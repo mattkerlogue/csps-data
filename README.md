@@ -43,7 +43,7 @@ under the MIT License.
 
 The processed data is released under the [Creative Commons Attribution License 4.0 (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/).
 
-The relevant licence is included in each sub-folder.
+The licenses are contained both at the root directory and in the relevant sub-folder.
 
 [ukgwa]: https://webarchive.nationalarchives.gov.uk/ukgwa/20140310230334/http://www.civilservice.gov.uk/about/improving/employee-engagement-in-the-civil-service/people-survey-2013
 [govuk-14]: https://www.gov.uk/government/publications/civil-service-people-survey-2014-results
