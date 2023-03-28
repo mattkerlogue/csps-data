@@ -12,7 +12,6 @@
 | Civil-Service-People-Survey-2015-results-by-gender.xlsx | Demographic scores - detailed gender scores | 2015 | XLSX |
 | Civil-Service-People-Survey-2015-results-by-health-status.xlsx | Demographic scores - detailed health scores | 2015 | XLSX |
 | Civil-Service-People-Survey-2015-results-by-sexual-identity.xlsx | Demographic scores - detailed sexual orientation scores | 2015 | XLSX |
-| csps2014_demographics.csv | Demographic scores | 2015 | CSV |
 | csps2015_allorganisations.xlsx | Organisation scores | 2015 | XLSX |
 | csps2015_allorganisations_csv.csv | Organisation scores | 2015 | CSV |
 | csps2015_benchmark_report.pdf | Benchmark scores report | 2015 | PDF |
