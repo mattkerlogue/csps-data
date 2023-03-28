@@ -47,7 +47,7 @@ The table below shows the files included in each year's folder.
 | Demographic scores - detailed health scores | . | . | . | . | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** |
 | Demographic scores - detailed sexual orientation scores | . | . | . | . | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** |
 | Demographic scores - detailed socio-economic background scores | . | . | . | . | . | . | . | . | . | . | **Y** | **Y** | **Y** |
-| Mean all respondents scores | x | x | x | x | x | x | x | x | x | 2018 | 2019 | 2020 | 2021 |
+| Mean all respondents scores | . | . | . | . | . | . | . | . | . | **Y** | **Y** | **Y** | **Y** |
 | Organisation scores | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** |
 | **Other files** |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | Benchmark scores report | . | . | . | . | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | **Y** | . | . |
