@@ -1,14 +1,6 @@
-# Question & metrics metadata processing
-# ============================
-# 
-# The CSPS questionnaire changes over time, including:
-#   * questions being added
-#   * questions being removed
-#   * question numbering changes
-#   
-# The aim of this script is to extract information about the
-# available questions each year, and other aggregate measures
-# 
+# 01-01.  Question & metrics metadata processing
+#         > Extract question wordings
+# =========================================================================
 
 # extract column headings
 extract_header <- function(path, sep = ",") {
@@ -32,7 +24,7 @@ extract_first_col <- function(path, locale = NULL) {
     file = path,
     locale = locale,
     col_select = 1
-    ))
+  ))
   
   df[[1]]
 }
@@ -200,7 +192,7 @@ qm_2020_dem_org <- qm_2020_dem_org[5:17]
 qm_2021_bm <- extract_ods_cols(
   "raw-data/2021/Civil_Service_People_Survey_2009_2021_Benchmarks_v2.ods",
   sheet = "Table_1", start_col = 1, cols = 2, row_to_names = 4
-  )
+)
 qm_2021_mean <- extract_ods_cols(
   "raw-data/2021/Civil_Service_People_Survey_2009_2021_Benchmarks_v2.ods",
   sheet = "Table_2", start_col = 1, cols = 2, row_to_names = 4
@@ -218,6 +210,25 @@ qm_2021_dem_org <- extract_ods_row(
   "raw-data/2021/Civil-Service-People-Survey-2021-results-by-ethnicity.ods",
   sheet = "Organisations", row = 4)
 qm_2021_dem_org <- qm_2021_dem_org[6:18]
+
+# 2022 contains benchmark scores, mean scores of all respondents,
+# organisation scores; other results not yet published (as at 2023-04-19)
+qm_2022_bm <- extract_ods_cols(
+  "raw-data/2022/Civil_Service_People_Survey_2022_Benchmark_Results.ods",
+  sheet = "Table_1", start_col = 1, cols = 2, row_to_names = 5
+)
+qm_2022_mean <- extract_ods_cols(
+  "raw-data/2022/Civil_Service_People_Survey_2022_Benchmark_Results.ods",
+  sheet = "Table_2", start_col = 1, cols = 2, row_to_names = 5
+)
+qm_2022_org <- extract_ods_row(
+  "raw-data/2022/Civil_Service_People_Survey_2022_Benchmark_Results.ods",
+  sheet = "Table_3", row = 5
+)
+qm_2022_org <- qm_2022_org[5:120]
+
+
+
 
 # get unified data --------------------------------------------------------
 
@@ -254,20 +265,33 @@ tbl_qms <- tibble::tibble(
     obj_class = purrr::map_chr(.x = obj, .f = ~class(get(.x))[1]),
     obj_vals = purrr::map2(.x = obj, .y = obj_class, .f = get_vals)
   ) |>
-  tidyr::unnest(obj_vals)
+  tidyr::unnest(obj_vals) |>
+  dplyr::mutate(
+    # handle windows encoding errors
+    obj_vals = iconv(obj_vals, "UTF-8", "UTF-8", "")
+  ) |>
+  tidyr::drop_na(obj_vals) |>
+  dplyr::filter(obj_vals != "")
 
 # add cleaned version of questions, stripping question numbers,
 # square brackets, scale/logic information
 tbl_qms_clean <- tbl_qms |> 
   dplyr::mutate(
-    # remove scale information
-    stripped_vals = gsub("\\s\\(%.*", "", obj_vals), 
+    # remove some scale information
+    stripped_vals = gsub("\\(0=not.*", "", obj_vals),
+    stripped_vals = gsub("\\(0=not.*", "", stripped_vals),
+    stripped_vals = gsub("\\(% strongly.*", "", stripped_vals),
+    # convert between word underscores
+    stripped_vals = gsub("_([A-z])", " \\1", stripped_vals),
+    # remove question numbers in scale information
+    stripped_vals = gsub("(.*\\(%.*)([A-Z]\\d{2}.*)", "\\1", stripped_vals),
     # remove question logic/routing
     stripped_vals = gsub("\\s\\(Asked.*\\)", ": ", stripped_vals),
     # remove extract colons
     stripped_vals = gsub(": : ", ": ", stripped_vals),
     # remove explanatory notes
     stripped_vals = gsub("\\s\\d$", "", stripped_vals),
+    stripped_vals = gsub("\\s\\[note.*", "", stripped_vals),
     # remove aggregation information
     stripped_vals = gsub("\\s\\([A-Z]\\d{2}.*", "", stripped_vals),
     # remove aggregation information
@@ -276,7 +300,7 @@ tbl_qms_clean <- tbl_qms |>
     stripped_vals = gsub(
       "^[A-Z]\\d{2}[A-Z]?_\\d{1,2}[\\.|\\:]?\\s?|^[A-Z]\\d{2}\\_[A-Z][:|\\.]\\s?|^[A-Z]\\d{2}[A-Z]?[\\.|\\:]\\s?|^[A-Z]\\d{2}\\s|^[A-Z]\\.\\s|^\\w+[\\.|\\:]",
       "", 
-      stripped_vals
+      stripped_vals,
     ),
     # replace quotation marks
     stripped_vals = gsub("<94>", "\"", stripped_vals),
@@ -300,98 +324,5 @@ tbl_qms_clean <- tbl_qms |>
     stripped_vals = tolower(stripped_vals)
   )
 
+readr::write_csv(tbl_qms_clean, "code/tbl_qms_clean.csv")
 
-# unique questions --------------------------------------------------------
-
-unq_qms <- tbl_qms_clean |>
-  dplyr::arrange(stripped_vals) |>
-  # drop single word entities (e.g. question numbers/variable names)
-  dplyr::mutate(
-    qnum_only = !grepl(" ", stripped_vals),
-  ) |>
-  dplyr::filter(!qnum_only) |>
-  #  replace punctuation
-  dplyr::mutate(
-    stripped_vals = gsub("_", ": ", stripped_vals)
-  ) |>
-  # get invidual
-  dplyr::distinct(stripped_vals)
-
-# function to detect entity in a vector
-find_in_vector <- function(x, vec) {
-  y <- vec[grepl(paste0("\\b", x, "\\b"), vec)]
-  if (length(y) != 1) {
-    return(NA_character_)
-  } else {
-    return(y)
-  }
-}
-
-# identify any unique words - words used only in a single question
-unq_words <- unq_qms |>
-  tidytext::unnest_tokens(output = "word", input = stripped_vals) |>
-  dplyr::count(word) |>
-  dplyr::anti_join(tidytext::stop_words, by = "word") |>
-  dplyr::filter(n == 1) |>
-  dplyr::mutate(
-    src_q = purrr::map_chr(
-      .x = word,
-      .f = ~find_in_vector(.x, unq_qms$stripped_vals))
-  )
-
-# identify unique bigrams
-unq_bigrams <- unq_qms |>
-  tidytext::unnest_ngrams(output = "bigram", input = stripped_vals, n = 2, ) |>
-  dplyr::count(bigram) |>
-  dplyr::filter(n == 1) |>
-  dplyr::mutate(
-    src_q = purrr::map_chr(
-      .x = bigram,
-      .f = ~find_in_vector(.x, unq_qms$stripped_vals))
-  ) |>
-  tidyr::drop_na(src_q)
-
-# get a list of unique words/bigrams
-unq_qs <- unq_words |>
-  dplyr::transmute(type = "word", phrase = word, src_q) |>
-  dplyr::bind_rows(
-    unq_bigrams |>
-      dplyr::transmute(type = "bigram", phrase = bigram, src_q)
-  ) |>
-  dplyr::nest_by(src_q) |>
-  dplyr::mutate(
-    n = nrow(data)
-  ) |>
-  dplyr::arrange(n) |>
-  dplyr::ungroup() |>
-  tidyr::unnest(data)
-
-# copy to clipboard to develop regex csv in spreadsheet editor
-unq_qs |> readr::write_csv()
-
-# read in question regex
-qm_regex <- readr::read_csv("code/question_regex.csv")
-
-# get questions that match regex
-get_matches <- function(regex, vec) {
-  vec[grepl(regex, vec)]
-}
-
-# match regex with questions
-tbl_match_qms <- qm_regex |>
-  dplyr::mutate(
-    matched_qs = purrr::map(
-      .x = regex_identifier,
-      .f = ~get_matches(.x, unq_qms$stripped_vals)
-    )
-  ) |>
-  tidyr::unnest(matched_qs)
-
-# get questions not matched by regex
-xunq_qs <- unq_qms |>
-  dplyr::filter(!(stripped_vals %in% tbl_match_qms$matched_qs))
-
-# copy to clipboard to further refine regex csv
-xunq_qs |> clipr::write_clip()
-
-# repeat until all questions matched
