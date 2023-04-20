@@ -10,7 +10,9 @@
 | Civil-Service-People-Survey-2021-results-by-health.ods | Demographic scores - detailed health scores | 2021 | ODS |
 | Civil-Service-People-Survey-2021-results-by-sexual-orientation.ods | Demographic scores - detailed sexual orientation scores | 2021 | ODS |
 | Civil-Service-People-Survey-2021-results-by-socio-economic-background.ods | Demographic scores - detailed socio-economic background scores | 2021 | ODS |
-| Civil_Service_People_Survey_2009_2021_Benchmarks_v2.ods | Benchmark scores & mean all respondent scores | 2009-2021 | ODS |
+| Civil_Service_People_Survey_2009_2021_Benchmarks_v2.ods | Benchmark scores, mean all respondent scores & organisation scores | 2009-2021* | ODS |
+
+* organisation scores are for 2021 only
 
 ## Source notes
 
