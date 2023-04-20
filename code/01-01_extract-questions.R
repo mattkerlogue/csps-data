@@ -324,5 +324,20 @@ tbl_qms_clean <- tbl_qms |>
     stripped_vals = tolower(stripped_vals)
   )
 
+# output main table of measures
 readr::write_csv(tbl_qms_clean, "code/tbl_qms_clean.csv")
 
+# output 2016-2019 lookups
+
+tbl_qms_1619_lookups <- tbl_qms_clean |>
+  dplyr::distinct(obj, obj_class) |>
+  dplyr::filter(obj_class == "tbl_df", grepl("1[6-9]_bm", obj)) |>
+  dplyr::mutate(
+    year = gsub("\\D", "", obj),
+    data = purrr::map(obj, ~get(as.name(.x)))
+  ) |>
+  tidyr::unnest(data) |>
+  janitor::clean_names() |>
+  dplyr::select(year, measure, label)
+
+readr::write_csv(tbl_qms_1619_lookups, "code/tbl_qms_1619_lookups.csv")
