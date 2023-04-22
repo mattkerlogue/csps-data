@@ -78,7 +78,8 @@ extract_ods_cols <- function(path, sheet = 1, start_col = 1, cols = 1,
 # get questions -----------------------------------------------------------
 
 # 2009-2013 benchmark scores are only available in a single 2013 publication
-qm_0913_bm <- extract_first_col("raw-data/2013/csps2013_benchmarks_20131125.csv")
+qm_0913_bm <- extract_first_col("raw-data/2013/csps2013_benchmarks_20131125.csv",
+                                locale = readr::locale(encoding = "latin1"))
 
 # 2009-2012 only organisation scores are published
 qm_2009_org <- extract_header("raw-data/2009/csps2009_allorganisations_20140213.csv")
