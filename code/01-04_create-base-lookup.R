@@ -47,11 +47,22 @@ tbl_qms_base <- tbl_qms_clean |>
     identifier_lookup = dplyr::if_else(
       is.na(label), obj_vals, label
     ),
-    qid = purrr::map_chr(identifier_lookup, ~identify_question(.x, qm_regex$regex_identifier, qm_regex$q_identifer))
+    qid = purrr::map_chr(
+      identifier_lookup, 
+      ~identify_question(.x, qm_regex$regex_identifier, qm_regex$q_identifer))
   ) |>
   dplyr::filter(!grepl("!!", qid)) |>
+  dplyr::mutate(
+    year_mult = dplyr::if_else(year == "0913", 5, 1)
+  ) |>
+  tidyr::uncount(year_mult, .id = "year_diff") |>
+  dplyr::mutate(
+    year = dplyr::if_else(year == "0913", 2008 + year_diff, as.numeric(year))
+  ) |>
   dplyr::select(
-    obj, year, qid, base_name = obj_vals
-  )
+    year, qid, base_labels = obj_vals
+  ) |>
+  dplyr::distinct() |>
+  dplyr::arrange(qid, year, base_labels)
 
 readr::write_csv(tbl_qms_base, "code/tbl_qms_base_lookup.csv")
