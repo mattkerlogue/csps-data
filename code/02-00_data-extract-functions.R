@@ -43,7 +43,7 @@
   }
 
   # ensure value is numeric
-  df$value <- as.numeric(df$value)
+  df$value <- suppressWarnings(as.numeric(df$value))
   
   # scale up percentages
   df <- df |>
@@ -257,6 +257,66 @@ adv_read_excel <- function(path, sheet, layers = 1, layer_names,
     df_out <- df_out |>
       dplyr::bind_rows(n_df)
   }
+  
+  df_out <- .coerce_to_csps_table(df_out, year = year)
+  
+  return(df_out)
+  
+}
+
+adv_read_ods <- function(path, sheet, start_row = 1, start_col = 1,
+                         header_label = "measure", layers = 1,
+                         layer_labels, year = NULL) {
+  
+  df <- suppressMessages(tidyods::read_ods_cells(path, sheet))
+  
+  df <- df |>
+    dplyr::filter(row >= start_row) |>
+    dplyr::filter(col >= start_col)
+  
+  table_headers <- df |>
+    dplyr::filter(row == start_row) |>
+    dplyr::filter(col > start_col + layers - 1) |>
+    dplyr::select(
+      col,
+      "{header_label}" := cell_content
+    )
+  
+  layer_cols <- start_col + seq_len(layers) - 1
+  
+  layer_vals <- df |>
+    dplyr::filter(row > start_row) |>
+    dplyr::filter(col %in% layer_cols) |>
+    dplyr::mutate(
+      layer = paste0("layer", col - start_col + 1)
+    )
+  
+  layer_names <- paste0("layer", seq_len(layers))
+  names(layer_names) <- layer_labels
+  
+  if (length(layer_cols) == 1) {
+    layer_vals <- layer_vals  |>
+      dplyr::select(
+        row, layer1 = cell_content
+      )
+  } else {
+    layer_vals <- layer_vals  |>
+      dplyr::select(
+        row, cell_content, layer
+      ) |>
+      tidyr::pivot_wider(names_from = layer, values_from = cell_content)
+  }
+  
+  df_out <- df |>
+    dplyr::filter(row > start_row) |>
+    dplyr::filter(col > (start_col + layers - 1)) |>
+    dplyr::left_join(table_headers, by = "col") |>
+    dplyr::left_join(layer_vals, by = "row") |>
+    dplyr::select(
+      {{ header_label }},
+      tidyselect::all_of(layer_names),
+      value = base_value
+    )
   
   df_out <- .coerce_to_csps_table(df_out, year = year)
   
