@@ -77,7 +77,7 @@ df_2013_scs <- adv_read_csv(
 
 
 
-# 2014 general scores -----------------------------------------------------
+# 2014 scores -------------------------------------------------------------
 
 # 2014 benchmark scores
 df_2014_bm <- adv_read_csv(
@@ -529,7 +529,7 @@ df_2014_dorg_lgb <- adv_read_excel (
   )
 
 
-# 2015 general scores -----------------------------------------------------
+# 2015 scores -------------------------------------------------------------
 
 # 2015 benchmark scores
 df_2015_bm <- adv_read_csv(
@@ -727,7 +727,7 @@ df_2015_dorg_lgb <- adv_read_excel (
   )
 
 
-# 2016 general scores -----------------------------------------------------
+# 2016 scores -------------------------------------------------------------
 
 # 2016 benchmark scores
 df_2016_bm <- adv_read_csv(
@@ -925,7 +925,7 @@ df_2016_dorg_lgbo <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
   )
 
-# 2017 general scores -----------------------------------------------------
+# 2017 scores -------------------------------------------------------------
 
 # 2017 benchmark scores
 df_2017_bm <- adv_read_csv(
@@ -1139,7 +1139,7 @@ df_2017_dorg_lgbo <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
   )
 
-# 2018 general scores -----------------------------------------------------
+# 2018 scores -------------------------------------------------------------
 
 # 2018 benchmark scores
 df_2018_bm <- adv_read_csv(
@@ -1360,7 +1360,7 @@ df_2018_dorg_lgbo <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
   )
 
-# 2019 general scores -----------------------------------------------------
+# 2019 scores -------------------------------------------------------------
 
 # 2019 benchmark scores
 df_2019_bm <- adv_read_csv(
@@ -1580,11 +1580,213 @@ df_2019_dorg_lgbo <- adv_read_excel (
   )
 
 
-# TODO
-# ODS extraction functions
-# 2020 data
-# 2021 data
-# 2022 data
+
+# 2020 scores -------------------------------------------------------------
+
+# 2020 benchmark scores
+df_2020_bm <- adv_read_csv(
+  "raw-data/2020/Civil_Service_People_Survey_2009_to_2020_Mean_Benchmark_Scores.csv",
+  col_types = paste0("_c_", paste0(rep("n", 12), collapse = "")),
+  rename_first = "measure"
+)
+
+# 2020 mean scores
+df_2020_mean <- adv_read_csv(
+  "raw-data/2020/Civil_Service_People_Survey_2009_to_2020_Mean_Benchmark_Scores.csv",
+  col_types = paste0("_c_", paste0(rep("n", 12), collapse = "")),
+  rename_first = "measure"
+)
+
+# 2020 organisation scores
+df_2020_org1 <- adv_read_ods(
+  "raw-data/2020/Civil_Service_People_Survey_2020-_All_organisation_scores.ods",
+  sheet = "Table_1", start_row = 1, start_col = 3, layers = 1, 
+  layer_labels = "organisation", year = 2020
+)
+
+df_2020_org2 <- adv_read_ods(
+  "raw-data/2020/Civil_Service_People_Survey_2020-_All_organisation_scores.ods",
+  sheet = "Table_2", start_row = 1, start_col = 3, layers = 1, 
+  layer_labels = "organisation", year = 2020
+)
+
+# 2020 demographic scores
+df_2020_dem <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-all-demographics-v2.ods",
+  sheet = "Benchmarks", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic1_var", "demographic1_cat"), year = 2020
+)
+
+
+# 2020 scores: ethnicity --------------------------------------------------
+
+# 2020 detailed demographic results - white
+df_2020_d2_white <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-ethnicity-v2.ods",
+  sheet = "White", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Ethnicity - binary",
+    demographic1_cat = "White",
+  )
+
+# 2020 detailed demographic results - ethnic minority
+df_2020_d2_em <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-ethnicity-v2.ods",
+  sheet = "Ethnic_Minority", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Ethnicity - binary",
+    demographic1_cat = "Ethnic minority",
+  )
+
+# 2020 organisation by ethnicity
+df_2020_dorg_eth <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-ethnicity-v2.ods",
+  sheet = "Organisations", start_row = 5, start_col = 3, layers = 2, 
+  layer_labels = c("organisation", "demographic1_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Ethnicity - binary"
+  )
+
+
+# 2020 scores: disability -------------------------------------------------
+
+# 2020 detailed demographic results - no ltlc
+df_2020_d2_noltlc <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-health-v2.ods",
+  sheet = "No_LTLC", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z08: Limiting long-term illness, disability or health condition",
+    demographic1_cat = "No long-term limiting condition, illness or disability"
+  )
+
+# 2020 detailed demographic results - ltlc
+df_2020_d2_ltlc <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-health-v2.ods",
+  sheet = "Has_LTLC", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z08: Limiting long-term illness, disability or health condition",
+    demographic1_cat = "Long-term limiting condition, illness or disability"
+  )
+
+# 2020 organisation by disability
+df_2020_dorg_dis <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-ethnicity-v2.ods",
+  sheet = "Organisations", start_row = 5, start_col = 3, layers = 2, 
+  layer_labels = c("organisation", "demographic1_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z08: Limiting long-term illness, disability or health condition"
+  )
+
+
+# 2020 scores: sex --------------------------------------------------------
+
+# 2020 detailed splits for sex and gender
+df_2019_dem_sexdet <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods",
+  sheet = "Overview", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic1_var", "demographic1_cat"), year = 2020
+)
+
+# 2020 detailed demographic results - female
+df_2020_d2_female <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods",
+  sheet = "Female", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation",
+    demographic1_cat = "Female"
+  )
+
+# 2020 detailed demographic results - male
+df_2020_d2_male <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods",
+  sheet = "Male", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation",
+    demographic1_cat = "Male"
+  )
+
+# 2020 detailed demographic results - other
+df_2020_d2_sexoth <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods",
+  sheet = "Other", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation",
+    demographic1_cat = "Other"
+  )
+
+# 2020 organisation by gender
+df_2020_dorg_sex <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods",
+  sheet = "Organisations", start_row = 5, start_col = 3, layers = 2,
+  layer_labels = c("organisation", "demographic1_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation"
+  ) |>
+  dplyr::filter(
+    measure != "response_order"
+  )
+
+
+# 2020 scores: lgb --------------------------------------------------------
+
+# 2020 detailed splits for sexual orientation and gender
+df_2019_dem_lgbdet <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-sexual-orientation-v2.ods",
+  sheet = "Overview", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic1_cat", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation",
+    demographic2_var = "J07: Which of the following (sexual orientation) options best describes how you think of yourself?"
+  )
+
+# 2020 detailed demographic results - heterosexual
+df_2020_d2_hetero <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-sexual-orientation-v2.ods",
+  sheet = "Heterosexual", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z10: Sexual Orientation (grouped)",
+    demographic1_cat = "Heterosexual/straight"
+  )
+
+# 2020 detailed demographic results - lgb+
+df_2020_d2_lgb <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-sexual-orientation-v2.ods",
+  sheet = "LGB+", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic2_var", "demographic2_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z10: Sexual Orientation (grouped)",
+    demographic1_cat = "LGB+"
+  )
+
+df_2020_dorg_lgb <- adv_read_ods(
+  "raw-data/2020/Civil-Service-People-Survey-2020-results-by-sexual-orientation-v2.ods",
+  sheet = "Organisations", start_row = 5, start_col = 3, layers = 2,
+  layer_labels = c("organisation", "demographic1_cat"), year = 2020
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z10: Sexual Orientation (grouped)"
+  )
 
 # combine scores ----------------------------------------------------------
 
