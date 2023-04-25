@@ -2,10 +2,11 @@
 #         > Extract data
 # =========================================================================
 
+# setup -------------------------------------------------------------------
 
-# helper functions --------------------------------------------------------
-
+# helper functions
 source("code/02-00_data-extract-functions.R")
+
 
 # 2009-2013 benchmarks ----------------------------------------------------
 
@@ -25,12 +26,14 @@ df_2009_org <- adv_read_csv(
   encoding = "latin1", names_to = "measure", year = 2009
 )
 
+
 # 2010 organisation scores
 df_2010_org <- adv_read_csv(
   "raw-data/2010/csps2010allorganisations_tcm6-38334.csv",
   col_types = paste0("c", "c", paste0(rep("n", 73), collapse = "")),
   names_to = "measure", year = 2010
 )
+
 
 # 2011 organisation scores
 df_2011_org <- adv_read_csv(
@@ -39,12 +42,14 @@ df_2011_org <- adv_read_csv(
   names_to = "measure", year = 2011
 )
 
+
 # 2012 organisation scores
 df_2012_org <- adv_read_csv(
   "raw-data/2012/csps2012_allorganisations_20130201.csv",
   col_types = paste0("c", "c", paste0(rep("n", 81), collapse = "")),
   names_to = "measure", year = 2012
 )
+
 
 
 # 2013 scores: organisation and demographic -------------------------------
@@ -56,6 +61,7 @@ df_2013_org <- adv_read_csv(
   names_to = "measure", year = 2013
 )
 
+
 # 2013 demographic scores
 df_2013_dem <- adv_read_excel(
   path = "raw-data/2013/csps2013_demographic_results.xlsx",
@@ -63,6 +69,8 @@ df_2013_dem <- adv_read_excel(
   layer_names = c("demographic1_var", "demographic1_cat"),
   year = 2013
 )
+
+
 
 # 2009-2013 SCS scores
 df_2013_scs <- adv_read_csv(
@@ -85,12 +93,14 @@ df_2014_bm <- adv_read_csv(
   col_types = paste0("c", paste0(rep("n", 6), collapse = ""))
 )
 
+
 # 2014 organisation scores
 df_2014_org <- adv_read_csv(
   "raw-data/2014/csps2014_allorganisations_20141120.csv",
   col_types = paste0("c", "c", paste0(rep("n", 82), collapse = "")),
   names_to = "measure", year = 2014
 )
+
 
 # 2014 overall demographic scores
 df_2014_dem <- adv_read_excel(
@@ -99,6 +109,7 @@ df_2014_dem <- adv_read_excel(
   layer_names = c("demographic1_var", "demographic1_cat"),
   contains_endnotes = TRUE, year = 2014
 )
+
 
 
 # 2014 scores: ethnicity --------------------------------------------------
@@ -114,6 +125,7 @@ df_0914_dem_ethnicity <- adv_read_excel (
     demographic1_var = "Ethnicity - binary",
   )
 
+
 # 2014 detailed demographic results - white
 df_2014_d2_white <- adv_read_excel (
   path = "raw-data/2014/csps2014_bme_detailedresults.xlsx",
@@ -125,6 +137,7 @@ df_2014_d2_white <- adv_read_excel (
     demographic1_var = "Ethnicity - binary",
     demographic1_cat = "White",
   )
+
 
 # 2014 detailed demographic results - white
 df_2014_d2_em <- adv_read_excel (
@@ -138,6 +151,7 @@ df_2014_d2_em <- adv_read_excel (
     demographic1_cat = "BME",
   )
 
+
 # 2009 organisation by ethnicity
 df_2009_dorg_eth <- adv_read_excel (
   path = "raw-data/2014/csps2014_bme_detailedresults.xlsx",
@@ -148,6 +162,7 @@ df_2009_dorg_eth <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary",
   )
+
 
 # 2010 organisation by ethnicity
 df_2010_dorg_eth <- adv_read_excel (
@@ -160,6 +175,7 @@ df_2010_dorg_eth <- adv_read_excel (
     demographic1_var = "Ethnicity - binary",
   )
 
+
 # 2011 organisation by ethnicity
 df_2011_dorg_eth <- adv_read_excel (
   path = "raw-data/2014/csps2014_bme_detailedresults.xlsx",
@@ -170,6 +186,7 @@ df_2011_dorg_eth <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary",
   )
+
 
 # 2012 organisation by ethnicity
 df_2012_dorg_eth <- adv_read_excel (
@@ -182,6 +199,7 @@ df_2012_dorg_eth <- adv_read_excel (
     demographic1_var = "Ethnicity - binary",
   )
 
+
 # 2013 organisation by ethnicity
 df_2013_dorg_eth <- adv_read_excel (
   path = "raw-data/2014/csps2014_bme_detailedresults.xlsx",
@@ -193,6 +211,7 @@ df_2013_dorg_eth <- adv_read_excel (
     demographic1_var = "Ethnicity - binary",
   )
 
+
 # 2014 organisation by ethnicity
 df_2014_dorg_eth <- adv_read_excel (
   path = "raw-data/2014/csps2014_bme_detailedresults.xlsx",
@@ -203,6 +222,7 @@ df_2014_dorg_eth <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary",
   )
+
 
 
 # 2014 scores: disability -------------------------------------------------
@@ -218,6 +238,7 @@ df_0914_dem_disability <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
   )
 
+
 # 2014 detailed demographic results - no ltli
 df_2014_d2_noltli <- adv_read_excel (
   path = "raw-data/2014/csps2014_disability_detailedresults.xlsx",
@@ -229,6 +250,7 @@ df_2014_d2_noltli <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
     demographic1_cat = "No long-term limiting illness/condition or an illness/condition has no impact on daily activities/work",
   )
+
 
 # 2014 detailed demographic results - ltli
 df_2014_d2_ltli <- adv_read_excel (
@@ -242,6 +264,7 @@ df_2014_d2_ltli <- adv_read_excel (
     demographic1_cat = "Long-term limiting illness or condition which has an impact on daily activities/work",
   )
 
+
 # 2009 organisation by disability
 df_2009_dorg_dis <- adv_read_excel (
   path = "raw-data/2014/csps2014_disability_detailedresults.xlsx",
@@ -252,6 +275,7 @@ df_2009_dorg_dis <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Long-term health [J04/J4A]",
   )
+
 
 # 2010 organisation by disability
 df_2010_dorg_dis <- adv_read_excel (
@@ -264,6 +288,7 @@ df_2010_dorg_dis <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
   )
 
+
 # 2011 organisation by disability
 df_2011_dorg_dis <- adv_read_excel (
   path = "raw-data/2014/csps2014_disability_detailedresults.xlsx",
@@ -274,6 +299,7 @@ df_2011_dorg_dis <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Long-term health [J04/J4A]",
   )
+
 
 # 2012 organisation by disability
 df_2012_dorg_dis <- adv_read_excel (
@@ -286,6 +312,7 @@ df_2012_dorg_dis <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
   )
 
+
 # 2013 organisation by disability
 df_2013_dorg_dis <- adv_read_excel (
   path = "raw-data/2014/csps2014_disability_detailedresults.xlsx",
@@ -297,6 +324,7 @@ df_2013_dorg_dis <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
   )
 
+
 # 2014 organisation by disability
 df_2014_dorg_dis <- adv_read_excel (
   path = "raw-data/2014/csps2014_disability_detailedresults.xlsx",
@@ -307,6 +335,7 @@ df_2014_dorg_dis <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Long-term health [J04/J4A]",
   )
+
 
 
 # 2014 scores: sex --------------------------------------------------------
@@ -322,6 +351,7 @@ df_0914_dem_sex <- adv_read_excel (
     demographic1_var = "Sex [J01]",
   )
 
+
 # 2014 detailed demographic results - female
 df_2014_d2_female <- adv_read_excel (
   path = "raw-data/2014/csps2014_gender_detailedresults.xlsx",
@@ -333,6 +363,7 @@ df_2014_d2_female <- adv_read_excel (
     demographic1_var = "Sex [J01]",
     demographic1_cat = "Female",
   )
+
 
 # 2014 detailed demographic results - male
 df_2014_d2_male <- adv_read_excel (
@@ -346,6 +377,7 @@ df_2014_d2_male <- adv_read_excel (
     demographic1_cat = "Male",
   )
 
+
 # 2009 organisation by sex
 df_2009_dorg_sex <- adv_read_excel (
   path = "raw-data/2014/csps2014_gender_detailedresults.xlsx",
@@ -356,6 +388,7 @@ df_2009_dorg_sex <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sex [J01]",
   )
+
 
 # 2010 organisation by sex
 df_2010_dorg_sex <- adv_read_excel (
@@ -368,6 +401,7 @@ df_2010_dorg_sex <- adv_read_excel (
     demographic1_var = "Sex [J01]",
   )
 
+
 # 2011 organisation by sex
 df_2011_dorg_sex <- adv_read_excel (
   path = "raw-data/2014/csps2014_gender_detailedresults.xlsx",
@@ -378,6 +412,7 @@ df_2011_dorg_sex <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sex [J01]",
   )
+
 
 # 2012 organisation by sex
 df_2012_dorg_sex <- adv_read_excel (
@@ -390,6 +425,7 @@ df_2012_dorg_sex <- adv_read_excel (
     demographic1_var = "Sex [J01]",
   )
 
+
 # 2013 organisation by sex
 df_2013_dorg_sex <- adv_read_excel (
   path = "raw-data/2014/csps2014_gender_detailedresults.xlsx",
@@ -401,6 +437,7 @@ df_2013_dorg_sex <- adv_read_excel (
     demographic1_var = "Sex [J01]",
   )
 
+
 # 2014 organisation by sex
 df_2014_dorg_sex <- adv_read_excel (
   path = "raw-data/2014/csps2014_gender_detailedresults.xlsx",
@@ -411,6 +448,7 @@ df_2014_dorg_sex <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sex [J01]",
   )
+
 
 
 # 2014 scores: lgb --------------------------------------------------------
@@ -427,6 +465,7 @@ df_2014_dem_lgbdet <- adv_read_excel (
     demographic2_var = "Sexual identity - expanded [J07]"
   )
 
+
 # 2009-2014 lgb trend
 df_0914_dem_lgb <- adv_read_excel (
   path = "raw-data/2014/csps2014_lgb_detailedresults.xlsx" ,
@@ -437,6 +476,7 @@ df_0914_dem_lgb <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sexual identity [J07]",
   )
+
 
 # 2014 detailed demographic results - heterosexual
 df_2014_d2_hetero <- adv_read_excel (
@@ -450,6 +490,7 @@ df_2014_d2_hetero <- adv_read_excel (
     demographic1_cat = "Heterosexual/straight",
   )
 
+
 # 2014 detailed demographic results - lgb
 df_2014_d2_lgb <- adv_read_excel (
   path = "raw-data/2014/csps2014_lgb_detailedresults.xlsx",
@@ -462,6 +503,7 @@ df_2014_d2_lgb <- adv_read_excel (
     demographic1_cat = "LGB",
   )
 
+
 # 2009 organisation by lgb
 df_2009_dorg_lgb <- adv_read_excel (
   path = "raw-data/2014/csps2014_lgb_detailedresults.xlsx",
@@ -472,6 +514,7 @@ df_2009_dorg_lgb <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sexual identity [J07]",
   )
+
 
 # 2010 organisation by lgb
 df_2010_dorg_lgb <- adv_read_excel (
@@ -484,6 +527,7 @@ df_2010_dorg_lgb <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
   )
 
+
 # 2011 organisation by lgb
 df_2011_dorg_lgb <- adv_read_excel (
   path = "raw-data/2014/csps2014_lgb_detailedresults.xlsx",
@@ -494,6 +538,7 @@ df_2011_dorg_lgb <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sexual identity [J07]",
   )
+
 
 # 2012 organisation by lgb
 df_2012_dorg_lgb <- adv_read_excel (
@@ -506,6 +551,7 @@ df_2012_dorg_lgb <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
   )
 
+
 # 2013 organisation by lgb
 df_2013_dorg_lgb <- adv_read_excel (
   path = "raw-data/2014/csps2014_lgb_detailedresults.xlsx",
@@ -516,6 +562,7 @@ df_2013_dorg_lgb <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sexual identity [J07]",
   )
+
 
 # 2014 organisation by lgb
 df_2014_dorg_lgb <- adv_read_excel (
@@ -529,6 +576,7 @@ df_2014_dorg_lgb <- adv_read_excel (
   )
 
 
+
 # 2015 scores -------------------------------------------------------------
 
 # 2015 benchmark scores
@@ -537,12 +585,14 @@ df_2015_bm <- adv_read_csv(
   col_types = paste0("c", paste0(rep("n", 7), collapse = ""))
 )
 
+
 # 2015 organisation scores
 df_2015_org <- adv_read_csv(
   "raw-data/2015/csps2015_allorganisations_csv.csv",
   col_types = paste0("c", "c", paste0(rep("n", 161), collapse = "")),
   names_to = "measure", year = 2015
 )
+
 
 # 2015 overall demographic scores
 df_2015_dem <- adv_read_excel(
@@ -551,6 +601,7 @@ df_2015_dem <- adv_read_excel(
   layer_names = c("demographic1_var", "demographic1_cat"),
   contains_endnotes = TRUE, year = 2015
 )
+
 
 # 2015 scores: ethnicity --------------------------------------------------
 
@@ -566,6 +617,7 @@ df_2015_d2_white <- adv_read_excel (
     demographic1_cat = "White",
   )
 
+
 # 2015 detailed demographic results - ethnic minority
 df_2015_d2_em <- adv_read_excel (
   path = "raw-data/2015/Civil-Service-People-Survey-2015-results-by-ethnicity.xlsx",
@@ -578,6 +630,7 @@ df_2015_d2_em <- adv_read_excel (
     demographic1_cat = "BME",
   )
 
+
 # 2015 organisation by ethnicity
 df_2015_dorg_eth <- adv_read_excel (
   path = "raw-data/2015/Civil-Service-People-Survey-2015-results-by-ethnicity.xlsx",
@@ -588,6 +641,7 @@ df_2015_dorg_eth <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary",
   )
+
 
 # 2015 scores: disability -------------------------------------------------
 
@@ -603,6 +657,7 @@ df_2015_dem_disdet <- adv_read_excel (
     demographic2_var = "Impact [J4A]",
   )
 
+
 # 2015 detailed demographic results - no ltli
 df_2015_d2_noltli <- adv_read_excel (
   path = "raw-data/2015/Civil-Service-People-Survey-2015-results-by-health-status.xlsx",
@@ -614,6 +669,7 @@ df_2015_d2_noltli <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
     demographic1_cat = "No long-term limiting illness/condition or an illness/condition has no impact on daily activities/work",
   )
+
 
 # 2015 detailed demographic results - ltli
 df_2015_d2_ltli <- adv_read_excel (
@@ -627,6 +683,7 @@ df_2015_d2_ltli <- adv_read_excel (
     demographic1_cat = "Long-term limiting illness or condition which has an impact on daily activities/work",
   )
 
+
 # 2015 organisation by disability
 df_2015_dorg_dis <- adv_read_excel (
   path = "raw-data/2015/Civil-Service-People-Survey-2015-results-by-health-status.xlsx",
@@ -637,6 +694,7 @@ df_2015_dorg_dis <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Long-term health [J04/J4A]",
   )
+
 
 
 # 2015 scores: sex --------------------------------------------------------
@@ -653,6 +711,7 @@ df_2015_d2_female <- adv_read_excel (
     demographic1_cat = "Female",
   )
 
+
 # 2015 detailed demographic results - male
 df_2015_d2_male <- adv_read_excel (
   path = "raw-data/2015/Civil-Service-People-Survey-2015-results-by-gender.xlsx",
@@ -665,6 +724,7 @@ df_2015_d2_male <- adv_read_excel (
     demographic1_cat = "Male",
   )
 
+
 # 2015 organisation by sex
 df_2015_dorg_sex <- adv_read_excel (
   path = "raw-data/2015/Civil-Service-People-Survey-2015-results-by-gender.xlsx",
@@ -675,6 +735,7 @@ df_2015_dorg_sex <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sex [J01]",
   )
+
 
 
 # 2015 scores: lgb --------------------------------------------------------
@@ -691,6 +752,7 @@ df_2015_dem_lgbdet <- adv_read_excel (
     demographic2_var = "Sexual identity - expanded [J07]"
   )
 
+
 # 2015 detailed demographic results - heterosexual
 df_2015_d2_hetero <- adv_read_excel (
   path = "raw-data/2015/Civil-Service-People-Survey-2015-results-by-sexual-identity.xlsx",
@@ -702,6 +764,7 @@ df_2015_d2_hetero <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
     demographic1_cat = "Heterosexual/straight",
   )
+
 
 # 2015 detailed demographic results - lgb
 df_2015_d2_lgb <- adv_read_excel (
@@ -715,6 +778,7 @@ df_2015_d2_lgb <- adv_read_excel (
     demographic1_cat = "LGB",
   )
 
+
 # 2015 organisation by lgb
 df_2015_dorg_lgb <- adv_read_excel (
   path = "raw-data/2015/Civil-Service-People-Survey-2015-results-by-sexual-identity.xlsx",
@@ -727,6 +791,7 @@ df_2015_dorg_lgb <- adv_read_excel (
   )
 
 
+
 # 2016 scores -------------------------------------------------------------
 
 # 2016 benchmark scores
@@ -736,12 +801,14 @@ df_2016_bm <- adv_read_csv(
   rename_first = "measure"
 )
 
+
 # 2016 organisation scores
 df_2016_org <- adv_read_csv(
   "raw-data/2016/civil_service_peoples_survey_2016_all_org_scores.csv",
   col_types = paste0("c", "c", "c", paste0(rep("n", 85), collapse = "")),
   names_to = "measure", na = ".", year = 2016
 )
+
 
 # 2016 overall demographic scores
 df_2016_dem <- adv_read_excel(
@@ -750,6 +817,7 @@ df_2016_dem <- adv_read_excel(
   layer_names = c("demographic1_var", "demographic1_cat"),
   contains_endnotes = TRUE, year = 2016
 )
+
 
 # 2016 scores: ethnicity --------------------------------------------------
 
@@ -765,6 +833,7 @@ df_2016_d2_white <- adv_read_excel (
     demographic1_cat = "White",
   )
 
+
 # 2016 detailed demographic results - ethnic minority
 df_2016_d2_em <- adv_read_excel (
   path = "raw-data/2016/Civil-Service-People-Survey-2016-results-by-ethnicity.xlsx",
@@ -777,6 +846,7 @@ df_2016_d2_em <- adv_read_excel (
     demographic1_cat = "BAME",
   )
 
+
 # 2016 organisation by ethnicity
 df_2016_dorg_eth <- adv_read_excel (
   path = "raw-data/2016/Civil-Service-People-Survey-2016-results-by-ethnicity.xlsx",
@@ -787,6 +857,7 @@ df_2016_dorg_eth <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary",
   )
+
 
 # 2016 scores: disability -------------------------------------------------
 
@@ -802,6 +873,7 @@ df_2016_dem_disdet <- adv_read_excel (
     demographic2_var = "Impact [J4A]",
   )
 
+
 # 2016 detailed demographic results - no ltli
 df_2016_d2_noltli <- adv_read_excel (
   path = "raw-data/2016/Civil-Service-People-Survey-2016-results-by-health-status.xlsx",
@@ -813,6 +885,7 @@ df_2016_d2_noltli <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
     demographic1_cat = "No long-term limiting illness/condition or an illness/condition has no impact on daily activities/work",
   )
+
 
 # 2016 detailed demographic results - ltli
 df_2016_d2_ltli <- adv_read_excel (
@@ -826,6 +899,7 @@ df_2016_d2_ltli <- adv_read_excel (
     demographic1_cat = "Long-term limiting illness or condition which has an impact on daily activities/work",
   )
 
+
 # 2016 organisation by disability
 df_2016_dorg_dis <- adv_read_excel (
   path = "raw-data/2016/Civil-Service-People-Survey-2016-results-by-health-status.xlsx",
@@ -836,6 +910,7 @@ df_2016_dorg_dis <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Long-term health [J04/J4A]",
   )
+
 
 
 # 2016 scores: sex --------------------------------------------------------
@@ -852,6 +927,7 @@ df_2016_d2_female <- adv_read_excel (
     demographic1_cat = "Female",
   )
 
+
 # 2016 detailed demographic results - male
 df_2016_d2_male <- adv_read_excel (
   path = "raw-data/2016/Civil-Service-People-Survey-2016-results-by-gender.xlsx",
@@ -864,6 +940,7 @@ df_2016_d2_male <- adv_read_excel (
     demographic1_cat = "Male",
   )
 
+
 # 2016 organisation by sex
 df_2016_dorg_sex <- adv_read_excel (
   path = "raw-data/2016/Civil-Service-People-Survey-2016-results-by-gender.xlsx",
@@ -874,6 +951,7 @@ df_2016_dorg_sex <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sex [J01]",
   )
+
 
 
 # 2016 scores: lgb --------------------------------------------------------
@@ -890,6 +968,7 @@ df_2016_dem_lgbdet <- adv_read_excel (
     demographic2_var = "Sexual identity - expanded [J07]"
   )
 
+
 # 2016 detailed demographic results - heterosexual
 df_2016_d2_hetero <- adv_read_excel (
   path = "raw-data/2016/Civil-Service-People-Survey-2016-results-by-sexual-identity.xlsx",
@@ -901,6 +980,7 @@ df_2016_d2_hetero <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
     demographic1_cat = "Heterosexual/straight",
   )
+
 
 # 2016 detailed demographic results - lgb
 df_2016_d2_lgb <- adv_read_excel (
@@ -914,6 +994,7 @@ df_2016_d2_lgb <- adv_read_excel (
     demographic1_cat = "LGBO",
   )
 
+
 # 2016 organisation by lgb
 df_2016_dorg_lgbo <- adv_read_excel (
   path = "raw-data/2016/Civil-Service-People-Survey-2016-results-by-sexual-identity.xlsx",
@@ -925,6 +1006,7 @@ df_2016_dorg_lgbo <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
   )
 
+
 # 2017 scores -------------------------------------------------------------
 
 # 2017 benchmark scores
@@ -934,12 +1016,14 @@ df_2017_bm <- adv_read_csv(
   rename_first = "measure"
 )
 
+
 # 2017 organisation scores
 df_2017_org <- adv_read_csv(
   "raw-data/2017/Civil_Service_People_Survey_2017_All_Organisation_Scores__CSV_.csv",
   col_types = paste0("c", "c", "c", paste0(rep("n", 84), collapse = "")),
   names_to = "measure", na = ".", year = 2017
 )
+
 
 # 2017 overall demographic scores
 df_2017_dem <- adv_read_excel(
@@ -948,6 +1032,7 @@ df_2017_dem <- adv_read_excel(
   layer_names = c("demographic1_var", "demographic1_cat"),
   contains_endnotes = TRUE, year = 2017
 )
+
 
 # 2017 scores: ethnicity --------------------------------------------------
 
@@ -963,6 +1048,7 @@ df_2017_d2_white <- adv_read_excel (
     demographic1_cat = "White",
   )
 
+
 # 2017 detailed demographic results - ethnic minority
 df_2017_d2_em <- adv_read_excel (
   path = "raw-data/2017/Civil_Service_People_Survey_2017_results_by_ethnicity.xlsx",
@@ -975,6 +1061,7 @@ df_2017_d2_em <- adv_read_excel (
     demographic1_cat = "Ethnic minority",
   )
 
+
 # 2017 organisation by ethnicity
 df_2017_dorg_eth <- adv_read_excel (
   path = "raw-data/2017/Civil_Service_People_Survey_2017_results_by_ethnicity.xlsx",
@@ -985,6 +1072,7 @@ df_2017_dorg_eth <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary",
   )
+
 
 # 2017 scores: disability -------------------------------------------------
 
@@ -1000,6 +1088,7 @@ df_2017_dem_disdet <- adv_read_excel (
     demographic2_var = "Impact [J4A]",
   )
 
+
 # 2017 detailed demographic results - no ltlc
 df_2017_d2_noltlc <- adv_read_excel (
   path = "raw-data/2017/Civil_Service_People_Survey_2017_results_by_health_status.xlsx",
@@ -1013,6 +1102,7 @@ df_2017_d2_noltlc <- adv_read_excel (
     demographic1_cat = "No long-term limiting illness/condition or an illness/condition has no impact on daily activities/work",
   )
 
+
 # 2017 detailed demographic results - ltlc
 df_2017_d2_ltlc <- adv_read_excel (
   path = "raw-data/2017/Civil_Service_People_Survey_2017_results_by_health_status.xlsx",
@@ -1025,6 +1115,7 @@ df_2017_d2_ltlc <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
     demographic1_cat = "Long-term limiting illness or condition which has an impact on daily activities/work",
   )
+
 
 # 2017 organisation by disability
 df_2017_dorg_dis <- adv_read_excel (
@@ -1052,6 +1143,7 @@ df_2017_d2_female <- adv_read_excel (
     demographic1_cat = "Female",
   )
 
+
 # 2017 detailed demographic results - male
 df_2017_d2_male <- adv_read_excel (
   path = "raw-data/2017/Civil_Service_People_Survey_2017_results_by_gender.xlsx",
@@ -1063,6 +1155,7 @@ df_2017_d2_male <- adv_read_excel (
     demographic1_var = "Sex [J01]",
     demographic1_cat = "Male",
   )
+
 
 # 2017 detailed demographic results - identify another way
 df_2017_d2_sexother <- adv_read_excel (
@@ -1076,6 +1169,7 @@ df_2017_d2_sexother <- adv_read_excel (
     demographic1_cat = "I identify in another way",
   )
 
+
 # 2017 organisation by sex
 df_2017_dorg_sex <- adv_read_excel (
   path = "raw-data/2017/Civil_Service_People_Survey_2017_results_by_gender.xlsx",
@@ -1086,6 +1180,7 @@ df_2017_dorg_sex <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sex [J01]",
   )
+
 
 
 # 2017 scores: lgb --------------------------------------------------------
@@ -1102,6 +1197,7 @@ df_2017_dem_lgbdet <- adv_read_excel (
     demographic2_var = "Sexual identity - expanded [J07]"
   )
 
+
 # 2017 detailed demographic results - heterosexual
 df_2017_d2_hetero <- adv_read_excel (
   path = "raw-data/2017/Civil_Service_People_Survey_2017_results_by_sexual_orientation.xlsx",
@@ -1114,6 +1210,7 @@ df_2017_d2_hetero <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
     demographic1_cat = "Heterosexual/straight",
   )
+
 
 # 2017 detailed demographic results - lgb
 df_2017_d2_lgb <- adv_read_excel (
@@ -1128,6 +1225,7 @@ df_2017_d2_lgb <- adv_read_excel (
     demographic1_cat = "LGBO",
   )
 
+
 # 2017 organisation by lgb
 df_2017_dorg_lgbo <- adv_read_excel (
   path = "raw-data/2017/Civil_Service_People_Survey_2017_results_by_sexual_orientation.xlsx",
@@ -1139,6 +1237,7 @@ df_2017_dorg_lgbo <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
   )
 
+
 # 2018 scores -------------------------------------------------------------
 
 # 2018 benchmark scores
@@ -1148,12 +1247,14 @@ df_2018_bm <- adv_read_csv(
   rename_first = "measure"
 )
 
+
 # 2018 mean scores
 df_2018_mean <- adv_read_csv(
   "raw-data/2018/Civil-Service-People-Survey-2009-2018-Mean-Civil-Servants-Scores.csv",
   col_types = paste0("_c", paste0(rep("n", 10), collapse = "")),
   rename_first = "measure"
 )
+
 
 # 2018 organisation scores
 df_2018_org <- adv_read_csv(
@@ -1162,6 +1263,7 @@ df_2018_org <- adv_read_csv(
   names_to = "measure", na = ".", year = 2018
 )
 
+
 # 2018 overall demographic scores
 df_2018_dem <- adv_read_excel(
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-all-demographic-groups.xlsx",
@@ -1169,6 +1271,7 @@ df_2018_dem <- adv_read_excel(
   layer_names = c("demographic1_var", "demographic1_cat"),
   contains_endnotes = TRUE, year = 2018
 )
+
 
 # 2018 scores: ethnicity --------------------------------------------------
 
@@ -1184,6 +1287,7 @@ df_2018_d2_white <- adv_read_excel (
     demographic1_cat = "White",
   )
 
+
 # 2018 detailed demographic results - ethnic minority
 df_2018_d2_em <- adv_read_excel (
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-ethnicity.xlsx",
@@ -1196,6 +1300,7 @@ df_2018_d2_em <- adv_read_excel (
     demographic1_cat = "Ethnic minority",
   )
 
+
 # 2018 organisation by ethnicity
 df_2018_dorg_eth <- adv_read_excel (
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-ethnicity.xlsx",
@@ -1206,6 +1311,7 @@ df_2018_dorg_eth <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary",
   )
+
 
 # 2018 scores: disability -------------------------------------------------
 
@@ -1221,6 +1327,7 @@ df_2018_dem_disdet <- adv_read_excel (
     demographic2_var = "Impact [J4A]",
   )
 
+
 # 2018 detailed demographic results - no ltlc
 df_2018_d2_noltlc <- adv_read_excel (
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-health-status.xlsx",
@@ -1233,6 +1340,7 @@ df_2018_d2_noltlc <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
     demographic1_cat = "No long-term limiting illness/condition or an illness/condition has no impact on daily activities/work",
   )
+
 
 # 2018 detailed demographic results - ltlc
 df_2018_d2_ltlc <- adv_read_excel (
@@ -1247,6 +1355,7 @@ df_2018_d2_ltlc <- adv_read_excel (
     demographic1_cat = "Long-term limiting illness or condition which has an impact on daily activities/work",
   )
 
+
 # 2018 organisation by disability
 df_2018_dorg_dis <- adv_read_excel (
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-health-status.xlsx",
@@ -1257,6 +1366,7 @@ df_2018_dorg_dis <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Long-term health [J04/J4A]",
   )
+
 
 
 # 2018 scores: sex --------------------------------------------------------
@@ -1273,6 +1383,7 @@ df_2018_d2_female <- adv_read_excel (
     demographic1_cat = "Woman",
   )
 
+
 # 2018 detailed demographic results - male
 df_2018_d2_male <- adv_read_excel (
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-gender.xlsx",
@@ -1284,6 +1395,7 @@ df_2018_d2_male <- adv_read_excel (
     demographic1_var = "Sex [J01]",
     demographic1_cat = "Man",
   )
+
 
 # 2018 detailed demographic results - identify another way
 df_2018_d2_sexother <- adv_read_excel (
@@ -1297,6 +1409,7 @@ df_2018_d2_sexother <- adv_read_excel (
     demographic1_cat = "I identify in another way",
   )
 
+
 # 2018 organisation by sex
 df_2018_dorg_sex <- adv_read_excel (
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-gender.xlsx",
@@ -1307,6 +1420,7 @@ df_2018_dorg_sex <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sex [J01]",
   )
+
 
 
 # 2018 scores: lgb --------------------------------------------------------
@@ -1323,6 +1437,7 @@ df_2018_dem_lgbdet <- adv_read_excel (
     demographic2_var = "Sexual identity - expanded [J07]"
   )
 
+
 # 2018 detailed demographic results - heterosexual
 df_2018_d2_hetero <- adv_read_excel (
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-sexual-orientation.xlsx",
@@ -1335,6 +1450,7 @@ df_2018_d2_hetero <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
     demographic1_cat = "Heterosexual/straight",
   )
+
 
 # 2018 detailed demographic results - lgb
 df_2018_d2_lgb <- adv_read_excel (
@@ -1349,6 +1465,7 @@ df_2018_d2_lgb <- adv_read_excel (
     demographic1_cat = "LGBO",
   )
 
+
 # 2018 organisation by lgb
 df_2018_dorg_lgbo <- adv_read_excel (
   path = "raw-data/2018/Civil-Service-People-Survey-2018-results-by-sexual-orientation.xlsx",
@@ -1360,6 +1477,7 @@ df_2018_dorg_lgbo <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
   )
 
+
 # 2019 scores -------------------------------------------------------------
 
 # 2019 benchmark scores
@@ -1369,12 +1487,14 @@ df_2019_bm <- adv_read_csv(
   rename_first = "measure"
 )
 
+
 # 2019 mean scores
 df_2019_mean <- adv_read_csv(
   "raw-data/2019/Civil-Service-People-Survey-2009-to-2019-Mean-Civil-Servants-Scores-CSV.csv",
   col_types = paste0("_c", paste0(rep("n", 11), collapse = "")),
   rename_first = "measure"
 )
+
 
 # 2019 organisation scores
 df_2019_org <- adv_read_csv(
@@ -1383,6 +1503,7 @@ df_2019_org <- adv_read_csv(
   names_to = "measure", na = ".", year = 2019
 )
 
+
 # 2019 overall demographic scores
 df_2019_dem <- adv_read_excel(
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-all-demographic-groups.xlsx",
@@ -1390,6 +1511,7 @@ df_2019_dem <- adv_read_excel(
   layer_names = c("demographic1_var", "demographic1_cat"),
   contains_endnotes = TRUE, year = 2019
 )
+
 
 # 2019 scores: ethnicity --------------------------------------------------
 
@@ -1405,6 +1527,7 @@ df_2019_d2_white <- adv_read_excel (
     demographic1_cat = "White",
   )
 
+
 # 2019 detailed demographic results - ethnic minority
 df_2019_d2_em <- adv_read_excel (
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-ethnicity.xlsx",
@@ -1417,6 +1540,7 @@ df_2019_d2_em <- adv_read_excel (
     demographic1_cat = "Ethnic minority",
   )
 
+
 # 2019 organisation by ethnicity
 df_2019_dorg_eth <- adv_read_excel (
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-ethnicity.xlsx",
@@ -1427,6 +1551,7 @@ df_2019_dorg_eth <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary",
   )
+
 
 # 2019 scores: disability -------------------------------------------------
 
@@ -1442,6 +1567,7 @@ df_2019_dem_disdet <- adv_read_excel (
     demographic2_var = "Impact [J4A]",
   )
 
+
 # 2019 detailed demographic results - no ltlc
 df_2019_d2_noltlc <- adv_read_excel (
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-health-status.xlsx",
@@ -1453,6 +1579,7 @@ df_2019_d2_noltlc <- adv_read_excel (
     demographic1_var = "Long-term health [J04/J4A]",
     demographic1_cat = "No long-term limiting illness/condition or an illness/condition has no impact on daily activities/work",
   )
+
 
 # 2019 detailed demographic results - ltlc
 df_2019_d2_ltlc <- adv_read_excel (
@@ -1466,6 +1593,7 @@ df_2019_d2_ltlc <- adv_read_excel (
     demographic1_cat = "Long-term limiting illness or condition which has an impact on daily activities/work",
   )
 
+
 # 2019 organisation by disability
 df_2019_dorg_dis <- adv_read_excel (
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-health-status.xlsx",
@@ -1476,6 +1604,7 @@ df_2019_dorg_dis <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Long-term health [J04/J4A]",
   )
+
 
 
 # 2019 scores: sex --------------------------------------------------------
@@ -1492,6 +1621,7 @@ df_2019_d2_female <- adv_read_excel (
     demographic1_cat = "Woman",
   )
 
+
 # 2019 detailed demographic results - male
 df_2019_d2_male <- adv_read_excel (
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-gender.xlsx",
@@ -1503,6 +1633,7 @@ df_2019_d2_male <- adv_read_excel (
     demographic1_var = "Sex [J01]",
     demographic1_cat = "Man",
   )
+
 
 # 2019 detailed demographic results - identify another way
 df_2019_d2_sexother <- adv_read_excel (
@@ -1516,6 +1647,7 @@ df_2019_d2_sexother <- adv_read_excel (
     demographic1_cat = "I identify in another way",
   )
 
+
 # 2019 organisation by sex
 df_2019_dorg_sex <- adv_read_excel (
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-gender.xlsx",
@@ -1526,6 +1658,7 @@ df_2019_dorg_sex <- adv_read_excel (
   dplyr::mutate(
     demographic1_var = "Sex [J01]",
   )
+
 
 
 # 2019 scores: lgb --------------------------------------------------------
@@ -1542,6 +1675,7 @@ df_2019_dem_lgbdet <- adv_read_excel (
     demographic2_var = "Sexual identity - expanded [J07]"
   )
 
+
 # 2019 detailed demographic results - heterosexual
 df_2019_d2_hetero <- adv_read_excel (
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-sexual-orientation.xlsx",
@@ -1554,6 +1688,7 @@ df_2019_d2_hetero <- adv_read_excel (
     demographic1_var = "Sexual identity [J07]",
     demographic1_cat = "Heterosexual/straight",
   )
+
 
 # 2019 detailed demographic results - lgb
 df_2019_d2_lgb <- adv_read_excel (
@@ -1568,6 +1703,7 @@ df_2019_d2_lgb <- adv_read_excel (
     demographic1_cat = "LGBO",
   )
 
+
 # 2019 organisation by lgb
 df_2019_dorg_lgbo <- adv_read_excel (
   path = "raw-data/2019/Civil-Service-People-Survey-2019-results-by-sexual-orientation.xlsx",
@@ -1581,6 +1717,7 @@ df_2019_dorg_lgbo <- adv_read_excel (
 
 
 
+
 # 2020 scores -------------------------------------------------------------
 
 # 2020 benchmark scores
@@ -1590,12 +1727,14 @@ df_2020_bm <- adv_read_csv(
   rename_first = "measure"
 )
 
+
 # 2020 mean scores
 df_2020_mean <- adv_read_csv(
   "raw-data/2020/Civil_Service_People_Survey_2009_to_2020_Mean_Benchmark_Scores.csv",
   col_types = paste0("_c_", paste0(rep("n", 12), collapse = "")),
   rename_first = "measure"
 )
+
 
 # 2020 organisation scores
 df_2020_org1 <- adv_read_ods(
@@ -1604,11 +1743,13 @@ df_2020_org1 <- adv_read_ods(
   layer_labels = "organisation", year = 2020
 )
 
+
 df_2020_org2 <- adv_read_ods(
   "raw-data/2020/Civil_Service_People_Survey_2020-_All_organisation_scores.ods",
   sheet = "Table_2", start_row = 1, start_col = 3, layers = 1, 
   layer_labels = "organisation", year = 2020
 )
+
 
 # 2020 demographic scores
 df_2020_dem <- adv_read_ods(
@@ -1616,6 +1757,7 @@ df_2020_dem <- adv_read_ods(
   sheet = "Benchmarks", start_row = 5, start_col = 1, layers = 2, 
   layer_labels = c("demographic1_var", "demographic1_cat"), year = 2020
 )
+
 
 
 # 2020 scores: ethnicity --------------------------------------------------
@@ -1631,6 +1773,7 @@ df_2020_d2_white <- adv_read_ods(
     demographic1_cat = "White",
   )
 
+
 # 2020 detailed demographic results - ethnic minority
 df_2020_d2_em <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-ethnicity-v2.ods",
@@ -1642,6 +1785,7 @@ df_2020_d2_em <- adv_read_ods(
     demographic1_cat = "Ethnic minority",
   )
 
+
 # 2020 organisation by ethnicity
 df_2020_dorg_eth <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-ethnicity-v2.ods",
@@ -1651,6 +1795,7 @@ df_2020_dorg_eth <- adv_read_ods(
   dplyr::mutate(
     demographic1_var = "Ethnicity - binary"
   )
+
 
 
 # 2020 scores: disability -------------------------------------------------
@@ -1666,6 +1811,7 @@ df_2020_d2_noltlc <- adv_read_ods(
     demographic1_cat = "No long-term limiting condition, illness or disability"
   )
 
+
 # 2020 detailed demographic results - ltlc
 df_2020_d2_ltlc <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-health-v2.ods",
@@ -1676,6 +1822,7 @@ df_2020_d2_ltlc <- adv_read_ods(
     demographic1_var = "Z08: Limiting long-term illness, disability or health condition",
     demographic1_cat = "Long-term limiting condition, illness or disability"
   )
+
 
 # 2020 organisation by disability
 df_2020_dorg_dis <- adv_read_ods(
@@ -1688,14 +1835,16 @@ df_2020_dorg_dis <- adv_read_ods(
   )
 
 
+
 # 2020 scores: sex --------------------------------------------------------
 
 # 2020 detailed splits for sex and gender
-df_2019_dem_sexdet <- adv_read_ods(
+df_2020_dem_sexdet <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods",
   sheet = "Overview", start_row = 5, start_col = 1, layers = 2, 
   layer_labels = c("demographic1_var", "demographic1_cat"), year = 2020
 )
+
 
 # 2020 detailed demographic results - female
 df_2020_d2_female <- adv_read_ods(
@@ -1708,6 +1857,7 @@ df_2020_d2_female <- adv_read_ods(
     demographic1_cat = "Female"
   )
 
+
 # 2020 detailed demographic results - male
 df_2020_d2_male <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods",
@@ -1719,6 +1869,7 @@ df_2020_d2_male <- adv_read_ods(
     demographic1_cat = "Male"
   )
 
+
 # 2020 detailed demographic results - other
 df_2020_d2_sexoth <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods",
@@ -1729,6 +1880,7 @@ df_2020_d2_sexoth <- adv_read_ods(
     demographic1_var = "J1A: Gender categorisation",
     demographic1_cat = "Other"
   )
+
 
 # 2020 organisation by gender
 df_2020_dorg_sex <- adv_read_ods(
@@ -1747,7 +1899,7 @@ df_2020_dorg_sex <- adv_read_ods(
 # 2020 scores: lgb --------------------------------------------------------
 
 # 2020 detailed splits for sexual orientation and gender
-df_2019_dem_lgbdet <- adv_read_ods(
+df_2020_dem_lgbdet <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-sexual-orientation-v2.ods",
   sheet = "Overview", start_row = 5, start_col = 1, layers = 2, 
   layer_labels = c("demographic1_cat", "demographic2_cat"), year = 2020
@@ -1756,6 +1908,7 @@ df_2019_dem_lgbdet <- adv_read_ods(
     demographic1_var = "J1A: Gender categorisation",
     demographic2_var = "J07: Which of the following (sexual orientation) options best describes how you think of yourself?"
   )
+
 
 # 2020 detailed demographic results - heterosexual
 df_2020_d2_hetero <- adv_read_ods(
@@ -1768,6 +1921,7 @@ df_2020_d2_hetero <- adv_read_ods(
     demographic1_cat = "Heterosexual/straight"
   )
 
+
 # 2020 detailed demographic results - lgb+
 df_2020_d2_lgb <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-sexual-orientation-v2.ods",
@@ -1779,6 +1933,7 @@ df_2020_d2_lgb <- adv_read_ods(
     demographic1_cat = "LGB+"
   )
 
+
 df_2020_dorg_lgb <- adv_read_ods(
   "raw-data/2020/Civil-Service-People-Survey-2020-results-by-sexual-orientation-v2.ods",
   sheet = "Organisations", start_row = 5, start_col = 3, layers = 2,
@@ -1787,6 +1942,258 @@ df_2020_dorg_lgb <- adv_read_ods(
   dplyr::mutate(
     demographic1_var = "Z10: Sexual Orientation (grouped)"
   )
+
+
+
+# 2021 scores -------------------------------------------------------------
+
+# 2021 benchmark scores
+df_2021_bm <- adv_read_ods(
+  "raw-data/2021/Civil_Service_People_Survey_2009_2021_Benchmarks_v2.ods",
+  sheet = "Table_1", header_label = "year", start_row = 5, start_col = 2,
+  layers = 3, layer_labels = c("measure", "section", "notes")
+)
+
+
+# 2021 mean scores
+df_2021_mean <- adv_read_ods(
+  "raw-data/2021/Civil_Service_People_Survey_2009_2021_Benchmarks_v2.ods",
+  sheet = "Table_2", header_label = "year", start_row = 5, start_col = 2,
+  layers = 3, layer_labels = c("measure", "section", "notes")
+)
+
+
+# 2021 organisation scores
+df_2021_org <- adv_read_ods(
+  "raw-data/2021/Civil_Service_People_Survey_2009_2021_Benchmarks_v2.ods",
+  sheet = "Table_3", start_row = 5, start_col = 2,
+  layers = 3, layer_labels = c("organisation", "dept_group", "notes"),
+  year = 2021
+)
+
+
+# 2021 demographic scores
+df_2021_dem <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-all-demographics.ods",
+  sheet = "Benchmarks", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic1_var", "demographic1_cat", "ntoes"), 
+  year = 2021
+)
+
+
+
+# 2021 scores: ethnicity --------------------------------------------------
+
+# 2021 detailed demographic results - white
+df_2021_d2_white <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-ethnicity.ods",
+  sheet = "White", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat", "notes"),
+  year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Ethnicity - binary",
+    demographic1_cat = "White",
+  )
+
+
+# 2021 detailed demographic results - ethnic minority
+df_2021_d2_em <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-ethnicity.ods",
+  sheet = "Ethnic_Minority", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat", "notes"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Ethnicity - binary",
+    demographic1_cat = "Ethnic minority",
+  )
+
+
+# 2021 organisation by ethnicity
+df_2021_dorg_eth <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-ethnicity.ods",
+  sheet = "Organisations", start_row = 5, start_col = 3, layers = 3, 
+  layer_labels = c("organisation", "notes", "demographic1_cat"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Ethnicity - binary"
+  )
+
+
+
+# 2021 scores: disability -------------------------------------------------
+
+# 2021 detailed demographic results - no ltlc
+df_2021_d2_noltlc <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-health.ods",
+  sheet = "No_LTLC", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat", "notes"),
+  year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z08: Limiting long-term illness, disability or health condition",
+    demographic1_cat = "No long-term limiting condition, illness or disability"
+  )
+
+
+# 2021 detailed demographic results - no ltlc
+df_2021_d2_ltlc <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-health.ods",
+  sheet = "Has_LTLC", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat", "notes"),
+  year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z08: Limiting long-term illness, disability or health condition",
+    demographic1_cat = "Long-term limiting condition, illness or disability"
+  )
+
+
+# 2021 organisation by disability
+df_2021_dorg_dis <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-health.ods",
+  sheet = "Organisations", start_row = 5, start_col = 3, layers = 3, 
+  layer_labels = c("organisation", "notes", "demographic1_cat"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z08: Limiting long-term illness, disability or health condition"
+  )
+
+
+
+# 2021 scores: sex --------------------------------------------------------
+
+# 2021 detailed splits for sex and gender
+df_2021_dem_sexdet <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-gender.ods",
+  sheet = "Overview", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic1_var", "demographic1_cat"), year = 2021
+)
+
+
+# 2021 detailed demographic results - female
+df_2021_d2_female <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-gender.ods",
+  sheet = "Female", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat", "notes"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation",
+    demographic1_cat = "Female"
+  )
+
+
+# 2021 detailed demographic results - male
+df_2021_d2_male <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-gender.ods",
+  sheet = "Male", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat", "notes"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation",
+    demographic1_cat = "Male"
+  )
+
+
+# 2021 detailed demographic results - other
+df_2021_d2_sexoth <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-gender.ods",
+  sheet = "Other", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat", "notes"),
+  year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation",
+    demographic1_cat = "Other"
+  )
+
+
+# 2021 organisation by gender
+df_2021_dorg_sex <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-gender.ods",
+  sheet = "Organisations", start_row = 5, start_col = 3, layers = 3,
+  layer_labels = c("organisation", "notes", "demographic1_cat"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation"
+  )
+
+
+# 2021 scores: lgb --------------------------------------------------------
+
+# 2021 detailed splits for sexual orientation and gender
+df_2021_dem_lgbdet <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-sexual-orientation.ods",
+  sheet = "Overview", start_row = 5, start_col = 1, layers = 2, 
+  layer_labels = c("demographic1_cat", "demographic2_cat"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "J1A: Gender categorisation",
+    demographic2_var = "J07: Which of the following (sexual orientation) options best describes how you think of yourself?"
+  )
+
+
+# 2021 detailed demographic results - heterosexual
+df_2021_d2_hetero <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-sexual-orientation.ods",
+  sheet = "Heterosexual", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat", "notes"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z10: Sexual Orientation (grouped)",
+    demographic1_cat = "Heterosexual/straight"
+  )
+
+
+# 2021 detailed demographic results - lgb+
+df_2021_d2_lgb <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-sexual-orientation.ods",
+  sheet = "LGBO", start_row = 5, start_col = 1, layers = 3, 
+  layer_labels = c("demographic2_var", "demographic2_cat","notes"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z10: Sexual Orientation (grouped)",
+    demographic1_cat = "LGB+"
+  )
+
+
+# 2021 organisation by lgb
+df_2021_dorg_lgb <- adv_read_ods(
+  "raw-data/2021/Civil-Service-People-Survey-2021-results-by-sexual-orientation.ods",
+  sheet = "Organisations", start_row = 5, start_col = 3, layers = 3,
+  layer_labels = c("organisation", "demographic1_cat", "notes"), year = 2021
+) |>
+  dplyr::mutate(
+    demographic1_var = "Z10: Sexual Orientation (grouped)"
+  )
+
+
+# 2022 scores -------------------------------------------------------------
+
+# 2022 benchmark scores
+df_2022_bm <- adv_read_ods(
+  "raw-data/2022/Civil_Service_People_Survey_2022_Benchmark_Results.ods",
+  sheet = "Table_1", header_label = "year", start_row = 6, start_col = 2,
+  layers = 3, layer_labels = c("measure", "section", "notes")
+)
+
+
+# 2022 mean scores
+df_2022_mean <- adv_read_ods(
+  "raw-data/2022/Civil_Service_People_Survey_2022_Benchmark_Results.ods",
+  sheet = "Table_2", header_label = "year", start_row = 6, start_col = 2,
+  layers = 3, layer_labels = c("measure", "section", "notes")
+)
+
+
+# 2022 mean scores
+df_2022_org <- adv_read_ods(
+  "raw-data/2022/Civil_Service_People_Survey_2022_Benchmark_Results.ods",
+  sheet = "Table_3", start_row = 6, start_col = 2,
+  layers = 3, layer_labels = c("organisation", "dept_group", "notes"),
+  year = 2022
+)
+
 
 # combine scores ----------------------------------------------------------
 
@@ -1797,4 +2204,21 @@ tbl_all_data <- purrr::map_dfr(
   .x = ls_df,
   .f = get,
   .id =  "source_obj"
+)
+
+readr::write_rds(
+  tbl_all_data, 
+  file.path(
+    "raw-data",
+    paste0(Sys.Date(), "_tbl_extract_all_", as.integer(Sys.time()), ".rds")
+  ),
+  compress = "bz2"
+)
+
+arrow::write_parquet(
+  tbl_all_data, 
+  file.path(
+    "raw-data",
+    paste0(Sys.Date(), "_tbl_extract_all_", as.integer(Sys.time()), ".parquet")
+  )
 )
