@@ -74,7 +74,10 @@
   
   # join to the base format
   df_out <- .base_csps_table() |>
-    dplyr::bind_rows(df)
+    dplyr::bind_rows(df) |>
+    dplyr::select(
+      year, organisation, demographic1_var, demographic1_cat, 
+      demographic2_var, demographic2_cat, measure, value)
   
   return(df_out)
   
