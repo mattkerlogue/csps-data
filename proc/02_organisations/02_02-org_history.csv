@@ -1,0 +1,274 @@
+﻿"uid","organisation","year_from","year_to"
+"ACAS","Acas",2009,2024
+"ACTIBK","Accountant in Bankruptcy",2009,2024
+"ACTREN","Active Travel England",2023,2024
+"ANHVLA","Animal Health and Veterinary Laboratories Agency",2011,2013
+"ANHVLA","Animal Health & Veterinary Laboratories Agency",2012,2012
+"ANMHEL","Animal Health",2009,2010
+"ANPHEL","Animal and Plant Health Agency",2014,2024
+"APPTCH","Institute for Apprenticeships and Techincal Education",2020,2020
+"APPTCH","Institute for Apprenticeships and Technical Education",2021,2024
+"ATTGEN","Attorney General's Office",2009,2024
+"BLDDIG","Building Digital UK",2022,2024
+"BRDFCE","Border Force",2012,2013
+"BRDFCE","Home Office: Border Force",2014,2020
+"BUSENG","Department for Business, Energy & Industrial Strategy",2016,2018
+"BUSENG","Department for Business, Energy and Industrial Strategy",2019,2022
+"BUSINV","Department for Business, Innovation and Skills",2009,2013
+"BUSINV","Department for Business, Innovation & Skills (excluding agencies)",2010,2010
+"BUSINV","Department for Business, Innovation and Skills (excluding agencies)",2011,2011
+"BUSINV","Department for Business, Innovation & Skills",2014,2015
+"BUSTRD","Department for Business and Trade",2023,2024
+"BUYSOL","Buying Solutions",2009,2010
+"CABOFF","Cabinet Office",2009,2024
+"CABOFF","Cabinet Office (excluding agencies)",2010,2011
+"CEFAS","Centre for Environment, Fisheries and Aquaculture Science",2009,2024
+"CEFAS","Centre for Environment, Food and Aquaculture Science",2010,2014
+"CEFAS","Centre for Fisheries and Aquaculture Science",2013,2013
+"CHLSCH","Department for Children, Schools and Families",2009,2009
+"CLDSUP","Child Support Agency",2009,2009
+"CLDSUP","Child Maintenance and Enforcement Commission - Child Support Agency",2010,2010
+"CLMDSP","Department for Culture, Media and Sport",2009,2024
+"CLMDSP","Department for Culture, Media and Sport (excluding agencies)",2010,2011
+"CLMDSP","Department for Culture, Media & Sport",2014,2016
+"CMECCE","Commission Executive",2009,2009
+"CMECCE","Child Maintenance and Enforcement Commission - Commission Executive",2010,2010
+"CMECCS","Corporate Services",2009,2009
+"CMECCS","Child Maintenance and Enforcement Commission - Corporate Services",2010,2010
+"CMECOM","Child Maintenance and Enforcement Commission",2011,2011
+"CMPHSE","Companies House",2009,2024
+"CMPMKT","Competition and Markets Authority",2014,2024
+"CMTGRP","Child Maintenance Group",2012,2012
+"COFINF","Central Office of Information",2009,2010
+"COMLGV","Department for Communities and Local Government",2009,2017
+"COMLGV","Department for Communities and Local Government (excluding agencies)",2010,2011
+"COPFSV","Crown Office and Procurator Fiscal Service",2009,2024
+"CRMINJ","Criminal Injuries Compensation Authority",2009,2024
+"CRMRCD","Criminal Records Bureau",2009,2012
+"CRNCOM","Crown Commercial Service",2014,2024
+"CRNPRS","Crown Prosecution Service",2009,2024
+"CRTCOM","Charity Commission",2010,2024
+"CRTSRV","HM Courts Service",2009,2010
+"CRTTRB","HM Courts and Tribunals Service",2011,2024
+"CRTTRB","HM Courts and Tribunal Service",2013,2013
+"CSBNCH","Civil Service benchmark",2009,2013
+"CSBNCH","Civil Service 2010 benchmark (median)",2010,2010
+"CSBNCH","Civil Service 2011 benchmark (median)",2011,2011
+"CSBNCH","Civil Service benchmark (median)",2014,2018
+"CSBNCH","Civil Service Benchmark (median)",2019,2020
+"CSMEAN","All civil servants (mean score)",2019,2024
+"CSRVHR","Civil Service HR",2016,2018
+"DEFELC","Defence Electronics and Components Agency",2015,2022
+"DEFEQP","Defence Equipment & Support",2014,2018
+"DEFEQP","Defence Equipment and Support",2019,2024
+"DEFRA","Department for the Environment, Food and Rural Affairs",2009,2009
+"DEFRA","Department for Environment, Food and Rural Affairs (excluding agencies)",2010,2011
+"DEFRA","Department for Environment, Food and Rural Affairs",2012,2024
+"DEFRA","Department for Environment, Food & Rural Affairs",2014,2018
+"DEFSUP","Defence Support Group",2010,2014
+"DGCLMD","Department for Digital, Culture, Media & Sport",2017,2017
+"DGCLMD","Department for Digital, Culture, Media and Sport",2018,2022
+"DRVLIC","Driver and Vehicle Licensing Agency",2009,2024
+"DRVSTD","Driving Standards Agency",2009,2013
+"DRVVCH","Driver and Vehicle Standards Agency",2014,2024
+"DSCSCO","Disclosure Scotland",2009,2024
+"DSTL","Dstl",2010,2024
+"EDUCAT","Department for Education",2010,2024
+"EDUSCO","Education Scotland",2011,2024
+"ENGCLM","Department of Energy and Climate Change",2009,2015
+"ENGCLM","Deptartment of Energy & Climate Change",2010,2010
+"ENGCLM","Department of Energy & Climate Change",2012,2013
+"ENGNET","Department for Energy Security and Net Zero",2023,2024
+"ESTYN","Estyn",2010,2024
+"EXITEU","Department for Exiting the European Union",2016,2019
+"EXPFIN","Export Credit Guarantee Department",2009,2009
+"EXPFIN","Export Credits Guarantee Department",2010,2011
+"EXPFIN","UK Export Finance",2012,2024
+"FAIRTD","Office of Fair Trading",2009,2013
+"FCDSRV","FCO Services",2009,2019
+"FCDSRV","FCDO Services",2020,2024
+"FDENRS","Food and Environment Research Agency",2009,2014
+"FDSTDS","Food Standards Agency",2009,2024
+"FDSTSC","Food Standards Scotland",2016,2024
+"FORCOM","Foreign and Commonwealth Office",2009,2019
+"FORCOM","Foreign and Commonwealth Office (excluding agencies)",2010,2011
+"FORCOM","Foreign & Commonwealth Office",2014,2018
+"FRCMDV","Foreign, Commonwealth and Development Office",2020,2024
+"FRLDSC","Forestry and Land Scotland",2019,2024
+"FRSVCL","Fire Service College",2009,2011
+"GOVEQU","Government Equalities Office",2009,2019
+"GOVLEG","Government Legal Department",2015,2024
+"GREGSC","General Register Office for Scotland",2009,2010
+"GVACTS","Government Actuary's Department",2010,2024
+"GVCARD","Government Car and Despatch Agency",2009,2011
+"GVOFNT","Government Office Network",2009,2010
+"GVPRCM","Government Procurement Service",2011,2013
+"GVPRPT","Government Property Agency",2018,2024
+"HEALTH","Department of Health",2009,2017
+"HEALTH","Department of Health (excluding agencies)",2010,2010
+"HEALTH","Department for Health (excluding agencies)",2011,2011
+"HEALTH","Department of Health and Social Care",2018,2024
+"HELSEC","UK Health Security Agency",2021,2024
+"HELSFT","Health and Safety Executive",2009,2024
+"HIGHAG","Highways Agency",2009,2014
+"HISTSC","Historic Scotland",2009,2013
+"HISTSC","Historic Scotland and the Royal Commission on the Ancient and Historic Monuments of Scotland",2014,2014
+"HMCPSI","HM CPS Inspectorate",2009,2024
+"HMCPSI","HM Crown Prosecution Service Inspectorate",2014,2018
+"HMIEDU","HM Inspectorate of Education",2009,2010
+"HMRC","HM Revenue & Customs",2009,2018
+"HMRC","HM Revenue and Customs",2010,2024
+"HMTRES","HM Treasury",2009,2024
+"HMTRES","HM Treasury (excluding agencies)",2010,2011
+"HOFGRP","Home Office group",2015,2018
+"HOFGRP","Home Office group (combined results)",2019,2020
+"HOMEOF","Home Office",2009,2024
+"HOMEOF","Home Office (excluding agencies)",2010,2011
+"HOMEOF","Home Office (HQ)",2013,2013
+"HOMEOF","Home Office: Policy and Enablers",2014,2020
+"HOMEOF","Home Office: Policy and Enablers (formerly known as Home Office HQ)",2015,2018
+"HSCMLG","Ministry of Housing, Communities and Local Government (excluding agencies)",2018,2018
+"HSCMLG","Ministry of Housing, Communities and Local Government",2019,2024
+"HYDROG","UK Hydrographic Office",2009,2024
+"HYDROG","UK Hyrdographic Office",2013,2013
+"IDPASS","Identity and Passport Service",2009,2011
+"IDPASS","Identity & Passport Service",2010,2012
+"IMMENF","Immigration Enforcement",2013,2013
+"IMMENF","Home Office: Immigration Enforcement",2014,2020
+"INSOLV","Insolvency Service",2009,2013
+"INSOLV","The Insolvency Service",2011,2024
+"INTAUD","Government Internal Audit Agency",2015,2024
+"INTDEV","Department for International Development",2009,2019
+"INTPRP","Intellectual Property Office",2009,2024
+"INTPRP","UK Intellectual Property Office",2011,2011
+"INTTRD","Department for International Trade",2016,2022
+"ISCFRS","HM Inspectorate of Constabulary and Fire & Rescue Services",2017,2018
+"ISCFRS","Her Majesty's Inspectorate of Constabulary and Fire and Rescue Services",2019,2022
+"ISCFRS","HM Inspectorate of Constabulary and Fire and Rescue Services",2023,2024
+"ISPCNS","HM Inspectorate of Constabulary",2014,2016
+"JSTARM","MoJ Arms Length Bodies",2010,2017
+"JSTARM","MOJ Arms Length Bodies",2011,2011
+"JSTARM","MoJ Arms Length and Other Bodies",2018,2018
+"JSTARM","Ministry of Justice Arm’s Length and Other Bodies",2019,2020
+"JSTARM","Ministry of Justice Arm's Length and Other Bodies",2021,2024
+"JSTGRP","Ministry of Justice (including agencies)",2015,2018
+"JSTGRP","Ministry of Justice group (including agencies)",2019,2024
+"LEGAID","Legal Aid Agency",2013,2024
+"LEGSRV","Legal Services Commission",2011,2012
+"LEVLUP","Department for Levelling Up, Housing and Communities",2022,2023
+"LNDREG","Land Registry",2009,2017
+"LNDREG","HM Land Registry",2018,2024
+"MEATHY","Meat Hygiene Service",2009,2009
+"MEDPRD","Medicines and Healthcare Products Regulatory Agency",2009,2018
+"MEDPRD","Medicines and Healthcare products Regulatory Agency",2010,2024
+"METOFF","Met Office",2010,2024
+"MINDEF","Ministry of Defence",2009,2024
+"MINDEF","Ministry of Defence (excluding agencies)",2010,2011
+"MINJST","Ministry of Justice",2009,2014
+"MINJST","Ministry of Justice (excluding agencies)",2010,2011
+"MINJST","Ministry of Justice (HQ)",2013,2018
+"MINJST","Ministry of Justice Headquarters",2019,2024
+"MRTCST","Maritime and Coastguard Agency",2009,2024
+"MRTFSH","Maritime and Fisheries Agency",2009,2009
+"NARCSC","National Archives of Scotland",2009,2010
+"NATARC","The National Archives",2010,2024
+"NATCRM","National Crime Agency",2013,2024
+"NATINF","National Infrastructure Commission",2019,2024
+"NATMSR","National Measurement Office",2009,2014
+"NATMSR","National Measurement and Regulation Office",2015,2015
+"NATPRB","National Probation Service",2014,2020
+"NATSAV","National Savings and Investment",2009,2012
+"NATSAV","National Savings & Investment",2010,2011
+"NATSAV","National Savings and Investments",2013,2024
+"NHSTAT","NHS Test and Trace",2020,2020
+"NOMSHQ","National Offender Management Service (HQ)",2014,2016
+"NTOFSV","National Offender Management Service",2009,2013
+"NTRCSC","National Records of Scotland",2011,2024
+"NTSCGV","National School of Government",2009,2010
+"OFGEM","Ofgem",2011,2018
+"OFGEM","Office of Gas and Electricity Markets",2019,2024
+"OFGVCM","Office of Government Commerce",2009,2010
+"OFPBGD","Office of the Public Guardian",2009,2024
+"OFQUAL","Ofqual",2011,2018
+"OFQUAL","Office of Qualifications and Examinations Regulation",2019,2024
+"OFRLRD","Office of Rail Regulation",2009,2014
+"OFRLRD","Office of the Rail Regulator",2010,2010
+"OFRLRD","Office of Rail and Road",2015,2024
+"OFSCCR","Office of the Scottish Charity Regulator",2009,2024
+"OFSTED","Ofsted",2010,2024
+"OFWAT","Water Regulation Services Authority (Ofwat)",2019,2023
+"OFWAT","Water Services Regulation Authority (Ofwat)",2024,2024
+"ONS","Office for National Statistics",2011,2024
+"ONS","Office of National Statistics",2013,2013
+"ORDSRV","Ordnance Survey",2009,2014
+"PLNISP","The Planning Inspectorate",2009,2012
+"PLNISP","Planning Inspectorate",2013,2024
+"PRBSRV","Probation Service",2021,2024
+"PRISON","HM Prison Service",2014,2024
+"PRPBHQ","HM Prison and Probation Service (HQ)",2017,2018
+"PRPBHQ","HM Prison and Probation Service Headquarters",2019,2024
+"PSSOFF","HM Passport Office",2013,2018
+"PSSOFF","Home Office: HM Passport Office",2019,2020
+"PUBHEL","Public Health England",2013,2020
+"REGSCO","Registers of Scotland",2009,2024
+"REVSCT","Revenue Scotland",2015,2024
+"RURPAY","Rural Payments Agency",2009,2024
+"RYLPRK","The Royal Parks",2009,2016
+"SCFRST","Scottish Forestry",2019,2024
+"SCITCH","Department for Science, Innovation and Technology",2023,2024
+"SCSESC","Social Security Scotland",2019,2024
+"SCTCTR","Scottish Courts and Tribunals Service",2015,2024
+"SCTCTS","Scottish Court Service",2010,2014
+"SCTCTS","Scottish Courts Service",2011,2011
+"SCTGVT","Scottish Government",2009,2024
+"SCTGVT","Scottish Government (excluding agencies)",2010,2011
+"SCTHUS","Scottish Housing Regulator",2009,2024
+"SCTOFF","Scotland Office and Office of the Advocate General",2009,2009
+"SCTPEN","Scottish Public Pensions Agency",2009,2024
+"SCTPRS","Scottish Prison Service",2010,2024
+"SCTTRB","Scottish Tribunals Service",2012,2014
+"SCTWLS","Scotland Office, Office of the Advocate General and Wales Office",2010,2010
+"SCWLNI","Scotland Office, Office of the Advocate General, Wales Office, and Northern Ireland Office",2011,2011
+"SCWLNI","Scotland Office, Office of the Advocate General, Wales Office and Northern Ireland Office",2012,2014
+"SCWLNI","Scotland Office, Office of the Advocate General, Wales Office and Northern Ireland Office combined",2015,2018
+"SCWLNI","Scotland, Wales and Northern Ireland Offices, and the Office of the Advocate General",2019,2024
+"SKLFND","Skils Funding Agency",2011,2011
+"SKLFND","Skills Funding Agency",2012,2016
+"SRSFRD","Serious Fraud Office",2009,2024
+"STATGP","UK Statistics Authority and Office for National Statistics",2009,2009
+"STATGP","UK Statistics Authority (including ONS)",2010,2018
+"STATGP","UK Statistics Authority group (including ONS)",2019,2024
+"STAWSC","Student Awards Agency for Scotland",2009,2018
+"STAWSC","Student Awards Agency Scotland",2013,2024
+"SUBDEL","Submarine Delivery Agency",2018,2024
+"SWISPE","Social Work Inspection Authority",2009,2009
+"SWISPE","Social Work Inspection Agency",2010,2010
+"TRBSRV","Tribunal Service",2009,2009
+"TRBSRV","Tribunals Service",2010,2010
+"TRNSCT","Transport Scotland",2009,2024
+"TRNSPT","Department for Transport",2009,2024
+"TRNSPT","Department for Transport (excluding agencies)",2010,2010
+"TRNSPT","Department for Transport (excluding Agencies)",2011,2011
+"TSOL","TSol",2009,2014
+"UKBRDA","UK Border Agency",2009,2012
+"UKDMO","UK Debt Management Office",2009,2024
+"UKDMO","Debt Management Office",2010,2014
+"UKSPCE","UK Space Agency",2019,2024
+"UKSTAT","UK Statistics Authority",2011,2024
+"UKTRDI","UK Trade and Investment",2013,2015
+"VALOFF","Valuation Office Agency",2009,2024
+"VEHCRT","Vehicle Certification Agency",2009,2024
+"VEHOPP","Vehicle Operator Services Agency",2009,2013
+"VEHOPP","Vehicle and Operator Services Agency",2010,2011
+"VETLAB","Veterinary Laboratories Agency",2009,2010
+"VETMED","Veterinary Medicines Directorate",2009,2024
+"VISAIM","UK Visas and Immigration",2013,2013
+"VISAIM","Home Office: UK Visas and Immigration",2014,2020
+"WLSGVT","Welsh Assembly Government",2010,2010
+"WLSGVT","Welsh Government",2011,2024
+"WLSOFF","Wales Office",2009,2009
+"WLSREV","Welsh Revenue Authority",2018,2024
+"WLTPRK","Wilton Park Executive Agency",2009,2012
+"WLTPRK","Wilton Park",2010,2024
+"WRKPEN","Department for Work and Pensions",2009,2024
+"WRKPEN","Department for Work and Pensions (including Jobcentre Plus and Pensions, Disability & Carers Service)",2010,2010

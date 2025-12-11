@@ -1,0 +1,298 @@
+﻿uid_demcat,uid_demcat_num,resp_type,label_short,label_long,label_full
+ALLRSP,0.00.00.000,primary,All respondents,All respondents,All respondents
+GRADE_AOAA,1.01.00.001,primary,AO/AA,AO/AA equivalent,Grade: AO/AA equivalent
+GRADE_EO,1.01.00.002,primary,EO,EO equivalent,Grade: EO equivalent
+GRADE_SEOHEO,1.01.00.003,primary,SEO/HEO,SEO/HEO equivalent,Grade: SEO/HEO equivalent
+GRADE_G6G7,1.01.00.004,primary,Grade 6/7,Grade 6/7 equivalent,Grade: Grade 6/7 equivalent
+GRADE_SCS,1.01.00.005,primary,SCS,SCS equivalent,Grade: SCS equivalent
+LOCCTR_ENG,1.02.00.001,primary,England,England,Country: England
+LOCCTR_SCT,1.02.00.002,primary,Scotland,Scotland,Country: Scotland
+LOCCTR_WLS,1.02.00.003,primary,Wales,Wales,Country: Wales
+LOCCTR_NIR,1.02.00.004,primary,Northern Ireland,Northern Ireland,Country: Northern Ireland
+LOCCTR_OUT,1.02.00.005,primary,Outside the UK,Outside the UK,Country: Outisde the UK
+LOCENG_EMD,1.02.01.101,primary,East Midlands,East Midlands,Region: East Midlands
+LOCENG_EST,1.02.01.102,primary,East of England,East of England,Region: East of England
+LOCENG_LON,1.02.01.103,primary,London,London,Region: London
+LOCENG_NEE,1.02.01.104,primary,North East England,North East England,Region: North East England
+LOCENG_NWE,1.02.01.105,primary,North West England,North West England,Region: North West England
+LOCENG_SEE,1.02.01.106,primary,South East England,South East England,Region: South East England
+LOCENG_SWE,1.02.01.107,primary,South West England,South West England,Region: South West England
+LOCENG_WMD,1.02.01.108,primary,West Midlands,West Midlands,Region: West Midlands
+LOCENG_YRK,1.02.01.109,primary,Yorkshire and the Humber,Yorkshire and the Humber,Region: Yorkshire and the Humber
+LOCSCT_CEN,1.02.02.001,primary,Central Scotland,Central Scotland,Region: Central Scotland
+LOCSCT_EDB,1.02.02.002,primary,Edinburgh,Edinburgh,Region: Edinburgh
+LOCSCT_GLG,1.02.02.003,primary,Glasgow,Glasgow,Region: Glasgow
+LOCSCT_HIS,1.02.02.004,primary,Highlands and Islands,Highlands and Islands,Region: Highlands and Islands
+LOCSCT_MDS,1.02.02.005,primary,Mid-Scotland,Mid-Scotland,Region: Mid-Scotland
+LOCSCT_NES,1.02.02.006,primary,North East Scotland,North East Scotland,Region: North East Scotland
+LOCSCT_SSC,1.02.02.007,primary,South Scotland,South Scotland,Region: South Scotland
+LOCSCT_WSC,1.02.02.008,primary,West Scotland,West Scotland,Region: West Scotland
+LOCWLS_MDW,1.02.03.001,primary,Mid-Wales,Mid-Wales,Region: Mid-Wales
+LOCWLS_NWL,1.02.03.002,primary,North Wales,North Wales,Region: North Wales
+LOCWLS_SEW,1.02.03.003,primary,South East Wales,South East Wales,Region: South East Wales
+LOCWLS_SWW,1.02.03.004,primary,South West Wales,South West Wales,Region: South West Wales
+TIMJOB_LT006M,1.03.01.001,primary,Less than 6 months,Less than 6 months,Time in job: Less than 6 months
+TIMJOB_LT001Y,1.03.01.002,primary,Less than 1 year,Less than 1 year,Time in job: Less than 1 year
+TIMJOB_06M01Y,1.03.01.003,primary,6 months to 1 year,At least 6 months but less than 1 year,Time in job: At least 6 months but less than 1 year
+TIMJOB_01Y03Y,1.03.01.004,primary,1 to 3 years,At least 1 year but less than 3 years,Time in job: At least 1 year but less than 3 years
+TIMJOB_03Y05Y,1.03.01.005,primary,3 to 5 years,At least 3 years but less than 5 years,Time in job: At least 3 years but less than 5 years
+TIMJOB_05Y10Y,1.03.01.006,primary,5 to 10 years,At least 5 years but less than 10 years,Time in job: At least 5 years but less than 10 years
+TIMJOB_10Y20Y,1.03.01.007,primary,10 to 20 years,At least 10 years but less than 20 years,Time in job: At least 10 years but less than 20 years
+TIMJOB_GT010Y,1.03.01.008,primary,More than 10 years,At least 10 years or more,Time in job: At least 10 years or more
+TIMJOB_GT020Y,1.03.01.009,primary,More than 20 years,At least 20 years or more,Time in job: At least 20 years or more
+TIMORG_LT006M,1.03.02.001,primary,Less than 6 months,Less than 6 months,Time in organisation: Less than 6 months
+TIMORG_LT001Y,1.03.02.002,primary,Less than 1 year,Less than 1 year,Time in organisation: Less than 1 year
+TIMORG_06M01Y,1.03.02.003,primary,6 months to 1 year,At least 6 months but less than 1 year,Time in organisation: At least 6 months but less than 1 year
+TIMORG_01Y03Y,1.03.02.004,primary,1 to 3 years,At least 1 year but less than 3 years,Time in organisation: At least 1 year but less than 3 years
+TIMORG_03Y05Y,1.03.02.005,primary,3 to 5 years,At least 3 years but less than 5 years,Time in organisation: At least 3 years but less than 5 years
+TIMORG_05Y10Y,1.03.02.006,primary,5 to 10 years,At least 5 years but less than 10 years,Time in organisation: At least 5 years but less than 10 years
+TIMORG_10Y20Y,1.03.02.007,primary,10 to 20 years,At least 10 years but less than 20 years,Time in organisation: At least 10 years but less than 20 years
+TIMORG_GT010Y,1.03.02.008,primary,More than 10 years,At least 10 years or more,Time in organisation: At least 10 years or more
+TIMORG_GT020Y,1.03.02.009,primary,More than 20 years,At least 20 years or more,Time in organisation: At least 20 years or more
+TIMCIV_LT006M,1.03.03.001,primary,Less than 6 months,Less than 6 months,Time in the Civil Service: Less than 6 months
+TIMCIV_LT001Y,1.03.03.002,primary,Less than 1 year,Less than 1 year,Time in the Civil Service: Less than 1 year
+TIMCIV_06M01Y,1.03.03.003,primary,6 months to 1 year,At least 6 months but less than 1 year,Time in the Civil Service: At least 6 months but less than 1 year
+TIMCIV_01Y03Y,1.03.03.004,primary,1 to 3 years,At least 1 year but less than 3 years,Time in the Civil Service: At least 1 year but less than 3 years
+TIMCIV_03Y05Y,1.03.03.005,primary,3 to 5 years,At least 3 years but less than 5 years,Time in the Civil Service: At least 3 years but less than 5 years
+TIMCIV_05Y10Y,1.03.03.006,primary,5 to 10 years,At least 5 years but less than 10 years,Time in the Civil Service: At least 5 years but less than 10 years
+TIMCIV_10Y20Y,1.03.03.007,primary,10 to 20 years,At least 10 years but less than 20 years,Time in the Civil Service: At least 10 years but less than 20 years
+TIMCIV_GT010Y,1.03.03.008,primary,More than 10 years,At least 10 years or more,Time in the Civil Service: At least 10 years or more
+TIMCIV_GT020Y,1.03.03.009,primary,More than 20 years,At least 20 years or more,Time in the Civil Service: At least 20 years or more
+MANAGE_MGR,1.04.00.001,primary,Manager,Manages others,Manager status: Manages others
+MANAGE_NMG,1.04.00.002,primary,Non-manager,Not a manager,Manager status: Not a manager
+WKPTRN_FUL,1.05.01.001,primary,Full-time,Full-time,Working pattern (hours): Full-time
+WKPTRN_PRT,1.05.01.002,primary,Part-time,Part-time,Working pattern (hours): Part-time
+WKPTRN_JSH,1.05.01.003,primary,Job-share,Job-share,Working pattern (hours): Job-share
+WRKPLC_WPL,1.05.02.001,primary,Workplace,Workplace-based,Working pattern (location): Workplace-based
+WRKPLC_HYB,1.05.02.002,primary,Hybrid,Hybrid (mixed workplace/home/other),Working pattern (location): Hybrid (mixed workplace/home/other)
+WRKPLC_MOB,1.05.02.003,primary,Mobile,Mobile (no fixed workplace),Working pattern (location): Mobile (no fixed workplace)
+WRKPLC_HOM,1.05.02.004,primary,Homeworker,Homeworker,Working pattern (location): Homeworker
+EMPLST_PRM,1.06.00.001,primary,Permanent,Permanent contract,Employment status: Permanent contract
+EMPLST_FIX,1.06.00.002,primary,Fixed-term,Fixed-term contract,Employment status: Fixed-term contract
+EMPLST_OCS,1.06.00.003,primary,Loan within the Civil Service,On loan from another Civil Service organisation,Employment status: On loan from another Civil Service organisation
+EMPLST_TMP,1.06.00.004,primary,Temporary/agency,Temporary or agency worker,Employment status: Temporary or agency worker
+EMPLST_CON,1.06.00.005,primary,Contractor,Contract or freelance worker,Employment status: Contract or freelance worker
+EMPLST_SEC,1.06.00.006,primary,External secondment,On secondment from outside the Civil Service,Employment status: On secondment from outside the Civil Service
+OCCGRP_OPS,1.07.01.001,primary,Operational role,Operational role,Occupation (grouped): Operational role
+OCCGRP_CRP,1.07.01.002,primary,Coporate services role,Coporate services role,Occupation (grouped): Coporate services role
+OCCGRP_POL,1.07.01.003,primary,Policy role,Policy role,Occupation (grouped): Policy role
+OCCGRP_SPC,1.07.01.004,primary,Specialist role,Specialist role,Occupation (grouped): Specialist role
+OCCGRP_OTH,1.07.01.900,primary,Other role,Other role,Occupation (grouped): Other role
+OCCDET_OPS_ADM,1.07.02.101,primary,Administration,Administration,Occupation: Administration
+OCCDET_OPS_CAL,1.07.02.102,primary,Call-centre,Call-centre,Occupation: Call-centre
+OCCDET_OPS_CAS,1.07.02.103,primary,Casework,Casework,Occupation: Casework
+OCCDET_OPS_FRD,1.07.02.104,primary,Counter fraud,Counter fraud,Occupation: Counter fraud
+OCCDET_OPS_DBT,1.07.02.105,primary,Debt management,Debt management,Occupation: Debt management
+OCCDET_OPS_FAC,1.07.02.106,primary,Face-to-face services,Face-to-face services,Occupation: Face-to-face services
+OCCDET_OPS_ISP,1.07.02.107,primary,Inspection,Inspection,Occupation: Inspection
+OCCDET_OPS_INV,1.07.02.108,primary,Investigation,Investigation,Occupation: Investigation
+OCCDET_OPS_LOG,1.07.02.109,primary,Logistics,Logistics,Occupation: Logistics
+OCCDET_OPS_MGT,1.07.02.110,primary,Management,Management,Occupation: Management
+OCCDET_OPS_OFF,1.07.02.111,primary,Offender management,Offender management,Occupation: Offender management
+OCCDET_OPS_PRC,1.07.02.112,primary,Processing,Processing,Occupation: Processing
+OCCDET_OPS_PRP,1.07.02.113,primary,Property,Property,Occupation: Property
+OCCDET_OPS_TAX,1.07.02.114,primary,Tax professional,Tax professional,Occupation: Tax professional
+OCCDET_OPS_TRA,1.07.02.115,primary,Transport,Transport,Occupation: Transport
+OCCDET_OPS_OTH,1.07.02.199,primary,Other operational role,Other operational role,Occupation: Other operational role
+OCCDET_CRP_CMC,1.07.02.201,primary,Commercial,Commercial,Occupation: Commercial
+OCCDET_CRP_DIG,1.07.02.202,primary,Digital/IT,Digital/IT,Occupation: Digital/IT
+OCCDET_CRP_EST,1.07.02.203,primary,Estates,Estates,Occupation: Estates
+OCCDET_CRP_FIN,1.07.02.204,primary,Finance,Finance,Occupation: Finance
+OCCDET_CRP_HR,1.07.02.205,primary,HR,Human resources,Occupation: Human resources
+OCCDET_CRP_AUD,1.07.02.206,primary,Internal audit,Internal audit,Occupation: Internal Audit
+OCCDET_CRP_KIM,1.07.02.207,primary,Knowl. and information,Knowledge and information management,Occupation: Knowledge and information management
+OCCDET_CRP_PRJ,1.07.02.208,primary,Project delivery,Project delivery,Occupation: Project delivery
+OCCDET_CRP_PRV,1.07.02.209,primary,PO and secretariat,Private office and secretariat,Occupation: Private office and secretariat
+OCCDET_CRP_SEC,1.07.02.210,primary,Security,Security,Occupation: Security
+OCCDET_CRP_SRT,1.07.02.211,primary,Strategy,Strategy,Occupation: Strategy
+OCCDET_POL,1.07.02.300,primary,Policy,Policy,Occupation: Policy
+OCCDET_SPC_ANM,1.07.02.401,primary,Animal health,Animal health,Occupation: Animal health
+OCCDET_SPC_CRT,1.07.02.402,primary,Cartography,Cartography,Occupation: Cartography
+OCCDET_SPC_CMS,1.07.02.403,primary,Communications,Communications,Occupation: Communications
+OCCDET_SPC_ECN,1.07.02.404,primary,Economics,Economics,Occupation: Economics
+OCCDET_SPC_ENG,1.07.02.405,primary,Engineering,Engineering,Occupation: Engineering
+OCCDET_SPC_HEL,1.07.02.406,primary,Human health,Human health,Occupation: Human health
+OCCDET_SPC_LEG,1.07.02.407,primary,Legal,Legal,Occupation: Legal
+OCCDET_SPC_OPR,1.07.02.408,primary,Operational research,Operational research,Occupation: Operational research
+OCCDET_SPC_RES,1.07.02.409,primary,Social research,Social research,Occupation: Social research
+OCCDET_SPC_SCI,1.07.02.410,primary,Science,Science,Occupation: Science
+OCCDET_SPC_OTH,1.07.02.490,primary,Other specialist role,Other specialist role,Occupation: Other specialist role
+OCCDET_OTH,1.07.02.900,primary,Other role,Other role,Occupation: Other role
+FUNCTN_ANL,1.07.03.001,primary,Analysis,Analysis,Operational function: Analysis
+FUNCTN_CMC,1.07.03.002,primary,Commerical,Commerical,Operational function: Commerical
+FUNCTN_CMS,1.07.03.003,primary,Communications,Communications,Operational function: Communications
+FUNCTN_CNS,1.07.03.004,primary,Consular,Consular,Operational function: Consular
+FUNCTN_CFR,1.07.03.005,primary,Counter fraud,Counter fraud,Operational function: Counter fraud
+FUNCTN_FED,1.07.03.006,primary,FEDG,"Fraud, Error, Debt and Grants","Operational function: Fraud, Error, Debt and Grants"
+FUNCTN_DBT,1.07.03.007,primary,Debt management,Debt management,Operational function: Debt management
+FUNCTN_DIG,1.07.03.008,primary,Digital,"Digital, data and technology","Operational function: Digital, data and technology"
+FUNCTN_FIN,1.07.03.009,primary,Finance,Finance,Operational function: Finance
+FUNCTN_GTM,1.07.03.010,primary,Grants management,Grants management,Operational function: Grants management
+FUNCTN_HR,1.07.03.011,primary,HR,Human resources,Operational function: Human resources
+FUNCTN_INT,1.07.03.012,primary,Intelligence analysis,Intelligence analysis,Operational function: Intelligence analysis
+FUNCTN_AUD,1.07.03.013,primary,Internal audit,Internal audit,Operational function: Internal audit
+FUNCTN_TRD,1.07.03.013,primary,International trade,International trade,Operational function: International trade
+FUNCTN_KIM,1.07.03.014,primary,Knowl. and information,Knowledge and information management,Operational function: Knowledge and information management
+FUNCTN_LEG,1.07.03.015,primary,Legal,Legal,Operational function: Legal
+FUNCTN_DEL,1.07.03.016,primary,Operational delivery,Operational delivery,Operational function: Operational delivery
+FUNCTN_POL,1.07.03.017,primary,Policy,Policy,Operational function: Policy
+FUNCTN_PRJ,1.07.03.018,primary,Project delivery,Project delivery,Operational function: Project delivery
+FUNCTN_PRP,1.07.03.019,primary,Property,Property,Operational function: Property
+FUNCTN_SEC,1.07.03.220,primary,Security,Security,Operational function: Security
+FUNCTN_SCE,1.07.03.221,primary,Science and engineering,Science and engineering,Operational function: Science and engineering
+FUNCTN_TAX,1.07.03.222,primary,Tax professional,Tax professional,Operational function: Tax professional
+FUNCTN_OTH,1.07.03.900,secondary,Other role,Other role,Operational function: Other role
+DEVSCH_FST,1.08.00.101,primary,Fast Stream,Fast Stream scheme(s),Development scheme: Fast Stream scheme(s)
+DEVSCH_FST_CUR,1.08.00.102,primary,Fast Stream (currently),Currently on a Fast Stream scheme,Development scheme: Currently on a Fast Stream scheme
+DEVSCH_FST_PRV,1.08.00.103,primary,Fast Stream (previously),Previously on a Fast Stream scheme,Development scheme: Previously on a Fast Stream scheme
+DEVSCH_APP,1.08.00.201,primary,Apprenticeship,Apprenticeship scheme,Development scheme: Apprenticeship scheme
+DEVSCH_DIR,1.08.00.201,primary,Directors Leadership Prog.,Directors Leadership Programme,Development scheme: Directors Leadership Programme
+DEVSCH_FLS,1.08.00.202,primary,Future Leaders Scheme,Future Leaders Scheme,Development scheme: Future Leaders Scheme
+DEVSCH_SLS,1.08.00.203,primary,Senior Leaders Scheme,Senior Leaders Scheme,Development scheme: Senior Leaders Scheme
+DEVSCH_PAP,1.08.00.301,primary,Positive Action Pathway,Positive Action Pathway,Development scheme: Positive Action Pathway
+DEVSCH_BBO,1.08.00.302,primary,Beyond Boundaries,Beyond Boundaries,Development scheme: Beyond Boundaries
+DEVSCH_IDP,1.08.00.303,primary,Individual Development Prog.,Individual Development Programme,Development scheme: Individual Development Programme
+DEVSCH_OTH,1.08.00.900,primary,Another scheme,Another development scheme,Development scheme: Another development scheme
+DEVSCH_OTH_CUR,1.08.00.901,primary,Another shceme (currently),Currently on another development scheme,Development scheme: Currently on another development scheme
+DEVSCH_OTH_PRV,1.08.00.902,primary,Another scheme (previously),Previously on another development scheme,Development scheme: Previously on another development scheme
+DEVSCH_NOT,1.08.00.995,secondary,Not on a development scheme,Not on a development scheme,Development scheme: Not on a development scheme
+DEVSCH_NAP,1.08.00.996,secondary,Not applicable,Not applicable,Development scheme: Not applicable
+SEXGEN_FEM,2.01.00.001,primary,Female,Female,Sex: Female
+SEXGEN_MAL,2.01.00.002,primary,Male,Male,Sex: Male
+SEXGEN_OTH,2.01.00.900,primary,Other identity,I identify in another way,Sex: I identify in another way
+CISTRN_CIS,2.01.01.001,primary,Cisgender,Cisgender,Gender identity (grouped): Cisgender
+CISTRN_TRN,2.01.01.002,primary,Transgender,Transgender,Gender identity (grouped): Cisgender
+GENDID_CISMAN,2.01.02.001,primary,Cisgender man,Cisgender man,Gender identity (detailed): Cisgender man
+GENDID_CISWOM,2.01.02.002,primary,Cisgender woman,Cisgender woman,Gender identity (detailed): Cisgender woman
+GENDID_SAM,2.01.02.101,primary,Gender same as sex,Gender identity same as sex,Gender identity (detailed): Gender identity same as sex
+GENDID_TRNMAN,2.01.02.201,primary,Trans man,Transgender man/male,Gender identity (detailed): Transgender man/male
+GENDID_TRNWOM,2.01.02.202,primary,Trans woman,Transgender woman/female,Gender identity (detailed): Transgender woman/female
+GENDID_NBN,2.01.02.301,primary,Non-binary,Non-binary,Gender identity (detailed): Non-binary
+GENDID_OTH,2.01.02.302,primary,Other gender identity,Another gender identity,Gender identity (detailed): Another gender identity
+GENDID_DIF,2.01.02.303,primary,Gender different to sex,"Gender different to sex, but no identity provided","Gender identity (detailed): Gender different to sex, but no identity provided"
+AGE_1634,2.02.00.001,primary,16-34,Aged 16 to 34,Age: Aged 16 to 34
+AGE_3544,2.02.00.002,primary,35-44,Aged 35 to 44,Age: Aged 35 to 44
+AGE_4554,2.02.00.003,primary,45-54,Aged 45 to 54,Age: Aged 45 to 54
+AGE_55PL,2.02.00.004,primary,55+,Aged 55 and above,Age: Aged 55 and above
+AGE_PNS,2.02.00.999,secondary,Prefer not to say,Prefer not to say,Age: Prefer not to say
+ETHBIN_WHT,2.03.00.001,primary,White,White,Ethnicity (binary): White
+ETHBIN_MIN,2.03.00.002,primary,Ethnic minority,Ethnic minority,Ethnicity (binary): Ethnic minority
+ETHGRP_WHT,2.03.01.001,primary,White,White,Ethnicity (grouped): White
+ETHGRP_MXD,2.03.01.002,primary,Mixed/multiple,Mixed/multiple,Ethnicity (grouped): Mixed/multiple
+ETHGRP_ASN,2.03.01.003,primary,Asian,Asian,Ethnicity (grouped): Asian
+ETHGRP_BLK,2.03.01.004,primary,Black,Black,Ethnicity (grouped): Black
+ETHGRP_OTH,2.03.01.900,primary,Other,Other,Ethnicity (grouped): Other ethnic background
+ETHGRP_PNS,2.03.01.999,secondary,Prefer not to say,Prefer not to say,Ethnicity (grouped): Prefer not to say
+ETHDET_WHT_BRT,2.03.03.101,primary,White British,"White English, Scottish, Northern Irish or British","Ethnicity: White English, Scottish, Northern Irish or British"
+ETHDET_WHT_IRI,2.03.03.102,primary,White Irish,White Irish,Ethnicity: White Irish
+ETHDET_WHT_GYP,2.03.03.103,primary,Gypsy or Irish Traveller,Gypsy or Irish Traveller,Ethnicity: Gypsy or Irish Traveller
+ETHDET_WHT_ROM,2.03.03.104,primary,Roma,Roma,Ethnicity: Roma
+ETHDET_WHT_OTH,2.03.03.190,primary,Other White,Any other white background,Ethnicity: Any other white background
+ETHDET_MXD_WBC,2.03.03.201,primary,White and Black Caribbean,White and Black Caribbean,Ethnicity: White and Black Caribbean
+ETHDET_MXD_WAF,2.03.03.202,primary,White and Black African,White and Black African,Ethnicity: White and Black African
+ETHDET_MXD_WAS,2.03.03.203,primary,White and Asian,White and Asian,Ethnicity: White and Asian
+ETHDET_MXD_OTH,2.03.03.290,primary,Other Mixed/Multiple,Any other Mixed/Multiple background,Ethnicity: Any other Mixed/Multiple background
+ETHDET_ASN_IND,2.03.03.301,primary,Indian,Indian,Ethnicity: Indian
+ETHDET_ASN_PAK,2.03.03.302,primary,Pakistani,Pakistani,Ethnicity: Pakistani
+ETHDET_ASN_BGD,2.03.03.303,primary,Bangladeshi,Bangladeshi,Ethnicity: Bangladeshi
+ETHDET_ASN_CHN,2.03.03.304,primary,Chinese,Chinese,Ethnicity: Chinese
+ETHDET_ASN_OTH,2.03.03.390,primary,Other Asian,Any other Asian background,Ethnicity: Any other Asian background
+ETHDET_BLK_AFR,2.03.03.401,primary,African,African,Ethnicity: African
+ETHDET_BLK_CRB,2.03.03.402,primary,Caribbean,Caribbean,Ethnicity: Caribbean
+ETHDET_BLK_OTH,2.03.03.490,primary,Other Black,Any other Black background,Ethnicity: Any other Black background
+ETHDET_OTH_ARB,2.03.03.501,primary,Arab,Arab,Ethnicity: Arab
+ETHDET_OTH_OTH,2.03.03.900,primary,Other ethnicity,Any other ethnic group,Ethnicity: Any other ethnic group
+ETHDET_PNS,2.03.03.999,secondary,Prefer not to say,Prefer not to say,Ethnicity: Prefer not to say
+CITIZN_BRT,2.03.04.001,primary,British,British,Citizenship: British
+CITIZN_CMW,2.03.04.002,primary,Commonwealth,Commonwealth,Citizenship: Commonwealth
+CITIZN_EUR,2.03.04.003,primary,EU/EFTA,"European Union, Iceland, Liechtenstein, Norway and Switzerland","Citizenship: European Union, Iceland, Liechtenstein, Norway and Switzerland"
+CITIZN_OTH,2.03.04.900,secondary,Other citizenhip,Other citizenhip,Citizenship: Other citizenhip
+CITIZN_DKP,2.03.04.998,secondary,Don't know,Don't know,Citizenship: Don't know
+LTCOND_LTC,2.04.00.001,primary,Has a long-term limiting condition,Has a long-term limiting condition,Health status: Has a long-term limiting condition
+LTCOND_NCD,2.04.00.002,primary,No long-term limiting condition,No long-term limiting condition,Health status: No long-term limiting condition
+LTCIMP_LOT,2.04.01.001,primary,Long-term condition that limits a lot,Long-term health condition that limits daily activities a lot,Health condition impact: Long-term health condition that limits daily activities a lot
+LTCIMP_LOW,2.04.01.002,primary,Long-term condition that limits a little,Long-term health condition that limits daily activities a little,Health condition impact: Long-term health condition that limits daily activities a little
+LTCIMP_NIM,2.04.01.003,primary,Long-term condition that does not limit,Long-term health condition that does not limit daily activities,Health condition impact: Long-term health condition that does not limit daily activities
+LTCIMP_NCD,2.04.01.004,primary,No long-term health condition,No-long term health condition,Health condition impact: No-long term health condition
+MENHEL_POR,2.04.02.001,primary,Poor,Poor mental health,Mental health rating: Poor mental health
+MENHEL_FAI,2.04.02.002,primary,Fair,Fair mental health,Mental health rating: Fair mental health
+MENHEL_GOD,2.04.02.003,primary,Good,Good mental health,Mental health rating: Good mental health
+MENHEL_VGD,2.04.02.004,primary,Very good,Very good mental health,Mental health rating: Very good mental health
+MENHEL_EXC,2.04.02.005,primary,Excellent,Excellent mental health,Mental health rating: Excellent mental health
+WKPADJ_CMP,2.04.03.001,primary,Completely,Completely met,Workplace adjustments: Needs completely met
+WKPADJ_MST,2.04.03.002,primary,Mostly,Mostly met,Workplace adjustments: Needs mostly met
+WKPADJ_PRT,2.04.03.003,primary,Partially,Partially met,Workplace adjustments: Needs partially met
+WKPADJ_NOT,2.04.03.004,primary,Not at all,Not at all met,Workplace adjustments: Needs not at all met
+WKPADJ_NAR,2.04.03.005,secondary,Not applicable,Not applicable,Workplace adjustments: Not applicable
+WADJMG_SDA,2.04.04.001,primary,Strongly disagree,Strongly disagree,Manager supports workplace adjustments: Strongly disagree
+WADJMG_DIS,2.04.04.002,primary,Disagree,Disagree,Manager supports workplace adjustments: Disagree
+WADJMG_NAD,2.04.04.003,primary,Neither agree nor disagree,Neither agree nor disagree,Manager supports workplace adjustments: Neither agree nor disagree
+WADJMG_AGR,2.04.04.004,primary,Agree,Agree,Manager supports workplace adjustments: Agree
+WADJMG_SAG,2.04.04.005,primary,Strongly agree,Strongly agree,Manager supports workplace adjustments: Strongly agree
+WADJPS_PSP,2.04.05.101,primary,Has a passport,Has a workplace adjustment passport,Workplace adjustment passport: Has a workplace adjustment passport
+WADJPS_PSH,2.04.05.102,primary,Passport helps,Has a workplace adjustment passport,Workplace adjustment passport: Has a workplace adjustment passport
+WADJPS_PSN,2.04.05.103,primary,"Passport, but does not help",Has a workplace adjustment passport,Workplace adjustment passport: Has a workplace adjustment passport
+WADJPS_NOP,2.04.05.201,primary,No passport,Does not have a workpalce adjustment passport,Workplace adjustment passport: Does not have a workpalce adjustment passport
+WADJPS_DKN,2.04.05.998,secondary,Don't know about passport,Does not know what a workplace adjustment passport is,Workplace adjustment passport: Does not know what a workplace adjustment passport is
+MENOPS_MPS,2.04.06.001,primary,Experiencing menopause,"Experiencing menopause, perimenopause, or postmenopause",Menopause: Experiencing menopause
+MENOPS_NMP,2.04.06.002,primary,Not experiencing menopause,"Not experiencing menopause, perimenopause, or postmenopause",Menopause: Not experiencing menopause
+CARERO_CRR,2.05.00.001,primary,Carer,Has caring responsibilities,Carer status: Carer
+CARERO_NCR,2.05.00.002,primary,Not a carer,Does not have caring responsibilities,Carer status: Not a carer
+CARERO_PNS,2.05.00.999,secondary,Prefer not to say,Prefer not to say,Carer status: Prefer not to say
+CAREIF_SDA,2.05.01.001,primary,Strongly disagree,Strongly disagree,Access to carer information and support: Strongly disagree
+CAREIF_DIS,2.05.01.002,primary,Disagree,Disagree,Access to carer information and support: Disagree
+CAREIF_NAD,2.05.01.003,primary,Neither agree nor disagree,Neither agree nor disagree,Access to carer information and support: Neither agree nor disagree
+CAREIF_AGR,2.05.01.004,primary,Agree,Agree,Access to carer information and support: Agree
+CAREIF_SAG,2.05.01.005,primary,Strongly agree,Strongly agree,Access to carer information and support: Strongly agree
+CARBAL_SDA,2.05.02.001,primary,Strongly disagree,Strongly disagree,Manager supports balancing caring responsibilities: Strongly disagree
+CAREBL_DIS,2.05.02.002,primary,Disagree,Disagree,Manager supports balancing caring responsibilities: Disagree
+CARBAL_NAD,2.05.02.003,primary,Neither agree nor disagree,Neither agree nor disagree,Manager supports balancing caring responsibilities: Neither agree nor disagree
+CAREBL_AGR,2.05.02.004,primary,Agree,Agree,Manager supports balancing caring responsibilities: Agree
+CARBAL_SAG,2.05.02.005,primary,Strongly agree,Strongly agree,Manager supports balancing caring responsibilities: Strongly agree
+CAREPS_HPS,2.05.03.001,primary,Has a passport,Has a carer's passport,Carer's passport: Has a carer's passport
+CAREPS_NPS,2.05.03.002,primary,No passport,Does not have a carer's passport,Carer's passport: Does not have a carer's passport
+CAREPS_DKN,2.05.03.998,secondary,Don't know about passport,Does not know what a carer's passport is,Carer's passport: Does not know what a carer's passport is
+CHILDC_CHL,2.06.00.001,primary,Childcare,Has childcare responsibilities,Childcare: Has childcare responsibilities
+CHILDC_LON,2.06.00.002,primary,Childcare (lone parent),Has childcare responsibilities (lone parent),Childcare: Has childcare responsibilities (lone parent)
+CHILDC_NCH,2.06.00.003,primary,No childcare,No childcare responsibilities,Childcare: No childcare responsibilities
+CHILDC_PNS,2.06.00.999,secondary,Prefer not to say,Prefer not to say,Childcare: Prefer not to say
+SEXOGR_HET,2.07.00.001,primary,Heterosexual/straight,Heterosexual/straight,Sexual orientation (grouped): Heterosexual/straight
+SEXOGR_LGB,2.07.00.002,primary,"Lesbian, gay, bisexual or other","Lesbian, gay, bisexual or other","Sexual orientation (grouped): Lesbian, gay, bisexual or other"
+SEXOGR_OTH,2.07.00.900,primary,Other sexual orientation,Any other sexual orientation,Sexual orientation (grouped): Any other sexual orientation
+SEXORN_HET,2.07.01.001,primary,Heterosexual/straight,Heterosexual/straight,Sexual orientation: Heterosexual/straight
+SEXORN_GOL,2.07.01.002,primary,Gay or lesbian,Gay or lesbian,Sexual orientation: Gay or lesbian
+SEXORN_BIS,2.07.01.003,primary,Bisexual,Bisexual,Sexual orientation: Bisexual
+SEXORN_OTH,2.07.01.900,primary,Other sexual orientation,Any other sexual orientation,Sexual orientation: Any other sexual orientation
+SEXORN_PNS,2.07.01.999,secondary,Prefer not to say,Prefer not to say,Sexual orientation: Prefer not to say
+RELIGN_NOR,2.08.00.001,primary,No religion,No religion,Religion: No religion
+RELIGN_CHR,2.08.00.002,primary,Christian,Christian,Religion: Christian
+RELIGN_BUD,2.08.00.003,primary,Buddhist,Buddhist,Religion: Buddhist
+RELIGN_HIN,2.08.00.004,primary,Hindu,Hindu,Religion: Hindu
+RELIGN_JEW,2.08.00.005,primary,Jewish,Jewish,Religion: Jewish
+RELIGN_MUS,2.08.00.006,primary,Muslim,Muslim,Religion: Muslim
+RELIGN_SIK,2.08.00.007,primary,Sikh,Sikh,Religion: Sikh
+RELIGN_OTH,2.08.00.900,primary,Other religion,Any other religion,Religion: Any other religion
+RELIGN_PNS,2.08.00.999,secondary,Prefer not to say,Prefer not to say,Religion: Prefer not to say
+NSSEC_HIG,2.09.01.001,primary,Managerial and professional,"Managerial, administrative, and professional occupations","NSSEC background: Managerial, administrative, and professional occupations"
+NSSEC_INT,2.09.01.002,primary,Intermediate occupations,Intermediate occupations,NSSEC background: Intermediate occupations
+NSSEC_ROU,2.09.01.003,primary,Routine occupations,Routine and manual occupations,NSSEC background: Routine and manual occupations
+NSSEC_NWK,2.09.01.004,primary,Never worked,Never worked and long-term unemployed,NSSEC background: Never worked and long-term unemployed
+SCHOOL_SNS,2.09.02.101,primary,State non-selective,"State run/funded school, not selective","Secondary school: State run/funded school, not selective"
+SCHOOL_SSE,2.09.02.102,primary,State selective,"State run/funded school, selective on academic, faith or other grounds","Secondary school: State run/funded school, selective on academic, faith or other grounds"
+SCHOOL_INB,2.09.02.201,primary,Independent with bursary,"Independent school, attended with a bursary","Secondary school: Independent school, attended with a bursary"
+SCHOOL_INN,2.09.02.202,primary,Independent no bursary,"Independent school, attended without a bursary","Secondary school: Independent school, attended without a bursary"
+SCHOOL_OUT,2.09.02.300,primary,Outside of the UK,Attended school outside of the UK,Secondary school: Attended school outside of the UK
+SCHOOL_OTH,2.09.02.990,secondary,Other schooling,Other school experience,Secondary school: Other school experience
+SCHOOL_DKN,2.09.02.998,secondary,Don't know,Don't know,Secondary school: Don't know
+SCHOOL_PNS,2.09.02.999,secondary,Prefer not to say,Prefer not to say,Secondary school: Prefer not to say
+PRQUAL_ONE,2.09.03.001,primary,Degree level,At least one parent with qualifications above degree level,Parents' qualifications: At least one parent with qualifications above degree level
+PRQUAL_BEL,2.09.03.002,primary,Below degree level,At least one parent has qualifications below degree level,Parents' qualifications: At least one parent has qualifications below degree level
+PRQUAL_NOQ,2.09.03.003,primary,No qualifications,Neither parent has qualifications,Parents' qualifications: Neither parent has qualifications
+PRQUAL_OTH,2.09.03.990,secondary,Other qualification status,Other qualification status,Parents' qualifications: Other qualification status
+PRQUAL_PNS,2.09.03.990,secondary,Prefer not to say,Prefer not to say,Parents' qualifications: Prefer not to say
+PRQUAL_NAP,2.09.03.996,secondary,Not applicable,Not applicable,Parents' qualifications: Not applicable
+PRQUAL_DKN,2.09.03.998,secondary,Don't know,Don't know,Parents' qualifications: Don't know
+SEBSLF_LOW,2.09.04.001,primary,Lower socio-economic background,Considers self to have lower socio-economic background to others,Self-reported background: Considers self to have lower socio-economic background to others
+SEBSLF_NOT,2.09.04.002,primary,Not from a lower socio-economic background,Does not consider self to have lower socio-economic background to others,Self-reported background: Does not consider self to have lower socio-economic background to others
+SEBSLF_DKN,2.09.04.998,secondary,Don't know,Don't know,Self-reported background: Don't know
+SEBSLF_PNS,2.09.04.999,secondary,Prefer not to say,Prefer not to say,Self-reported background: Prefer not to say

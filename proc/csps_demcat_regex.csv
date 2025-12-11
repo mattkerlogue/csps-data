@@ -1,0 +1,246 @@
+﻿category,uid_txt,regex
+"no, i do not have a passport",ADJ_NOP,^no.*passport
+"yes, and it helps me to get appropriate workplace adjustments and support in place",ADJ_PAS_YAN,^yes.*and.*helps.*adjust
+"yes, but it doesn't help me to get appropriate workplace adjustments and support in place",ADJ_PAS_YBU,^yes.*but.*adjust
+aged 16-34,AGE_1634,16.*34
+aged 35-44,AGE_3544,35.*44
+aged 45-54,AGE_4554,45.*54
+aged 55+,AGE_55PL,55(\+|.*higher)
+all civil servants,ALL_CIV_SRV,all.civil.servants
+carer for others,CRR_CRR,carer.*others
+not a carer,CRR_NCR,not.a.carer
+has childcare responsibilities,CHL_CHL,^has.childcare.responsibilities$
+has childcare responsibilities as a lone parent,CHL_LON,lone.parent
+no childcare responsibilities,CHL_NON,^no.*childcare
+"british citizen (including english, northern irish, scottish and welsh)",CTZ_BRT,british.citizen
+"citizen of a commonwealth member state (other than the united kingdom, malta and cyprus)",CTZ_CMW,citizen.*commonwealth
+"citizen of a european union member state and or iceland, liechtenstein, norway and switzerland",CTZ_EUR,citizen.*european
+apprenticeship scheme,DEV_APP,apprentice
+beyond boundaries,DEV_BBO,beyond.bound
+director leadership programme,DEV_DIR,director.leadership|high.potential
+future leaders scheme,DEV_FLS,future.leaders
+civil service fast stream schemes,DEV_FST,^civil.service.fast.stream|currently.*prev.*fast.stream
+currently on civil service fast stream schemes,DEV_FST_CUR,^currently.on.*fast.stream
+previously on civil service fast stream,DEV_FST_PRV,^previously.*fast.stream
+individual development programme,DEV_IDP,individual.development
+not on a development scheme,DEV_NOT,not.*development
+other development scheme,DEV_OTH,^other.development
+currently on other development scheme,DEV_OTH_CUR,^currently.on.*other
+previously on other development scheme,DEV_OTH_PRV,^previously.*other
+positive action pathway,DEV_PAP,positive.action
+senior leaders scheme,DEV_SLS,senior.leaders
+"contract or freelance worker, where you or your employer invoices [my organisation] directly",EMP_CON,contract.*freelance
+"fixed term, temporary contract, appointment with [my organisation]",EMP_FIX,fixed.term
+on loan to [my organisation] from another organisation in the civil service,EMP_OCS,loan
+"permanent contract, appointment with [my organisation]",EMP_PRM,^permanent
+on secondment to [my organisation] from an organisation outside the civil service,EMP_SEC,secondment|secondee
+"temporary worker, where you are employed and paid through an employment agency",EMP_TMP,^temporary.*worker
+asian,ETH_ASN_ALL,^asian(.*british)?$
+asian or asian british: bangladeshi,ETH_ASN_BGD,bangladeshi
+asian or asian british: chinese,ETH_ASN_CHN,chinese
+asian or asian british: indian,ETH_ASN_IND,indian
+asian or asian british: any other asian background,ETH_ASN_OTH,asian.*other
+asian or asian british: pakistani,ETH_ASN_PAK,pakistani
+black or black british: african,ETH_BLK_AFR,black(:\s|\s[-–—]\s|.*british:.*)african$
+black or black british,ETH_BLK_ALL,black(.*british)?$
+black or black british: caribbean,ETH_BLK_CRB,black(:\s|\s[-–—]\s|.*british:.*)caribbean$
+"black or black british: any other black, black british or caribbean background",ETH_BLK_OTH,black.*other
+ethnic minority,ETH_MIN,ba?me|ethnic.minority
+mixed or multiple ethnic groups,ETH_MXD_ALL,^mixed(.*groups)?$
+mixed or multiple ethnic groups: any other mixed or multiple ethnic background,ETH_MXD_OTH,mixed.*other
+mixed or multiple ethnic groups: white and black african,ETH_MXD_WAF,mixed.*african
+mixed or multiple ethnic groups: white and asian,ETH_MXD_WAS,mixed.*asian
+mixed or multiple ethnic groups: white and black caribbean,ETH_MXD_WBC,mixed.*carib
+any other ethnic group,ETH_OTH_ALL,^(any.)?other.ethnic.group$
+any other ethnic group: arab,ETH_OTH_ARB,other.*arab
+any other ethnic group: any other ethnic group,ETH_OTH_OTH,other.*other
+white,ETH_WHT_ALL,^white$
+"white: english, welsh, scottish, northern irish or british",ETH_WHT_BRT,white.*british
+white: gypsy or irish traveller,ETH_WHT_GYP,white.*gypsy
+white: irish,ETH_WHT_IRI,white(:\s|\s[-–—]\s)irish
+white: any other white background,ETH_WHT_OTH,white.*other
+white: roma,ETH_WHT_ROM,white.*roma
+analysis,FNC_ANL,^analysis$
+internal audit,FNC_AUD,^internal.audit$
+counter fraud,FNC_CFR,^counter.fraud$
+commercial,FNC_CMC,^commercial$
+communications,FNC_CMS,^communications$
+consular,FNC_CNS,^consular$
+debt management,FNC_DBT,^debt.management$
+operational delivery,FNC_DEL,^operational.delivery$
+government digital and data,FNC_DIG,^digital|digital.*data
+"fraud, error, debts and grants",FNC_FED,^fraud
+finance,FNC_FIN,^finance$
+grants management,FNC_GTM,^grants
+hr,FNC_HR,^hr$
+intelligence analysis,FNC_INT,^intelligence
+knowledge and information management,FNC_KIM,^knowledge
+legal,FNC_LEG,^legal$
+something else,FNC_OTH,^none.of.these$|^something.else$
+project delivery,FNC_PRJ,^project.delivery$
+property,FNC_PRP,^property$
+science and engineering,FNC_SCE,^science
+security,FNC_SEC,^security$
+tax professionals,FNC_TAX,^tax.professionals$
+international trade,FNC_TRD,^international.trade$
+cisgender,GID_CIS_ALL,^cisgender$
+cisgender man,GID_CIS_MAN,^cis.*\bman$
+cisgender woman,GID_CIS_WOM,^cis.*woman$
+gender identity different from sex registered at birth but no specific identity given,GID_DIF,^gender.*different
+female,GID_FEM,^female$|^woman$
+male,GID_MAL,^male$|^man$
+non-binary,GID_NBN,^non-binary$
+all other gender identities,GID_OTH,other.*gender|identify.*other
+gender identity the same as sex registered at birth,GID_SAM,^gender.*same
+transgender / other,GID_TRN_ALL,^transgender(.*other)?$|^trans.other$
+transgender man,GID_TRN_MAN,^trans.*\bman$
+transgender woman,GID_TRN_WOM,^trans.*woman$
+ao / aa,GRADE_AOAA,ao.*aa
+eo,GRADE_EO,^eo$
+g6 / 7,GRADE_G6G7,g6.*7
+scs,GRADE_SCS,^scs$
+seo / heo,GRADE_SEOHEO,^seo.*heo$
+england,LOC_CTR_ENG,^england
+northern ireland,LOC_CTR_NIR,northern.ireland
+outside of the united kingdom,LOC_CTR_OUT,overseas|outside.*united
+scotland,LOC_CTR_SCT,^scotland$
+wales,LOC_CTR_WLS,^wales$
+east midlands,LOC_ENG_EMD,east.midlands
+east of england,LOC_ENG_EST,east.of.england
+london,LOC_ENG_LON,^london$
+north east england,LOC_ENG_NEE,north.east.england
+north west england,LOC_ENG_NWE,north.west.england
+south east england,LOC_ENG_SEE,south.east.england
+south west england,LOC_ENG_SWE,south.west.england
+west midlands,LOC_ENG_WMD,west.midlands
+yorkshire and the humber,LOC_ENG_YRK,yorkshire
+central scotland,LOC_SCT_CEN,central.scotland
+edinburgh & lothian,LOC_SCT_EDB,edinburgh
+glasgow,LOC_SCT_GLG,glasgow
+highlands & islands,LOC_SCT_HIS,^highlands
+mid scotland & fife,LOC_SCT_MID,^mid.scotland
+north east scotland,LOC_SCT_NES,north.east.scotland
+south scotland,LOC_SCT_STH,south.scotland
+west scotland,LOC_SCT_WST,west.scotland
+mid wales,LOC_WLS_MID,^mid.wales$
+north wales,LOC_WLS_NTH,north.wales
+south east wales,LOC_WLS_SEW,south.east.wales
+south west wales,LOC_WLS_SWW,south.west.wales
+"condition, illness or disability has little impact on your day-to-day activities",LTC_IMP_LIT,condition.*little
+"condition, illness or disability has a lot of impact on your day-to-day activities",LTC_IMP_LOT,condition.*a.lot
+"condition, illness or disability has no impact on your day-to-day activities",LTC_IMP_NON,^(illness|condition).*no
+"long-term limiting condition, illness or disability",LTC_LTC,^long.term.*condition
+"no long-term limiting condition, illness or disability",LTC_NON,^no.long.term
+manager,MGR_MGR,^manager$
+non-manager,MGR_NON,^non.manager
+poor,MHL_POR,^poor$
+cs - internal audit,OCC_CRP_AUD,cs.*audit
+cs - commercial,OCC_CRP_CMC,cs.*commercial
+corporate services,OCC_GRP_CRP,corporate.services
+cs - estates,OCC_CRP_EST,cs.*estates
+cs - finance,OCC_CRP_FIN,cs.*finance
+operations,OCC_GRP_OPS,^operations$
+specialist services,OCC_GRP_SPC,^spec.*services$
+cs - human resources,OCC_CRP_HR,cs.*human
+cs - information technology,OCC_CRP_DIG,cs.*(technology|digital)
+cs - knowledge & information management,OCC_CRP_KIM,cs.*knowledge
+operations - administrative,OCC_OPS_ADM,^op.*administrative$
+operations - call centre,OCC_OPS_CAL,^op.*(call|voice)
+operations - casework,OCC_OPS_CAS,^op.*case
+operations - debt management and banking,OCC_OPS_DBT,^op.*debt
+operations - face to face,OCC_OPS_FAC,^op.*face
+operations - counter fraud,OCC_OPS_FRD,^op.*fraud
+operations - investigation,OCC_OPS_INV,^op.*invest
+operations - inspection,OCC_OPS_ISP,^op.*inspect
+operations - logistics,OCC_OPS_LOG,^op.*log
+operations - management,OCC_OPS_MGT,op.*[-–—]\s(general\s)?management$
+operations - offender management,OCC_OPS_OFF,^op.*offender
+operations - other operations,OCC_OPS_OTH,^op.*other
+operations - processing,OCC_OPS_PRC,^op.*processing
+operations - property,OCC_OPS_PRP,^op.*property
+operations - tax professional,OCC_OPS_TAX,^op.*tax
+operations - transport,OCC_OPS_TRA,^op.*transport
+cs - programme and project management,OCC_CRP_PRJ,cs.*project
+cs - po & secretariats,OCC_CRP_PRV,cs.*(private.office|secretariats)
+cs - security,OCC_CRP_SEC,cs.*security
+specialist - animal health,OCC_SPC_ANM,^spec.*animal
+specialist - communications,OCC_SPC_CMS,^spec.*comm
+specialist - cartography,OCC_SPC_CRT,^spec.*cartogr
+specialist - economics,OCC_SPC_ECN,^spec.*econ
+specialist - engineering,OCC_SPC_ENG,^spec.*eng
+specialist - health,OCC_SPC_HEL,^spec.*[-–—]\shealth
+specialist - legal,OCC_SPC_LEG,^spec.*legal
+specialist - operational research,OCC_SPC_OPR,^spec.*op.*research
+specialist - other,OCC_SPC_OTH,^spec.*other
+specialist - social research,OCC_SPC_RES,^spec.*soc.*research
+specialist - scientist,OCC_SPC_SCI,^spec.*scientist
+specialist - statistics,OCC_SPC_STS,^spec.*stat
+cs - strategy,OCC_CRP_SRT,cs.*strategy
+qualifications below degree level,QUL_BEL,below.*degree
+no formal qualifications,QUL_NON,no.*qualifications
+at least one has a degree level qualification,QUL_ONE,degree.*above|at.least.*degree
+buddhist,REL_BUD,buddhist
+christian,REL_CHR,christian
+hindu,REL_HIN,^hindu$
+jewish,REL_JEW,^jewish$
+muslim,REL_MUS,^muslim$
+no religion,REL_NON,^no.religion
+any other religion,REL_OTH,other.religion
+sikh,REL_SIK,^sikh$
+independent or fee-paying school - bursary,SCH_IND_BUR,independent(.with|.*[-–—])\sbursary
+independent or fee-paying school - no bursary,SCH_IND_NOB,independent.*no.bursary
+other including abroad,SCH_OTH,^other.*abroad$
+attended school outside the uk,SCH_OUT,school.outside
+state-run or state-funded school - non-selective,SCH_SAT_NSE,state.*non-selective
+"state-run or state-funded school - selective on academic, faith or other grounds",SCH_SAT_SEL,state(.selective|.*[--—]\sselective)
+intermediate,SEB_NSE_INT,^intermediate$
+never worked or long term unemployed,SEB_NSE_NWK,^never.worked
+routine,SEB_NSE_ROU,^routine$
+lower socio-economic background,SEB_SLF_LOW,^lower.(seb|socio)
+not lower socio-economic background,SEB_SLF_NOT,not.lower
+bisexual,SXO_BIS,^bisexual$
+gay or lesbian,SXO_GOL,^gay.*lesbian$
+straight or heterosexual,SXO_HET,straight
+"lesbian, gay, bisexual or other",SXO_LGB,lesbian.*bisexual|^lgb
+other sexual orientation,SXO_OTH,^other.*orientation
+no adjustment required,ADJ_NAR,^no.adjustment
+not at all,ADJ_NOT,not.at.all
+partially,ADJ_PRT,^partially$
+contractual home based worker,WPL_HOM,home.*based
+hybrid (work between workplaces or bases and home or other),WPL_HYB,hybrid
+"mobile (no fixed work location, work between various sites or locations)",WPL_MOB,^mobile
+workplace based (work all the time in a workplace or base),WPL_WPL,^workplace
+full-time,WPT_FUL,^full.time$
+in a job-share,WPT_JSH,job.?share
+part-time,WPT_PRT,^part.time$
+at least 5 years but not more than 10 years,YRS_FIV_TEN,5.*10\syears
+less than 1 year,YRS_LES_ONE,less.*1.year
+less than 6 months,YRS_LES_SIX,less.*6.months
+at least 1 year but not more than 3 years,YRS_ONE_THR,1.*3\syears
+at least 6 months but not more than 1 year,YRS_SIX_ONE,6.months.*1.year
+10 years or more,YRS_TEN_MOR,10.*more$|^more.*10
+at least 10 years but not more than 20 years,YRS_TEN_TWE,10.*20\syears
+at least 3 years but not more than 5 years,YRS_THR_FIV,3.*5\syears
+at least 20 years or more,YRS_TWE_MOR,20\syears.*more
+agree,ZZZ_AGR,^agree$
+any other,CTZ_OTH,^any.other$|other.*specify
+completely,ADJ_CMP,^completely$
+disagree,ZZZ_DIS,^disagree$
+don't know,ZZZ_DKN,^don.t\sknow$
+i don't know what this is or how to get one,ZZZ_DKN_WHT,know.what
+"don’t know, prefer not to say",ZZZ_DKP,don.t.*prefer
+excellent,MHL_EXC,^excellent$
+fair,MHL_FAI,^fair$
+good,MHL_GOD,^good$
+high,SEB_NSE_HIG,^high$
+mostly,ADJ_MST,^mostly$
+neither agree nor disagree,ZZZ_NAD,^neither.agree
+no,ZZZ_NO,^no$
+not applicable,ZZZ_NOT_APP,not.applicable
+other,ZZZ_OTH,^other$
+prefer not to say,ZZZ_PNS,^(20: )?prefer.not.to.say
+policy,ZZZ_POL,^policy$
+strongly agree,ZZZ_SAG,^strongly.agree$
+strongly disagree,ZZZ_SDA,^strongly.disagree$
+very good,MHL_VGD,^very.good$
+yes,ZZZ_YES,^yes$

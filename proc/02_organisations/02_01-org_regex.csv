@@ -1,0 +1,273 @@
+﻿regex,uid_txt,organisation_name
+^acas$,ACAS,Acas
+^accountant.*bankrupt,ACTIBK,Accountant in Bankruptcy
+^active.travel.england,ACTREN,Active Travel England
+^animal.health.*vet,ANHVLA,Animal Health and Veterinary Laboratories Agency
+^animal.health$,ANMHEL,Animal Health
+^animal.*plant.health,ANPHEL,Animal and Plant Health Agency
+institute.*apprenticeships,APPTCH,Institute for Apprenticeships and Technical Education
+^attorney,ATTGEN,Attorney General's Office
+^building.*digital,BLDDIG,Building Digital UK
+border.force,BRDFCE,Home Office: Border Force
+business.*energy,BUSENG,"Department for Business, Energy and Industrial Strategy"
+business.*innovation.*skills,BUSINV,"Department for Business, Innovation and Skills"
+business.*trade,BUSTRD,Department for Business and Trade
+^buying.solutions,BUYSOL,OGC Buying Solutions
+^cabinet,CABOFF,Cabinet Office
+^centre.*(fisheries|aquaculture),CEFAS,"Centre for Environment, Fisheries and Aquaculture Science"
+children.*schools.*families,CHLSCH,"Department for Children, Schools and Families"
+child.support.agency,CLDSUP,Child Support Agency
+^department.for.culture,CLMDSP,"Department for Culture, Media and Sport"
+commission.*executive,CMECCE,Child Maintenance and Enforcement Commission: Commission Executive
+corporate.services,CMECCS,Child Maintenance and Enforcement Commission: Corporate Services
+^child.maintenance.*commission$,CMECOM,Child Maintenance and Enforcement Commission
+^companies.house,CMPHSE,Companies House
+^competition,CMPMKT,Competition and Markets Authority
+^child.maintenance.group$,CMTGRP,Child Maintenance Group
+^central.*information,COFINF,Central Office of Information
+^department.for.communities,COMLGV,Department for Communities and Local Government
+^crown.office,COPFSV,Crown Office and Procurator Fiscal Service
+^criminal.injuries,CRMINJ,Criminal Injuries Compensation Authority
+^criminal.records,CRMRCD,Criminal Records Bureau
+^crown.commercial,CRNCOM,Crown Commercial Service
+^crown.prosecution,CRNPRS,Crown Prosecution Service
+^charity,CRTCOM,Charity Commission
+^hm.courts.service$,CRTSRV,HM Courts Service
+^hm.court.*tribunal,CRTTRB,HM Courts and Tribunals Service
+^civil.service.*benchmark|median,CSBNCH,Civil Service benchmark
+^all.civil.servants,CSMEAN,All civil servants
+^civil.service.hr,CSRVHR,Civil Service HR
+^defence.electronics,DEFELC,Defence Electronics and Components Agency
+^defence.*equipment,DEFEQP,Defence Equipment and Support
+^department.*environment,DEFRA,"Department for Environment, Food and Rural Affairs"
+^defence.support,DEFSUP,Defence Support Group
+digital.*culture,DGCLMD,"Department for Digital, Culture, Media and Sport"
+^driver.*licensing,DRVLIC,Driver and Vehicle Licensing Agency
+^driving.standards,DRVSTD,Driving Standards Agency
+^driver.*vehicle.standards,DRVHST,Driver and Vehicle Standards Agency
+^disclosure.scotland,DSCSCT,Disclosure Scotland
+^dstl$,DSTL,Dstl
+^department.*education,EDUCAT,Department for Education
+^education.scotland,EDUSCT,Education Scotland
+energy.*climate,ENGCLM,Department of Energy and Climate Change
+energy.*net.zero,ENGNET,Department for Energy Security and Net Zero
+^estyn$,ESTYN,Estyn
+exiting.*european.union,EXITEU,Department for Exiting the European Union
+export.(credit|finance),EXPFIN,UK Export Finance
+^office.*fair.trading,FAIRTD,Office of Fair Trading
+^fcd?o.*services,FCDSRV,FCDO Services
+^food.*env.*research,FDENRS,Food and Environment Research Agency
+^food.standards.agency$,FDSTDS,Food Standards Agency
+^food.standards.scotland,FDSTSC,Food Standards Scotland
+^foreign.(&|and).commonwealth,FORCOM,Foreign and Commonwealth Office
+^foreign.*development,FRCMDV,"Foreign, Commonwealth and Development Office"
+^forestry.*scotland,FRLDSC,Forestry and Land Scotland
+^fire.service.college,FRSVCL,Fire Service College
+^gov.*equalities,GOVEQU,Government Equalities Office
+^gov.*legal,GOVLEG,Government Legal Department
+register.office.*scotland,GREGSC,General Register Office for Scotland
+actuary,GVACTS,Government Actuary's Department
+car.*despatch,GVCARD,Government Car and Despatch Agency
+^gov.*office.network$,GVOFNT,Government Office Network
+^gov.*procurement,GVPRCM,Government Procurement Service
+^gov.*property,GVPRPT,Government Property Agency
+^department.*health,HEALTH,Department of Health and Social Care
+health.security,HELSEC,UK Health Security Agency
+^health.*safety,HELSFT,Health and Safety Executive
+^highways.agency,HIGHAG,Highways Agency
+^hist.*scot,HISTSC,Historic Scotland
+(cps|crown.prosec).*inspect,HMCPSI,HM CPS Inspectorate
+inspectorate.*education,HMIEDU,HM Inspectorate of Education
+^hm.revenue.*customs$,HMRC,HM Revenue and Customs
+^hm.treasury,HMTRES,HM Treasury
+^home.office.*(group|combined),HOFGRP,Home Office (group)
+^home.office$|^home.office.*(hq|policy|excluding),HOMEOF,Home Office
+housing.*local.government,HSCMLG,"Ministry of Housing, Communities and Local Government"
+hyr?dr?ographic,HYDROG,UK Hydrographic Office
+identity.*passport,IDPASS,Identity and Passport Service
+immigration.enforcement,IMMENF,Home Office: Immigration Enforcement
+insolvency.service,INSOLV,The Insolvency Service
+^gov.*internal.audit,INTAUD,Government Internal Audit Agency
+international.development,INTDEV,Department for International Development
+intellectual.property,INTPRP,Intellectual Property Office
+international.trade,INTTRD,Department for International Trade
+inspectorate.*fire.*rescue,ISCFRS,HM Inspectorate of Constabulary and Fire and Rescue Services
+inspectorate.*constabulary$,ISPCNS,HM Inspectorate of Constabulary
+(moj|justice).*arm.?s.length,JSTARM,Ministry of Justice Arm's Length and Other Bodies
+^ministry.*justice.*(group|including),JSTGRP,Ministry of Justice (group)
+legal.aid,LEGAID,Legal Aid Agency
+legal.services,LEGSRV,Legal Services Commission
+levelling.up,LEVLUP,"Department for Levelling Up, Housing and Communities"
+land.registry,LNDREG,HM Land Registry
+meat.hygiene,MEATHY,Meat Hygiene Service
+medicines.*products,MEDPRD,Medicines and Healthcare products Regulatory Agency
+met.office,METOFF,Met Office
+ministry.*defence,MINDEF,Ministry of Defence
+^ministry.*justice$|^ministry.*justice.*(hq|excluding|headquarters),MINJST,Ministry of Justice
+maritime.*coastguard,MRTCST,Maritime and Coastguard Agency
+maritime.*fisheries,MRTFSH,Maritime and Fisheries Agency
+^national.archives.*scotland,NARCSC,National Archives of Scotland
+^the.national.archives$,NATARC,The National Archives
+^national.crime,NATCRM,National Crime Agency
+^national.infrastructure,NATINF,National Infrastructure Commission
+^national.measurement,NATMSR,National Measurement and Regulation Office
+^national.probation,NATPRB,National Probation Service
+^national.saving,NATSAV,National Savings and Investments
+^nhs.test.*trace,NHSTAT,NHS Test and Trace
+^national.offender.*hq,NOMSHQ,National Offender Management Service headquarters
+^national.offender.*service$,NTOFSV,National Offender Management Service
+^national.records.*scotland,NTRCSC,National Records of Scotland
+^national.school,NTSCGV,National School of Government
+^ofgem$|^office.*gas,OFGEM,Office of Gas and Electricity Markets
+^office.*government.commerce,OFGVCM,Office of Government Commerce
+^office.*public.guard,OFPBGD,Office of the Public Guardian
+^ofqual$|^office.*qualifications,OFQUAL,Office of Qualifications and Examinations Regulation
+^office.*rail,OFRLRD,Office of Rail and Road
+^office.*scottish.charity,OFSCCR,Office of the Scottish Charity Regulator
+^ofsted$,OFSTED,"Office for Standards in Education, Children's Services and Skills "
+^water.*services,OFWAT,Water Services Regulation Authority (Ofwat)
+^office.*statistics,ONS,Office for National Statistics
+^ordnance,ORDSRV,Ordnance Survey
+planning.inspect,PLNISP,Planning Inspectorate
+^probation.service$,PRBSRV,Probation Service
+^hm.prison.service$,PRISON,HM Prison Service
+prison.*probation.*(hq|headquarters),PRPBHQ,HM Prison and Probation Service Headquarters
+passport.office,PSSOFF,HM Passport Office
+^public.health,PUBHEL,Public Health England
+^registers.*scotland,REGSCT,Registers of Scotland
+^revenue.scotland,REVSCT,Revenue Scotland
+^rural.payments,RURPAY,Rural Payments Agency
+royal.parks,RYLPRK,The Royal Parks
+^scottish.forestry,SCFRST,Scottish Forestry
+science.*technology,SCITCH,"Department for Science, Innovation and Technology"
+^social.security.scotland,SCSESC,Social Security Scotland
+^scottish.court.*trib,SCTCTR,Scottish Courts and Tribunals Service
+^scottish.courts?.service,SCTCTS,Scottish Court Service
+^scottish.government,SCTGVT,Scottish Government
+^scottish.housing,SCTHUS,Scottish Housing Regulator
+^scotland.office.*general$,SCTOFF,Scotland Office and Office of the Advocate General
+^scottish.*pensions,SCTPEN,Scottish Public Pensions Agency
+^scottish.prison,SCTPRS,Scottish Prison Service
+^scottish.tribunals,SCTTRB,Scottish Tribunals Service
+^scotland.*wales.office$,SCTWLS,"Scotland Office, Office of the Advocate General and Wales Office"
+^scotland.*wales.*north.*ireland,SCWLNI,"Scotland, Wales and Northern Ireland Offices, and the Office of the Advocate General"
+^skil.*funding,SKLFND,Skills Funding Agency
+^serious.fraud,SRSFRD,Serious Fraud Office
+statistics.authority.*(group|and|including),STATGP,UK Statistics Agency (group)
+^student.awards.*scotland,STAWSC,Student Awards Agency Scotland
+^submarine.delivery,SUBDEL,Submarine Delivery Agency
+^social.work.inspection,SWISPE,Social Work Inspection Agency
+^tribunals?.service$,TRBSRV,Tribunals Service
+^transport.scotland$,TRNSCT,Transport Scotland
+^department.*transport,TRNSPT,Department for Transport
+^tsol$,TSOL,Treasury Solicitor's Department
+border.agency,UKBRDA,UK Border Agency
+debt.management,UKDMO,UK Debt Management Office
+space.agency,UKSPCE,UK Space Agency
+statistics.authority$,UKSTAT,UK Statistics Agency
+^uk.trade,UKTRDI,UK Trade and Investment
+^valuation.office,VALOFF,Valuation Office Agency
+^vehicle.certification,VEHCRT,Vehicle Certification Agency
+^vehicle.*operator,VEHOPP,Vehicle and Operator Services Agency
+^veterinary.lab,VETLAB,Veterinary Laboratories Agency
+^veterinary.medicine,VETMED,Veterinary Medicines Directorate
+visas.*immigration,VISAIM,Home Office: UK Visas and Immigration
+^welsh.*government,WLSGVT,Welsh Government
+^wales.office$,WLSOFF,Wales Office
+^welsh.revenue,WLSREV,Welsh Revenue Authority
+^wilton.park,WLTPRK,Wilton Park
+work.*pensions,WRKPEN,Department for Work and Pensions
+,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+,,
+ ,,
+,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+ ,,
+,,
+,,
+ ,,
+ ,,

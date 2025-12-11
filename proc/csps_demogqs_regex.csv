@@ -1,0 +1,44 @@
+﻿uid_txt,regex,demographic,question_wording_latest
+AGEBND,j02|z15,Age,What is your age?
+CAREBL,j05b,Able to balance work and caring responsibities,I feel supported by my manager to balance my work and caring responsibilities
+CARERO,j05\b,Caring responsibilities,"Do you look after, or give any help or support to, anyone because they have long-term physical or mental health conditions, or illnesses, or problems related to old age?"
+CAREIF,j05a,Access to information and support for carers,"As a carer, I know where to access information and support in [my organisation]"
+CAREPS,j05c,Carers passport,Do you have a carer’s passport or a wider passport which covers caring?
+CHILDC,j06,Childcare responsibilities,"Do you have childcare responsibilities as a primary care giver (for example, parent or guardian)?"
+CISTRN,j1b|j01_grouped|gender.*higher,Cisgender/transgender,Is the gender you identify with the same as your sex registered at birth?
+CITIZN,j09,Citizenship,What are your citizenships?
+DEVSCH,h09,Development scheme participation,"Are you currently on, or have you completed in the last 12 months, any of the following cross-Civil Service accelerated development programmes?"
+EMPLST,h07,Employment status,Which of the following statements best describes your employment status?
+ETHBIN,binary.*j03|j03_grouped|z06,Ethnicity (binary),What is your ethnic group?
+ETHDET,detailed.*j03|j03_all,Ethnicity (detailed),What is your ethnic group?
+ETHGRP,major.group.*j03|^j03.*what,Ethnicity (grouped),What is your ethnic group?
+FUNCTN,h8b,Functional group,Which of the following categories best reflects the type of work you do in your main job?
+GENDID,j01\.\sgender|gender.*lower,Gender identity,Is the gender you identify with the same as your sex registered at birth?
+GRADE,grade|z02,Grade/payband,"What is your grade, pay band or responsibility level?"
+LOCCTR,country.*h01|h01.*where.do,Work location - country,Where do you currently work?
+LOCENG,h01.*england|h1a,Work location - England,Where in England do you usually work?
+LOCSCT,h1b,Work location - Scotland,Where in Scotland do you usually work?
+LOCWLS,h1c,Work location - Wales,Where in Wales do you usually work?
+TIMCIV,h04,Time in Civil Service,How long have you worked for the Civil Service?
+TIMJOB,h02,Time in current job,How long have you worked in your current job?
+TIMORG,h03,Time in organisation,How long have you worked for [my organisation] or its predecessor(s)?
+LTCIMP,impact.*j04|z09,Severity of long-term condition,Does your condition or illness/do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?
+LTCOND,health.*j04\b|z08,Has long-term condition,Do you have any physical or mental health conditions or illnesses lasting or expected to last for 12 months or more?
+MANAGE,h05,Manages others,Do you manage any other employees?
+MENHEL,j04b,Mental health rating,"In general, how would you rate your overall mental health now?"
+MENOPS,j04i,Menopause,"Are you currently experiencing the menopause, perimenopause, or postmenopause?"
+NSSEC,s03,NS-SEC ages 11-16,"National Statistics Socio-Economic Classification (S03, S04, S05, S06)"
+OCCDET,role\s[^-–—]?(\(c.*)?\[h08,Occupation (detailed),Which of the following occupational or professional groups most accurately reflects the type of work you do in your main job?
+OCCGRP,groups.*h08,Occupation (grouped),Which of the following occupational or professional groups most accurately reflects the type of work you do in your main job?
+PRQUAL,s02,Parental qualification level,What is the highest level of qualifications achieved by either of your parent(s) or guardian(s) by the time you were 18?
+RELIGN,j08,Religion,What is your religion?
+SCHTYP,s01,Type of school attended,What type of school did you mainly attend between the ages of 11 and 16?
+SEBSLF,s07,Self-rated socio-economic background,"Compared to people in general, would you describe yourself as coming from a lower socio-economic background?"
+SEXGEN,^(sex|gender).*j01|j1a|^j01a,Sex/gender,What is your sex?
+SEXORN,detailed.*j07|^j07\b,Sexual orientation,Which of the following (sexual orientation) options best describes how you think of yourself?
+SEXOGR,(identity|orientation)\s\[j07|z10.*grouped|j07.*grouped,Sexual orientation (grouped),Which of the following (sexual orientation) options best describes how you think of yourself?
+WADJMG,j04f,Workplace adjustment support,My manager supports me to ensure I have the workplace adjustments I need to reduce the barriers I face due to my condition(s) or illness(es)
+WADJPS,j04g,Workplace adjustment passport,Do you have a current workplace adjustment passport?
+WKPADJ,j04c,Workplace adjustments,???
+WKPTRN,h06,Working pattern,"Do you work full-time, part-time, or in a job share?"
+WRKPLC,h10,Workplace attendance,Which option best describes how you work?
