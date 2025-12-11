@@ -38,35 +38,35 @@ org_2015 <- extract_csv_org_cols(
 org_2016 <- extract_csv_org_cols(
   csps_data_files$csps2016$organisations.c,
   cols = 3,
-  col_names = c("group", "organisation", "org_code")
+  col_names = c("dept_group", "organisation", "org_code")
 )
 
 org_2017 <- extract_csv_org_cols(
   csps_data_files$csps2017$organisations.c,
   cols = 3,
-  col_names = c("group", "organisation", "org_code")
+  col_names = c("dept_group", "organisation", "org_code")
 )
 
 org_2018 <- extract_csv_org_cols(
   csps_data_files$csps2018$organisations.c,
   cols = 3,
-  col_names = c("group", "organisation", "org_code")
+  col_names = c("dept_group", "organisation", "org_code")
 )
 
 org_2019 <- extract_csv_org_cols(
   csps_data_files$csps2019$organisations.c,
   cols = 3,
-  col_names = c("group", "organisation", "org_code")
+  col_names = c("dept_group", "organisation", "org_code")
 )
 
-# 2020 organisations ----
+# 2020 organisations ------
 # organisation data published only as ODS file
 
 org_2020 <- extract_ods_org_cols(
   csps_data_files$csps2020$organisations.o,
   sheet = "Table_1",
   cols = 3,
-  col_names = c("group", "org_code", "organisation")
+  col_names = c("dept_group", "org_code", "organisation")
 )
 
 # 2021-24 organisations ----
@@ -77,7 +77,7 @@ org_2021 <- extract_ods_org_cols(
   sheet = "Table_3",
   cols = 3,
   skip = 5,
-  col_names = c("org_code", "organisation", "group")
+  col_names = c("org_code", "organisation", "dept_group")
 )
 
 org_2022 <- extract_ods_org_cols(
@@ -85,7 +85,7 @@ org_2022 <- extract_ods_org_cols(
   sheet = "Table_3",
   cols = 3,
   skip = 6,
-  col_names = c("org_code", "organisation", "group")
+  col_names = c("org_code", "organisation", "dept_group")
 )
 
 org_2023 <- extract_ods_org_cols(
@@ -93,7 +93,7 @@ org_2023 <- extract_ods_org_cols(
   sheet = "Table_3",
   cols = 3,
   skip = 6,
-  col_names = c("org_code", "organisation", "group")
+  col_names = c("org_code", "organisation", "dept_group")
 )
 
 org_2024 <- extract_ods_org_cols(
@@ -101,7 +101,7 @@ org_2024 <- extract_ods_org_cols(
   sheet = "Table_3",
   cols = 3,
   skip = 6,
-  col_names = c("org_code", "organisation", "group")
+  col_names = c("org_code", "organisation", "dept_group")
 )
 
 # merged data ----
@@ -122,7 +122,7 @@ readr::write_excel_csv(
   na = ""
 )
 
-tbl_unq_groups <- raw_tbl_orgs |>
+tbl_unq_dept_group <- raw_tbl_orgs |>
   dplyr::summarise(
     year_from = min(year),
     year_to = max(year),
@@ -132,18 +132,18 @@ tbl_unq_groups <- raw_tbl_orgs |>
   dplyr::arrange(group)
 
 readr::write_excel_csv(
-  tbl_unq_group,
-  "proc/02-organisations_ref/02_01-tbl_unq_groups.csv",
+  tbl_unq_dept_group,
+  "proc/02-organisations_ref/02_01-tbl_unq_dept_group.csv",
   na = ""
 )
 
 readr::write_excel_csv(
-  tbl_unq_grp |>
+  tbl_unq_dept_group |>
     dplyr::mutate(
       regex = NA_character_,
       uid_txt = NA_character_
     ),
-  "proc/02-organisations_ref/02_01-tbl_unq_grp_regex.csv",
+  "proc/02-organisations_ref/02_01-tbl_unq_dept_group_regex.csv",
   na = ""
 )
 
@@ -166,10 +166,10 @@ tbl_unq_orgs <- raw_tbl_orgs |>
   ) |>
   dplyr::left_join(
     raw_tbl_orgs |>
-      dplyr::distinct(organisation, group) |>
+      dplyr::distinct(organisation, dept_group) |>
       tidyr::drop_na() |>
       dplyr::summarise(
-        groups = paste(group, collapse = ", "),
+        dept_groups = paste(dept_group, collapse = ", "),
         .by = organisation
       ),
     by = "organisation"
