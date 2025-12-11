@@ -1,0 +1,40 @@
+# Introduction {.unnumbered}
+
+This Quarto book is a companion that explains the processing of published data and results from the Civil Service People Survey (CSPS) into a collated and
+harmonised dataset.
+
+The CSPS is a annual employee attitude survey that has carried out across the
+UK Civil Service since 2009. While data and results from the survey have been
+published each year, there is no single dataset or API that makes it easy to
+access the data. The range of data published each year varies, as do aspects of
+the survey content and coverage[^changes].
+
+This companion outlines and describes the approach taken to approach taken to
+process the published data into a set of harmonised datasets that can be
+easily reused. The published data is available in the
+[`mattkerlogue/csps-data`](https://www.github.com/mattkerlogue/csps-data)
+repository on Github, and is documented [here]().
+
+## About the Civil Service People Survey
+
+...
+
+## About the author
+
+This companion, and the code it describes, has been written by
+Matt Kerlogue[^mk]
+
+## Copyright and licensing
+
+...
+
+[^changes]: The main set of attitudinal questions included in the questionnaire
+have remained relatively consistent though there have been some additions and
+removals over the past 16 years. Organisational coverage varies over time as
+organisations are established, abolished, merged or changed in other ways. The
+range of demographic categories either asked about or published has also changed
+over time.
+
+[^mk]: Visit my [website](https://matt.kerlogue.co.uk) or find me on
+[Github](https://www.github.com/mattkerlogue) and
+[Bluesky](https://bsky.app/profile/mattkerlogue.bsky.social).

@@ -1,0 +1,13 @@
+project: 
+  type: book
+  output-dir: docs
+
+book: 
+  title: "CSPS data companion"
+  subtitle: |
+    A companion to processing published data and results from the Civil Service
+    People Survey
+  author: "Matt Kerlogue"
+  date: "2025-12-10"
+  chapters: 
+    - index.qmd
