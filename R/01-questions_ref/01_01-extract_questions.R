@@ -1,16 +1,18 @@
-# 01-01.  Question & metrics metadata processing
-#         > Extract question wordings
-# =========================================================================
+# CSPS data extraction and processing
+# 01.01 extract questions
+# ======
+# This script works through files in raw-data folder and scrapes headers,
+# rows and columns containing question/measure labels.
 
-# setup -------------------------------------------------------------------
+# setup ------
 
 # load df_list
 source("R/00_data_files.R")
 source("R/variable_extract_helpers.R")
 
-# get questions -----------------------------------------------------------
+# get questions ------
 
-## 2009-2013 benchmarks ----
+## 2009-2013 benchmarks ------
 
 cli::cli_progress_step("2009-2013 benchmarks")
 
@@ -20,7 +22,7 @@ qs_2013_bm <- extract_csv_col1(
   locale = readr::locale(encoding = "latin1")
 )
 
-## 2009-2012 organisations ----
+## 2009-2012 organisations ------
 
 cli::cli_progress_step("2009-2012 organisation scores")
 
@@ -34,7 +36,7 @@ qs_2011_org <- qs_2011_org[c(-1, -2)]
 qs_2012_org <- extract_csv_header(csps_data_files$csps2012$organisations.c)
 qs_2012_org <- qs_2012_org[c(-1, -2)]
 
-## 2013 additional scores ----
+## 2013 additional scores ------
 
 cli::cli_progress_step("2013 additional scores")
 
@@ -48,7 +50,7 @@ qs_2013_dem <- extract_csv_col1(csps_data_files$csps2013$demographics.c)
 # scs 2009 to 2013 trend
 qs_2013_scs <- extract_csv_col1(csps_data_files$csps2013$scs.c)
 
-## 2014 scores ----
+## 2014 scores ------
 
 cli::cli_progress_step("2014 scores")
 
@@ -63,7 +65,7 @@ qs_2014_org <- qs_2014_org[c(-1, -2)]
 qs_2014_dem <- extract_csv_col1(csps_data_files$csps2014$demographics.c)
 qs_2014_dem <- qs_2014_dem[4:122]
 
-## 2015 scores ----
+## 2015 scores ------
 
 cli::cli_progress_step("2015 scores")
 
@@ -78,7 +80,7 @@ qs_2015_org <- qs_2015_org[c(-1, -2)]
 qs_2015_dem <- extract_csv_col1(csps_data_files$csps2015$demographics.c)
 qs_2015_dem <- qs_2015_dem[4:132]
 
-## 2016 scores ----
+## 2016 scores ------
 
 cli::cli_progress_step("2016 scores")
 
@@ -95,7 +97,7 @@ qs_2016_dem <- qs_2016_dem[c(3, 5:127)]
 
 cli::cli_progress_update(3)
 
-## 2017 scores ----
+## 2017 scores ------
 
 cli::cli_progress_step("2017 scores")
 
@@ -110,7 +112,7 @@ qs_2017_org <- qs_2017_org[c(-1, -2, -3)]
 qs_2017_dem <- extract_excel_col(csps_data_files$csps2017$demographics.x)
 qs_2017_dem <- qs_2017_dem[3:128]
 
-## 2018 scores ----
+## 2018 scores ------
 
 cli::cli_progress_step("2018 scores")
 
@@ -128,7 +130,7 @@ qs_2018_org <- qs_2018_org[c(-1, -2, -3)]
 qs_2018_dem <- extract_excel_col(csps_data_files$csps2018$demographics.x)
 qs_2018_dem <- qs_2018_dem[3:129]
 
-## 2019 scores ----
+## 2019 scores ------
 
 cli::cli_progress_step("2019 scores")
 
@@ -146,7 +148,7 @@ qs_2019_org <- qs_2019_org[c(-1, -2, -3)]
 qs_2019_dem <- extract_excel_col(csps_data_files$csps2019$demographics.x)
 qs_2019_dem <- qs_2019_dem[3:133]
 
-## 2020 scores ----
+## 2020 scores ------
 
 cli::cli_progress_step("2020 scores")
 
@@ -181,7 +183,7 @@ qs_2020_dem <- extract_ods_row(
 )
 qs_2020_dem <- qs_2020_dem[3:146]
 
-## 2021 scores ----
+## 2021 scores ------
 # note: from 2021 onwards all files are published as ODS files
 
 cli::cli_progress_step("2021 scores")
@@ -221,7 +223,7 @@ qs_2021_dem <- extract_ods_row(
 )
 qs_2021_dem <- qs_2021_dem[4:147]
 
-## 2022 scores ----
+## 2022 scores ------
 
 cli::cli_progress_step("2022 scores")
 
@@ -259,7 +261,7 @@ qs_2022_dem <- extract_ods_row(
 )
 qs_2022_dem <- qs_2022_dem[4:180]
 
-## 2023 scores ----
+## 2023 scores ------
 
 cli::cli_progress_step("2023 scores")
 
@@ -297,7 +299,7 @@ qs_2023_dem <- extract_ods_row(
 )
 qs_2023_dem <- qs_2023_dem[5:183]
 
-## 2024 scores ----
+## 2024 scores ------
 
 cli::cli_progress_step("2024 scores")
 
@@ -335,7 +337,7 @@ qs_2024_dem <- extract_ods_row(
 )
 qs_2024_dem <- qs_2024_dem[4:185]
 
-# get unified data --------------------------------------------------------
+# get unified data ------
 
 cli::cli_progress_step("Merge data")
 
@@ -351,7 +353,7 @@ get_values <- function(x, class) {
   }
 }
 
-## raw table ---
+## raw table ------
 raw_tbl_qs <- tibble::tibble(
   obj = ls(pattern = "^qs_", envir = .GlobalEnv)
 ) |>

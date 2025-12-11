@@ -1,8 +1,16 @@
-# load df_list
+# CSPS data extraction and processing
+# 03.01 extract demographics
+# ======
+# This script works through files in raw-data folder and scrapes files for
+# the labels of demographic questions and categories.
+
+# setup ------
 source("R/00_data_files.R")
 source("R/extract_helpers.R")
 
-# 2013 demographics
+# 2013 to 2019 demographics ------
+# 2013 to 2019 follow a similar format, published in Excel
+
 dm_2013 <- extract_excel_dem_rows(
   csps_data_files$csps2013$demographics.x,
   sheet = "Scores",
@@ -58,6 +66,11 @@ dm_2019 <- extract_excel_dem_rows(
   start_col = 3
 )
 
+# 2020 to 2024 demographics ------
+# Following updates to government statistical service guidance on publishing
+# spreadsheets from 2020 onwards the format of the demographics files changed,
+# including a switch to using ODS files.
+
 dm_2020 <- extract_ods_dem_cols(
   csps_data_files$csps2020$demographics.o,
   sheet = "Benchmarks",
@@ -92,6 +105,8 @@ dm_2024 <- extract_ods_dem_cols(
   cols = 1:2,
   skip = 5
 )
+
+# create and output files for regex development ------
 
 raw_tbl_dems <- tibble::tibble(
   obj = ls(pattern = "^dm_", envir = .GlobalEnv)

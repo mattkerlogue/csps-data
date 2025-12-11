@@ -1,15 +1,18 @@
-# 01-01.  Question & metrics metadata processing
-#         > Review questions and develop regexes
-# =========================================================================
+# CSPS data extraction and processing
+# 01.02 regex development
+# ======
+# This script takes the output of script 01_01-extract_questions.R and
+# processes it into intermediate outputs to support development of regexes
+# that can be used to uniquely identify questions/measures over time.
 
-# load data ----
+# load data ------
 
 raw_tbl_qs <- readr::read_csv(
   "proc/01-questions_ref/01_01-raw_tbl_qs.csv",
   show_col_types = FALSE
 )
 
-# reference table ----
+# reference table ------
 tbl_qs <- raw_tbl_qs |>
   dplyr::mutate(
     year = as.integer(gsub(".*(\\d{4}).*", "\\1", obj)),

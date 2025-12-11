@@ -1,8 +1,11 @@
-# 01-02.  Question & metrics metadata processing
-#         > Test and refine regexes
-# =========================================================================
+# CSPS data extraction and processing
+# 01.03 regex refinement
+# ======
+# This script takes the output of script 01_02-regex_development.R, including
+# output that has been manually edited to assist in the development of
+# regexes by identifying where a regex matches with multiple questions.
 
-# load data ---------------------------------------------------------------
+# load data ------
 
 source("R/regex_matches.R")
 
@@ -14,6 +17,8 @@ qs_regexs <- readr::read_csv(
   "proc/01-questions_ref/01_02-regexes.csv",
   show_col_types = FALSE
 )
+
+# run matches ------
 
 qs_regexes_matched <- qs_regexs |>
   dplyr::mutate(

@@ -1,8 +1,11 @@
-# 01-02.  Question & metrics metadata processing
-#         > Develop questions reference dataset
-# =========================================================================
+# CSPS data extraction and processing
+# 01.04 question reference
+# ======
+# This script takes the output of script 01_03-regex_refinement.R, including
+# output that has been manually edited to finalise regex development and
+# create key reference files for data processing.
 
-# load data ---------------------------------------------------------------
+# load data ------
 
 source("R/text_to_uid.R")
 
@@ -14,6 +17,8 @@ qs_ref <- readr::read_csv(
   "proc/01-questions_ref/01_03-qs_ref.csv",
   show_col_types = FALSE
 )
+
+# match questions ------
 
 tbl_qs_matched <- tbl_qs |>
   dplyr::mutate(
@@ -28,6 +33,11 @@ readr::write_excel_csv(
   "proc/01-questions_ref/01_03-tbl_qs_matched.csv",
   na = ""
 )
+
+# identify measures ------
+# some datasets do not have question text/labels only measure/variable ids
+# (e.g. `ees` or `B01` etc), these ids are not unique across years so a lookup
+# is needed to enable alignment of this data to the common standard
 
 tbl_detect_measures <- tbl_qs_matched |>
   dplyr::mutate(
@@ -69,6 +79,9 @@ readr::write_excel_csv(
   na = ""
 )
 
+# completely matched data ------
+# testing that the matching process works
+
 tbl_qs_complete_match <- tbl_detect_measures |>
   dplyr::rows_patch(tbl_yr_measures, by = c("year", "proc_measure")) |>
   dplyr::select(obj, raw_label, year, proc_measure, uid)
@@ -78,6 +91,8 @@ readr::write_excel_csv(
   "proc/01-questions_ref/01_04-tbl_qs_complete_match.csv",
   na = ""
 )
+
+# write output -----
 
 tbl_measures_uid <- tbl_qs_complete_match |>
   dplyr::filter(!is.na(proc_measure)) |>

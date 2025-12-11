@@ -1,3 +1,11 @@
+# CSPS data extraction and processing
+# 03.02 demographic regex refinement
+# ======
+# This script takes the output of script 03_01-extract-demogs.R,
+# including output that has been manually edited, to help refine the
+# development of organisational regexes.
+
+# setup ------
 source("R/regex_matches.R")
 source("R/text_to_uid.R")
 
@@ -13,6 +21,8 @@ cat_regexes <- readr::read_csv(
   "proc/03-demographics_ref/03_01-categories_regex.csv"
 )
 
+# review demographic questions regexes ------
+
 dem_regex_matched <- dem_regexes |>
   dplyr::mutate(
     matches = purrr::map(
@@ -27,6 +37,24 @@ dem_regex_matched <- dem_regexes |>
 dem_regex_matched_unnested <- dem_regex_matched |>
   tidyr::unnest(matches) |>
   dplyr::filter(match)
+
+dem_to_uid <- raw_tbl_dems |>
+  dplyr::mutate(
+    uid = purrr::map_chr(
+      .x = stringr::str_squish(tolower(demographic)),
+      .f = ~ text_to_uid(
+        .x,
+        dem_regexes$regex,
+        dem_regexes$uid_txt,
+        overrun = TRUE
+      )
+    )
+  )
+
+dem_to_uid |> dplyr::filter(grepl(",", uid))
+dem_to_uid |> dplyr::filter(is.na(uid))
+
+# review category matches ------
 
 cat_regex_matched <- cat_regexes |>
   dplyr::mutate(
@@ -46,22 +74,6 @@ cat_regex_matched <- cat_regexes |>
 cat_regex_matched_unnested <- cat_regex_matched |>
   tidyr::unnest(matches) |>
   dplyr::filter(match)
-
-dem_to_uid <- raw_tbl_dems |>
-  dplyr::mutate(
-    uid = purrr::map_chr(
-      .x = stringr::str_squish(tolower(demographic)),
-      .f = ~ text_to_uid(
-        .x,
-        dem_regexes$regex,
-        dem_regexes$uid_txt,
-        overrun = TRUE
-      )
-    )
-  )
-
-dem_to_uid |> dplyr::filter(grepl(",", uid))
-dem_to_uid |> dplyr::filter(is.na(uid))
 
 cat_to_uid <- raw_tbl_dems |>
   dplyr::mutate(
@@ -83,6 +95,9 @@ cat_to_uid <- raw_tbl_dems |>
 
 cat_to_uid |> dplyr::filter(grepl(",", uid))
 cat_to_uid |> dplyr::filter(is.na(uid))
+
+
+# get merged combinations of demographics and categories
 
 tbl_dem_cat_matched <- raw_tbl_dems |>
   dplyr::mutate(

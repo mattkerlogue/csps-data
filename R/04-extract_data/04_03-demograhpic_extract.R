@@ -1,5 +1,17 @@
+# CSPS data extraction and processing
+# 03.02 extract demographic data
+# ======
+# This script works through files in raw-data folder and extracts data for the
+# demographic scores.
+
+# setup ---
+
 source("R/00_data_files.R")
 source("R/data_extract_helpers.R")
+
+# 2013 to 2019 files ------
+# From 2013 to 2019 demographic results were published in a similar format
+# Excel file
 
 df_2013_dem <- extract_demographic_data(
   csps_data_files$csps2013$demographics.x,
@@ -78,6 +90,7 @@ df_2017_dem <- extract_demographic_data(
     ),
     measures = list(orientation = "portrait", start_index = 4, measure_loc = 1)
   ),
+  # 2017 is missing a column header for detailed sexual orientation results
   insert = list(
     col = 182,
     row = 1,
@@ -118,6 +131,10 @@ df_2019_dem <- extract_demographic_data(
   value_convert = "scale_100"
 )
 
+# 2020 to 2024 files ------
+# From 2020 onwards demographic scores are published as ODS files with a
+# revised structure and format compared to the Excel files
+
 df_2020_dem <- extract_demographic_data(
   csps_data_files$csps2020$demographics.o,
   sheet = "Benchmarks",
@@ -152,6 +169,8 @@ df_2024_dem <- extract_demographic_data(
   data_structure = list(drop_cols = 3, na = c("", "NA", "[z]", "[c]")),
   skip = 5
 )
+
+# combine data and extract
 
 raw_tbl_dem_data <- tibble::tibble(
   obj = ls(pattern = "^df_\\d{4}_dem$", envir = .GlobalEnv)

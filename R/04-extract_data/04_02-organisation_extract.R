@@ -1,5 +1,16 @@
+# CSPS data extraction and processing
+# 03.02 extract organisation data
+# ======
+# This script works through files in raw-data folder and extracts data for the
+# organisation scores.
+
+# setup ------
 source("R/00_data_files.R")
 source("R/data_extract_helpers.R")
+
+# 2009 to 2013 files ------
+# from 2009 to 2013 organisation scores are published in a similar format as
+# both CSV and Excel files
 
 df_2009_org <- long_csv(
   csps_data_files$csps2009$organisations.c,
@@ -114,6 +125,11 @@ df_2019_org <- long_csv(
   na = c("", "NA", "n/a")
 )
 
+# 2020 file ------
+# In 2020 only an ODS file was published, no CSV, but this retained the
+# format of the Excel document which split organisation scores across two
+# sheets.
+
 xdf_2020_org_1 <- extract_organisation_ods(
   csps_data_files$csps2020$organisations.o,
   sheet = "Table_1",
@@ -133,6 +149,10 @@ xdf_2020_org_2 <- extract_organisation_ods(
 )
 
 df_2020_org <- dplyr::bind_rows(xdf_2020_org_1, xdf_2020_org_2)
+
+# 2021 to 2024 files ------
+# from 2021 onwards organisation scores were published as a single sheet within]
+# the benchmark results ODS file, rather than a separate file
 
 df_2021_org <- extract_organisation_ods(
   csps_data_files$csps2021$benchmarks.o,
@@ -173,6 +193,8 @@ df_2024_org <- extract_organisation_ods(
   org_headers = c("org_code", "organisation", "dept_group"),
   na = c("", "NA", "n/a", "[c]")
 )
+
+# combine and export data -------
 
 raw_tbl_org_data <- tibble::tibble(
   obj = ls(pattern = "^df_(\\d{4})_org$", envir = .GlobalEnv)

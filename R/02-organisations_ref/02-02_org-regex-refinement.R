@@ -1,3 +1,12 @@
+# CSPS data extraction and processing
+# 02.02 regex refinement
+# ======
+# This script takes the output of script 01_01-extract-organisations.R,
+# including output that has been manually edited, to help refine the
+# development of organisational regexes.
+
+# setup ------
+
 source("R/regex_matches.R")
 source("R/text_to_uid.R")
 
@@ -10,6 +19,8 @@ org_regex <- readr::read_csv(
   "proc/02-organisations_ref/02_01-org_regex.csv",
   show_col_types = FALSE
 )
+
+# match regexes to organisations ------
 
 org_regexes_matched <- org_regex |>
   dplyr::mutate(
@@ -26,6 +37,9 @@ org_regexes_matched_unnested <- org_regexes_matched |>
 org_regexes_matched_unnested |>
   dplyr::count(regex, organisation_name, sort = TRUE)
 
+
+# match organisations to regexes ------
+
 orgs_to_uid <- raw_tbl_orgs |>
   dplyr::mutate(
     uid = purrr::map_chr(
@@ -37,6 +51,9 @@ orgs_to_uid <- raw_tbl_orgs |>
 orgs_to_uid |>
   dplyr::filter(is.na(uid))
 
+# organisation history ------
+# file showing lifespan of organisations to develop a log of changes
+
 org_history <- orgs_to_uid |>
   dplyr::summarise(
     year_from = min(year),
@@ -44,6 +61,7 @@ org_history <- orgs_to_uid |>
     .by = c(uid, organisation)
   ) |>
   dplyr::arrange(uid, year_from)
+
 
 readr::write_excel_csv(
   orgs_history,

@@ -1,5 +1,18 @@
+# CSPS data extraction and processing
+# 03.01 extract benchmark data
+# ======
+# This script works through files in raw-data folder and extracts data for the
+# civil service benchmark median and mean scores.
+
+# setup ------
+
 source("R/00_data_files.R")
 source("R/data_extract_helpers.R")
+
+# 2013 to 2020 files ------
+# from 2013 to 2020 the benchmark results were published as CSV and Excel
+# documents
+# 2013 file contains data from 2009 to 2013
 
 df_2013_csbm <- long_csv(
   csps_data_files$csps2013$benchmarks.c,
@@ -85,6 +98,9 @@ df_2020_mean <- long_csv(
   na = c("", "NA", "n/a")
 )
 
+# 2021 to 2024 files ------
+# From 2021 onwards the benchmarks have been published only as ODS files
+
 df_2021_csbm <- extract_benchmark_ods(
   csps_data_files$csps2021$benchmarks.o,
   sheet = "Table_1",
@@ -148,6 +164,8 @@ df_2024_mean <- extract_benchmark_ods(
   skip = 4,
   na = c("", "NA", "n/a", "[z]")
 )
+
+# combine and export data ------
 
 raw_tbl_bm_data <- tibble::tibble(
   obj = ls(pattern = "^df_\\d{4}_(csbm|mean)$", envir = .GlobalEnv)

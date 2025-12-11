@@ -1,8 +1,15 @@
-# load df_list
+# CSPS data extraction and processing
+# 02.01 extract organisations
+# ======
+# This script works through files in raw-data folder and scrapes files for
+# the names/identifiers of organisations and departmental groups and outputs
+# files to support the development of regexes.
+
+# setup ------
 source("R/00_data_files.R")
 source("R/variable_extract_helpers.R")
 
-# 2009-13 organisations ----
+# 2009-15 organisation data ------
 
 org_2009 <- extract_csv_org_cols(
   csps_data_files$csps2009$organisations.c
@@ -32,8 +39,8 @@ org_2015 <- extract_csv_org_cols(
   csps_data_files$csps2015$organisations.c
 )
 
-# 2016-19 organisations ----
-# organisation code also included in csv file
+# 2016-19 organisation data ------
+# organisation code also included in csv file, amend defaults
 
 org_2016 <- extract_csv_org_cols(
   csps_data_files$csps2016$organisations.c,
@@ -69,8 +76,9 @@ org_2020 <- extract_ods_org_cols(
   col_names = c("dept_group", "org_code", "organisation")
 )
 
-# 2021-24 organisations ----
-# organisation data included within benchmarks ODS file
+# 2021-24 organisations ------
+# organisation data included within benchmarks ODS file,
+# column structure also changes
 
 org_2021 <- extract_ods_org_cols(
   path = csps_data_files$csps2021$benchmarks.o,
@@ -104,7 +112,9 @@ org_2024 <- extract_ods_org_cols(
   col_names = c("org_code", "organisation", "dept_group")
 )
 
-# merged data ----
+# merged data ------
+
+## raw dump of all organisation data ------
 
 raw_tbl_orgs <- tibble::tibble(
   obj = ls(pattern = "^org", envir = .GlobalEnv)
@@ -121,6 +131,8 @@ readr::write_excel_csv(
   "proc/02-organisations_ref/02_01-raw_tbl_orgs.csv",
   na = ""
 )
+
+## unique lists of dept groups and organisations ------
 
 tbl_unq_dept_group <- raw_tbl_orgs |>
   dplyr::summarise(
