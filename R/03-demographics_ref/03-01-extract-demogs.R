@@ -104,7 +104,7 @@ raw_tbl_dems <- tibble::tibble(
 
 readr::write_excel_csv(
   raw_tbl_dems,
-  "proc/03_demographics/03_01-raw_tbl_dems.csv",
+  "proc/03-demographics_ref/03_01-raw_tbl_dems.csv",
   na = ""
 )
 
@@ -115,14 +115,14 @@ unq_demographic_qs <- raw_tbl_dems |>
 
 readr::write_excel_csv(
   unq_demographic_qs,
-  "proc/03_demographics/03_01-unq_demographic_qs.csv",
+  "proc/03-demographics_ref/03_01-unq_demographic_qs.csv",
   na = ""
 )
 
 readr::write_excel_csv(
   unq_demographic_qs |>
     dplyr::mutate(uid_txt = NA_character_, regex = NA_character_),
-  "proc/03_demographics/03_01-unq_demographic_qs_regex.csv",
+  "proc/03-demographics_ref/03_01-unq_demographic_qs_regex.csv",
   na = ""
 )
 
@@ -136,13 +136,13 @@ unq_categories <- raw_tbl_dems |>
 
 readr::write_excel_csv(
   unq_categories,
-  "proc/03_demographics/03_01-unq_categories.csv",
+  "proc/03-demographics_ref/03_01-unq_categories.csv",
   na = ""
 )
 
 readr::write_excel_csv(
   unq_categories |>
     dplyr::mutate(uid_txt = NA_character_, regex = NA_character_),
-  "proc/03_demographics/03_01-unq_categories_regex.csv",
+  "proc/03-demographics_ref/03_01-unq_categories_regex.csv",
   na = ""
 )

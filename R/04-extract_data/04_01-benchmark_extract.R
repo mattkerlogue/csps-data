@@ -161,11 +161,11 @@ raw_tbl_bm_data <- tibble::tibble(
 
 # readr::write_excel_csv(
 #   raw_tbl_bm,
-#   "proc/04_extract/04_01-raw_tbl_bm_data.csv",
+#   "proc/04-extract_data/04_01-raw_tbl_bm_data.csv",
 #   na = ""
 # )
 
 arrow::write_parquet(
   raw_tbl_bm_data,
-  "proc/04_extract/04_01-raw_tbl_bm_data.parquet"
+  "proc/04-extract_data/04_01-raw_tbl_bm_data.parquet"
 )

@@ -1,5 +1,5 @@
 demcat_ref <- readr::read_csv(
-  "proc/03_demographics/03_02-dem_cat_ref-edited.csv",
+  "proc/03-demographics_ref/03_02-dem_cat_ref-edited.csv",
   show_col_types = FALSE
 )
 
@@ -28,21 +28,21 @@ readr::write_excel_csv(
       label_long = NA_character_,
     ) |>
     dplyr::relocate(uid_demcat_num, .after = uid_demcat),
-  "proc/03_demographics/03_03-unq_demcat.csv",
+  "proc/03-demographics_ref/03_03-unq_demcat.csv",
   na = ""
 )
 
 fs::file_copy(
-  "proc/03_demographics/03_01_demographic_regex.csv",
+  "proc/03-demographics_ref/03_01-demographic_regex.csv",
   "proc/csps_demogqs_regex.csv"
 )
 
 fs::file_copy(
-  "proc/03_demographics/03_01_categories_regex.csv",
+  "proc/03-demographics_ref/03_01-categories_regex.csv",
   "proc/csps_demcat_regex.csv"
 )
 
 fs::file_copy(
-  "proc/03_demographics/03_02-dem_cat_ref-edited.csv",
+  "proc/03-demographics_ref/03_02-dem_cat_ref-edited.csv",
   "proc/csps_demcat_lookup.csv"
 )

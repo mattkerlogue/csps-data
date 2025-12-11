@@ -1,14 +1,16 @@
 source("R/regex_matches.R")
 source("R/text_to_uid.R")
 
-raw_tbl_dems <- readr::read_csv("proc/03_demographics/03_01-raw_tbl_dems.csv")
+raw_tbl_dems <- readr::read_csv(
+  "proc/03-demographics_ref/03_01-raw_tbl_dems.csv"
+)
 
 dem_regexes <- readr::read_csv(
-  "proc/03_demographics/03_01_demographic_regex.csv"
+  "proc/03-demographics_ref/03_01-demographic_regex.csv"
 )
 
 cat_regexes <- readr::read_csv(
-  "proc/03_demographics/03_01_categories_regex.csv"
+  "proc/03-demographics_ref/03_01-categories_regex.csv"
 )
 
 dem_regex_matched <- dem_regexes |>
@@ -129,6 +131,6 @@ dem_cat_ref <- tbl_dem_cat_matched |>
 readr::write_excel_csv(
   dem_cat_ref |>
     dplyr::mutate(uid_demcat = NA_character_),
-  "proc/03_demographics/03_02-dem_cat_ref.csv",
+  "proc/03-demographics_ref/03_02-dem_cat_ref.csv",
   na = ""
 )

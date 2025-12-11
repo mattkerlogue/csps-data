@@ -188,11 +188,11 @@ raw_tbl_org_data <- tibble::tibble(
 # csv file is ~24MB in size, parquet is < 1MB
 # readr::write_excel_csv(
 #   raw_tbl_org,
-#   "proc/04_extract/04_02-raw_tbl_org_data.csv",
+#   "proc/04-extract_data/04_02-raw_tbl_org_data.csv",
 #   na = ""
 # )
 
 arrow::write_parquet(
   raw_tbl_org_data,
-  "proc/04_extract/04_02-raw_tbl_org_data.parquet"
+  "proc/04-extract_data/04_02-raw_tbl_org_data.parquet"
 )

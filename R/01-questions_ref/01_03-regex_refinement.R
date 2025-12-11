@@ -7,11 +7,11 @@
 source("R/regex_matches.R")
 
 tbl_qs <- readr::read_csv(
-  "proc/01_questions/01-02-tbl_qs.csv",
+  "proc/01-questions_ref/01_02-tbl_qs.csv",
   show_col_types = FALSE
 )
 qs_regexs <- readr::read_csv(
-  "proc/01_questions/01-02-regexes.csv",
+  "proc/01-questions_ref/01_02-regexes.csv",
   show_col_types = FALSE
 )
 
@@ -59,7 +59,7 @@ qs_unnested_w_year <- qs_regexes_matched_unnested |>
 
 readr::write_excel_csv(
   qs_unnested_w_year,
-  "proc/01_questions/01-03-qs_unnested_w_year.csv",
+  "proc/01-questions_ref/01_03-qs_unnested_w_year.csv",
   na = ""
 )
 

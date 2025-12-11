@@ -166,7 +166,7 @@ raw_tbl_dem_data <- tibble::tibble(
 # combined csv is ~49 MB
 # readr::write_excel_csv(
 #   raw_tbl_dem_data,
-#   "proc/04_extract/04_02-raw_tbl_dem_data.csv",
+#   "proc/04-extract_data/04_03-raw_tbl_dem_data.csv",
 #   na = ""
 # )
 #
@@ -178,7 +178,7 @@ raw_tbl_dem_data <- tibble::tibble(
 #       .x,
 #       file.path(
 #         "proc",
-#         "04_extract",
+#         "04-extract_data",
 #         "04_03-demographics_raw",
 #         paste0("", .y$obj, ".csv")
 #       ),
@@ -189,5 +189,5 @@ raw_tbl_dem_data <- tibble::tibble(
 # parquet file is ~ 1.1MB
 arrow::write_parquet(
   raw_tbl_dem_data,
-  "proc/04_extract/04_03-raw_tbl_dem_data.parquet"
+  "proc/04-extract_data/04_03-raw_tbl_dem_data.parquet"
 )

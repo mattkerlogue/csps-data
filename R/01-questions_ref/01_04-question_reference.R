@@ -7,11 +7,11 @@
 source("R/text_to_uid.R")
 
 tbl_qs <- readr::read_csv(
-  "proc/01_questions/01-02-tbl_qs.csv",
+  "proc/01-questions_ref/01_02-tbl_qs.csv",
   show_col_types = FALSE
 )
 qs_ref <- readr::read_csv(
-  "proc/01_questions/01-03-qs_ref.csv",
+  "proc/01-questions_ref/01_03-qs_ref.csv",
   show_col_types = FALSE
 )
 
@@ -25,7 +25,7 @@ tbl_qs_matched <- tbl_qs |>
 
 readr::write_excel_csv(
   tbl_qs_matched,
-  "proc/01_questions/01-03-tbl_qs_matched.csv",
+  "proc/01-questions_ref/01_03-tbl_qs_matched.csv",
   na = ""
 )
 
@@ -65,7 +65,7 @@ tbl_yr_measures <- tbl_detect_measures |>
 
 readr::write_excel_csv(
   tbl_yr_measures,
-  "proc/01_questions/01-04-tbl_yr_measures.csv",
+  "proc/01-questions_ref/01_04-tbl_yr_measures.csv",
   na = ""
 )
 
@@ -75,7 +75,7 @@ tbl_qs_complete_match <- tbl_detect_measures |>
 
 readr::write_excel_csv(
   tbl_qs_complete_match,
-  "proc/01_questions/01-04-tbl_qs_complete_match.csv",
+  "proc/01-questions_ref/01_04-tbl_qs_complete_match.csv",
   na = ""
 )
 
@@ -85,17 +85,17 @@ tbl_measures_uid <- tbl_qs_complete_match |>
 
 readr::write_excel_csv(
   tbl_measures_uid,
-  "proc/01_questions/01-04-tbl_measures_uid.csv",
+  "proc/01-questions_ref/01_04-tbl_measures_uid.csv",
   na = ""
 )
 
 fs::file_copy(
-  "proc/01_questions/01-03-qs_ref.csv",
+  "proc/01-questions_ref/01_03-qs_ref.csv",
   "proc/csps_questions_ref.csv"
 )
 
 fs::file_copy(
-  "proc/01_questions/01-04-tbl_measures_uid.csv",
+  "proc/01-questions_ref/01_04-tbl_measures_uid.csv",
   "proc/csps_measures_lookup.csv"
 )
 

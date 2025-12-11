@@ -5,7 +5,7 @@
 # load data ----
 
 raw_tbl_qs <- readr::read_csv(
-  "proc/01_questions/01-01-raw_tbl_qs.csv",
+  "proc/01-questions_ref/01_01-raw_tbl_qs.csv",
   show_col_types = FALSE
 )
 
@@ -31,7 +31,11 @@ tbl_qs <- raw_tbl_qs |>
     )
   )
 
-readr::write_excel_csv(tbl_qs, "proc/01_questions/01-02-tbl_qs.csv", na = "")
+readr::write_excel_csv(
+  tbl_qs,
+  "proc/01-questions_ref/01_02-tbl_qs.csv",
+  na = ""
+)
 
 ## unique questions ---
 unq_qs <- tbl_qs |>
@@ -45,7 +49,11 @@ unq_qs <- tbl_qs |>
   dplyr::arrange(stripped_label) |>
   dplyr::filter(stripped_label != "")
 
-readr::write_excel_csv(unq_qs, "proc/01_questions/01-02-unq_qs.csv", na = "")
+readr::write_excel_csv(
+  unq_qs,
+  "proc/01-questions_ref/01_02-unq_qs.csv",
+  na = ""
+)
 
 readr::write_excel_csv(
   unq_qs |>
@@ -54,6 +62,6 @@ readr::write_excel_csv(
       uid_txt = NA_character_,
       uid_num = NA_character_
     ),
-  "proc/01_questions/01-02-unq_qs_regex.csv",
+  "proc/01-questions_ref/01_02-unq_qs_regex.csv",
   na = ""
 )

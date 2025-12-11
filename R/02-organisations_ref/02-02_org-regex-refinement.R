@@ -2,12 +2,12 @@ source("R/regex_matches.R")
 source("R/text_to_uid.R")
 
 raw_tbl_orgs <- readr::read_csv(
-  "proc/02_organisations/02_01-raw_tbl_orgs.csv",
+  "proc/02-organisations_ref/02_01-raw_tbl_orgs.csv",
   show_col_types = FALSE
 )
 
 org_regex <- readr::read_csv(
-  "proc/02_organisations/02_01-org_regex.csv",
+  "proc/02-organisations_ref/02_01-org_regex.csv",
   show_col_types = FALSE
 )
 
@@ -47,6 +47,6 @@ org_history <- orgs_to_uid |>
 
 readr::write_excel_csv(
   orgs_history,
-  "proc/02_organisations/02_02-org_history.csv",
+  "proc/02-organisations_ref/02_02-org_history.csv",
   na = ""
 )

@@ -118,7 +118,7 @@ raw_tbl_orgs <- tibble::tibble(
 
 readr::write_excel_csv(
   raw_tbl_orgs,
-  "proc/02_organisations/02_01-raw_tbl_orgs.csv",
+  "proc/02-organisations_ref/02_01-raw_tbl_orgs.csv",
   na = ""
 )
 
@@ -133,7 +133,7 @@ tbl_unq_groups <- raw_tbl_orgs |>
 
 readr::write_excel_csv(
   tbl_unq_group,
-  "proc/02_organisations/02_01-tbl_unq_groups.csv",
+  "proc/02-organisations_ref/02_01-tbl_unq_groups.csv",
   na = ""
 )
 
@@ -143,7 +143,7 @@ readr::write_excel_csv(
       regex = NA_character_,
       uid_txt = NA_character_
     ),
-  "proc/02_organisations/02_01-tbl_unq_grp_regex.csv",
+  "proc/02-organisations_ref/02_01-tbl_unq_grp_regex.csv",
   na = ""
 )
 
@@ -177,7 +177,7 @@ tbl_unq_orgs <- raw_tbl_orgs |>
 
 readr::write_excel_csv(
   tbl_unq_orgs,
-  "proc/02_organisations/02_01-tbl_unq_orgs.csv",
+  "proc/02-organisations_ref/02_01-tbl_unq_orgs.csv",
   na = ""
 )
 
@@ -187,6 +187,6 @@ readr::write_excel_csv(
       regex = NA_character_,
       uid_txt = NA_character_
     ),
-  "proc/02_organisations/02_01-tbl_unq_orgs_regex.csv",
+  "proc/02-organisations_ref/02_01-tbl_unq_orgs_regex.csv",
   na = ""
 )

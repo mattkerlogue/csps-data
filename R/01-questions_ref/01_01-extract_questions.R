@@ -374,7 +374,7 @@ cli::cli_progress_step("Write merged data to disk")
 
 readr::write_excel_csv(
   raw_tbl_qs,
-  "proc/01_questions/01-01-raw_tbl_qs.csv",
+  "proc/01-questions_ref/01_01-raw_tbl_qs.csv",
   na = ""
 )
 
