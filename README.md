@@ -1,13 +1,32 @@
 # csps-data
 
-**!! This repository is currently a work in progress and subject to change !!**
+> [!CAUTION]
+> **This repository is currently a work in progress and subject to change**
 
-This repository stores published data from the UK [Civil Service People Survey](https://www.gov.uk/government/collections/civil-service-people-survey-hub)
-
+This repository stores published data from the UK
+[Civil Service People Survey](https://www.gov.uk/government/collections/civil-service-people-survey-hub).
 While the published data for each year is generally published in a structured
 format there is limited consistency between years and each year's data is stored
 in a different location. The aim of this repository is to provide a single and
 coherent set of data for multi-year analysis.
+
+## Workplan/status
+
+The expected workplan for this project is as follows:
+
+- [x] Download and store original files
+- [ ] Develop regexes and reference files to enable processing
+  - [x] Questions/measures
+  - [ ] Organisations (regexes complete, reference files to finish)
+  - [x] Demographics
+  - [ ] Demographic cross-tabs
+- [ ] Extract data from original files
+  - [x] Benchmarks
+  - [x] Organisations
+  - [x] Demographics
+  - [ ] Demographic cross-tabs
+- [ ] Process extracted data and create standardised output
+- [ ] Compendium documentation
 
 ## Structure
 
@@ -27,6 +46,16 @@ code for processing the data files, the `proc` folder contains both reference
 data sets and intermediate outputs. The `data` folder contains the output data
 files and the `companion` folder contains the Quarto source documents for
 building this repositories companion documentation website/book.
+
+## Data formats
+
+The original data has been published by the Cabinet Office in multiple formats
+over the years including CSV, Excel spreadsheets and ODS files.
+
+This repository principally stores data in CSV files, however in some instances
+where the resulting file size would be too large the
+[Apache Parquet](https://parquet.apache.org) format has been used as a
+convenient, open-source and interoperable format.
 
 ## Sources
 
