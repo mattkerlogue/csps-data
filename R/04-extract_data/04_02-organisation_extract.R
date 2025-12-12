@@ -205,7 +205,8 @@ raw_tbl_org_data <- tibble::tibble(
     data = purrr::map(.x = obj, .f = ~ get(.x))
   ) |>
   tidyr::unnest(data) |>
-  dplyr::relocate(org_code, .after = organisation)
+  dplyr::relocate(org_code, .after = organisation) |>
+  dplyr::mutate(across(where(is.character), ~ stringi::stri_enc_toutf8(.x)))
 
 # csv file is ~24MB in size, parquet is < 1MB
 # readr::write_excel_csv(

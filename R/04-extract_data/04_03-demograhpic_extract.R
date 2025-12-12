@@ -180,7 +180,8 @@ raw_tbl_dem_data <- tibble::tibble(
     obj_year = as.integer(gsub("df_(\\d{4})_dem", "\\1", obj)),
     data = purrr::map(.x = obj, .f = ~ get(.x))
   ) |>
-  tidyr::unnest(data)
+  tidyr::unnest(data) |>
+  dplyr::mutate(across(where(is.character), ~ stringi::stri_enc_toutf8(.x)))
 
 # combined csv is ~49 MB
 # readr::write_excel_csv(

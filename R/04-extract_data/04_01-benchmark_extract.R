@@ -175,7 +175,9 @@ raw_tbl_bm_data <- tibble::tibble(
     obj_year = as.integer(gsub("df_(\\d+)_.*", "\\1", obj)),
     data = purrr::map(.x = obj, .f = ~ get(.x))
   ) |>
-  tidyr::unnest(data)
+  tidyr::unnest(data) |>
+  # seems to be some wayward encoding problem, force utf8
+  dplyr::mutate(across(where(is.character), ~ stringi::stri_enc_toutf8(.x)))
 
 # readr::write_excel_csv(
 #   raw_tbl_bm,
