@@ -31,8 +31,8 @@ csps2014:
   details_health.x: "raw-data/2014/csps2014_disability_detailedresults.xlsx"
   details_lgbt.x: "raw-data/2014/csps2014_lgb_detailedresults.xlsx"
 csps2015:
-  benchmarks.c: "raw-data/2015/csps2015_benchmarks_csv.csv"
-  organisations.c: "raw-data/2015/csps2015_allorganisations_csv.csv"
+  benchmarks.c: "raw-data/2015/csps2015_benchmarks_csv_fixed.csv"
+  organisations.c: "raw-data/2015/csps2015_allorganisations_csv_fixed.csv"
   organisations.x: "raw-data/2015/csps2015_allorganisations.xlsx"
   demographics.c: "raw-data/2015/Civil-Service-People-Survey-2015-results-by-demographic-groups-csv.csv"
   demographics.x: "raw-data/2015/Civil-Service-People-Survey-2015-results-by-demographic-groups.xlsx"

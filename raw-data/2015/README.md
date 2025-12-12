@@ -14,8 +14,16 @@
 | Civil-Service-People-Survey-2015-results-by-sexual-identity.xlsx | Demographic scores - detailed sexual orientation scores | 2015 | XLSX |
 | csps2015_allorganisations.xlsx | Organisation scores | 2015 | XLSX |
 | csps2015_allorganisations_csv.csv | Organisation scores | 2015 | CSV |
+| csps2015_allorganisations_csv_fixed.csv | Organisation scores | 2015 | CSV |
 | csps2015_benchmark_report.pdf | Benchmark scores report | 2015 | PDF |
 | csps2015_benchmarks_csv.csv | Benchmark scores | 2009-2015 | CSV |
+| csps2015_benchmarks_csv_fixed.csv | Benchmark scores | 2009-2015 | CSV |
+
+The original benchmark and organisation scores CSV files result in encoding
+errors relating to the label text for question B68. Potentially Windows-1252
+encoding has been used but it is not clear. Instead these files have been
+manually edited and the `_fixed.csv` files which are saved as UTF-8 should be
+used instead.
 
 ## Source notes
 
