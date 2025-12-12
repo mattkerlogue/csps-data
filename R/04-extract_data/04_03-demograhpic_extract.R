@@ -209,5 +209,10 @@ raw_tbl_dem_data <- tibble::tibble(
 # parquet file is ~ 1.1MB
 arrow::write_parquet(
   raw_tbl_dem_data,
-  "proc/04-extract_data/04_03-raw_tbl_dem_data.parquet"
+  paste0(
+    "proc/04-extract_data/",
+    "04_03-raw_tbl_dem_data_",
+    round(as.numeric(Sys.time())),
+    ".parquet"
+  )
 )

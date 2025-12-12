@@ -187,5 +187,10 @@ raw_tbl_bm_data <- tibble::tibble(
 
 arrow::write_parquet(
   raw_tbl_bm_data,
-  "proc/04-extract_data/04_01-raw_tbl_bm_data.parquet"
+  paste0(
+    "proc/04-extract_data/",
+    "04_01-raw_tbl_bm_data_",
+    round(as.numeric(Sys.time())),
+    ".parquet"
+  )
 )

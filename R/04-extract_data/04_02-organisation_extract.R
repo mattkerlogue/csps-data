@@ -217,5 +217,10 @@ raw_tbl_org_data <- tibble::tibble(
 
 arrow::write_parquet(
   raw_tbl_org_data,
-  "proc/04-extract_data/04_02-raw_tbl_org_data.parquet"
+  paste0(
+    "proc/04-extract_data/",
+    "04_02-raw_tbl_org_data_",
+    round(as.numeric(Sys.time())),
+    ".parquet"
+  )
 )
