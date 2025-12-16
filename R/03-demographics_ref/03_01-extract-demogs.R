@@ -136,7 +136,7 @@ readr::write_excel_csv(
 
 readr::write_excel_csv(
   unq_demographic_qs |>
-    dplyr::mutate(uid_txt = NA_character_, regex = NA_character_),
+    dplyr::mutate(uid_demq_txt = NA_character_, regex = NA_character_),
   "proc/03-demographics_ref/03_01-unq_demographic_qs_regex.csv",
   na = ""
 )
@@ -157,7 +157,7 @@ readr::write_excel_csv(
 
 readr::write_excel_csv(
   unq_categories |>
-    dplyr::mutate(uid_txt = NA_character_, regex = NA_character_),
+    dplyr::mutate(uid_cat_txt = NA_character_, regex = NA_character_),
   "proc/03-demographics_ref/03_01-unq_categories_regex.csv",
   na = ""
 )

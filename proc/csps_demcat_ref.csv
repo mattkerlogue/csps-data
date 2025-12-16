@@ -1,4 +1,4 @@
-﻿uid_demcat,uid_demcat_num,resp_type,label_short,label_long,label_full
+﻿uid_demcat_txt,uid_demcat_num,resp_type,label_short,label_long,label_full
 ALLRSP,0.00.00.000,primary,All respondents,All respondents,All respondents
 GRADE_AOAA,1.01.00.001,primary,AO/AA,AO/AA equivalent,Grade: AO/AA equivalent
 GRADE_EO,1.01.00.002,primary,EO,EO equivalent,Grade: EO equivalent

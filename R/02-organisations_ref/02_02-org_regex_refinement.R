@@ -8,7 +8,7 @@
 # setup ------
 
 source("R/regex_matches.R")
-source("R/text_to_uid.R")
+source("R/text_to_uid_org_txt.R")
 
 raw_tbl_orgs <- readr::read_csv(
   "proc/02-organisations_ref/02_01-raw_tbl_orgs.csv",
@@ -40,27 +40,32 @@ org_regexes_matched_unnested |>
 
 # match organisations to regexes ------
 
-orgs_to_uid <- raw_tbl_orgs |>
+orgs_to_uid_org_txt <- raw_tbl_orgs |>
   dplyr::mutate(
-    uid = purrr::map_chr(
+    uid_org_txt = purrr::map_chr(
       .x = stringr::str_squish(tolower(organisation)),
-      .f = ~ text_to_uid(.x, org_regex$regex, org_regex$uid_txt, overrun = TRUE)
+      .f = ~ text_to_uid_org_txt(
+        .x,
+        org_regex$regex,
+        org_regex$uid_org_txt,
+        overrun = TRUE
+      )
     )
   )
 
-orgs_to_uid |>
-  dplyr::filter(is.na(uid))
+orgs_to_uid_org_txt |>
+  dplyr::filter(is.na(uid_org_txt))
 
 # organisation history ------
 # file showing lifespan of organisations to develop a log of changes
 
-org_history <- orgs_to_uid |>
+org_history <- orgs_to_uid_org_txt |>
   dplyr::summarise(
     year_from = min(year),
     year_to = max(year),
-    .by = c(uid, organisation)
+    .by = c(uid_org_txt, organisation)
   ) |>
-  dplyr::arrange(uid, year_from)
+  dplyr::arrange(uid_org_txt, year_from)
 
 
 readr::write_excel_csv(

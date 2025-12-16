@@ -1,4 +1,4 @@
-﻿year,uid,previous_uid,successor_type,reason,note_id
+﻿year,uid_org_txt,previous_uid_org_txt,successor_type,reason,note_id
 2011,ANHVLA,ANMHEL,indirect,merger,2011_ANHVLA
 2011,ANHVLA,VETLAB,indirect,merger,2011_ANHVLA
 2014,ANPHEL,ANHVLA,indirect,merger,2014_ANPHEL

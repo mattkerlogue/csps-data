@@ -153,7 +153,7 @@ readr::write_excel_csv(
   tbl_unq_dept_group |>
     dplyr::mutate(
       regex = NA_character_,
-      uid_txt = NA_character_
+      uid_org_txt = NA_character_
     ),
   "proc/02-organisations_ref/02_01-tbl_unq_dept_group_regex.csv",
   na = ""
@@ -197,7 +197,7 @@ readr::write_excel_csv(
   tbl_unq_orgs |>
     dplyr::mutate(
       regex = NA_character_,
-      uid_txt = NA_character_
+      uid_org_txt = NA_character_
     ),
   "proc/02-organisations_ref/02_01-tbl_unq_orgs_regex.csv",
   na = ""

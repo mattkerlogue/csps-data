@@ -1,4 +1,4 @@
-﻿regex,uid_txt,organisation_name
+﻿regex,uid_org_txt,organisation_name
 ^acas$,ACAS,Acas
 ^accountant.*bankrupt,ACTIBK,Accountant in Bankruptcy
 ^active.travel.england,ACTREN,Active Travel England

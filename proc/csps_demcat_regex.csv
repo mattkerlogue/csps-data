@@ -1,4 +1,4 @@
-﻿category,uid_txt,regex
+﻿category,uid_cat_txt,regex
 "no, i do not have a passport",ADJ_NOP,^no.*passport
 "yes, and it helps me to get appropriate workplace adjustments and support in place",ADJ_PAS_YAN,^yes.*and.*helps.*adjust
 "yes, but it doesn't help me to get appropriate workplace adjustments and support in place",ADJ_PAS_YBU,^yes.*but.*adjust

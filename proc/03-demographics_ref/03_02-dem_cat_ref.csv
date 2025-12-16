@@ -1,4 +1,4 @@
-"uid_dem","uid_cat","year_from","year_to","demographic","category","uid_demcat"
+"uid_dem_txt","uid_cat_txt","year_from","year_to","demographic","category","uid_demcat"
 "GRADE","GRADE_AOAA",2013,2024,"Grade/payband","ao / aa",
 "GRADE","GRADE_EO",2013,2024,"Grade/payband","eo",
 "GRADE","GRADE_SEOHEO",2013,2024,"Grade/payband","seo / heo",

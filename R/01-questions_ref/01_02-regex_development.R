@@ -62,8 +62,8 @@ readr::write_excel_csv(
   unq_qs |>
     dplyr::mutate(
       regex = NA_character_,
-      uid_txt = NA_character_,
-      uid_num = NA_character_
+      uid_qm_txt = NA_character_,
+      uid_qm_num = NA_character_
     ),
   "proc/01-questions_ref/01_02-unq_qs_regex.csv",
   na = ""

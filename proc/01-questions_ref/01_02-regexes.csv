@@ -1,4 +1,4 @@
-﻿regex,uid_txt
+﻿regex,uid_qm_txt
 ^ees|engagement.(index|score),000.engagement_index
 ^inclusion.*fair.treatment|^if_,000.inclusion_treatment
 ^leadership.*managing.change|^lc_,000.leadership_change

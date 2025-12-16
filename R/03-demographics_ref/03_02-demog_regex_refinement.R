@@ -40,19 +40,19 @@ dem_regex_matched_unnested <- dem_regex_matched |>
 
 dem_to_uid <- raw_tbl_dems |>
   dplyr::mutate(
-    uid = purrr::map_chr(
+    uid_demq_txt = purrr::map_chr(
       .x = stringr::str_squish(tolower(demographic)),
       .f = ~ text_to_uid(
         .x,
         dem_regexes$regex,
-        dem_regexes$uid_txt,
+        dem_regexes$uid_demq_txt,
         overrun = TRUE
       )
     )
   )
 
-dem_to_uid |> dplyr::filter(grepl(",", uid))
-dem_to_uid |> dplyr::filter(is.na(uid))
+dem_to_uid |> dplyr::filter(grepl(",", uid_demq_txt))
+dem_to_uid |> dplyr::filter(is.na(uid_demq_txt))
 
 # review category matches ------
 
@@ -77,7 +77,7 @@ cat_regex_matched_unnested <- cat_regex_matched |>
 
 cat_to_uid <- raw_tbl_dems |>
   dplyr::mutate(
-    uid = purrr::map_chr(
+    uid_cat_txt = purrr::map_chr(
       .x = stringr::str_squish(gsub(
         "\\s?\\((n=)?\\d.*$",
         "",
@@ -87,30 +87,30 @@ cat_to_uid <- raw_tbl_dems |>
       .f = ~ text_to_uid(
         .x,
         cat_regexes$regex,
-        cat_regexes$uid_txt,
+        cat_regexes$uid_cat_txt,
         overrun = TRIE
       )
     )
   )
 
-cat_to_uid |> dplyr::filter(grepl(",", uid))
-cat_to_uid |> dplyr::filter(is.na(uid))
+cat_to_uid |> dplyr::filter(grepl(",", uid_cat_txt))
+cat_to_uid |> dplyr::filter(is.na(uid_cat_txt))
 
 
 # get merged combinations of demographics and categories
 
 tbl_dem_cat_matched <- raw_tbl_dems |>
   dplyr::mutate(
-    uid_dem = purrr::map_chr(
+    uid_demq_txt = purrr::map_chr(
       .x = stringr::str_squish(tolower(demographic)),
       .f = ~ text_to_uid(
         .x,
         dem_regexes$regex,
-        dem_regexes$uid_txt,
+        dem_regexes$uid_demq_txt,
         overrun = TRUE
       )
     ),
-    uid_cat = purrr::map_chr(
+    uid_cat_txt = purrr::map_chr(
       .x = stringr::str_squish(gsub(
         "\\s?\\((n=)?\\d.*$",
         "",
@@ -120,7 +120,7 @@ tbl_dem_cat_matched <- raw_tbl_dems |>
       .f = ~ text_to_uid(
         .x,
         cat_regexes$regex,
-        cat_regexes$uid_txt,
+        cat_regexes$uid_cat_txt,
         overrun = TRIE
       )
     )
@@ -130,17 +130,17 @@ dem_cat_ref <- tbl_dem_cat_matched |>
   dplyr::summarise(
     year_from = min(year),
     year_to = max(year),
-    .by = c(uid_dem, uid_cat)
+    .by = c(uid_demq_txt, uid_cat_txt)
   ) |>
   dplyr::left_join(
     dem_regexes |>
-      dplyr::select(uid_dem = uid_txt, demographic),
-    by = "uid_dem"
+      dplyr::select(uid_demq_txt, demographic),
+    by = "uid_demq_txt"
   ) |>
   dplyr::left_join(
     cat_regexes |>
-      dplyr::select(uid_cat = uid_txt, category),
-    by = "uid_cat"
+      dplyr::select(uid_cat_txt, category),
+    by = "uid_cat_txt"
   )
 
 readr::write_excel_csv(

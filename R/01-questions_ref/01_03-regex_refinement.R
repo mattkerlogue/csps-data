@@ -50,8 +50,8 @@ qs_regexes_matched_unnested <- qs_regexes_matched |>
   )
 
 qs_unnested_w_year <- qs_regexes_matched_unnested |>
-  dplyr::distinct(uid_txt, regex, text) |>
-  dplyr::add_count(uid_txt) |>
+  dplyr::distinct(uid_qm_txt, regex, text) |>
+  dplyr::add_count(uid_qm_txt) |>
   dplyr::left_join(
     tbl_qs |>
       dplyr::mutate(text = stringr::str_squish(tolower(raw_label))) |>
@@ -59,7 +59,7 @@ qs_unnested_w_year <- qs_regexes_matched_unnested |>
       dplyr::filter(year == max(year), .by = text),
     by = "text"
   ) |>
-  dplyr::arrange(-n, uid_txt, -year, text) |>
+  dplyr::arrange(-n, uid_qm_txt, -year, text) |>
   clipr::write_clip()
 
 readr::write_excel_csv(
