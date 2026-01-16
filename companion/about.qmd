@@ -1,0 +1,37 @@
+---
+page-navigation: false
+---
+# About the CSPS Data Processing Companion {.unnumbered}
+
+...
+
+# Accessibility
+
+...
+
+## Copyright and licensing {#copyright}
+
+...
+
+## Legal disclaimer {#disclaimer}
+
+This companion and associated materials are provided as-is. 
+
+The author provides no guarantees or warranties that the information provided
+in this website and associated materials are current, secure, accurate,
+complete, or free from viruses or other harmful components.
+
+The materials on this site comprise the author's views, they do not constitute
+legal or other professional advice.
+
+The author, Matt Kerlogue, is not liable for any damages arising in contract,
+tort of otherwise from the use or inability to use this website, any material
+contained within it or any other website linked from this website, or from any
+action or decision taken as a result of using this website.
+
+This website includes links to other websites, the author is not responsible
+for the content of any linked website. The author is not responsible for any
+transmission received from any linked website. The linked websites are included
+to assist visitors but inclusion of a linked website does not imply that the
+author endorses, approves the website. The author makes no guarantee that
+links are current, accurate or working.

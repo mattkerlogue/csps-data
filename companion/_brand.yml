@@ -1,0 +1,57 @@
+color:
+  palette:
+    teal-60:  "#007d79"
+    cyan-50:  "#1192e8"
+    gray-10:  "#f4f4f4"
+    gray-20:  "#e0e0e0"
+    gray-30:  "#c6c6c6"
+    gray-40:  "#a8a8a8"
+    gray-50:  "#8d8d8d"
+    gray-60:  "#6f6f6f"
+    gray-70:  "#525252"
+    gray-80:  "#393939"
+    gray-90:  "#262626"
+    gray-100: "#161616"
+    black: "#000000"
+    magenta-70: "#9f1853"
+    yellow-30: "#f1c21b"
+    red-60: "#da1e28"
+    red: red-60
+    blue: cyan-50
+    green: teal-60
+    yellow: yellow-30
+  primary: teal-60
+  foreground: gray-100
+  info: cyan-50
+  warning: yellow
+  danger: red
+
+typography:
+  fonts:
+    - family: IBM Plex Sans
+      source: bunny
+      weight: [300, 400, 500, 600, 700]
+    - family: IBM Plex Sans Condensed
+      source: bunny
+      weight: [300, 400, 500]
+    - family: JetBrains Mono
+      source: bunny
+      weight: [200, 400, 500]
+  base:
+    family: IBM Plex Sans
+    weight: 300
+  headings:
+    family: IBM Plex Sans Condensed
+    color: teal-60
+    weight: 500
+  monospace: JetBrains Mono
+  monospace-inline:
+    size: 0.8em
+    weight: 400
+    color: magenta-70
+    background-color: gray-10
+  monospace-block:
+    size: 0.8em
+    weight: 200
+  link:
+    color: cyan-50

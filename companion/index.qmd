@@ -1,0 +1,144 @@
+# Welcome {.unnumbered}
+
+This companion outlines and documents the approach taken to approach taken to
+process data from the UK government's
+[Civil Service People Survey](#about-the-civil-service-people-survey) into a
+set of harmonised datasets that can be easily reused.
+
+The harmonised data is available in the
+[`csps-data`]({{< meta book.repo-url >}})
+repository on Github. Specific documentation about the data is available in
+[here]().
+
+:::{.callout-important}
+Note that the harmonised People Survey data and this companion book are not
+official products of the UK government.
+
+The harmonised data is derived from the official data published by the Cabinet
+Office. While efforts have been taken to ensure the accuracy and quality of the
+harmonised data, it is presented as-is and without warranty.
+
+This companion book has been derived from information on the methodology of the
+survey published by the Cabinet Office and the personal knowledge of the author
+about the workings of the survey.
+:::
+
+## Companion structure
+
+The structure of this companion is intended to (roughly) follow the structure
+and workflow taken by the R code in the
+[`csps-data`]({{< meta book.repo-url >}}) repository.
+
+* **[Introduction](00_introduction.qmd):** provides a general
+  introduction to the companion and a high-level outline of the approach to
+  processing the People Survey data.
+
+* **[Glossary of terms and concepts](01_terminology.qmd):**
+  provides a glossary of key terminology and concepts used throughout the
+  companion, including terminology/concepts specific to the People Survey and
+  the data processing as well as some terms and concepts relating to the UK
+  Civil Service more generally.
+
+* **Technical set-up**: this part of the companion discusses general
+  [technical approach](02_technical_approach.qmd) to the data processing,
+  including coding and the software/packages used, the
+  [source data](03_source_data.qmd) and the bespoke
+  [helper functions](04_helper_functions.qmd) that have been written to assist
+  the different stages of the data processing project.
+
+* **Developing harmonisations:** this part of the companion discusses and
+  documents the approach taken to developing a harmonised set of identifiers
+  the enable the processing of the People Survey data.
+  
+  * [Introduction to harmonisation](10_harmonisation.qmd)
+  * [Harmonising questions and measures](11_questions_regex.qmd)
+  * [Harmonising organisation names](12_organisations_regex.qmd)
+  * [Harmonising demographic questions and categories](13_demographics_regex.qmd)
+
+* **Extracting data:** this part of the companion discusses and documents the
+  approach taken to extracting the raw data from the People Survey publications.
+
+  * [Introduction to data extraction](20_extraction.qmd)
+  * [Extracting benchmark results](21_extract_benchmarks.qmd)
+  * [Extracting organisation results](22_extract_organisations.qmd)
+  * [Extracting demographic results](23_extract_demographics.qmd)
+
+* **Processing and harmonising data:** this part of the companion discusses and
+  documents the approach taken to standardising the raw data using the
+  harmonised identifiers.
+
+  * [Introduction to data processing](30_processing.qmd)
+  * [Processing benchmark results](31_processing_benchmarks.qmd)
+  * [Processing organisation results](32_processing_organisations.qmd)
+  * [Processing demographic results](33_processing_demographics.qmd)
+
+* **Data dictionaries:** this part provides technical documentation of the
+  output data files resulting from the processing stage.
+
+* **Appendices:** this part provides additional materials.
+
+  * [References](90_references.qmd)
+  * [Sex, gender and gender identity in the Civil Service People Survey](99_demographics_sex_gender.qmd)
+
+* **Colophon:** the [about](about.qmd) page provides information about the
+  development of this companion/website, accessibility, copyright and legal
+  disclaimer. The website's [privacy policy](privacy.qmd) is provided
+  separately.
+
+## About the Civil Service People Survey
+
+The [Civil Service People Survey]({{< var urls.cspshub >}}) is is the annual
+employee attitudes survey that has carried out across the UK Civil Service
+since 2009. It is an important management tool for managers and leaders working
+within in the Civil Service. It is also a useful tool for external parties that
+hold senior officials and government ministers to account for the leadership
+and management of the Civil Service.
+
+## About the author
+
+This companion and the code it describes have been written by Matt
+Kerlogue[^mk]. In 2009 Matt was part of the team that set up the Civil
+Service People Survey, leading the development of the survey's methodology and
+analysis of the survey results. He went on to lead the team delivering the
+survey from 2011 to 2015, and continued to provide ad-hoc analytical and
+methodological support to the People Survey team until he left the Cabinet
+Office in 2022.
+
+## Copyright and licensing
+
+This companion; the re-processed People Survey data and associated metadata;
+and, the software code written to process the data are copyright of Matt
+Kerlogue (2026).
+
+This companion itself and re-processed data are licensed under the
+[Creative Commons Attribution License 4.0 (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/). While the the software code is licensed under the
+[MIT License](https://github.com/mattkerlogue/csps-data/blob/main/LICENSE-MIT).
+
+The raw data from the People Survey is Crown Copyright, licensed under the [Open Government Licence 3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+
+The recommended citation for this companion is:
+
+> Kerlogue M (2026) CSPS Data Processing Companion, https://mattkerlogue.github.io/csps-data/
+
+The recommended citation for the re-processed data is:
+
+> Kerlogue M (2026) Civil Service People Survey harmonised datasets, https://github.com/mattkerlogue/csps-data
+
+Read more on [copyright, licensing and attribution](about.qmd#copyright).
+
+## Statement on AI
+
+This companion and the data processing it documents have not been produced
+using artificial intelligence.
+
+The author supports the Creative Commons'
+[CC Signals](https://creativecommons.org/ai-and-the-commons/cc-signals/implementation/)
+initiative. For this work the 'Credit + Open' signals apply, that is any use of
+this material by an AI-system appropriate credit/attribution should be given
+(as per the CC-BY license), and that the AI-systems used should be open models/
+systems.
+
+
+[^mk]: Visit my [website](https://matt.kerlogue.co.uk) and find me on
+[Github](https://www.github.com/mattkerlogue) or
+[Bluesky](https://bsky.app/profile/mattkerlogue.bsky.social).

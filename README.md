@@ -10,6 +10,15 @@ format there is limited consistency between years and each year's data is stored
 in a different location. The aim of this repository is to provide a single and
 coherent set of data for multi-year analysis.
 
+> [!IMPORTANT]
+> Please note that the harmonised People Survey data and its companion book
+> are not official products of the UK government. The harmonised data is
+> derived from the official data published by the Cabinet Office. The
+> companion book has been derived from information on the methodology of the
+> survey published by the Cabinet Office, the innate structure and contents of
+> the published data files, and prior knowledge of the author about the
+> workings of the survey.
+
 ## Workplan/status
 
 The expected workplan for this project is as follows:

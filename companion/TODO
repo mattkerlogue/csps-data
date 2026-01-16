@@ -1,0 +1,39 @@
+
+- [x] index.qmd
+- [] about.qmd
+    - [] about author
+    - [] about book
+    - [] accessibility
+    - [] copyright/licensing
+    - [x] legal disclaimer
+    - [] statement on AI
+- [x] 404.qmd
+- [] privacy.qmd
+
+- [x] 00_introduction.qmd
+- [!] 01_terminology.qmd
+
+- [!] 02_technical_approach.qmd
+- [x] 03_source_data.qmd
+- [] 04_helper_functions.qmd
+
+- [] 10_harmonisation.qmd
+- [] 11_questions_regex.qmd
+- [] 12_organisations_regex.qmd
+- [] 13_demographics_regex.qmd
+
+- [] 20_extraction.qmd
+- [] 21_extract_benchmarks.qmd
+- [] 22_extract_organisations.qmd
+- [] 23_extract_demographics.qmd
+
+- [] 30_processing.qmd
+- [] 31_processing_benchmarks.qmd
+- [] 32_processing_organisations.qmd
+- [] 33_processing_demographics.qmd
+
+- [] 40_data_dictionaries.qmd
+    - 
+
+- [] 90_references.qmd
+- [] 99_demographics_sex_gender.qmd

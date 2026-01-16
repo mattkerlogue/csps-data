@@ -1,0 +1,7 @@
+---
+page-navigation: false
+---
+# References {.unnumbered}
+
+:::{#refs}
+:::

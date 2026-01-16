@@ -1,0 +1,31 @@
+# Introduction to harmonisation
+
+As set out in the [introduction](00_introduction.qmd), the nature of People
+Survey data publications has varied over time, and while the content is broadly
+stable there have inevitably been changes to the core questionnaire and
+organisation coverage over its 17 years of operation. Similarly, while the
+published datasets have some level of consistency there have inevitably been
+changes in the content and structure of these documents.
+
+To overcome these issues it is necessary to create a set of lists of unique
+components in the survey data. After creating these unique reference lists
+there is also a need to also develop methods for matching items within the
+survey data to these reference lists. This is what is meant by 'harmonisation'
+in the context of processing the People Survey data: aligning published data to
+a set of unique lists.
+
+While the specific vary, each process for creating and developing
+harmonisations follow a similar workflow:
+
+* Extract items (questions, organisations, demographics etc) from the published
+  data.
+* Make the list of items unique.
+* Develop regexes for matching.
+* Test and refine the regexes.
+* Assign unique identifiers to each item.
+
+The next three chapters detail the specifics of developing the reference lists
+for harmonising three of the core components of the People Survey data:
+[questions and measures](11_questions_regex.qmd),
+[organisations](12_organisations_regex.qmd) and
+[demographic questions and categories](13_demographics_regex.qmd).

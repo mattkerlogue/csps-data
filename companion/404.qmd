@@ -1,0 +1,25 @@
+---
+pagetitle: Page Not Found
+toc: false
+---
+:::{.page-404}
+
+:::{.header-404}
+
+[{{< var sitetitle >}}](index.qmd){.title}
+
+:::
+
+:::{.banner-404 .column-screen}
+
+:::{.column-body}
+
+[404 [Page Not Found]{.heading-caption}]{.text-404}
+
+Sorry, the page you requested cannot be found, it might have been moved or
+removed.
+:::
+
+:::
+
+:::

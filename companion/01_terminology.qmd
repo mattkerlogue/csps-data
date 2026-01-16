@@ -1,0 +1,139 @@
+
+# Glossary of terms and concepts {.unnumbered}
+
+This chapter is a reference/glossary of various terminology used throughout
+this companion, including terminology relating to both the processing of the
+Civil Service People Survey data as well as terms and concepts relating more
+generally to the operation and management of the Civil Service.
+
+This companion uses the terms 'Civil Service People Survey' and 'People Survey'
+interchangeably; the acronym 'CSPS' is used sparingly, usually were space is
+at a premium (see the [CSPS entry](#csps) below for further details). 
+
+```{r}
+#| echo: false
+#| results: asis
+
+# read glossary yaml file
+glossary <- yaml12::read_yaml("glossary.yml")
+
+# convert to tibble
+glossary_df <- tibble::tibble(glossary) |>
+  dplyr::mutate(
+    term = purrr::map_chr(.x = glossary, .f = ~.x$term),
+    id = purrr::map_chr(
+      .x = glossary,
+      .f = ~ifelse(is.null(.x$id), NA_character_, .x$id)
+      ),
+    definition = purrr::map_chr(
+      .x = glossary,
+      .f = ~ifelse(is.null(.x$definition), NA_character_, .x$definition)
+      ),
+    refers_to = purrr::map_chr(
+      .x = glossary, 
+      .f = ~ifelse(is.null(.x$refers_to), NA_character_, .x$refers_to)
+      ),
+    see_also = purrr::map(
+      .x = glossary,
+      .f = ~.x$see_also
+    ),
+    id_all = dplyr::if_else(
+      is.na(id),
+      gsub("[^A-z0-9]", "-", gsub(",.*", "", tolower(term))),
+      id
+    ),
+    id_all = make.unique(id_all, sep = "-")
+  )
+
+refer_terms <- function(refs, df, also = FALSE, locale = "en_GB") {
+  
+  if (is.null(refs)) {
+    return(NA_character_)
+  }
+
+  if (length(refs) == 1 && is.na(refs)) {
+    return(NA_character_)
+  }
+
+  # exclude accidental NAs
+  refs <- refs[!is.na(refs)]
+
+  if (length(refs) == 0) {
+    return(NA_character_)
+  }
+
+  terms_df <- tibble::tibble(
+    ref = refs
+  ) |>
+    dplyr::mutate(
+      term = purrr::map_chr(
+        .x = ref,
+        .f = ~df$term[df$id_all == .x]
+      )
+    ) |>
+    dplyr::arrange(term, .locale = locale)
+
+  term_links <- glue::glue_collapse(
+    glue::glue("[{terms_df$term}](#{terms_df$ref})"),
+    sep = ", ", last = " and "
+  )
+
+  see <- "See "
+
+  if (also) {
+    see <- "\n\nSee also: "
+  }
+
+  paste0(see, term_links, ".")
+  
+}
+
+out_df <- glossary_df |>
+  dplyr::mutate(
+    definition = stringr::str_trim(definition, "right"),
+    refer_txt = purrr::map_chr(
+      .x = refers_to,
+      .f = ~refer_terms(.x, glossary_df)
+    ),
+    see_also_txt = purrr::map_chr(
+      .x = see_also,
+      .f = ~refer_terms(.x, glossary_df, TRUE)
+    ),
+    letter = toupper(substr(term, 1, 1)),
+    letter = dplyr::if_else(grepl("\\d", letter), "#", letter),
+    # create <dt> tags
+    term_tag = paste0("<dt id=\"",id_all,"\">", term,"</dt>"),
+    # create <dd> tags
+    definition_inner = dplyr::case_when(
+      is.na(refer_txt) & is.na(see_also_txt) ~ definition,
+      is.na(refer_txt) & !is.na(see_also_txt) ~ paste(definition, see_also_txt),
+      !is.na(refer_txt) & is.na(see_also_txt) ~ paste(refer_txt),
+      !is.na(refer_txt) & !is.na(see_also_txt) ~ paste(refer_txt, see_also_txt)
+    ),
+    definition_tag = paste0(
+      "<dd>\n",
+      definition_inner,
+      "\n</dd>"
+    )
+  ) |>
+  dplyr::arrange(tolower(term), .locale = "en_GB") |>
+  dplyr::summarise(
+    dl_inner = paste0(term_tag, definition_tag, collapse = "\n\n"),
+    .by = letter
+  ) |>
+  dplyr::mutate(
+    # create per letter sections and <dl> lists
+    output = paste0(
+      "## ", letter, "\n",
+      "<dl id=\"glossary-", tolower(letter), "\">\n",
+      dl_inner,
+      "\n</dl>"
+    )
+  )
+
+# render glossary content
+cat(
+  paste0(out_df$output, collapse = "\n\n")
+)
+
+```

@@ -1,0 +1,63 @@
+---
+format:
+    html:
+        df-print: paged
+---
+
+# Harmonising questions and measures
+
+The attitudinal questions and their associated measures (the engagement index,
+theme scores and wellbeing indexes) are the main purpose of the People Survey,
+they tell us about the attitudes and opinions of civil servants about working
+for their organisation.
+
+The core questionnaire for the survey has remained relatively stable over the
+17 years of the survey's life there have been changes, largely question
+additions but also some removals.
+
+The attitudinal questions and measures exist in all People Survey datasets.
+While the core questionnaire uses question numbers to distinguish between
+questions each year, due to changes in the questionnaire, these are not stable
+unique references over time. Further complicating the situation is that in
+some datasets there are no question numbers provided, while in others only the
+the question numbers are included. As a result there is a need to not only
+develop regexes to identify question wording, but also a lookup of questions
+to question numbers/measures.
+
+## Workflow
+
+The workflow for developing the regexes and identifiers for questions and
+measures is contained in R scripts in the [`R/01-questions_ref`][r-01]
+folder of the `csps-data` repo, interim outputs are stored in the
+[`proc/01-questions_ref][proc-01]:
+
+* [`01_01-extract_questions.R`][r-01_01] extracts the questions and measure
+  data for all of the raw data files.
+
+* [`01_02-regex_development.R`][r-01_02] de-duplicates the questions and measure
+  extracted from the raw data files and create files for manually developing
+  pattern matching regexes.
+
+* [`01_03-regex_refinement.R`][r-01_03] includes code for checking if the
+  regexes produce match unique questions/measures, creates files for manually
+  updating labels and unique identifiers.
+
+* [`01_04-question_reference.R`][r-01_04] outputs a finalised version of the
+  regexes, as well as a lookup file for those datasets that only include
+  question numbers.
+
+## Unique identifiers for questions and measures
+
+There are two unique identifiers that have been defined for attitudinal
+questions and measures: `uid_qm_txt`, a somewhat human-readable UID; and,
+`uid_qm_num`, a numeric-based UID.
+
+
+
+
+[r-01]: https://github.com/mattkerlogue/csps-data/tree/main/R/01-questions_ref
+[proc-01]: https://github.com/mattkerlogue/csps-data/tree/main/proc/01-questions_ref
+[r-01_01]: https://github.com/mattkerlogue/csps-data/tree/main/R/01-questions_ref/01_01-extract_questions.R
+[r-01_02]: https://github.com/mattkerlogue/csps-data/tree/main/R/01-questions_ref/01_02-regex_development.R
+[r-01_03]: https://github.com/mattkerlogue/csps-data/tree/main/R/01-questions_ref/01_03-regex_refinement.R
+[r-01_04]: https://github.com/mattkerlogue/csps-data/tree/main/R/01-questions_ref/01_04-question_reference.R

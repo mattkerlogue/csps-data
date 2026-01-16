@@ -1,0 +1,229 @@
+/*-- scss:defaults --*/
+
+$font-thin: "IBM Plex Sans Condensed", "IBM Plex Sans", sans-serif !default;
+
+/*-- scss:rules --*/
+
+b, strong {
+    font-weight: 500 !important;
+
+    * {
+        font-weight: 500 !important;
+    }
+}
+
+section#footnotes hr {
+    opacity: 1;
+    border-top: 1px solid var(--brand-gray-30);
+}
+
+.page-404 {
+    .header-404 {
+        a.title {
+            @extend h1;
+            text-decoration: none;
+        }
+    }
+    .banner-404 {
+        background-color: #d9fbfb;
+        padding: 50px 0px;
+        margin-top: 50px;
+        color: #007d79;
+        .text-404 {
+            font-size: 5rem;
+            font-weight: 700;
+            .heading-caption {
+                font-weight: 300;
+                font-size: 2rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.callout {
+    font-family: $font-thin;
+    font-size: 0.9rem !important;
+    border-radius: 0px !important;
+    border-right: 0px !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+    border-left-width: 3px !important;
+
+    .callout-header {
+        background-color: unset !important;
+    }
+
+    .callout-body {
+        font-weight: 300 !important;
+        color: inherit !important;
+    }
+
+}
+
+.callout-note .callout-title-container {
+    color: var(--brand-blue);
+}
+    
+.callout-important .callout-title-container {
+    color: var(--brand-red);
+}
+
+div.sidebar-item-container,
+a.pagination-link {
+    color: var(--brand-gray-50) !important;
+}
+
+.sidebar-menu-container {
+    font-family: $font-thin;
+    font-size: 0.85rem;
+    a.sidebar-item-text[role="navigation"] {
+        font-weight: 500;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+}
+
+a.sidebar-item-text:hover, a.pagination-link:hover {
+    color: var(--brand-teal-60) !important;
+}
+
+.sidebar-menu-container a.sidebar-item-text[role="navigation"]:hover {
+    color: var(--brand-gray-50);
+}
+
+div.sidebar-item-container .active {
+    color: var(--brand-teal-60) !important;
+}
+
+.sidebar-item-text.sidebar-link.active {
+    font-weight: 400;
+    .chapter-number, .chapter-title {
+        color: var(--brand-teal-60);
+    }
+}
+
+.sidebar-item .chapter-number {
+    color: inherit !important;
+}
+
+.sidebar nav#TOC[role=doc-toc] {
+    color: var(--brand-gray-50) !important;
+}
+
+.sidebar nav#TOC[role=doc-toc] ul>li>a:hover,
+.sidebar nav#TOC[role=doc-toc] ul>li>ul>li>a:hover {
+    color: var(--brand-teal-60) !important;
+}
+
+.sidebar nav#TOC[role=doc-toc] ul>li>a.active,
+.sidebar nav#TOC[role=doc-toc] ul>li>ul>li>a.active {
+    border-left-color: var(--brand-teal-60) !important;
+    color: var(--brand-teal-60) !important;
+}
+
+.sidebar-item-section {
+    //border-top: 1px solid var(--brand-gray-30);
+    margin: 0.75rem 0;
+    padding-top: 0.25em;
+}
+
+.sidebar-title > a {
+    font-weight: 500;
+    color: var(--brand-teal-60);
+}
+
+dt {
+    font-weight: 400 !important;
+    color: var(--brand-teal-60)
+}
+
+dd {
+    margin-bottom: 1.25rem !important;
+
+    p {
+        margin-bottom: 0.5rem;
+    }
+}
+
+section#footnotes {
+    font-size: 0.85rem;
+    color: var(--brand-gray-70);
+    //border-top: 1px solid var(--brand-gray-30);
+    margin-top: 2rem;
+    //padding-top: 1rem;
+
+    hr::after {
+        content: "Footnotes";
+        color: var(--brand-gray-50);
+        display: block;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding-left: 0rem;
+        margin-top: 0.5rem;
+    }
+
+    ol {
+        padding-left: 1.5rem;
+    }
+
+}
+
+.quarto-title-meta {
+    font-family: $font-thin;
+
+    .quarto-title-meta-heading {
+        color: var(--brand-gray-50);
+        font-size: 0.8rem;
+    }
+    .quarto-title-meta-contents {
+        font-size: 0.9rem;
+    }
+}
+
+figure.quarto-float-fig figcaption.quarto-float-caption-top,
+figure.quarto-float-tbl figcaption.quarto-float-caption-top {
+    text-align: left !important;
+    color: var(--brand-teal-60);
+    font-family: $font-thin;
+    font-weight: 400;
+}
+
+#book-site-banner {
+    padding: 5px;
+    font-size: 0.8rem;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--brand-yellow);
+    border-bottom: 5px solid #fff;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    div.banner-icon {
+        padding: 0 5px;
+        height: 25px;
+    }
+
+    div.banner-text {
+        height: 25px;
+    }
+}
+
+pre.txt {
+    line-height: 1.3;
+}
+
+h1 .chapter-number,
+h2 .header-section-number {
+    font-weight: 300;
+    color: var(--brand-teal-60);
+}
+
+th {
+    font-weight: 500;
+}

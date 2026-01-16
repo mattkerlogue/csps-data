@@ -1,0 +1,37 @@
+sitetitle: "CSPS Data Processing Companion"
+
+urls:
+  cspshub: https://www.gov.uk/government/collections/civil-service-people-survey-hub
+  cspsdata2013: https://webarchive.nationalarchives.gov.uk/ukgwa/20140310230334/http://www.civilservice.gov.uk/about/improving/employee-engagement-in-the-civil-service/people-survey-2013
+  cspsdata2014: https://www.gov.uk/government/publications/civil-service-people-survey-2014-results
+  cspsdata2015: https://www.gov.uk/government/publications/civil-service-people-survey-2015-results
+  cspsdata2016: https://www.gov.uk/government/publications/civil-service-people-survey-2016-results
+  cspsdata2017: https://www.gov.uk/government/publications/civil-service-people-survey-2017-results--2
+  cspsdata2018: https://www.gov.uk/government/publications/civil-service-people-survey-2018-results
+  cspsdata2019: https://www.gov.uk/government/publications/civil-service-people-survey-2019-results
+  cspsdata2020: https://www.gov.uk/government/publications/civil-service-people-survey-2020-results
+  cspsdata2021: https://www.gov.uk/government/publications/civil-service-people-survey-2021-results
+  cspsdata2022: https://www.gov.uk/government/publications/civil-service-people-survey-2022-results
+  cspsdata2023: https://www.gov.uk/government/publications/civil-service-people-survey-2023-results
+  cspsdata2024: https://www.gov.uk/government/publications/civil-service-people-survey-2024-results
+
+repo_links:
+  raw_data_folder: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/
+  raw_data:
+    csps2009: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2009
+    csps2010: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2010
+    csps2011: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2011
+    csps2012: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2012
+    csps2013: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2013
+    csps2014: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2014
+    csps2015: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2015
+    csps2016: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2016
+    csps2017: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2017
+    csps2018: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2018
+    csps2019: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2019
+    csps2020: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2020
+    csps2021: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2021
+    csps2022: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2022
+    csps2023: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2023
+    csps2024: https://github.com/mattkerlogue/csps-data/tree/main/raw-data/2024
+  r_utils: https://github.com/mattkerlogue/csps-data/tree/main/R/utils

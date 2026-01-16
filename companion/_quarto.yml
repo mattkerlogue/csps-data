@@ -1,0 +1,89 @@
+project: 
+  type: book
+  output-dir: ../docs
+
+book: 
+  title: "CSPS Data Processing Companion"
+  subtitle: |
+    A companion to processing published data and results from the Civil Service
+    People Survey
+  favicon: notebook.png
+  search: true
+  repo-url: https://github.com/mattkerlogue/csps-data
+  reader-mode: true
+  author: "Matt Kerlogue"
+  date: "2025-12-10"
+  bread-crumbs: false
+  chapters: 
+    - index.qmd
+    - 00_introduction.qmd
+    - 01_terminology.qmd
+    - part: "Technical set-up"
+      chapters: 
+        - 02_technical_approach.qmd
+        - 03_source_data.qmd
+        - 04_helper_functions.qmd
+    - part: "Developing harmonisations"
+      chapters:
+        - 10_harmonisation.qmd
+        - 11_questions_regex.qmd
+        - 12_organisations_regex.qmd
+        - 13_demographics_regex.qmd
+    - part: "Extracting data"
+      chapters:
+        - 20_extraction.qmd
+        - 21_extract_benchmarks.qmd
+        - 22_extract_organisations.qmd
+        - 23_extract_demographics.qmd
+    - part: "Processing and harmonising data"
+      chapters:
+        - 30_processing.qmd
+        - 31_processing_benchmarks.qmd
+        - 32_processing_organisations.qmd
+        - 33_processing_demographics.qmd
+    - part: "Data dictionaries"
+      chapters:
+        - "---"
+    - part: "Appendices"
+      chapters:
+        - 90_references.qmd
+        - 99_demographics_sex_gender.qmd
+    - part: "Colophon"
+      chapters:
+        - text: "About"
+          href: about.qmd
+        - privacy.qmd
+  page-footer:
+    border: true
+    left:
+      - text: "&copy; Matt Kerlogue 2026, licensed under CC-BY-4.0"
+        href: about.qmd#copyright
+    center:
+      - text: "About"
+        href: about.qmd
+      - text: "Privacy policy"
+        href: privacy.qmd
+      - text: "Legal"
+        href: about.qmd#disclaimer
+    right:
+      - text: Made with Quarto
+        href: https://www.quarto.org
+        target: _blank
+
+bibliography: bib.yml
+csl: cambridge-university-press-author-date-cambridge-a.csl
+abbreviations: abbreviations.txt
+
+format:
+  html:
+    theme:
+      - default
+      - brand
+      - custom.scss
+    link-external-icon: true
+    highlight-style: haddock
+    include-before-body: _banner.html
+    include-in-header: _banner_script.html
+    number-depth: 0
+    tbl-cap-location: top
+    fig-cap-location: top

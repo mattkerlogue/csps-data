@@ -1,0 +1,369 @@
+---
+nocite: |
+    @cspsdata2013, @cspsdata2014, @cspsdata2015, @cspsdata2016, @cspsdata2017,
+    @cspsdata2018, @cspsdata2019, @cspsdata2020, @cspsdata2021, @cspsdata2022,
+    @cspsdata2023, @cspsdata2024
+---
+# Source data
+
+The original data for the Civil Service People Survey is published by the
+Cabinet Office. @tbl-sources provides links to each of the sources and
+@tbl-coverage provides a summary of coverage overtime.
+
+| Year(s) | Source location |
+| :---- | :------ |
+| 2009-2013 | [{{< var urls.cspsdata2013 >}}]({{< var urls.cspsdata2013 >}}) |
+| 2014 | [{{< var urls.cspsdata2014 >}}]({{< var urls.cspsdata2014 >}}) |
+| 2015 | [{{< var urls.cspsdata2015 >}}]({{< var urls.cspsdata2015 >}}) |
+| 2016 | [{{< var urls.cspsdata2016 >}}]({{< var urls.cspsdata2016 >}}) |
+| 2017 | [{{< var urls.cspsdata2017 >}}]({{< var urls.cspsdata2017 >}}) |
+| 2018 | [{{< var urls.cspsdata2018 >}}]({{< var urls.cspsdata2018 >}}) |
+| 2019 | [{{< var urls.cspsdata2019 >}}]({{< var urls.cspsdata2019 >}}) |
+| 2020 | [{{< var urls.cspsdata2020 >}}]({{< var urls.cspsdata2020 >}}) |
+| 2021 | [{{< var urls.cspsdata2021 >}}]({{< var urls.cspsdata2021 >}}) |
+| 2022 | [{{< var urls.cspsdata2022 >}}]({{< var urls.cspsdata2022 >}}) |
+| 2023 | [{{< var urls.cspsdata2023 >}}]({{< var urls.cspsdata2023 >}}) |
+| 2024 | [{{< var urls.cspsdata2024 >}}]({{< var urls.cspsdata2024 >}}) |
+: Civil Service People Survey source data and documents {#tbl-sources}
+
+
+```{r}
+#| label: tbl-coverage
+#| tbl-cap: Summary of data coverage
+#| echo: false
+#| column: page-inset-right
+
+suppressMessages(
+    data_coverage <- readr::read_csv(
+        "../raw-data/00_data_coverage.csv", show_col_types = FALSE
+    )
+)
+
+data_coverage |>
+    dplyr::filter(!grepl("^report", content)) |>
+    dplyr::mutate(
+        content = dplyr::case_match(
+            content,
+            "benchmarks" ~ "Civil Service benchmark (median) scores",
+            "means" ~ "All respondents (mean) scores",
+            "organisations" ~ "Organisation scores",
+            "demographics" ~ "Demographic scores",
+            "details_ethnicity" ~ "Demographic scores by ethnicity",
+            "details_gender" ~ "Demographic scores by sex/gender",
+            "details_health" ~ "Demographic scores by health status",
+            "details_lgbt" ~ "Demographic scores by LGBT identity",
+            "details_seb" ~ "Demographic scores by socio-economic background",
+            "scs" ~ "SCS scores[^scs]"
+        ),
+        across(where(is.logical), ~dplyr::if_else(is.na(.x), "", "Y"))
+    ) |>
+    dplyr::rename(`Survey results` = content) |>
+    knitr::kable(
+        align = paste0(c("l", rep("c", length(2009:2024))))
+    )
+
+```
+
+@tbl-coverage summarises the extent of data covered, however owing to changes
+in publication practice over time there is not necessarily a specific file
+relating to each set of data in each year. Notably:
+
+* The 2009 to 2012 benchmarks are provided in the 2013 benchmarks file(s).
+* From 2014 onwards the SCS results are included in the demographic scores
+  file(s).
+* From 2021 onwards the all respondents (mean) scores and organisation scores
+  are included in the benchmark scores file.
+
+[^scs]: In 2013 the Cabinet Office stated to publish results all respondents by
+  demographic group, including the results for the Senior Civil Service (SCS).
+  In 2013 a one-off publication of the SCS results from 2009 to 2013 was also
+  released, in future years the scores for the SCS are included in the
+  demographic results publications.
+
+The original data is published in a combination of CSV and Excel formats from
+2009 to 2019, in 2020 in a combination of CSV and Open Document Spreadsheet
+(ODS) format, and only in ODS format from 2021 onwards. The file
+`raw-data/00_data_files.yaml` provides a log of all the relevant files
+contained within the `raw-data` folder, this file is also used to construct the
+`00_data_files.csv` and `00_data_coverage.csv` reference datasets.
+
+The remaining sections of this chapter provide an overview of the data files
+stored in the [`raw-data`]({{< var repo_links.raw_data_folder >}}) folder of
+the `csps-data` repo.
+
+## CSPS 2009
+
+* Source: [UK Government Web Archive]({{< var urls.cspsdata2013 >}})
+* Repo folder: [`raw-data/2009`]({{< var repo_links.raw_data.csps2009 >}})
+* Data files:
+    * Organisation scores (CSV, Excel)
+
+The benchmark and SCS results are contained in the 2013 results files.
+
+## CSPS 2010
+
+* Source: [UK Government Web Archive]({{< var urls.cspsdata2013 >}})
+* Repo folder: [`raw-data/2010`]({{< var repo_links.raw_data.csps2010 >}})
+* Data files:
+    * Organisation scores (CSV, Excel)
+* Other files:
+    * Summary of findings report (PDF)
+
+The benchmark and SCS results are contained in the 2013 results files.
+
+## CSPS 2011
+
+* Source: [UK Government Web Archive]({{< var urls.cspsdata2013 >}})
+* Repo folder: [`raw-data/2011`]({{< var repo_links.raw_data.csps2011 >}})
+* Data files:
+    * Organisation scores (CSV, Excel)
+* Other files:
+    * Summary of findings report (PDF)
+
+The benchmark and SCS results are contained in the 2013 results files.
+
+## CSPS 2012
+
+* Source: [UK Government Web Archive]({{< var urls.cspsdata2013 >}})
+* Repo folder: [`raw-data/2012`]({{< var repo_links.raw_data.csps2012 >}})
+* Data files:
+    * Organisation scores (CSV, Excel)
+* Other files:
+    * Summary of findings report (PDF)
+
+The benchmark and SCS results are contained in the 2013 results files.
+
+## CSPS 2013
+
+* Source: [UK Government Web Archive]({{< var urls.cspsdata2013 >}})
+* Repo folder: [`raw-data/2013`]({{< var repo_links.raw_data.csps2013 >}})
+* Data files:
+    * Benchmark (median) scores (CSV, Excel)
+    * Organisation scores (CSV, Excel)
+    * Demographic scores (CSV, Excel)
+    * SCS trend results (CSV, Excel)
+* Other files:
+    * Benchmark scores report (PDF)
+    * SCS trend results report (PDF)
+    * Demographic scores (PDF)
+    * Summary of findings report (PDF)
+    * Technical guide (PDF)
+    * Core questionnaire (PDF)
+
+## CSPS 2014
+
+* Source: [GOV.UK]({{< var urls.cspsdata2014 >}})
+* Repo folder: [`raw-data/2014`]({{< var repo_links.raw_data.csps2014 >}})
+* Data files:
+    * Benchmark (median) scores (CSV, Excel)
+    * Organisation scores (CSV, Excel)
+    * Demographic scores (CSV, Excel)
+    * Demographic scores by ethnicity (Excel)
+    * Demographic scores by sex/gender (Excel)
+    * Demographic scores by health status (Excel)
+    * Demographic scores by LGBT identity (Excel)
+* Other files:
+    * Benchmark scores report (PDF)
+    * SCS trend results report (PDF)
+    * Summary of findings report (PDF)
+    * Technical guide (PDF)
+
+## CSPS 2015
+
+* Source: [GOV.UK]({{< var urls.cspsdata2015 >}})
+* Repo folder: [`raw-data/2015`]({{< var repo_links.raw_data.csps2015 >}})
+* Data files:
+    * Benchmark (median) scores (CSV)
+    * Organisation scores (CSV, Excel)
+    * Demographic scores (CSV, Excel)
+    * Demographic scores by ethnicity (Excel)
+    * Demographic scores by sex/gender (Excel)
+    * Demographic scores by health status (Excel)
+    * Demographic scores by LGBT identity (Excel)
+* Other files:
+    * Benchmark scores report (PDF)
+    * Summary of findings report (PDF)
+    * Technical guide (PDF)
+
+## CSPS 2016
+
+* Source: [GOV.UK]({{< var urls.cspsdata2016 >}})
+* Repo folder: [`raw-data/2016`]({{< var repo_links.raw_data.csps2016 >}})
+* Data files:
+    * Benchmark (median) scores (CSV)
+    * Organisation scores (CSV, Excel)
+    * Demographic scores (CSV, Excel)
+    * Demographic scores by ethnicity (Excel)
+    * Demographic scores by sex/gender (Excel)
+    * Demographic scores by health status (Excel)
+    * Demographic scores by LGBT identity (Excel)
+* Other files:
+    * Benchmark scores report (PDF)
+    * Departmental trends report (PDF)
+    * Technical guide (PDF)
+
+## CSPS 2017
+
+* Source: [GOV.UK]({{< var urls.cspsdata2017 >}})
+* Repo folder: [`raw-data/2017`]({{< var repo_links.raw_data.csps2017 >}})
+* Data files:
+    * Benchmark (median) scores (CSV)
+    * Organisation scores (CSV, Excel)
+    * Demographic scores (Excel)
+    * Demographic scores by ethnicity (Excel)
+    * Demographic scores by sex/gender (Excel)
+    * Demographic scores by health status (Excel)
+    * Demographic scores by LGBT identity (Excel)
+* Other files:
+    * Benchmark scores report (PDF)
+    * Departmental trends report (PDF)
+    * Technical guide (PDF)
+
+## CSPS 2018
+
+* Source: [GOV.UK]({{< var urls.cspsdata2018 >}})
+* Repo folder: [`raw-data/2018`]({{< var repo_links.raw_data.csps2018 >}})
+* Data files:
+    * Benchmark (median) scores (CSV)
+    * All respondent (mean) scores (CSV)
+    * Organisation scores (CSV, Excel)
+    * Demographic scores (Excel)
+    * Demographic scores by ethnicity (Excel)
+    * Demographic scores by sex/gender (Excel)
+    * Demographic scores by health status (Excel)
+    * Demographic scores by LGBT identity (Excel)
+* Other files:
+    * Benchmark scores report (PDF)
+    * Departmental trends report (PDF)
+    * Technical guide (PDF)
+
+## CSPS 2019
+
+* Source: [GOV.UK]({{< var urls.cspsdata2019 >}})
+* Repo folder: [`raw-data/2019`]({{< var repo_links.raw_data.csps2019 >}})
+* Data files:
+    * Benchmark (median) scores (CSV)
+    * All respondent (mean) scores (CSV)
+    * Organisation scores (CSV, Excel)
+    * Demographic scores (Excel)
+    * Demographic scores by ethnicity (Excel)
+    * Demographic scores by sex/gender (Excel)
+    * Demographic scores by health status (Excel)
+    * Demographic scores by LGBT identity (Excel)
+    * Demographic scores by socio-economic background (Excel)
+* Other files:
+    * Benchmark scores report (PDF)
+    * Departmental trends report (PDF)
+    * Technical guide (PDF)
+
+## CSPS 2020
+
+* Source: [GOV.UK]({{< var urls.cspsdata2020 >}})
+* Repo folder: [`raw-data/2020`]({{< var repo_links.raw_data.csps2020 >}})
+* Data files:
+    * Benchmark (median) scores (CSV)
+    * All respondent (mean) scores (CSV)
+    * Organisation scores (ODS)
+    * Demographic scores (ODS)
+    * Demographic scores by ethnicity (ODS)
+    * Demographic scores by sex/gender (ODS)
+    * Demographic scores by health status (ODS)
+    * Demographic scores by LGBT identity (ODS)
+* Other files:
+    * Technical guide (PDF)
+
+## CSPS 2021
+
+* Source: [GOV.UK]({{< var urls.cspsdata2021 >}})
+* Repo folder: [`raw-data/2021`]({{< var repo_links.raw_data.csps2021 >}})
+* Data files:
+    * Benchmark (median) scores (ODS)
+    * Demographic scores (ODS)
+    * Demographic scores by ethnicity (ODS)
+    * Demographic scores by sex/gender (ODS)
+    * Demographic scores by health status (ODS)
+    * Demographic scores by LGBT identity (ODS)
+    * Demographic scores by socio-economic background (ODS)
+* Other files:
+    * Technical guide (HTML)
+
+The all respondent (mean) scores and organisation scores are included in the
+benchmark scores ODS file.
+
+The technical guide is published as an HTML file. For archive purposes the
+`raw-data/2021` folder contains a PDF print-preview of the report and a zip
+file containing the HTML file and associated assets (e.g. images, CSV,
+JavaScript).
+
+## CSPS 2022
+
+* Source: [GOV.UK]({{< var urls.cspsdata2022 >}})
+* Repo folder: [`raw-data/2022`]({{< var repo_links.raw_data.csps2022 >}})
+* Data files:
+    * Benchmark (median) scores (ODS)
+    * Demographic scores (ODS)
+    * Demographic scores by ethnicity (ODS)
+    * Demographic scores by sex/gender (ODS)
+    * Demographic scores by health status (ODS)
+    * Demographic scores by LGBT identity (ODS)
+    * Demographic scores by socio-economic background (ODS)
+* Other files:
+    * Technical guide (HTML)
+
+The all respondent (mean) scores and organisation scores are included in the
+benchmark scores ODS file.
+
+The technical guide is published as an HTML file. For archive purposes the
+`raw-data/2022` folder contains a PDF print-preview of the report and a zip
+file containing the HTML file and associated assets (e.g. images, CSV,
+JavaScript).
+
+## CSPS 2023
+
+* Source: [GOV.UK]({{< var urls.cspsdata2023 >}})
+* Repo folder: [`raw-data/2023`]({{< var repo_links.raw_data.csps2023 >}})
+* Data files:
+    * Benchmark (median) scores (ODS)
+    * Demographic scores (ODS)
+    * Demographic scores by ethnicity (ODS)
+    * Demographic scores by sex/gender (ODS)
+    * Demographic scores by health status (ODS)
+    * Demographic scores by LGBT identity (ODS)
+    * Demographic scores by socio-economic background (ODS)
+* Other files:
+    * Results highlights (HTML)
+    * Quality and Methodology Information (HTML)
+
+The all respondent (mean) scores and organisation scores are included in the
+benchmark scores ODS file.
+
+The results highlights and the 'quality and methodology information'
+(previously called the technical guide) are published as HTML files. For
+archive purposes the `raw-data/2023` folder contains a PDF print-preview of
+each report and a zip file containing the HTML file and associated assets
+(e.g. images, CSV, JavaScript).
+
+## CSPS 2024
+
+* Source: [GOV.UK]({{< var urls.cspsdata2024 >}})
+* Repo folder: [`raw-data/2024`]({{< var repo_links.raw_data.csps2024 >}})
+* Data files:
+    * Benchmark (median) scores (ODS)
+    * Demographic scores (ODS)
+    * Demographic scores by ethnicity (ODS)
+    * Demographic scores by sex/gender (ODS)
+    * Demographic scores by health status (ODS)
+    * Demographic scores by LGBT identity (ODS)
+    * Demographic scores by socio-economic background (ODS)
+* Other files:
+    * Results highlights (HTML)
+    * Quality and Methodology Information (HTML)
+
+The all respondent (mean) scores and organisation scores are included in the
+benchmark scores ODS file.
+
+The results highlights and the 'quality and methodology information'
+(previously called the technical guide) are published as HTML files. For
+archive purposes the `raw-data/2023` folder contains a PDF print-preview of
+each report and a zip file containing the HTML file and associated assets
+(e.g. images, CSV, JavaScript).

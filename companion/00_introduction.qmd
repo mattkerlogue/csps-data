@@ -1,0 +1,294 @@
+---
+format:
+    html:
+        df-print: tibble
+---
+
+# Introduction {#sec-introduction .unnumbered}
+
+The [Civil Service People Survey][cspshub] is is the annual employee attitudes
+survey that has carried out across the UK Civil Service since 2009. It is an
+important management tool for managers and leaders working within in the Civil
+Service. It is also a useful tool for external parties that hold senior
+officials and government ministers to account for the leadership and management
+of the Civil Service.
+
+This introduction covers: [who this companion is for](#sec-intro-who-for); a
+brief explanation of
+[how the People Survey is run](#sec-intro-how-survey-is-run); key
+[underlying concepts](#sec-survey-concepts) in the structure of survey's data;
+and, an outline of the harmonised
+[concepts and identifiers](#sec-intro-harmonised-concepts) and the
+[structure](#sec-intro-harmonised-data) of the harmonised datasets.
+
+This companion uses the terms 'Civil Service People Survey' and 'People Survey'
+interchangeably; the acronym 'CSPS' is used sparingly, usually were space is
+at a premium. A more complete guide to [terminology](01_terminology.qmd) is
+also available.
+
+## Who this companion is for {#sec-intro-who-for}
+
+This companion mainly acts as documentation for the data processing in the
+`csps-data` repository. It has been called a 'companion' because it takes a
+narrative approach to documentation that also includes wider discussion of the
+survey's background and operation, and explains the rationale for behind
+decisions taken to harmonise the data over time.
+
+The main audience for this companion is those who wish to reuse the harmonised
+data for their own analysis. It also serves as a record of decisions made in
+regards to harmonising aspects of the survey's data structure that change over
+time. This companion may also be useful for those working inside the Civil
+Service that are working with multi-year data and/or interested in comparing
+results between organisations or to Civil Service benchmarks.
+
+## How the People Survey is run {#sec-intro-how-survey-is-run}
+
+The Civil Service People Survey is coordinated by the
+[People Survey Team][cspshub] based in the Cabinet Office, they are responsible
+for the overall management and operation of the survey and publishing of the
+results. The survey's fieldwork and internal reporting is provided by an
+external third-party contractor, currently
+[Qualtrics](https://www.qualtrics.com/). Alongside the central team and
+external contractor, participating organisations have a 'survey manager' that
+acts as the liaison point for each organisation, survey managers are responsible
+for collating crucial 'local' information necessary for the running of the
+survey (such as the internal team hierarchy), publicising the survey and
+encouraging participation during the fieldwork period, and disseminating the
+results within their organisation.
+
+## The need for a harmonised dataset {#sec-intro-need}
+
+While data and results from the survey have been published each year, there is
+no single dataset or API that makes it easy to access the data. The range of
+data published each year varies, as do aspects of the survey content and
+coverage.
+
+Although there is some degree of consistency and stability in the survey's
+questionnaire over time there are additions and removals of questions that
+have occurred over the past 16 years. Organisational coverage varies over time
+as organisations are established, merged, abolished or changed in other ways.
+The range of demographic categories either asked about or published has also
+changed over time.
+
+These challenges prevent easy re-use of the data, including by individuals
+within the UK Civil Service. The aim of the data processing documented in this
+companion is to provide a public resource that makes it easy for others to
+re-use the data.
+
+## Original survey data concepts {#sec-survey-concepts}
+
+Before any processing we must first define core concepts in the survey's data
+structures and methodology.
+
+### Attitudinal questions and measures
+
+The main body of the survey's questionnaire is made up of individual questions
+that measure individual's attitudes and experiences of working in their civil
+service organisation over the past year. These questions are often rated through
+a five-point Likert scale of 'strongly disagree' to 'strongly agree', see the
+section on [response categories](#sec-intro-response-categories) for more
+details. Most of these attitudinal questions are also used to derive composite
+measures that are used as headline results for the survey, see the section on
+[indexes and theme scores](#sec-intro-composite-measures) for more details.
+In the context of the data processing, together, these are referred to as
+attitudinal *questions and measures*. In programming code the term `qm` has
+been typically used to refer to these data. See !!! for more details.
+
+### Organisations
+
+Respondents to the survey participate as part of an *organisation*, typically
+(but not always) the government department or agency they work for. Questions
+in the survey typically ask respondents to consider their responses in relation
+to this organisational unit. In programming code the term `org` has typically
+been used to refer to organisations, and `dept_group` is used to refer to groups
+of organisations related to a specific government department. See !!! for more
+details.
+
+### Civil Service benchmark and all respondents results
+
+The headline cross-government results from the survey are the
+*Civil Service benchmark* results, this is calculated for each question and
+measure as the median score of participating organisations.
+
+The results for all respondents to the survey are also published but these
+scores are largely determined by the experiences of respondents based in the
+5-6 largest civil service organisations. These scores may be referred to as
+either *all respondents*, *all civil servants* or *mean scores*.
+
+### Demographic questions
+
+Alongside the attitudinal questions the People Survey asks a range of
+*demographic* questions relating to both their job and personal
+characteristics that are used to understand the experiences of different groups
+of civil servants. The demographics comprise both questions and categories, in
+programming code the term `demog` is typically used to refer to these two
+aspects collectively, `demq` for demographic questions, `cat` for categories,
+and `demcat` for combinations of questions and categories (since categories are
+not always unique across the questions).
+
+In addition to the results for all respondents split by demographic questions
+and categories there are also more detailed results published for five sets of
+demographics (sex/gender, ethnicity, health status, sexual orientation and
+socio-economic background). These detailed demographic results publications
+provide results of cross-tabulation of these five demographics with all other
+demographic questions, for example results for men and women by grade. The
+detailed demographic results also include a summary of organisation scores for
+each of the five demographics.
+
+### Typology of data types {#sec-intro-typology}
+
+From the structure of the People Survey data described above we can devise a
+simple taxonomy of the different 'types' of data published by the People Survey.
+The attitudinal questions and measures are excluded from the taxonomy, with the
+taxonomy acting as a guide to the type of units of analysis covered by different
+sets of attitudinal question and measure results.
+
+* The **benchmark results** - the 'Civil Service benchmark', i.e. the median
+  scores of participating organisations.
+* The **mean scores** - the results for all respondents to the People Survey.
+* The **organisation results** - the overall results for each organisation.
+* The **demographic results** - the results for all respondents by individual
+  demographic questions and categories.
+* The **detailed demographic results** - results for multiple combinations of
+  demographic questions and categories.
+* The **organisation demographic results** - results of the People Survey's
+  headline measures for each organisation and select demographic categories.
+
+### Response categories {#sec-intro-response-categories}
+
+The majority of attitudinal questions are asked on a five-point scale ranging
+from 'strongly disagree' to 'strongly agree'. For these questions the
+survey results present the 'percent positive' which reflects the proportion
+answering 'agree' or 'strongly agree' [^pdf_reports].
+
+In addition to the five-point agreement scale the following scales are used for
+some questions:
+
+* *Yes/no scales*: offering respondents either a simple binary 'yes' 'no'
+  choice or sometimes with a 'don't know' or 'prefer not to say' option.
+* *Temporal scales*: offering respondents options to state how often a
+  situation occurs, typically ranging from 'always' to 'never' but also
+  including scales that refer to specific time periods (e.g. 'weekly' or
+  'monthly').
+* *Quality scale*: used for ratings of mental and physical health, ranging
+  from 'excellent' to 'very poor'.
+* *Numeric extent scale*: used for the personal wellbeing questions,
+  respondents are asked to provide a rating from '0' to '10' where a response
+  of '0' represents 'not at all' and '10' represents 'completely' (e.g. 'not at
+  all satisfied' or 'completely satisfied').
+* *Productivity range scale*: used for a question on self-assessed
+  productivity, respondents asked how productive they feel they have been
+  recently and are given a set of percentage ranges to select from.
+* *Stay/leave scale*: used for the question on future intentions, respondents
+  are asked about the future intentions of working for their organisation with
+  responses ranging from leaving as soon as possible to staying for at least
+  the next three years.
+* *Multiple choice scales*: offering respondents the ability to select
+  multiple categories in response to a question (e.g. to describe the type of
+  bullying or harassment the individual has experienced).
+
+### Indexes and theme scores {#sec-intro-composite-measures}
+
+The responses to individual questions are used to calculate a small number of
+summary measures, which are used as headline results for the survey. These
+summary measures are either called *indexes* when they make use of the full
+range of the input questions' response scales or *theme scores* when they
+make use of only part of the range of the input questions' response scales. 
+
+* The employee *engagement index* is derived from five questions relating to
+  respondents levels' of advocacy, attachment and motivation.
+* The *PERMA index* and *Proxy Stress Index* are wellbeing indexes that
+  assess the extent to which respondents are 'flourishing' (for the PERMA Index)
+  or experiencing factors that potentially increase stress levels (for the
+  Proxy Stress Index).
+* The nine *theme scores* are derived from the main section of attitudinal
+  questions and measure factors that influence employee engagement. These scores
+  are calculated relating to the of 'strongly agree' and 'agree' responses to
+  each question within each theme.
+
+[^pdf_reports]: Prior to 2020 some organisations published PDF reports of
+their results that also included a breakdown of the Likert scale for each
+question. A change in contractor for the People Survey ended the production of
+these PDF reports and since then most organisations have stopped publishing
+their own People Survey results independently of the combined results published
+by the Cabinet Office.
+
+## Harmonised survey data concepts {#sec-intro-harmonised-concepts}
+
+The processing documented in this companion aligns the original survey data
+published by the Cabinet Office into a set of harmonised datasets that allow
+for easy cross-sectional and time-series analysis of the data.
+
+### Unique identifiers
+
+At the core of the processing is the use of
+[regular expressions](https://en.wikipedia.org/wiki/Regular_expression) (or
+*'regexes'*) which are used to match question or measure text, organisation
+names, demographic questions and categories to a set of *unique identifiers*.
+There are three sets of unique identifiers:
+
+* **Question and measure identifiers:**
+  * `uid_qm_num`: A numeric identifier in the format `0.00.000.00`
+  * `uid_qm_txt`: A human-readable text identifier in the format `thm.question`
+    (where `thm` is a short-code for the survey section and `question` is short
+    phrase to describe the question or measure)
+* **Organisation identifiers:**
+  * `uid_org_txt`: Typically a 6-letter code to refer to organisations,
+    in some cases a shorter 3- to 5-letter code is used
+* **Demographic identifiers:**
+  * `uid_demq_txt`: Typically a 6-letter code to refer to demographic
+    questions, in two cases a 5-letter code is used
+  * `uid_cat_txt`: A 6- to 12-character alphanumeric code to refer to
+    demographic categories
+  * `uid_demcat_num`: A numeric identifier in the format `0.00.00.000` used to
+    refer to unique combinations of demographic questions and categories
+  * `uid_demcat_txt`: A (somewhat) human-readable text identifier used to
+    refer to unique combinations of demographic questions and categories in
+    the format `DEMQ_DCAT` where `DEMQ` refers to the demographic question
+    and `DCAT` to the category.
+
+### Output data files {#sec-intro-harmonised-data}
+
+The output data files are a combination of 'datasets' and 'lookups',
+*datasets* contain the processed data from the People Survey aligned to the
+unique identifiers while *lookups* provide labels and other metadata relating
+to the unique identifiers.
+
+The harmonised datasets structure the data in a 'long format', that is each
+row in a dataset relates to an individual value/score from the People Survey,
+at a minimum each dataset includes the following columns:
+
+* `data_type`: a value representing the type of data included in the dataset
+  (see the [data typology](#sec-intro-typology) section for more details)
+* `year`: the year of the survey's results the data relates to
+* `uid_qm_num`: the unique numeric identifier relating to the question or
+  measure
+* `uid_qm_txt`: the unique text identifier relating to the question or measure
+* `response_category`: a general identifier relating to the response category
+  that the value represents (see the
+  [response cateogries](#sec-intro-response-categories) section for more
+  details).
+* `value`: the actual survey result/score ranging from 0 to 100 (up to three
+  decimal points). Scores typically relate to percentages (e.g. 23 would
+  represent a true value of 23%, or 0.23 in decimal notation).
+
+Datasets may also include identifiers relating to the organisation
+(`uid_org_txt`) and/or demographic objects (`uid_demcat_num`, `uid_demcat_txt`,
+`uid_demq_txt` and/or `uid_cat_txt`) that the data relates to.
+
+```{r}
+#| echo: false
+set.seed(215202)
+```
+
+```{r}
+#| label: tbl-bench-example
+#| tbl-cap: Example structure of the benchmark results file
+readr::read_csv(
+    "../data/01-benchmarks/csps_benchmarks_2009-2024.csv",
+    show_col_types = FALSE
+) |>
+    dplyr::sample_n(10)
+```
+
+[cspshub]: https://www.gov.uk/government/collections/civil-service-people-survey-hub

@@ -1,0 +1,168 @@
+---
+format:
+    html:
+        code-copy: false
+---
+# Technical approach
+
+The processing of the People Survey data held in the
+[`csps-data`]({{< meta book.repo-url >}}) repository has been undertaken in
+[R](https://www.r-project.org) using the [Positron](http://positron.posit.co)
+IDE. The project is version controlled with git, using Github for storage.
+
+## File formats
+
+The original People Survey [source data](03_source_data.qmd) is stored in a mix
+of CSV files, Microsoft Excel spreadsheet files (`.xls`/`.xslx`) and Open Document
+Format spreadsheet files (`.ods`).
+
+Interim and output data are stored in either CSV format or Apache Parquet.
+
+## Dependencies
+
+:::{#packages-list}
+The following R packages (and their dependencies) have been used in the
+development of the processing code:
+
+* [`{arrow}`](https://github.com/apache/arrow/) - for storing and accessing
+  data in [Parquet](https://parquet.apache.org) files
+* [`{cli}`](https://cli.r-lib.org) - for console messages
+* [`{dplyr}`](https://dplyr.tidyverse.org) - for tabular data manipulation
+* [`{fs}`](https://fs.r-lib.org) - for file system operations
+* [`{janitor}`](https://github.com/sfirke/janitor) - for column name cleaning
+* [`{purrr}`](https://purrr.tidyverse.org/) - for data manipulation
+* [`{readODS}`](https://docs.ropensci.org/readODS/) - to read ODS files
+* [`{readr}`](https://readr.tidyverse.org) - to read and write CSV files
+* [`{readxl}`](https://readxl.tidyverse.org) - to read Excel files
+* [`{rlang}`](https://rlang.r-lib.org) - for helper functions
+* [`{stringi}`](https://stringi.gagolewski.com/) - for string processing
+* [`{stringr}`](https://stringr.tidyverse.org) - for string processing
+* [`{tibble}`](https://tibble.tidyverse.org/) - for tabular data manipulation
+* [`{tidyr}`](https://tidyr.tidyverse.org) - for tabular data manipulation
+* [`{tidyxl}`](https://github.com/nacnudus/tidyxl) - to read Excel files
+* [`{unpivotr}`](https://github.com/nacnudus/unpivotr) - to reshape tidyxl data
+* [`{yaml12}`](https://posit-dev.github.io/r-yaml12/) - to read YAML files
+
+The following packages (and their dependencies) have been used in the
+production of this companion:
+
+* [`{dplyr}`](https://dplyr.tidyverse.org)
+* [`{glue}`](https://glue.tidyverse.org/)
+* [`{purrr}`](https://purrr.tidyverse.org/)
+* [`{readr}`](https://readr.tidyverse.org)
+* [`{rmarkdown}`](https://github.com/rstudio/rmarkdown)
+* [`{stringr}`](https://stringr.tidyverse.org)
+* [`{tibble}`](https://tibble.tidyverse.org/)
+* [`{yaml12}`](https://posit-dev.github.io/r-yaml12/)
+
+:::
+
+
+## Repository structure
+
+This companion documents the contents of the
+[`csps-data`]({{< meta book.repo-url >}}) repository. The high-level folder
+structure of the repo is as follows:
+
+```txt
+csps-data
+├─ companion
+├─ data
+│  ├─ 00-reference
+│  ├─ 01-benchmarks
+│  ├─ 02-organisations
+│  └─ 03-demographics
+├─ proc
+│  ├─ 01-questions_ref
+│  ├─ 02-organisations_ref
+│  ├─ 03-demographics_ref
+│  ├─ 04-extract_data
+│  └─ 05-processing
+├─ R
+│  ├─ 01-questions_ref
+│  ├─ 02-organisations_ref
+│  ├─ 03-demographics_ref
+│  ├─ 04-extract_data
+│  └─ 05-processing
+└─ raw-data
+```
+
+* The `companion` folder contains the underlying source code for this companion
+  book
+* The `data` folder contains the harmonised and re-processed People Survey data,
+  see the [data dictionaries](40_data_dictionaries.qmd) part of the companion
+  for details.
+* The `proc` folder contains intermediate outputs from the data processing.
+* The `R` folder contains the source code for the data processing, see the
+  [workflow](#workflow) section below for details.
+* The `raw-data` folder contains the original published source datasets and
+  associated materials, see the chapter on [source_data](03_source_data.qmd)
+  for details.
+
+## Workflow
+
+The [`csps-data`]({{< meta book.repo-url >}}) repo and this companion are
+largely structured to follow the workflow of the data processing, in particular
+the structure and naming of the script in `R` folder outlines the workflow
+taken to process the data:
+
+```txt
+csps-data
+├─ ...
+├─ R
+│ ├─ 01-questions_ref
+│ │  ├ 01-questions_ref/01_01-extract_questions.R
+│ │  ├ 01-questions_ref/01_02-regex_development.R
+│ │  ├ 01-questions_ref/01_03-regex_refinement.R
+│ │  └ 01-questions_ref/01_04-question_reference.R
+│ ├─ 02-organisations_ref
+│ │  ├─ 02-organisations_ref/02_01-extract_organisations.R
+│ │  ├─ 02-organisations_ref/02_02-org_regex_refinement.R
+│ │  └─ 02-organisations_ref/02_03-org_reference.R
+│ ├─ 03-demographics_ref
+│ │  ├─ 03-demographics_ref/03_01-extract-demogs.R
+│ │  ├─ 03-demographics_ref/03_02-demog_regex_refinement.R
+│ │  ├─ 03-demographics_ref/03_03-demcat_development.R
+│ │  └─ 03-demographics_ref/03_04-demcat_ref.R
+│ ├─ 04-extract_data
+│ │  ├─ 04-extract_data/04_01-benchmark_extract.R
+│ │  ├─ 04-extract_data/04_02-organisation_extract.R
+│ │  └─ 04-extract_data/04_03-demograhpic_extract.R
+│ ├─ 05-processing
+│ │  ├─ 05-processing/05_01-process_benchmarks.R
+│ │  ├─ 05-processing/05_02-process_organisations.R
+│ │  └─ 05-processing/05_03-process_demographics.R
+│ ├─ utils
+│ │  ├─ data_extract_helpers.R
+│ │  ├─ data_files.R
+│ │  ├─ data_files_ref.R
+│ │  ├─ extract_response_category.R
+│ │  ├─ regex_matches.R
+│ │  ├─ text_to_uid.R
+│ │  └─ variable_extract_helpers.R
+│ ├─ LICENSE-MIT
+│ └─ README.md
+└─ ...
+```
+
+* The first stages of the workflow are dedicated to
+  [developing regexes and harmonised indicators](10_harmonisation.qmd).
+    * The `R/01-questions_ref` folder contains the scripts for regexes and
+      identifiers related to [questions and measures](11_questions_regex.qmd).
+    * The `R/02-organisations_ref` folder contains the scripts for regexes
+      and identifiers related to [organisations](12_organisations_regex.qmd).
+    * The `R/03-demographics_ref` folder contains the scripts for regexes
+      and identifiers related to
+      [demographic questions and categories](13_demographics_regex.qmd)
+* The `R/04-extract_data` folder contains the scripts for
+  [extracting data](20_extraction.qmd) from the raw source files for
+  [benchmarks](21_extract_benchmarks.qmd),
+  [organisations](22_extract_organisations.qmd), and
+  [demographics](23_extract_demographics.qmd).
+* The `R/05-processing` folder contains the scripts for
+  [processing the raw data](30_processing.qmd) and producing the harmonised
+  datasets for [benchmarks](31_processing_benchmarks.qmd),
+  [organisations](32_processing_organisations.qmd), and
+  [demographics](33_processing_demographics.qmd).
+* The `R/utils` folder contains the scripts for bespoke
+  [helpers and utility functions](04_helper_functions.qmd).

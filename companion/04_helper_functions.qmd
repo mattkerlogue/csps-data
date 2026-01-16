@@ -1,0 +1,131 @@
+# Utilities and helper functions
+
+A number of utilities and helper functions have been written to help the
+processing of the People Survey data and are documented in this chapter.
+The scripts for these utilities and helpers are contained in the
+[`R/utils`]({{< var repo_links.r_utils >}}) folder of the `csps-data` repo.
+
+## `csps_data_files`
+
+There are a large number of files that provide the
+[source data](03_source_data.qmd) for the People Survey. The
+`raw-data/00_data_files.yaml` file provides a log (in YAML format) of all the
+source data files stored in the `raw-data` folder of the `csps-data` repo.
+
+The `R/utils/data_files.R` script loads this YAML file as a list
+(called `csps_data_files`) to make it easier to access file paths from within
+the R code.
+
+```{r}
+#| include: false
+knitr::opts_knit$set(root.dir = "..")
+```
+
+```{r}
+source("R/utils/data_files.R")
+names(csps_data_files)
+str(csps_data_files$csps2015)
+```
+
+The `R/data_files_ref.R` script also processes the YAML file to produce two
+reference CSV files, it is not directly used in the processing.
+
+## Data extraction helpers
+
+The `R/utils/data_extract_helpers.R` function provides a series of helper
+functions used in the scripts in folder `R/04-extract_data` that are designed
+to open and process the raw data_files.
+
+While the file formats of published data have changed over time (from CSV and
+Excel to ODS format) and the internal structure of each format is different,
+for each file type the structure has remained largely consistent throughout
+time (for example the CSV of benchmark scores in 2018 is similar in structure
+to the CSV of benchmark scores in 2013). This stability in per-format structure
+has made it easy to construct a set of re-usable extraction functions:
+
+* [`long_csv()`](#long_csv)
+* [`extract_benchmark_ods()`]()
+* `extract_organisation_ods()`
+* `extract_demographic_data()`
+
+All of these functions are designed to return a
+[tibble](https://tibble.tidyverse.org/reference/tibble.html) that stores the
+data from the raw data sets in 'long' format, that is each row of the tibble
+relates to an individual value (i.e. a cell of the 2-dimensional input
+spreadsheet/table).
+
+```{r}
+#| echo: false
+#| label: fig-pivot-long
+#| fig-cap: Example of converting People Survey data from 'wide' to 'long' format
+
+inlinesvg::inline_svg_file(
+    "companion/images/pivot_plot.svg",
+    alt_title = "Example of a table being pivoted",
+    alt_description = paste(
+        "Image showing two tables. The left hand table shows an example of",
+        "a People Survey benchmark scores dataset in 'wide' format with",
+        "one question per row and one year per column. The right hand table",
+        "shows the same data in 'long' format where each row is a separate",
+        "value and the column header years have been transposed to a new",
+        "column called year."
+    ),
+    dimensions = "strip"
+)
+```
+
+### `long_csv()` {#long-csv}
+
+The `long_csv()` function reads a CSV file and converts it into long format.
+It is used to process CSV files containing either benchmark scores (and all
+respondent scores which have the same layout) or organisation scores datasets.
+Benchmark scores datasets have question labels in rows and years in columns,
+while organisation scores datasets have organisation names (and, depending on
+year, reference codes) in rows and question labels in columns.
+
+```r
+long_csv(
+    path, type = NULL, values_convert = NULL, skip = 0, cols = NULL,
+    na = c("", "NA", "n/a"), ...
+)
+```
+
+path
+: file path
+
+type
+: type of CSV being processed (either `benchmark_csv` or `organisation_csv`)
+
+values_convert
+: if necessary use `"scale_100"` to convert percentages from 0-1 decimal to
+  0-100 score
+
+skip
+: rows to skip
+
+cols
+: columns to subset to
+
+na
+: values to consider missing
+
+...
+: values to pass on to `readr::read_csv()`
+
+### `extract_benchmark_ods()`
+
+The `extract_benchmark_ods()` function 
+
+## `extract_response_cat()`
+
+For the majority of attitudinal questions and measures in the People Survey the
+published data includes only one value. The majority of attitudinal questions
+are asked on a 'strongly agree' to 'strongly disagree' scale, and published
+score is the combined percentage responding 'agree' or 'strongly agree'.
+However, some questions use other scales and in some cases more than one
+response category is published. There are also a small number of questions
+with multiple responses.
+
+The `extract_response_cat()` function (in the `R/utils/extract_response_cat.R`
+file) takes a vector of attitudinal question/measure text and associated UIDs
+and returns a vector of response categories based on that input.
