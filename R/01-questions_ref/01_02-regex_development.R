@@ -7,6 +7,7 @@
 
 # load data ------
 
+# read raw table
 raw_tbl_qs <- readr::read_csv(
   "proc/01-questions_ref/01_01-raw_tbl_qs.csv",
   show_col_types = FALSE
@@ -15,8 +16,11 @@ raw_tbl_qs <- readr::read_csv(
 # reference table ------
 tbl_qs <- raw_tbl_qs |>
   dplyr::mutate(
+    # convert year to integer value
     year = as.integer(gsub(".*(\\d{4}).*", "\\1", obj)),
+    # standardise display of question labels
     proc_label = stringr::str_squish(tolower(raw_label)),
+    # get rid of question numbers and additional info
     stripped_label = stringr::str_squish(
       stringr::str_remove_all(
         stringr::str_remove_all(
@@ -34,6 +38,7 @@ tbl_qs <- raw_tbl_qs |>
     )
   )
 
+# export table of all questions
 readr::write_excel_csv(
   tbl_qs,
   "proc/01-questions_ref/01_02-tbl_qs.csv",
@@ -52,12 +57,14 @@ unq_qs <- tbl_qs |>
   dplyr::arrange(stripped_label) |>
   dplyr::filter(stripped_label != "")
 
+# write unique table
 readr::write_excel_csv(
   unq_qs,
   "proc/01-questions_ref/01_02-unq_qs.csv",
   na = ""
 )
 
+# create editible version for manually constructing regexes
 readr::write_excel_csv(
   unq_qs |>
     dplyr::mutate(

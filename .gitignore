@@ -54,3 +54,7 @@ rsconnect/
 
 # GOV.UK html
 *GOV.UK_files
+**/*.quarto_ipynb
+
+# hash store
+.csps_hash_time.rds

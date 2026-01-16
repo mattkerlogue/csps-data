@@ -7,12 +7,15 @@
 
 # load data ------
 
-source("R/regex_matches.R")
+source("R/utils/regex_matches.R")
 
+# read table of all questions
 tbl_qs <- readr::read_csv(
   "proc/01-questions_ref/01_02-tbl_qs.csv",
   show_col_types = FALSE
 )
+
+# read manually constructed regexes
 qs_regexs <- readr::read_csv(
   "proc/01-questions_ref/01_02-regexes.csv",
   show_col_types = FALSE
@@ -20,6 +23,7 @@ qs_regexs <- readr::read_csv(
 
 # run matches ------
 
+# match regexes to questions
 qs_regexes_matched <- qs_regexs |>
   dplyr::mutate(
     matches = purrr::map(
@@ -59,11 +63,33 @@ qs_unnested_w_year <- qs_regexes_matched_unnested |>
       dplyr::filter(year == max(year), .by = text),
     by = "text"
   ) |>
-  dplyr::arrange(-n, uid_qm_txt, -year, text) |>
-  clipr::write_clip()
+  dplyr::arrange(-n, uid_qm_txt, -year, text)
 
+# export unnested table of questions
 readr::write_excel_csv(
   qs_unnested_w_year,
   "proc/01-questions_ref/01_03-qs_unnested_w_year.csv",
+  na = ""
+)
+
+# question ref ------
+# base table for manual editing, use latest question label as a guide
+
+tbl_qm_ref <- qs_unnested_w_year |>
+  dplyr::arrange(uid_qm_txt, -year) |>
+  dplyr::distinct(uid_qm_txt, regex, .keep_all = TRUE) |>
+  dplyr::select(
+    uid_qm_txt,
+    regex,
+    label = text
+  ) |>
+  dplyr::mutate(
+    uid_qm_num = NA_character_,
+    .after = uid_qm_txt
+  )
+
+readr::write_excel_csv(
+  tbl_qm_ref,
+  "proc/01-questions_ref/01_03-tbl_qm_ref.csv",
   na = ""
 )

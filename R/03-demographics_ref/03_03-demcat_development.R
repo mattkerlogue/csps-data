@@ -44,7 +44,7 @@ readr::write_excel_csv(
       label_short = NA_character_,
       label_long = NA_character_,
     ) |>
-    dplyr::relocate(uid_demcat_num, .after = uid_demcat),
+    dplyr::relocate(uid_demcat_num, .after = uid_demcat_txt),
   "proc/03-demographics_ref/03_03-unq_demcat.csv",
   na = ""
 )

@@ -7,7 +7,7 @@
 
 # load data ------
 
-source("R/text_to_uid.R")
+source("R/utils/text_to_uid.R")
 
 tbl_qs <- readr::read_csv(
   "proc/01-questions_ref/01_02-tbl_qs.csv",

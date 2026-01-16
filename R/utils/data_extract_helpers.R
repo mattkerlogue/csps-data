@@ -301,3 +301,57 @@ extract_demographic_data <- function(
 
   return(df_out)
 }
+
+extract_dem_cats <- function(
+  path,
+  sheet,
+  rows = NULL,
+  start_col = NULL,
+  cols = NULL,
+  skip = NULL,
+  insert = NULL,
+  .file_ext = tools::file_ext(path)
+) {
+  .file_ext <- rlang::arg_match(.file_ext, c("xls", "xlsx", "ods"))
+
+  if (!is.null(insert)) {
+    insert_tbl <- tibble::tibble(
+      col = as.integer(insert$col),
+      row = as.integer(insert$row),
+      is_blank = FALSE,
+      data_type = "character",
+      character = as.character(insert$text)
+    )
+  } else {
+    insert_tbl <- tibble::tibble(
+      col = integer(0),
+      row = integer(0),
+      is_blank = NA,
+      data_type = "character",
+      character = character(0)
+    )
+  }
+
+  if (.file_ext == "ods") {
+    df_in <- readODS::read_ods(
+      path,
+      sheet = sheet,
+      skip = skip,
+      progress = FALSE
+    )
+    df_out <- df_in[cols]
+    names(df_out) <- c("demographic", "category")
+  } else {
+    df_in <- tidyxl::xlsx_cells(path, sheets = sheet)
+    df_out <- df_in |>
+      dplyr::filter(
+        row %in% rows & col >= start_col & data_type == "character"
+      ) |>
+      dplyr::bind_rows(insert_tbl) |>
+      dplyr::arrange(row, col) |>
+      unpivotr::behead("up-left", name = "demographic") |>
+      dplyr::select(demographic, category = character)
+  }
+
+  return(df_out)
+}

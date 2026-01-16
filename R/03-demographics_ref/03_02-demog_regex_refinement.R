@@ -6,8 +6,8 @@
 # development of organisational regexes.
 
 # setup ------
-source("R/regex_matches.R")
-source("R/text_to_uid.R")
+source("R/utils/regex_matches.R")
+source("R/utils/text_to_uid.R")
 
 raw_tbl_dems <- readr::read_csv(
   "proc/03-demographics_ref/03_01-raw_tbl_dems.csv"

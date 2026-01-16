@@ -6,8 +6,9 @@
 
 # setup ------
 
-source("R/00_data_files.R")
-source("R/data_extract_helpers.R")
+source("R/utils/data_files.R")
+source("R/utils/data_extract_helpers.R")
+source("R/utils/hash_time.R")
 
 # 2013 to 2020 files ------
 # from 2013 to 2020 the benchmark results were published as CSV and Excel
@@ -179,6 +180,8 @@ raw_tbl_bm_data <- tibble::tibble(
   # seems to be some wayward encoding problem, force utf8
   dplyr::mutate(across(where(is.character), ~ stringi::stri_enc_toutf8(.x)))
 
+hash_time()
+
 # readr::write_excel_csv(
 #   raw_tbl_bm,
 #   "proc/04-extract_data/04_01-raw_tbl_bm_data.csv",
@@ -190,7 +193,7 @@ arrow::write_parquet(
   paste0(
     "proc/04-extract_data/",
     "04_01-raw_tbl_bm_data_",
-    round(as.numeric(Sys.time())),
+    .csps_hash_time$hash_short,
     ".parquet"
   )
 )

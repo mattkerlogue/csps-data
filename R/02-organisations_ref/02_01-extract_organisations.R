@@ -6,8 +6,8 @@
 # files to support the development of regexes.
 
 # setup ------
-source("R/00_data_files.R")
-source("R/variable_extract_helpers.R")
+source("R/utils/data_files.R")
+source("R/utils/variable_extract_helpers.R")
 
 # 2009-15 organisation data ------
 

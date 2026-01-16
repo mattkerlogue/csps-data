@@ -5,8 +5,9 @@
 # organisation scores.
 
 # setup ------
-source("R/00_data_files.R")
-source("R/data_extract_helpers.R")
+source("R/utils/data_files.R")
+source("R/utils/data_extract_helpers.R")
+source("R/utils/hash_time.R")
 
 # 2009 to 2013 files ------
 # from 2009 to 2013 organisation scores are published in a similar format as
@@ -208,6 +209,8 @@ raw_tbl_org_data <- tibble::tibble(
   dplyr::relocate(org_code, .after = organisation) |>
   dplyr::mutate(across(where(is.character), ~ stringi::stri_enc_toutf8(.x)))
 
+hash_time()
+
 # csv file is ~24MB in size, parquet is < 1MB
 # readr::write_excel_csv(
 #   raw_tbl_org,
@@ -220,7 +223,7 @@ arrow::write_parquet(
   paste0(
     "proc/04-extract_data/",
     "04_02-raw_tbl_org_data_",
-    round(as.numeric(Sys.time())),
+    .csps_hash_time$hash_short,
     ".parquet"
   )
 )

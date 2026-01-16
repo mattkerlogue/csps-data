@@ -6,8 +6,9 @@
 
 # setup ---
 
-source("R/00_data_files.R")
-source("R/data_extract_helpers.R")
+source("R/utils/data_files.R")
+source("R/utils/data_extract_helpers.R")
+source("R/utils/hash_time.R")
 
 # 2013 to 2019 files ------
 # From 2013 to 2019 demographic results were published in a similar format
@@ -183,6 +184,8 @@ raw_tbl_dem_data <- tibble::tibble(
   tidyr::unnest(data) |>
   dplyr::mutate(across(where(is.character), ~ stringi::stri_enc_toutf8(.x)))
 
+hash_time()
+
 # combined csv is ~49 MB
 # readr::write_excel_csv(
 #   raw_tbl_dem_data,
@@ -212,7 +215,7 @@ arrow::write_parquet(
   paste0(
     "proc/04-extract_data/",
     "04_03-raw_tbl_dem_data_",
-    round(as.numeric(Sys.time())),
+    .csps_hash_time$hash_short,
     ".parquet"
   )
 )

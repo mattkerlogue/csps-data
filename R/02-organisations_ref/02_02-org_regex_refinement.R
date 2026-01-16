@@ -7,8 +7,8 @@
 
 # setup ------
 
-source("R/regex_matches.R")
-source("R/text_to_uid_org_txt.R")
+source("R/utils/regex_matches.R")
+source("R/utils/text_to_uid.R")
 
 raw_tbl_orgs <- readr::read_csv(
   "proc/02-organisations_ref/02_01-raw_tbl_orgs.csv",
@@ -44,7 +44,7 @@ orgs_to_uid_org_txt <- raw_tbl_orgs |>
   dplyr::mutate(
     uid_org_txt = purrr::map_chr(
       .x = stringr::str_squish(tolower(organisation)),
-      .f = ~ text_to_uid_org_txt(
+      .f = ~ text_to_uid(
         .x,
         org_regex$regex,
         org_regex$uid_org_txt,
@@ -69,7 +69,7 @@ org_history <- orgs_to_uid_org_txt |>
 
 
 readr::write_excel_csv(
-  orgs_history,
+  org_history,
   "proc/02-organisations_ref/02_02-org_history.csv",
   na = ""
 )

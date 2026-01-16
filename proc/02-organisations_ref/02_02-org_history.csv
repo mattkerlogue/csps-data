@@ -68,13 +68,13 @@
 "DEFSUP","Defence Support Group",2010,2014
 "DGCLMD","Department for Digital, Culture, Media & Sport",2017,2017
 "DGCLMD","Department for Digital, Culture, Media and Sport",2018,2022
+"DRVHST","Driver and Vehicle Standards Agency",2014,2024
 "DRVLIC","Driver and Vehicle Licensing Agency",2009,2024
 "DRVSTD","Driving Standards Agency",2009,2013
-"DRVVCH","Driver and Vehicle Standards Agency",2014,2024
-"DSCSCO","Disclosure Scotland",2009,2024
+"DSCSCT","Disclosure Scotland",2009,2024
 "DSTL","Dstl",2010,2024
 "EDUCAT","Department for Education",2010,2024
-"EDUSCO","Education Scotland",2011,2024
+"EDUSCT","Education Scotland",2011,2024
 "ENGCLM","Department of Energy and Climate Change",2009,2015
 "ENGCLM","Deptartment of Energy & Climate Change",2010,2010
 "ENGCLM","Department of Energy & Climate Change",2012,2013
@@ -210,7 +210,7 @@
 "PSSOFF","HM Passport Office",2013,2018
 "PSSOFF","Home Office: HM Passport Office",2019,2020
 "PUBHEL","Public Health England",2013,2020
-"REGSCO","Registers of Scotland",2009,2024
+"REGSCT","Registers of Scotland",2009,2024
 "REVSCT","Revenue Scotland",2015,2024
 "RURPAY","Rural Payments Agency",2009,2024
 "RYLPRK","The Royal Parks",2009,2016

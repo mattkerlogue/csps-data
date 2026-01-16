@@ -7,14 +7,12 @@
 # setup ------
 
 # load df_list
-source("R/00_data_files.R")
-source("R/variable_extract_helpers.R")
+source("R/utils/data_files.R")
+source("R/utils/variable_extract_helpers.R")
 
 # get questions ------
 
 ## 2009-2013 benchmarks ------
-
-cli::cli_progress_step("2009-2013 benchmarks")
 
 # 2009-2013 benchmark scores are only available in a single 2013 publication
 qs_2013_bm <- extract_csv_col1(
@@ -23,8 +21,6 @@ qs_2013_bm <- extract_csv_col1(
 )
 
 ## 2009-2012 organisations ------
-
-cli::cli_progress_step("2009-2012 organisation scores")
 
 # 2009-2012 only organisation scores are published
 qs_2009_org <- extract_csv_header(csps_data_files$csps2009$organisations.c)
@@ -38,8 +34,6 @@ qs_2012_org <- qs_2012_org[c(-1, -2)]
 
 ## 2013 additional scores ------
 
-cli::cli_progress_step("2013 additional scores")
-
 # organisations
 qs_2013_org <- extract_csv_header(csps_data_files$csps2013$organisations.c)
 qs_2013_org <- qs_2013_org[c(-1, -2)]
@@ -51,8 +45,6 @@ qs_2013_dem <- extract_csv_col1(csps_data_files$csps2013$demographics.c)
 qs_2013_scs <- extract_csv_col1(csps_data_files$csps2013$scs.c)
 
 ## 2014 scores ------
-
-cli::cli_progress_step("2014 scores")
 
 # benchmarks
 qs_2014_bm <- extract_csv_col1(csps_data_files$csps2014$benchmarks.c)
@@ -67,8 +59,6 @@ qs_2014_dem <- qs_2014_dem[4:122]
 
 ## 2015 scores ------
 
-cli::cli_progress_step("2015 scores")
-
 # benchmarks
 qs_2015_bm <- extract_csv_col1(csps_data_files$csps2015$benchmarks.c)
 
@@ -82,8 +72,6 @@ qs_2015_dem <- qs_2015_dem[4:132]
 
 ## 2016 scores ------
 
-cli::cli_progress_step("2016 scores")
-
 # benchmarks
 qs_2016_bm <- extract_csv_col2(csps_data_files$csps2016$benchmarks.c)
 
@@ -95,11 +83,7 @@ qs_2016_org <- qs_2016_org[c(-1, -2, -3)]
 qs_2016_dem <- extract_csv_col1(csps_data_files$csps2016$demographics.c)
 qs_2016_dem <- qs_2016_dem[c(3, 5:127)]
 
-cli::cli_progress_update(3)
-
 ## 2017 scores ------
-
-cli::cli_progress_step("2017 scores")
 
 # benchmarks
 qs_2017_bm <- extract_csv_col2(csps_data_files$csps2017$benchmarks.c)
@@ -113,8 +97,6 @@ qs_2017_dem <- extract_excel_col(csps_data_files$csps2017$demographics.x)
 qs_2017_dem <- qs_2017_dem[3:128]
 
 ## 2018 scores ------
-
-cli::cli_progress_step("2018 scores")
 
 # benchmarks
 qs_2018_bm <- extract_csv_col2(csps_data_files$csps2018$benchmarks.c)
@@ -132,8 +114,6 @@ qs_2018_dem <- qs_2018_dem[3:129]
 
 ## 2019 scores ------
 
-cli::cli_progress_step("2019 scores")
-
 # benchmark
 qs_2019_bm <- extract_csv_col2(csps_data_files$csps2019$benchmarks.c)
 
@@ -149,8 +129,6 @@ qs_2019_dem <- extract_excel_col(csps_data_files$csps2019$demographics.x)
 qs_2019_dem <- qs_2019_dem[3:133]
 
 ## 2020 scores ------
-
-cli::cli_progress_step("2020 scores")
 
 # benchmarks
 qs_2020_bm <- extract_csv_col2(csps_data_files$csps2020$benchmarks.c)
@@ -185,8 +163,6 @@ qs_2020_dem <- qs_2020_dem[3:146]
 
 ## 2021 scores ------
 # note: from 2021 onwards all files are published as ODS files
-
-cli::cli_progress_step("2021 scores")
 
 # benchmarks
 qs_2021_bm <- extract_ods_cols(
@@ -225,8 +201,6 @@ qs_2021_dem <- qs_2021_dem[4:147]
 
 ## 2022 scores ------
 
-cli::cli_progress_step("2022 scores")
-
 # benchmarks
 qs_2022_bm <- extract_ods_cols(
   csps_data_files$csps2022$benchmarks.o,
@@ -262,8 +236,6 @@ qs_2022_dem <- extract_ods_row(
 qs_2022_dem <- qs_2022_dem[4:180]
 
 ## 2023 scores ------
-
-cli::cli_progress_step("2023 scores")
 
 # benchmarks
 qs_2023_bm <- extract_ods_cols(
@@ -301,8 +273,6 @@ qs_2023_dem <- qs_2023_dem[5:183]
 
 ## 2024 scores ------
 
-cli::cli_progress_step("2024 scores")
-
 # benchmarks
 qs_2024_bm <- extract_ods_cols(
   csps_data_files$csps2024$benchmarks.o,
@@ -339,8 +309,6 @@ qs_2024_dem <- qs_2024_dem[4:185]
 
 # get unified data ------
 
-cli::cli_progress_step("Merge data")
-
 # function to extract question labels from objects
 get_values <- function(x, class) {
   if (class == "character") {
@@ -372,12 +340,9 @@ raw_tbl_qs <- tibble::tibble(
   ) |>
   dplyr::filter(!is.na(raw_label) & raw_label != "")
 
-cli::cli_progress_step("Write merged data to disk")
-
+# write raw table
 readr::write_excel_csv(
   raw_tbl_qs,
   "proc/01-questions_ref/01_01-raw_tbl_qs.csv",
   na = ""
 )
-
-cli::cli_progress_done()

@@ -5,41 +5,41 @@
 # the labels of demographic questions and categories.
 
 # setup ------
-source("R/00_data_files.R")
-source("R/extract_helpers.R")
+source("R/utils/data_files.R")
+source("R/utils/data_extract_helpers.R")
 
 # 2013 to 2019 demographics ------
 # 2013 to 2019 follow a similar format, published in Excel
 
-dm_2013 <- extract_excel_dem_rows(
+dm_2013 <- extract_dem_cats(
   csps_data_files$csps2013$demographics.x,
   sheet = "Scores",
   rows = 1:2,
   start_col = 3
 )
 
-dm_2014 <- extract_excel_dem_rows(
+dm_2014 <- extract_dem_cats(
   csps_data_files$csps2014$demographics.x,
   sheet = "2014",
   rows = 1:2,
   start_col = 3
 )
 
-dm_2015 <- extract_excel_dem_rows(
+dm_2015 <- extract_dem_cats(
   csps_data_files$csps2015$demographics.x,
   sheet = "2015",
   rows = 1:2,
   start_col = 3
 )
 
-dm_2016 <- extract_excel_dem_rows(
+dm_2016 <- extract_dem_cats(
   csps_data_files$csps2016$demographics.x,
   sheet = "2016",
   rows = 1:2,
   start_col = 3
 )
 
-dm_2017 <- extract_excel_dem_rows(
+dm_2017 <- extract_dem_cats(
   csps_data_files$csps2017$demographics.x,
   sheet = "2017",
   rows = 1:2,
@@ -52,14 +52,14 @@ dm_2017 <- extract_excel_dem_rows(
   )
 )
 
-dm_2018 <- extract_excel_dem_rows(
+dm_2018 <- extract_dem_cats(
   csps_data_files$csps2018$demographics.x,
   sheet = "2018",
   rows = 1:2,
   start_col = 3
 )
 
-dm_2019 <- extract_excel_dem_rows(
+dm_2019 <- extract_dem_cats(
   csps_data_files$csps2019$demographics.x,
   sheet = "2019",
   rows = 1:2,
@@ -71,35 +71,35 @@ dm_2019 <- extract_excel_dem_rows(
 # spreadsheets from 2020 onwards the format of the demographics files changed,
 # including a switch to using ODS files.
 
-dm_2020 <- extract_ods_dem_cols(
+dm_2020 <- extract_dem_cats(
   csps_data_files$csps2020$demographics.o,
   sheet = "Benchmarks",
   cols = 1:2,
   skip = 4
 )
 
-dm_2021 <- extract_ods_dem_cols(
+dm_2021 <- extract_dem_cats(
   csps_data_files$csps2021$demographics.o,
   sheet = "Benchmarks",
   cols = 1:2,
   skip = 4
 )
 
-dm_2022 <- extract_ods_dem_cols(
+dm_2022 <- extract_dem_cats(
   csps_data_files$csps2022$demographics.o,
   sheet = "Benchmarks",
   cols = 1:2,
   skip = 4
 )
 
-dm_2023 <- extract_ods_dem_cols(
+dm_2023 <- extract_dem_cats(
   csps_data_files$csps2023$demographics.o,
   sheet = "Benchmarks",
   cols = 1:2,
   skip = 5
 )
 
-dm_2024 <- extract_ods_dem_cols(
+dm_2024 <- extract_dem_cats(
   csps_data_files$csps2024$demographics.o,
   sheet = "Table_1",
   cols = 1:2,
