@@ -21,6 +21,6 @@ fs::file_copy(
 )
 
 fs::file_copy(
-  "proc/03-demographics_ref/03_02-dem-cat_ref-edited.csv",
+  "proc/03-demographics_ref/03_02-dem_cat_ref-edited.csv",
   "proc/csps_demcat_ref.csv"
 )

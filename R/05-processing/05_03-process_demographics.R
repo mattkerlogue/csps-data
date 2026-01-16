@@ -9,7 +9,7 @@ source("R/utils/extract_response_category.R")
 source("R/utils/hash_time.R")
 
 raw_tbl_dem_data <- arrow::read_parquet(
-  "proc/04-extract_data/04_03-raw_tbl_dem_data_692a26db.parquet"
+  "proc/04-extract_data/04_03-raw_tbl_dem_data_df950add.parquet"
 )
 
 qs_regex <- readr::read_csv(

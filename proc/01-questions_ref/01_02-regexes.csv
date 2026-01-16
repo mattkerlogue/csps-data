@@ -177,9 +177,9 @@ senior.*visible,lmc.seniors_visible
 skills.*need,rwk.skills_needed
 speak.up,tpl.speak_up_risk
 team.*care.*wellbeing,wlb.team_care
-team.*encouraged,tem.team_encouraged
-team.*improve,tem.improve_service
-team.*relied.upon,tem.relied_upon
+team.*encouraged,twk.team_encouraged
+team.*improve,twk.improve_service
+team.*relied.upon,twk.relied_upon
 technology.*collaborate,tpl.technology_collaborate
 tools.*need,rwk.tools_needed
 training.*information,inf.information_training

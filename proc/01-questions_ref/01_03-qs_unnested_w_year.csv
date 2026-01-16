@@ -1180,30 +1180,6 @@
 "rwk.work_objectives","work.objectives","b30. i have clear work objectives",8,2019
 "rwk.work_objectives","work.objectives","b32. i have clear work objectives",8,2016
 "rwk.work_objectives","work.objectives","b32. i have clear work objectives (% strongly agree or agree)",8,2015
-"tem.improve_service","team.*improve","b19 the people in my team work together to find ways to improve the service we provide (% selecting 'strongly agree' or 'agree')",8,2024
-"tem.improve_service","team.*improve","the people in my team work together to find ways to improve the service we provide (% selecting 'strongly agree' or 'agree')",8,2024
-"tem.improve_service","team.*improve","b19. the people in my team work together to find ways to improve the service we provide (% selecting 'strongly agree' or 'agree')",8,2023
-"tem.improve_service","team.*improve","b19. the people in my team work together to find ways to improve the service we provide (% strongly agree or agree)",8,2022
-"tem.improve_service","team.*improve","b19: the people in my team work together to find ways to improve the service we provide (% strongly agree or agree)",8,2020
-"tem.improve_service","team.*improve","b19. the people in my team work together to find ways to improve the service we provide",8,2019
-"tem.improve_service","team.*improve","b20. the people in my team work together to find ways to improve the service we provide",8,2016
-"tem.improve_service","team.*improve","b20. the people in my team work together to find ways to improve the service we provide (% strongly agree or agree)",8,2015
-"tem.relied_upon","team.*relied.upon","b18 the people in my team can be relied upon to help when things get difficult in my job (% selecting 'strongly agree' or 'agree')",8,2024
-"tem.relied_upon","team.*relied.upon","the people in my team can be relied upon to help when things get difficult in my job (% selecting 'strongly agree' or 'agree')",8,2024
-"tem.relied_upon","team.*relied.upon","b18. the people in my team can be relied upon to help when things get difficult in my job (% selecting 'strongly agree' or 'agree')",8,2023
-"tem.relied_upon","team.*relied.upon","b18. the people in my team can be relied upon to help when things get difficult in my job (% strongly agree or agree)",8,2022
-"tem.relied_upon","team.*relied.upon","b18: the people in my team can be relied upon to help when things get difficult in my job (% strongly agree or agree)",8,2020
-"tem.relied_upon","team.*relied.upon","b18. the people in my team can be relied upon to help when things get difficult in my job",8,2019
-"tem.relied_upon","team.*relied.upon","b19. the people in my team can be relied upon to help when things get difficult in my job",8,2016
-"tem.relied_upon","team.*relied.upon","b19. the people in my team can be relied upon to help when things get difficult in my job (% strongly agree or agree)",8,2015
-"tem.team_encouraged","team.*encouraged","b20 the people in my team are encouraged to come up with new and better ways of doing things (% selecting 'strongly agree' or 'agree')",8,2024
-"tem.team_encouraged","team.*encouraged","the people in my team are encouraged to come up with new and better ways of doing things (% selecting 'strongly agree' or 'agree')",8,2024
-"tem.team_encouraged","team.*encouraged","b20. the people in my team are encouraged to come up with new and better ways of doing things (% selecting 'strongly agree' or 'agree')",8,2023
-"tem.team_encouraged","team.*encouraged","b20. the people in my team are encouraged to come up with new and better ways of doing things (% strongly agree or agree)",8,2022
-"tem.team_encouraged","team.*encouraged","b20: the people in my team are encouraged to come up with new and better ways of doing things (% strongly agree or agree)",8,2020
-"tem.team_encouraged","team.*encouraged","b20. the people in my team are encouraged to come up with new and better ways of doing things",8,2019
-"tem.team_encouraged","team.*encouraged","b21. the people in my team are encouraged to come up with new and better ways of doing things",8,2016
-"tem.team_encouraged","team.*encouraged","b21. the people in my team are encouraged to come up with new and better ways of doing things (% strongly agree or agree)",8,2015
 "tpl.aware_vision","aware.*vision","b59 i am aware of the civil service vision for 'a modern civil service' (% selecting 'strongly agree' or 'agree')",8,2024
 "tpl.aware_vision","aware.*vision","i am aware of the civil service vision for 'a modern civil service' (% selecting 'strongly agree' or 'agree')",8,2024
 "tpl.aware_vision","aware.*vision","b59. i am aware of the civil service vision for 'a modern civil service' (% selecting 'strongly agree' or 'agree')",8,2023
@@ -1212,6 +1188,30 @@
 "tpl.aware_vision","aware.*vision","b59: i am aware of the civil service vision for 'a brilliant civil service' (% strongly agree or agree)",8,2020
 "tpl.aware_vision","aware.*vision","b59 i am aware of the civil service vision for 'a brilliant civil service'",8,2019
 "tpl.aware_vision","aware.*vision","b61. i am aware of the civil service vision for 'a brilliant civil service'",8,2018
+"twk.improve_service","team.*improve","b19 the people in my team work together to find ways to improve the service we provide (% selecting 'strongly agree' or 'agree')",8,2024
+"twk.improve_service","team.*improve","the people in my team work together to find ways to improve the service we provide (% selecting 'strongly agree' or 'agree')",8,2024
+"twk.improve_service","team.*improve","b19. the people in my team work together to find ways to improve the service we provide (% selecting 'strongly agree' or 'agree')",8,2023
+"twk.improve_service","team.*improve","b19. the people in my team work together to find ways to improve the service we provide (% strongly agree or agree)",8,2022
+"twk.improve_service","team.*improve","b19: the people in my team work together to find ways to improve the service we provide (% strongly agree or agree)",8,2020
+"twk.improve_service","team.*improve","b19. the people in my team work together to find ways to improve the service we provide",8,2019
+"twk.improve_service","team.*improve","b20. the people in my team work together to find ways to improve the service we provide",8,2016
+"twk.improve_service","team.*improve","b20. the people in my team work together to find ways to improve the service we provide (% strongly agree or agree)",8,2015
+"twk.relied_upon","team.*relied.upon","b18 the people in my team can be relied upon to help when things get difficult in my job (% selecting 'strongly agree' or 'agree')",8,2024
+"twk.relied_upon","team.*relied.upon","the people in my team can be relied upon to help when things get difficult in my job (% selecting 'strongly agree' or 'agree')",8,2024
+"twk.relied_upon","team.*relied.upon","b18. the people in my team can be relied upon to help when things get difficult in my job (% selecting 'strongly agree' or 'agree')",8,2023
+"twk.relied_upon","team.*relied.upon","b18. the people in my team can be relied upon to help when things get difficult in my job (% strongly agree or agree)",8,2022
+"twk.relied_upon","team.*relied.upon","b18: the people in my team can be relied upon to help when things get difficult in my job (% strongly agree or agree)",8,2020
+"twk.relied_upon","team.*relied.upon","b18. the people in my team can be relied upon to help when things get difficult in my job",8,2019
+"twk.relied_upon","team.*relied.upon","b19. the people in my team can be relied upon to help when things get difficult in my job",8,2016
+"twk.relied_upon","team.*relied.upon","b19. the people in my team can be relied upon to help when things get difficult in my job (% strongly agree or agree)",8,2015
+"twk.team_encouraged","team.*encouraged","b20 the people in my team are encouraged to come up with new and better ways of doing things (% selecting 'strongly agree' or 'agree')",8,2024
+"twk.team_encouraged","team.*encouraged","the people in my team are encouraged to come up with new and better ways of doing things (% selecting 'strongly agree' or 'agree')",8,2024
+"twk.team_encouraged","team.*encouraged","b20. the people in my team are encouraged to come up with new and better ways of doing things (% selecting 'strongly agree' or 'agree')",8,2023
+"twk.team_encouraged","team.*encouraged","b20. the people in my team are encouraged to come up with new and better ways of doing things (% strongly agree or agree)",8,2022
+"twk.team_encouraged","team.*encouraged","b20: the people in my team are encouraged to come up with new and better ways of doing things (% strongly agree or agree)",8,2020
+"twk.team_encouraged","team.*encouraged","b20. the people in my team are encouraged to come up with new and better ways of doing things",8,2019
+"twk.team_encouraged","team.*encouraged","b21. the people in my team are encouraged to come up with new and better ways of doing things",8,2016
+"twk.team_encouraged","team.*encouraged","b21. the people in my team are encouraged to come up with new and better ways of doing things (% strongly agree or agree)",8,2015
 "wlb.life_worthwhile","life.*worthwhile","overall, to what extent do you feel that things you do in your life are worthwhile? (% selecting '7 to 10', where 10 is the most worthwhile)",8,2024
 "wlb.life_worthwhile","life.*worthwhile","w02 overall, to what extent do you feel that things you do in your life are worthwhile? (% selecting '7 to 10', where 10 is the most worthwhile)",8,2024
 "wlb.life_worthwhile","life.*worthwhile","w02. overall, to what extent do you feel that things you do in your life are worthwhile? (% selecting 7 to 10, where 10 is the most worthwhile)",8,2023
