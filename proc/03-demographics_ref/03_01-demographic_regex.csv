@@ -22,8 +22,8 @@ locwls,h1c,Work location - Wales,Where in Wales do you usually work?
 timciv,h04,Time in Civil Service,How long have you worked for the Civil Service?
 timjob,h02,Time in current job,How long have you worked in your current job?
 timorg,h03,Time in organisation,How long have you worked for [my organisation] or its predecessor(s)?
-ltcimp,impact.*j04|z09,Severity of long-term condition,Does your condition or illness/do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?
-ltcond,health.*j04\b|z08,Has long-term condition,Do you have any physical or mental health conditions or illnesses lasting or expected to last for 12 months or more?
+ltcimp,impact.*j04|j04.j4a|z09,Severity of long-term condition,Does your condition or illness/do any of your conditions or illnesses reduce your ability to carry out day-to-day activities?
+ltcond,health.*j04\]?$|z08,Has long-term condition,Do you have any physical or mental health conditions or illnesses lasting or expected to last for 12 months or more?
 manage,h05,Manages others,Do you manage any other employees?
 menhel,j04b,Mental health rating,"In general, how would you rate your overall mental health now?"
 menops,j04i,Menopause,"Are you currently experiencing the menopause, perimenopause, or postmenopause?"

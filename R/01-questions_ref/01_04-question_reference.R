@@ -98,7 +98,7 @@ readr::write_excel_csv(
 
 # write output -----
 
-tbl_measures_uid <- tbl_qs_complete_match |>
+tbl_measures_uid <- tbl_yr_measures |>
   dplyr::filter(!is.na(proc_measure)) |>
   dplyr::distinct(year, measure = proc_measure, uid_qm_num, uid_qm_txt)
 

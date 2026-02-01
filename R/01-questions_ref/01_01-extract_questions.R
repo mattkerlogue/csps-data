@@ -326,13 +326,20 @@ raw_tbl_qs <- tibble::tibble(
   obj = ls(pattern = "^qs_", envir = .GlobalEnv)
 ) |>
   dplyr::mutate(
-    obj_class = purrr::map_chr(.x = obj, .f = ~ class(get(.x))[1]),
+    obj_chr = purrr::map_lgl(.x = obj, .f = ~ is.character(get(.x))),
+    obj_tbl = purrr::map_lgl(.x = obj, .f = ~ inherits(get(.x), "tbl_df")),
+    obj_class = dplyr::case_when(
+      obj_chr ~ "character",
+      obj_tbl ~ "tbl_df",
+      TRUE ~ "ERROR"
+    ),
     obj_labels = purrr::map2(
       .x = obj,
       .y = obj_class,
       .f = ~ get_values(.x, .y)
     )
   ) |>
+  dplyr::select(-obj_chr, -obj_tbl) |>
   tidyr::unnest(obj_labels) |>
   dplyr::mutate(
     # handle windows encoding errors

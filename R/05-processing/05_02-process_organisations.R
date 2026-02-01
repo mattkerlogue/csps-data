@@ -63,8 +63,9 @@ tbl_org_data_proc <- raw_tbl_org_data |>
     measures_lookup |>
       dplyr::add_count(year, measure) |>
       dplyr::filter(n == 1) |>
-      dplyr::select(-n),
-    by = c("year", "measure"),
+      dplyr::select(-n) |>
+      dplyr::rename(qm_text = measure),
+    by = c("year", "qm_text"),
     unmatched = "ignore"
   ) |>
   dplyr::left_join(raw_unq_org, by = "organisation")

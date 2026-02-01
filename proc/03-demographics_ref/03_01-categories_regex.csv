@@ -129,8 +129,10 @@ south west wales,loc_wls_sww,south.west.wales
 "condition, illness or disability has little impact on your day-to-day activities",ltc_imp_lit,condition.*little
 "condition, illness or disability has a lot of impact on your day-to-day activities",ltc_imp_lot,condition.*a.lot
 "condition, illness or disability has no impact on your day-to-day activities",ltc_imp_non,^(illness|condition).*no
-"long-term limiting condition, illness or disability",ltc_ltc,^long.term.*condition
-"no long-term limiting condition, illness or disability",ltc_non,^no.long.term
+"long-term limiting condition, illness or disability",ltc_ltc,^long.term.*condition(?!.*impact)
+"long-term limiting illness or condition which has an impact on daily activities/work",ltc_imp,^long.term.*condition.*impact
+"no long-term limiting condition, illness or disability",ltc_non,^no.long.term.*condition(?!.*impact)
+"no long-term limiting illness or condition which has an impact on daily activities/work",ltc_noi,^no.long.term.*condition.*impact
 manager,mgr_mgr,^manager$
 non-manager,mgr_non,^non.manager
 poor,mhl_por,^poor$

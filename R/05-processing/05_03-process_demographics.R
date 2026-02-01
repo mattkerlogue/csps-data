@@ -171,6 +171,13 @@ tbl_dem_data_out <- tbl_dem_data_proc |>
     demcat_ref |> dplyr::select(uid_demcat_txt, uid_demcat_num),
     by = "uid_demcat_txt"
   ) |>
+  dplyr::mutate(
+    uid_demq_txt = dplyr::if_else(
+      is.na(uid_demq_txt) & obj_year == 2018 & uid_demcat_txt == "allrsp",
+      "allrsp",
+      uid_demq_txt
+    )
+  ) |>
   dplyr::select(
     data_type = obj_data,
     year = obj_year,

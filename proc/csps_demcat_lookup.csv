@@ -191,7 +191,9 @@ timorg,yrs_twe_mor,timorg_gt020y
 ltcimp,ltc_imp_lit,ltcimp_low
 ltcimp,ltc_imp_lot,ltcimp_lot
 ltcimp,ltc_imp_non,ltcimp_nim
+ltcimp,ltc_imp,ltcimp_imp
 ltcimp,ltc_non,ltcimp_ncd
+ltcimp,ltc_noi,ltcimp_noi
 ltcond,ltc_ltc,ltcond_ltc
 ltcond,ltc_non,ltcond_ncd
 manage,mgr_mgr,manage_mgr
@@ -246,7 +248,7 @@ occdet,occ_spc_opr,occdet_spc_opr
 occdet,occ_spc_oth,occdet_spc_oth
 occdet,occ_spc_res,occdet_spc_res
 occdet,occ_spc_sci,occdet_spc_sci
-occdet,occ_spc_sts,occdet_spc_sci
+occdet,occ_spc_sts,occdet_spc_sts
 occdet,occ_crp_srt,occdet_crp_srt
 occdet,zzz_oth,occdet_oth
 occdet,zzz_pol,occdet_pol
@@ -283,7 +285,7 @@ schtyp,zzz_pns,schtyp_pns
 sebslf,seb_slf_low,sebslf_low
 sebslf,seb_slf_not,sebslf_not
 sebslf,zzz_dkn,sebslf_dkn
-sebslf,zzz_no,sebslf_low
+sebslf,zzz_no,sebslf_not
 sebslf,zzz_pns,sebslf_pns
 sebslf,zzz_yes,sebslf_low
 sexgen,gid_fem,sexgen_fem

@@ -116,6 +116,7 @@ occdet,occ_spc_leg,occdet_spc_leg,1.07.02.407,primary,Legal,Legal,Occupation: Le
 occdet,occ_spc_opr,occdet_spc_opr,1.07.02.408,primary,Operational research,Operational research,Occupation: Operational research
 occdet,occ_spc_res,occdet_spc_res,1.07.02.409,primary,Social research,Social research,Occupation: Social research
 occdet,occ_spc_sci,occdet_spc_sci,1.07.02.410,primary,Science,Science,Occupation: Science
+occdet,occ_spc_sts,occdet_spc_sts,1.07.02.411,primary,Statistics,Statistics,Occupation: Statistics
 occdet,occ_spc_oth,occdet_spc_oth,1.07.02.490,primary,Other specialist role,Other specialist role,Occupation: Other specialist role
 occdet,zzz_oth,occdet_oth,1.07.02.900,primary,Other role,Other role,Occupation: Other role
 functn,fnc_anl,functn_anl,1.07.03.001,primary,Analysis,Analysis,Operational function: Analysis
@@ -210,10 +211,12 @@ citizn,ctz_oth,citizn_oth,2.03.04.900,secondary,Other citizenhip,Other citizenhi
 citizn,zzz_dkp,citizn_dkp,2.03.04.998,secondary,Don't know,Don't know,Citizenship: Don't know
 ltcond,ltc_ltc,ltcond_ltc,2.04.00.001,primary,Has a long-term limiting condition,Has a long-term limiting condition,Health status: Has a long-term limiting condition
 ltcond,ltc_non,ltcond_ncd,2.04.00.002,primary,No long-term limiting condition,No long-term limiting condition,Health status: No long-term limiting condition
-ltcimp,ltc_imp_lot,ltcimp_lot,2.04.01.001,primary,Long-term condition that limits a lot,Long-term health condition that limits daily activities a lot,Health condition impact: Long-term health condition that limits daily activities a lot
-ltcimp,ltc_imp_lit,ltcimp_low,2.04.01.002,primary,Long-term condition that limits a little,Long-term health condition that limits daily activities a little,Health condition impact: Long-term health condition that limits daily activities a little
-ltcimp,ltc_imp_non,ltcimp_nim,2.04.01.003,primary,Long-term condition that does not limit,Long-term health condition that does not limit daily activities,Health condition impact: Long-term health condition that does not limit daily activities
-ltcimp,ltc_non,ltcimp_ncd,2.04.01.004,primary,No long-term health condition,No-long term health condition,Health condition impact: No-long term health condition
+ltcimp,ltc_imp,ltcimp_imp,2.04.00.101, primary,Long-term condition that has an impact,Long-term health condition that has any impact on daily activities,Health condition impact: Long-term health condition that has any impact on daily activities
+ltcimp,ltc_noi,ltcimp_noi,2.04.01.102,primary,No condition or condition that does not limit,No-long term health condition or has a condition that does not limit daily activities,Health condition impact: No-long term health condition or has a condition that does not limit daily activities
+ltcimp,ltc_imp_lot,ltcimp_lot,2.04.01.201,primary,Long-term condition that limits a lot,Long-term health condition that limits daily activities a lot,Health condition impact: Long-term health condition that limits daily activities a lot
+ltcimp,ltc_imp_lit,ltcimp_low,2.04.01.202,primary,Long-term condition that limits a little,Long-term health condition that limits daily activities a little,Health condition impact: Long-term health condition that limits daily activities a little
+ltcimp,ltc_imp_non,ltcimp_nim,2.04.01.203,primary,Long-term condition that does not limit,Long-term health condition that does not limit daily activities,Health condition impact: Long-term health condition that does not limit daily activities
+ltcimp,ltc_non,ltcimp_ncd,2.04.01.204,primary,No long-term health condition,No-long term health condition,Health condition impact: No-long term health condition
 menhel,mhl_por,menhel_por,2.04.02.001,primary,Poor,Poor mental health,Mental health rating: Poor mental health
 menhel,mhl_fai,menhel_fai,2.04.02.002,primary,Fair,Fair mental health,Mental health rating: Fair mental health
 menhel,mhl_god,menhel_god,2.04.02.003,primary,Good,Good mental health,Mental health rating: Good mental health
