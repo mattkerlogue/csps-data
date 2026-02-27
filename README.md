@@ -93,6 +93,14 @@ while the processed data and documentation companion are released under the
 
 The licenses are contained both at the root directory and in the relevant sub-folder.
 
+The recommended citation for this companion is:
+
+> Kerlogue M (2026) CSPS Data Processing Companion, https://mattkerlogue.github.io/csps-data/
+
+The recommended citation for the re-processed data is:
+
+> Kerlogue M (2026) Civil Service People Survey harmonised datasets, https://github.com/mattkerlogue/csps-data
+
 [ukgwa]: https://webarchive.nationalarchives.gov.uk/ukgwa/20140310230334/http://www.civilservice.gov.uk/about/improving/employee-engagement-in-the-civil-service/people-survey-2013
 [govuk-14]: https://www.gov.uk/government/publications/civil-service-people-survey-2014-results
 [govuk-15]: https://www.gov.uk/government/publications/civil-service-people-survey-2015-results
