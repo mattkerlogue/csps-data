@@ -39,9 +39,6 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# pkgdown site
-docs/
-
 # translation temp files
 po/*~
 
@@ -51,6 +48,7 @@ rsconnect/
 # quarto
 /.quarto/
 /_site/
+/companion/_site/
 
 # GOV.UK html
 *GOV.UK_files

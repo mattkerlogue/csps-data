@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Glossary of terms and concepts – CSPS Data Processing Companion</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./02_technical_approach.html" rel="next">
+<link href="./00_introduction.html" rel="prev">
+<link href="./notebook.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b43b71f09d5e7a5dab1754ea13aae5e9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b43b71f09d5e7a5dab1754ea13aae5e9.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b43b71f09d5e7a5dab1754ea13aae5e9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-25b27c06c95c447fbb28acaffbc34332.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-af25218ebb03d3594df13b45f551ff89.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-25b27c06c95c447fbb28acaffbc34332.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+    window.onload = (event) => {
+        document.getElementsByTagName("body")[0].prepend(
+            document.getElementById("book-site-banner")
+        )
+    }
+</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Glossary of terms and concepts</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CSPS&nbsp;Data Processing Companion</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mattkerlogue/csps-data" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_terminology.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Glossary of terms and concepts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Technical set-up</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_technical_approach.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Technical approach</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_source_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Source data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_helper_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Utilities and helper functions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Developing harmonisations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_harmonisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to harmonisation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_questions_regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonising questions and measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_organisations_regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Harmonising organisations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_demographics_regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Harmonising demographics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Extracting data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20_extraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to data extraction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21_extract_benchmarks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Extracting benchmark results</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22_extract_organisations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Extracting organisation results</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23_extract_demographics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Extracting demographic results</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Processing and harmonising data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30_processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introduction to data processing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31_processing_benchmarks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Processing benchmark results</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./32_processing_organisations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Processing organisations results</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./33_processing_demographics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Processing demographic results</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data dictionaries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./90_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./99_demographics_sex_gender.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sex, gender and gender identity in the Civil Service People Survey</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Colophon</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./privacy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Privacy policy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#a" id="toc-a" class="nav-link active" data-scroll-target="#a">A</a></li>
+  <li><a href="#c" id="toc-c" class="nav-link" data-scroll-target="#c">C</a></li>
+  <li><a href="#d" id="toc-d" class="nav-link" data-scroll-target="#d">D</a></li>
+  <li><a href="#e" id="toc-e" class="nav-link" data-scroll-target="#e">E</a></li>
+  <li><a href="#g" id="toc-g" class="nav-link" data-scroll-target="#g">G</a></li>
+  <li><a href="#m" id="toc-m" class="nav-link" data-scroll-target="#m">M</a></li>
+  <li><a href="#n" id="toc-n" class="nav-link" data-scroll-target="#n">N</a></li>
+  <li><a href="#o" id="toc-o" class="nav-link" data-scroll-target="#o">O</a></li>
+  <li><a href="#p" id="toc-p" class="nav-link" data-scroll-target="#p">P</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#s" id="toc-s" class="nav-link" data-scroll-target="#s">S</a></li>
+  <li><a href="#t" id="toc-t" class="nav-link" data-scroll-target="#t">T</a></li>
+  <li><a href="#u" id="toc-u" class="nav-link" data-scroll-target="#u">U</a></li>
+  <li><a href="#v" id="toc-v" class="nav-link" data-scroll-target="#v">V</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<div id="book-site-banner">
+    <div class="banner-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewbox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"></path>
+        </svg>
+    </div>
+    <div class="book-site-banner-text">
+        <strong>Under development:</strong> This book is still under active
+        development, its content and structure are subject to change.
+    </div>
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Glossary of terms and concepts</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter is a reference/glossary of various terminology used throughout this companion, including terminology relating to both the processing of the Civil Service People Survey data as well as terms and concepts relating more generally to the operation and management of the Civil Service.</p>
+<p>This companion uses the terms ‘Civil Service People Survey’ and ‘People Survey’ interchangeably; the acronym ‘CSPS’ is used sparingly, usually were space is at a premium (see the <a href="#csps">CSPS&nbsp;entry</a> below for further details).</p>
+<section id="a" class="level2">
+<h2 class="anchored" data-anchor-id="a">A</h2>
+<dl id="glossary-a">
+<dt id="agency">
+agency
+</dt>
+<dd>
+See <a href="#organisation">organisation</a>.
+</dd>
+</dl>
+</section>
+<section id="c" class="level2">
+<h2 class="anchored" data-anchor-id="c">C</h2>
+<dl id="glossary-c">
+<dt id="civil-servant">
+civil servant
+</dt>
+<dd>
+An official employed by the Crown that works in the UK <a href="#civil-service">Civil Service</a>.
+</dd>
+<dt id="civil-service">
+Civil Service
+</dt>
+<dd>
+<p>The term “Civil Service” means the <a href="https://www.gov.uk/government/organisations/civil-service">UK Civil Service</a>, that is the body of officials employed by the Crown that work in departments and agencies of the UK’s central government, the Scottish Government and the Welsh Government. Historically, it has been called the <em>‘Home Civil Service’</em>. The vast majority of civil servants working for the UK Civil Service are invited to take part in the survey<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>The Diplomatic Service are the combination of Crown employees working for the Foreign, Commonwealth and Development Office and staff employed locally by British diplomatic missions and posts (e.g. High Commissions, Embassies or Consulates). Staff of the diplomatic service, both FCDO&nbsp;Crown employees and those locally employed, participate in the People Survey.</p>
+Unlike the Scottish and Welsh Governments, the Northern Ireland Executive is supported by a legally separate body of civil servants called the Northern Ireland Civil Service. Staff for the Northern Ireland Civil Service do not participate in the People Survey. Staff of UK government departments or agencies based in Northern Ireland do participate in the survey as they are UK civil servants.
+</dd>
+<dt id="civil-service-people-survey">
+Civil Service People Survey
+</dt>
+<dd>
+The <a href="https://www.gov.uk/government/collections/civil-service-people-survey-hub">Civil Service People Survey</a> is the annual employee attitudes survey of civil servants working in the UK <a href="#civil-service">Civil Service</a>.
+</dd>
+<dt id="core-questionnaire">
+core questionnaire
+</dt>
+<dd>
+<p>The bulk of the People Survey uses a common questionnaire seen by all respondents no matter which <a href="#organisation">organisation</a> they participate through, this is called the ‘core questionnaire’. Some items of the core questionnaire use <a href="#variable-term">‘variable terms’</a> that adapt the language of the question so that it reflects the organisational context of the respondent. In addition to the core questionnaire organisations can chose a small number of additional ‘local’ questions bespoke to their needs, these are not included in the central datasets published by the Cabinet Office.</p>
+See also: <a href="#demographics">demographic questions, demographic categories</a> and <a href="#variable-term">variable term</a>.
+</dd>
+<dt id="csps">
+CSPS
+</dt>
+<dd>
+<p>‘CSPS’ is a commonly used acronym to refer to the Civil Service People Survey. Like many terms used in the Civil Service/government this acronym is not unique. In the context of this companion and the data processing it describes, ‘CSPS’ is only used to refer to the Civil Service People Survey.</p>
+<p>The other main use in the context of the management of the Civil Service is the Civil Service Pension Scheme (also ‘CSPS’, all capitalised).</p>
+Elsewhere in government, Community Safety Partnerships (local partnerships of public service organisations in England and Wales) and Co-ordinated Support Plans (a legal support plan in Scotland for children with long-term, multiple or complex support needs) can both be referred to using the acronym ‘CSP’ and is pluralised as ‘CSPs’ (note the lower-case ‘s’).
+</dd>
+</dl>
+</section>
+<section id="d" class="level2">
+<h2 class="anchored" data-anchor-id="d">D</h2>
+<dl id="glossary-d">
+<dt id="demographics">
+demographic questions, demographic categories
+</dt>
+<dd>
+<p>In addition to attitudinal questions the People Survey includes a number of ‘demographic’ questions that allow the results of the survey to be broken down by different characteristics of respondents. The demographics are split in to two major groups: work-related characteristics such as a respondent’s <a href="#grade">grade</a>, their working location or the type of role they do; and, personal characteristics such as a respondent’s <a href="#sex-and-gender">sex</a>, their age or whether they have childcare responsibilities. Individual responses to demographic questions are referred to as ‘demographic categories’.</p>
+See also: <a href="#core-questionnaire">core questionnaire</a>.
+</dd>
+<dt id="department">
+department, departmental family, departmental group
+</dt>
+<dd>
+See <a href="#organisation">organisation</a>.
+</dd>
+</dl>
+</section>
+<section id="e" class="level2">
+<h2 class="anchored" data-anchor-id="e">E</h2>
+<dl id="glossary-e">
+<dt id="eei">
+EEI, EES
+</dt>
+<dd>
+See <a href="#engagement-index">employee engagement index</a>.
+</dd>
+<dt id="employee-engagement">
+employee engagement
+</dt>
+<dd>
+<p>The concept underlying the measurement framework for the Civil Service People Survey. There is no singular definition of employee engagement, however <span class="citation" data-cites="Baileyengagement2015">Bailey <em>et al.</em> (<a href="90_references.html#ref-Baileyengagement2015" role="doc-biblioref">2015</a>)</span> notes that many definitions have developed as a result of the “positive psychology” movement. In regards to the People Survey, the <span class="citation" data-cites="cspsqualityinfo2024">Cabinet Office (<a href="90_references.html#ref-cspsqualityinfo2024" role="doc-biblioref">2025</a>)</span> describes employee engagement as:</p>
+<blockquote class="blockquote">
+<p>a workplace approach designed to ensure that employees are committed to their organisation’s goals and values, motivated to contribute to organisational success, and are able at the same time to enhance their own sense of well-being.</p>
+</blockquote>
+</dd>
+<dt id="engagement-index">
+employee engagement index
+</dt>
+<dd>
+<p>The Civil Service People Survey measures <a href="#employee-engagement">employee engagement</a> through an ‘employee engagement index’ (often simplified to ‘engagement index’), which is calculated from five questions that individual respondents levels of “pride, advocacy, attachment, inspiration and motivation” with their organisation <span class="citation" data-cites="cspsqualityinfo2024">(<a href="90_references.html#ref-cspsqualityinfo2024" role="doc-biblioref">Cabinet Office 2025</a>)</span>. The index is calculated such that a score of 0% reflects all respondents answering ‘strongly disagree’ to all five questions, and a score of 100% reflects all respondents answering ‘strongly agree’ to all five questions.</p>
+<p>The employee engagement index is sometimes referred to by the acronym EEI (for employee engagement index) or EES (for employee engagement score).</p>
+See also: <a href="#employee-engagement">employee engagement</a> and <a href="#theme-scores">theme scores</a>.
+</dd>
+<dt id="executive-agency">
+executive agency
+</dt>
+<dd>
+See <a href="#organisation">organisation</a>.
+</dd>
+</dl>
+</section>
+<section id="g" class="level2">
+<h2 class="anchored" data-anchor-id="g">G</h2>
+<dl id="glossary-g">
+<dt id="gender">
+gender, gender identity
+</dt>
+<dd>
+See <a href="#sex-and-gender">sex and gender</a>.
+</dd>
+<dt id="git">
+git
+</dt>
+<dd>
+A distributed version control system for managing source code and data.
+</dd>
+<dt id="government-department">
+government department
+</dt>
+<dd>
+See <a href="#organisation">organisation</a>.
+</dd>
+<dt id="grade">
+grade
+</dt>
+<dd>
+Changes in 1991 and 1996 ended the collective pay and grading system in use across the Civil Service and government departments were given flexibility to set their own salary scales <span class="citation" data-cites="holpublicservice1998">(<a href="90_references.html#ref-holpublicservice1998" role="doc-biblioref">Public Service Select Committee 1998</a>)</span>, often called ‘grades’. For coordination purposes these departmental grades are aligned into a cross-Civil Service framework of seven broad grades <span class="citation" data-cites="cscareers2026">(<a href="90_references.html#ref-cscareers2026" role="doc-biblioref">Cabinet Office</a>)</span>.
+</dd>
+</dl>
+</section>
+<section id="m" class="level2">
+<h2 class="anchored" data-anchor-id="m">M</h2>
+<dl id="glossary-m">
+<dt id="mog-change">
+machinery of government change
+</dt>
+<dd>
+<p>A ‘machinery of government change’ or ‘MoG’ change (typically pronounced “mog change”) is the common term used for the transfer of functions between different government/public service <a href="#organisation">organisations</a>.</p>
+<p>Machinery of government changes present complications in analysing People Survey time-series data as government departments and executive agencies can be created, merged, split. While many MoG changes are visible in the published data (typically through changes in organisation name), some MoG changes involve the transfer of functions between existing organisations without any visible external changes to organisation names/labels.</p>
+<p>Machinery of government changes and their implications for the People Survey are discussed further in the chapter on <a href="./12_organisations_regex.html">harmonising organisations</a>.</p>
+See also: <a href="#organisation">organisation</a>.
+</dd>
+<dt id="ministry">
+ministry
+</dt>
+<dd>
+See <a href="#organisation">organisation</a>.
+</dd>
+<dt id="mog-change-1">
+MoG change
+</dt>
+<dd>
+See <a href="#mog-change">machinery of government change</a>.
+</dd>
+</dl>
+</section>
+<section id="n" class="level2">
+<h2 class="anchored" data-anchor-id="n">N</h2>
+<dl id="glossary-n">
+<dt id="non-departmental-public-body">
+non-departmental public body
+</dt>
+<dd>
+See <a href="#organisation">organisation</a>.
+</dd>
+<dt id="non-ministerial-department">
+non-ministerial department
+</dt>
+<dd>
+See <a href="#organisation">organisation</a>.
+</dd>
+</dl>
+</section>
+<section id="o" class="level2">
+<h2 class="anchored" data-anchor-id="o">O</h2>
+<dl id="glossary-o">
+<dt id="organisation">
+organisation
+</dt>
+<dd>
+<p>The organisational structure of the UK Civil Service is not simple and nor is it formally codified. While there are aspects common to the experiences of civil servants and all are required to follow the Civil Service Code. The UK Civil Service is not a single employer, rather it is the government department or agency that is the employer of individual civil servants.</p>
+<p>The People Survey is designed to support this flexibility as questions in the core questionnaire include a <a href="#variable-term">‘variable term’</a> that ensure respondents see terminology specific to their context rather than use a generic term like ‘organisation’ or ‘department’ that may cause confusion. Organisations also have the option to include bespoke local questions in addition to the survey’s core questionnaire.</p>
+<p>In this context, individuals participate in the People Survey through one of around 100 ‘organisations’. These agencies typically align with individual government departments and agencies, however in some cases staff in agencies are surveyed as part of their parent department, in other cases for a department may have additional ‘organisations’ that split out a specific group of staff for operational reasons. Individual organisations are grouped into departmental groups (sometimes referred to as ‘families’).</p>
+The nature of the Civil Service’s organisational structure, and its implications for the People Survey is discussed further in the chapter on <a href="./12_organisations_regex.html">harmonising organisations</a>.
+</dd>
+</dl>
+</section>
+<section id="p" class="level2">
+<h2 class="anchored" data-anchor-id="p">P</h2>
+<dl id="glossary-p">
+<dt id="pay-band">
+pay band, pay scale
+</dt>
+<dd>
+See <a href="#grade">grade</a>.
+</dd>
+<dt id="people-survey">
+People Survey
+</dt>
+<dd>
+See <a href="#civil-service-people-survey">Civil Service People Survey</a>.
+</dd>
+</dl>
+</section>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<dl id="glossary-r">
+<dt id="regex">
+regex
+</dt>
+<dd>
+See <a href="#regular-expression">regular expression</a>.
+</dd>
+<dt id="regular-expression">
+regular expression
+</dt>
+<dd>
+<p>A <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> (often called a ‘regex’) is a method for pattern matching in text. They are used in the People Survey to identify attitudinal questions, demographic questions and categories, and organisation names within the People Survey datasets.</p>
+See the <a href="./10_harmonisation.html">introduction to harmonisation</a> for further details on how regular expressions are used in the processing of People Survey data.
+</dd>
+<dt id="repo">
+repo
+</dt>
+<dd>
+See <a href="#repository">repository</a>.
+</dd>
+<dt id="repository">
+repository
+</dt>
+<dd>
+In the context of this companion the term ‘repository’, often shortened to ‘repo’, typically means a collection of software code managed through a version control system such as <a href="#git">git</a> and often stored in a cloud service such as <a href="https://www.github.com">Github</a>.
+</dd>
+<dt id="responsibility-level">
+responsibility level
+</dt>
+<dd>
+See <a href="#grade">grade</a>.
+</dd>
+</dl>
+</section>
+<section id="s" class="level2">
+<h2 class="anchored" data-anchor-id="s">S</h2>
+<dl id="glossary-s">
+<dt id="sex-and-gender">
+sex and gender
+</dt>
+<dd>
+Over the years of its operation there have been several changes to the way the People Survey has measured sex, gender and gender identity. These questionnaire changes and the particular choices made to harmonise People Survey data over time are discussed in a dedicated <a href="./99_demographics_sex_gender.html">appendix</a>.
+</dd>
+</dl>
+</section>
+<section id="t" class="level2">
+<h2 class="anchored" data-anchor-id="t">T</h2>
+<dl id="glossary-t">
+<dt id="theme-scores">
+theme scores
+</dt>
+<dd>
+<p>Alongside the <a href="#engagement-index">engagement index</a>, the survey results include a set of ‘theme scores’ which provide a summary score for the nine main themes of the survey’s questionnaire. Theme scores reflect the level of positive response to the questions in the given theme, that is ‘strongly agree’ or ‘agree’ answers. Theme scores are calculated on a per respondent basis and as a result of missing data (i.e. if a does not answer all questions in a theme) theme scores may not match a simple mean of the published percent positive scores for a theme.</p>
+See also: <a href="#engagement-index">employee engagement index</a>.
+</dd>
+</dl>
+</section>
+<section id="u" class="level2">
+<h2 class="anchored" data-anchor-id="u">U</h2>
+<dl id="glossary-u">
+<dt id="uid">
+UID
+</dt>
+<dd>
+See <a href="#unique-identifier">unique identifier</a>.
+</dd>
+<dt id="uk-civil-service">
+UK Civil Service
+</dt>
+<dd>
+See <a href="#civil-service">Civil Service</a>.
+</dd>
+<dt id="unique-identifier">
+unique identifier
+</dt>
+<dd>
+<p>A unique identifier (UID) is a code that refers to a specific item.</p>
+<p>In the context of the People Survey processing there are three sets of UIDs that have been implements: UIDs for attitudinal questions and measures; UIDs for organisations; and, UIDs for demographic questions and categories.</p>
+See also: <a href="#core-questionnaire">core questionnaire</a>, <a href="#demographics">demographic questions, demographic categories</a> and <a href="#organisation">organisation</a>.
+</dd>
+</dl>
+</section>
+<section id="v" class="level2">
+<h2 class="anchored" data-anchor-id="v">V</h2>
+<dl id="glossary-v">
+<dt id="variable-term">
+variable term
+</dt>
+<dd>
+<p>The <a href="#core-questionnaire">core questionnaire</a> is seen by all respondents to the survey, however to ensure questions are clear some questions include ‘variable terms’ which replace a generic term with terms that are bespoke to the specific organisation. As of 2024 the only variable terms are ‘my organisation’ and ‘your organisation’, which are substituted with the organisation’s actual name (or in some cases acronym, such as ‘HMRC’ for staff in HM Revenue and Customs).</p>
+The question on <a href="#grade">grade</a> can be considered a special variation of the variable terms as it is part of the core questionnaire but the options are bespoke to each organisation’s grade structure. In practice each organisation has a separate grade question for their respondents and the answers are then matched to the Civil Service’s common grade framework.
+</dd>
+</dl>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-Baileyengagement2015" class="csl-entry" role="listitem">
+<strong>Bailey C, Madden A, Alfes K, Fletcher L, Robinson D, Holmes J, Buzzeo J and Currie G</strong> (2015) Evaluating the evidence on employee engagement and its potential benefits to NHS staff: a narrative synthesis of the literature. <em>Health and Social Care Delivery Research</em> <strong>3</strong>(26). <a href="https://doi.org/10.3310/hsdr03260">https://doi.org/10.3310/hsdr03260.</a>
+</div>
+<div id="ref-cscareers2026" class="csl-entry" role="listitem">
+<strong>Cabinet Office</strong> (n.d.) Civil Service grades and salaries. <em>Civil Service Careers</em>. <a href="https://www.civil-service-careers.gov.uk/civil-service-grades-and-pay/">https://www.civil-service-careers.gov.uk/civil-service-grades-and-pay/</a> (accessed January 2, 2026)
+</div>
+<div id="ref-cspsqualityinfo2024" class="csl-entry" role="listitem">
+<strong>Cabinet Office</strong> (2025) <em>Quality and Methodology Information</em> <em>Civil Service People Survey: 2024 results - GOV.UK</em>. Retrieved from <a href="https://www.gov.uk/government/publications/civil-service-people-survey-2024-results/quality-and-methodology-information-for-the-civil-service-people-survey-2024">https://www.gov.uk/government/publications/civil-service-people-survey-2024-results/quality-and-methodology-information-for-the-civil-service-people-survey-2024</a>
+</div>
+<div id="ref-holpublicservice1998" class="csl-entry" role="listitem">
+<strong>Public Service Select Committee</strong> (1998) <em>Part 4: The Civil Service Today</em> <em>Public Service Committee Report (HL 1997-98 (55))</em>. Retrieved from <a href="https://publications.parliament.uk/pa/ld199798/ldselect/ldpubsrv/055/psrep10.htm">https://publications.parliament.uk/pa/ld199798/ldselect/ldpubsrv/055/psrep10.htm</a>
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Very small organisations are not obliged to participate in the People Survey. Some civil servants provide secretariat services to advisory bodies that are independent of government, in most cases these staff participate in the People Survey through their ‘home department’ (as they are employed by the government that ‘sponsors’ the advisory body) however in some cases these staff do not participate in the survey.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./00_introduction.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./02_technical_approach.html" class="pagination-link" aria-label="Technical approach">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Technical approach</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./about.html#copyright">
+<p>© Matt Kerlogue 2026, licensed under CC-BY-4.0</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="./about.html" aria-current="page">
+<p>About</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./privacy.html">
+<p>Privacy policy</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./about.html#disclaimer">
+<p>Legal</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.quarto.org" target="_blank">
+<p>Made with Quarto</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

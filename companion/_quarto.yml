@@ -1,6 +1,7 @@
 project: 
   type: book
-  output-dir: ../docs
+  output-dir: _site
+  post-render: "../R/utils/companion-post-render.R"
 
 book: 
   title: "CSPS Data Processing Companion"

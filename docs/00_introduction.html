@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introduction – CSPS Data Processing Companion</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./01_terminology.html" rel="next">
+<link href="./index.html" rel="prev">
+<link href="./notebook.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b43b71f09d5e7a5dab1754ea13aae5e9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b43b71f09d5e7a5dab1754ea13aae5e9.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b43b71f09d5e7a5dab1754ea13aae5e9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-25b27c06c95c447fbb28acaffbc34332.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-af25218ebb03d3594df13b45f551ff89.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-25b27c06c95c447fbb28acaffbc34332.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+    window.onload = (event) => {
+        document.getElementsByTagName("body")[0].prepend(
+            document.getElementById("book-site-banner")
+        )
+    }
+</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"><span id="sec-introduction" class="quarto-section-identifier">Introduction</span></h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CSPS&nbsp;Data Processing Companion</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mattkerlogue/csps-data" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00_introduction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_terminology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary of terms and concepts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Technical set-up</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_technical_approach.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Technical approach</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_source_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Source data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_helper_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Utilities and helper functions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Developing harmonisations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_harmonisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to harmonisation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_questions_regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Harmonising questions and measures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_organisations_regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Harmonising organisations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_demographics_regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Harmonising demographics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Extracting data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20_extraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to data extraction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21_extract_benchmarks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Extracting benchmark results</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22_extract_organisations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Extracting organisation results</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./23_extract_demographics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Extracting demographic results</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Processing and harmonising data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30_processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introduction to data processing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./31_processing_benchmarks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Processing benchmark results</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./32_processing_organisations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Processing organisations results</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./33_processing_demographics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Processing demographic results</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data dictionaries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./90_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./99_demographics_sex_gender.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sex, gender and gender identity in the Civil Service People Survey</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Colophon</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./privacy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Privacy policy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-intro-who-for" id="toc-sec-intro-who-for" class="nav-link active" data-scroll-target="#sec-intro-who-for">Who this companion is for</a></li>
+  <li><a href="#sec-intro-how-survey-is-run" id="toc-sec-intro-how-survey-is-run" class="nav-link" data-scroll-target="#sec-intro-how-survey-is-run">How the People Survey is run</a></li>
+  <li><a href="#sec-intro-need" id="toc-sec-intro-need" class="nav-link" data-scroll-target="#sec-intro-need">The need for a harmonised dataset</a></li>
+  <li><a href="#sec-survey-concepts" id="toc-sec-survey-concepts" class="nav-link" data-scroll-target="#sec-survey-concepts">Original survey data concepts</a>
+  <ul class="collapse">
+  <li><a href="#attitudinal-questions-and-measures" id="toc-attitudinal-questions-and-measures" class="nav-link" data-scroll-target="#attitudinal-questions-and-measures">Attitudinal questions and measures</a></li>
+  <li><a href="#organisations" id="toc-organisations" class="nav-link" data-scroll-target="#organisations">Organisations</a></li>
+  <li><a href="#civil-service-benchmark-and-all-respondents-results" id="toc-civil-service-benchmark-and-all-respondents-results" class="nav-link" data-scroll-target="#civil-service-benchmark-and-all-respondents-results">Civil Service benchmark and all respondents results</a></li>
+  <li><a href="#demographic-questions" id="toc-demographic-questions" class="nav-link" data-scroll-target="#demographic-questions">Demographic questions</a></li>
+  <li><a href="#sec-intro-typology" id="toc-sec-intro-typology" class="nav-link" data-scroll-target="#sec-intro-typology">Typology of data types</a></li>
+  <li><a href="#sec-intro-response-categories" id="toc-sec-intro-response-categories" class="nav-link" data-scroll-target="#sec-intro-response-categories">Response categories</a></li>
+  <li><a href="#sec-intro-composite-measures" id="toc-sec-intro-composite-measures" class="nav-link" data-scroll-target="#sec-intro-composite-measures">Indexes and theme scores</a></li>
+  </ul></li>
+  <li><a href="#sec-intro-harmonised-concepts" id="toc-sec-intro-harmonised-concepts" class="nav-link" data-scroll-target="#sec-intro-harmonised-concepts">Harmonised survey data concepts</a>
+  <ul class="collapse">
+  <li><a href="#unique-identifiers" id="toc-unique-identifiers" class="nav-link" data-scroll-target="#unique-identifiers">Unique identifiers</a></li>
+  <li><a href="#sec-intro-harmonised-data" id="toc-sec-intro-harmonised-data" class="nav-link" data-scroll-target="#sec-intro-harmonised-data">Output data files</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<div id="book-site-banner">
+    <div class="banner-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewbox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"></path>
+        </svg>
+    </div>
+    <div class="book-site-banner-text">
+        <strong>Under development:</strong> This book is still under active
+        development, its content and structure are subject to change.
+    </div>
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span id="sec-introduction" class="quarto-section-identifier">Introduction</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The <a href="https://www.gov.uk/government/collections/civil-service-people-survey-hub">Civil Service People Survey</a> is is the annual employee attitudes survey that has carried out across the UK Civil Service since 2009. It is an important management tool for managers and leaders working within in the Civil Service. It is also a useful tool for external parties that hold senior officials and government ministers to account for the leadership and management of the Civil Service.</p>
+<p>This introduction covers: <a href="#sec-intro-who-for">who this companion is for</a>; a brief explanation of <a href="#sec-intro-how-survey-is-run">how the People Survey is run</a>; key <a href="#sec-survey-concepts">underlying concepts</a> in the structure of survey’s data; and, an outline of the harmonised <a href="#sec-intro-harmonised-concepts">concepts and identifiers</a> and the <a href="#sec-intro-harmonised-data">structure</a> of the harmonised datasets.</p>
+<p>This companion uses the terms ‘Civil Service People Survey’ and ‘People Survey’ interchangeably; the acronym ‘CSPS’ is used sparingly, usually were space is at a premium. A more complete guide to <a href="./01_terminology.html">terminology</a> is also available.</p>
+<section id="sec-intro-who-for" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro-who-for">Who this companion is for</h2>
+<p>This companion mainly acts as documentation for the data processing in the <code>csps-data</code> repository. It has been called a ‘companion’ because it takes a narrative approach to documentation that also includes wider discussion of the survey’s background and operation, and explains the rationale for behind decisions taken to harmonise the data over time.</p>
+<p>The main audience for this companion is those who wish to reuse the harmonised data for their own analysis. It also serves as a record of decisions made in regards to harmonising aspects of the survey’s data structure that change over time. This companion may also be useful for those working inside the Civil Service that are working with multi-year data and/or interested in comparing results between organisations or to Civil Service benchmarks.</p>
+</section>
+<section id="sec-intro-how-survey-is-run" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro-how-survey-is-run">How the People Survey is run</h2>
+<p>The Civil Service People Survey is coordinated by the <a href="https://www.gov.uk/government/collections/civil-service-people-survey-hub">People Survey Team</a> based in the Cabinet Office, they are responsible for the overall management and operation of the survey and publishing of the results. The survey’s fieldwork and internal reporting is provided by an external third-party contractor, currently <a href="https://www.qualtrics.com/">Qualtrics</a>. Alongside the central team and external contractor, participating organisations have a ‘survey manager’ that acts as the liaison point for each organisation, survey managers are responsible for collating crucial ‘local’ information necessary for the running of the survey (such as the internal team hierarchy), publicising the survey and encouraging participation during the fieldwork period, and disseminating the results within their organisation.</p>
+</section>
+<section id="sec-intro-need" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro-need">The need for a harmonised dataset</h2>
+<p>While data and results from the survey have been published each year, there is no single dataset or API that makes it easy to access the data. The range of data published each year varies, as do aspects of the survey content and coverage.</p>
+<p>Although there is some degree of consistency and stability in the survey’s questionnaire over time there are additions and removals of questions that have occurred over the past 16 years. Organisational coverage varies over time as organisations are established, merged, abolished or changed in other ways. The range of demographic categories either asked about or published has also changed over time.</p>
+<p>These challenges prevent easy re-use of the data, including by individuals within the UK Civil Service. The aim of the data processing documented in this companion is to provide a public resource that makes it easy for others to re-use the data.</p>
+</section>
+<section id="sec-survey-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="sec-survey-concepts">Original survey data concepts</h2>
+<p>Before any processing we must first define core concepts in the survey’s data structures and methodology.</p>
+<section id="attitudinal-questions-and-measures" class="level3">
+<h3 class="anchored" data-anchor-id="attitudinal-questions-and-measures">Attitudinal questions and measures</h3>
+<p>The main body of the survey’s questionnaire is made up of individual questions that measure individual’s attitudes and experiences of working in their civil service organisation over the past year. These questions are often rated through a five-point Likert scale of ‘strongly disagree’ to ‘strongly agree’, see the section on <a href="#sec-intro-response-categories">response categories</a> for more details. Most of these attitudinal questions are also used to derive composite measures that are used as headline results for the survey, see the section on <a href="#sec-intro-composite-measures">indexes and theme scores</a> for more details. In the context of the data processing, together, these are referred to as attitudinal <em>questions and measures</em>. In programming code the term <code>qm</code> has been typically used to refer to these data. See !!! for more details.</p>
+</section>
+<section id="organisations" class="level3">
+<h3 class="anchored" data-anchor-id="organisations">Organisations</h3>
+<p>Respondents to the survey participate as part of an <em>organisation</em>, typically (but not always) the government department or agency they work for. Questions in the survey typically ask respondents to consider their responses in relation to this organisational unit. In programming code the term <code>org</code> has typically been used to refer to organisations, and <code>dept_group</code> is used to refer to groups of organisations related to a specific government department. See !!! for more details.</p>
+</section>
+<section id="civil-service-benchmark-and-all-respondents-results" class="level3">
+<h3 class="anchored" data-anchor-id="civil-service-benchmark-and-all-respondents-results">Civil Service benchmark and all respondents results</h3>
+<p>The headline cross-government results from the survey are the <em>Civil Service benchmark</em> results, this is calculated for each question and measure as the median score of participating organisations.</p>
+<p>The results for all respondents to the survey are also published but these scores are largely determined by the experiences of respondents based in the 5-6 largest civil service organisations. These scores may be referred to as either <em>all respondents</em>, <em>all civil servants</em> or <em>mean scores</em>.</p>
+</section>
+<section id="demographic-questions" class="level3">
+<h3 class="anchored" data-anchor-id="demographic-questions">Demographic questions</h3>
+<p>Alongside the attitudinal questions the People Survey asks a range of <em>demographic</em> questions relating to both their job and personal characteristics that are used to understand the experiences of different groups of civil servants. The demographics comprise both questions and categories, in programming code the term <code>demog</code> is typically used to refer to these two aspects collectively, <code>demq</code> for demographic questions, <code>cat</code> for categories, and <code>demcat</code> for combinations of questions and categories (since categories are not always unique across the questions).</p>
+<p>In addition to the results for all respondents split by demographic questions and categories there are also more detailed results published for five sets of demographics (sex/gender, ethnicity, health status, sexual orientation and socio-economic background). These detailed demographic results publications provide results of cross-tabulation of these five demographics with all other demographic questions, for example results for men and women by grade. The detailed demographic results also include a summary of organisation scores for each of the five demographics.</p>
+</section>
+<section id="sec-intro-typology" class="level3">
+<h3 class="anchored" data-anchor-id="sec-intro-typology">Typology of data types</h3>
+<p>From the structure of the People Survey data described above we can devise a simple taxonomy of the different ‘types’ of data published by the People Survey. The attitudinal questions and measures are excluded from the taxonomy, with the taxonomy acting as a guide to the type of units of analysis covered by different sets of attitudinal question and measure results.</p>
+<ul>
+<li>The <strong>benchmark results</strong> - the ‘Civil Service benchmark’, i.e. the median scores of participating organisations.</li>
+<li>The <strong>mean scores</strong> - the results for all respondents to the People Survey.</li>
+<li>The <strong>organisation results</strong> - the overall results for each organisation.</li>
+<li>The <strong>demographic results</strong> - the results for all respondents by individual demographic questions and categories.</li>
+<li>The <strong>detailed demographic results</strong> - results for multiple combinations of demographic questions and categories.</li>
+<li>The <strong>organisation demographic results</strong> - results of the People Survey’s headline measures for each organisation and select demographic categories.</li>
+</ul>
+</section>
+<section id="sec-intro-response-categories" class="level3">
+<h3 class="anchored" data-anchor-id="sec-intro-response-categories">Response categories</h3>
+<p>The majority of attitudinal questions are asked on a five-point scale ranging from ‘strongly disagree’ to ‘strongly agree’. For these questions the survey results present the ‘percent positive’ which reflects the proportion answering ‘agree’ or ‘strongly agree’ <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>In addition to the five-point agreement scale the following scales are used for some questions:</p>
+<ul>
+<li><em>Yes/no scales</em>: offering respondents either a simple binary ‘yes’ ‘no’ choice or sometimes with a ‘don’t know’ or ‘prefer not to say’ option.</li>
+<li><em>Temporal scales</em>: offering respondents options to state how often a situation occurs, typically ranging from ‘always’ to ‘never’ but also including scales that refer to specific time periods (e.g. ‘weekly’ or ‘monthly’).</li>
+<li><em>Quality scale</em>: used for ratings of mental and physical health, ranging from ‘excellent’ to ‘very poor’.</li>
+<li><em>Numeric extent scale</em>: used for the personal wellbeing questions, respondents are asked to provide a rating from ‘0’ to ‘10’ where a response of ‘0’ represents ‘not at all’ and ‘10’ represents ‘completely’ (e.g. ‘not at all satisfied’ or ‘completely satisfied’).</li>
+<li><em>Productivity range scale</em>: used for a question on self-assessed productivity, respondents asked how productive they feel they have been recently and are given a set of percentage ranges to select from.</li>
+<li><em>Stay/leave scale</em>: used for the question on future intentions, respondents are asked about the future intentions of working for their organisation with responses ranging from leaving as soon as possible to staying for at least the next three years.</li>
+<li><em>Multiple choice scales</em>: offering respondents the ability to select multiple categories in response to a question (e.g. to describe the type of bullying or harassment the individual has experienced).</li>
+</ul>
+</section>
+<section id="sec-intro-composite-measures" class="level3">
+<h3 class="anchored" data-anchor-id="sec-intro-composite-measures">Indexes and theme scores</h3>
+<p>The responses to individual questions are used to calculate a small number of summary measures, which are used as headline results for the survey. These summary measures are either called <em>indexes</em> when they make use of the full range of the input questions’ response scales or <em>theme scores</em> when they make use of only part of the range of the input questions’ response scales.</p>
+<ul>
+<li>The employee <em>engagement index</em> is derived from five questions relating to respondents levels’ of advocacy, attachment and motivation.</li>
+<li>The <em>PERMA index</em> and <em>Proxy Stress Index</em> are wellbeing indexes that assess the extent to which respondents are ‘flourishing’ (for the PERMA Index) or experiencing factors that potentially increase stress levels (for the Proxy Stress Index).</li>
+<li>The nine <em>theme scores</em> are derived from the main section of attitudinal questions and measure factors that influence employee engagement. These scores are calculated relating to the of ‘strongly agree’ and ‘agree’ responses to each question within each theme.</li>
+</ul>
+</section>
+</section>
+<section id="sec-intro-harmonised-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro-harmonised-concepts">Harmonised survey data concepts</h2>
+<p>The processing documented in this companion aligns the original survey data published by the Cabinet Office into a set of harmonised datasets that allow for easy cross-sectional and time-series analysis of the data.</p>
+<section id="unique-identifiers" class="level3">
+<h3 class="anchored" data-anchor-id="unique-identifiers">Unique identifiers</h3>
+<p>At the core of the processing is the use of <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> (or <em>‘regexes’</em>) which are used to match question or measure text, organisation names, demographic questions and categories to a set of <em>unique identifiers</em>. There are three sets of unique identifiers:</p>
+<ul>
+<li><strong>Question and measure identifiers:</strong>
+<ul>
+<li><code>uid_qm_num</code>: A numeric identifier in the format <code>0.00.000.00</code></li>
+<li><code>uid_qm_txt</code>: A human-readable text identifier in the format <code>thm.question</code> (where <code>thm</code> is a short-code for the survey section and <code>question</code> is short phrase to describe the question or measure)</li>
+</ul></li>
+<li><strong>Organisation identifiers:</strong>
+<ul>
+<li><code>uid_org_txt</code>: Typically a 6-letter code to refer to organisations, in some cases a shorter 3- to 5-letter code is used</li>
+</ul></li>
+<li><strong>Demographic identifiers:</strong>
+<ul>
+<li><code>uid_demq_txt</code>: Typically a 6-letter code to refer to demographic questions, in two cases a 5-letter code is used</li>
+<li><code>uid_cat_txt</code>: A 6- to 12-character alphanumeric code to refer to demographic categories</li>
+<li><code>uid_demcat_num</code>: A numeric identifier in the format <code>0.00.00.000</code> used to refer to unique combinations of demographic questions and categories</li>
+<li><code>uid_demcat_txt</code>: A (somewhat) human-readable text identifier used to refer to unique combinations of demographic questions and categories in the format <code>DEMQ_DCAT</code> where <code>DEMQ</code> refers to the demographic question and <code>DCAT</code> to the category.</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-intro-harmonised-data" class="level3">
+<h3 class="anchored" data-anchor-id="sec-intro-harmonised-data">Output data files</h3>
+<p>The output data files are a combination of ‘datasets’ and ‘lookups’, <em>datasets</em> contain the processed data from the People Survey aligned to the unique identifiers while <em>lookups</em> provide labels and other metadata relating to the unique identifiers.</p>
+<p>The harmonised datasets structure the data in a ‘long format’, that is each row in a dataset relates to an individual value/score from the People Survey, at a minimum each dataset includes the following columns:</p>
+<ul>
+<li><code>data_type</code>: a value representing the type of data included in the dataset (see the <a href="#sec-intro-typology">data typology</a> section for more details)</li>
+<li><code>year</code>: the year of the survey’s results the data relates to</li>
+<li><code>uid_qm_num</code>: the unique numeric identifier relating to the question or measure</li>
+<li><code>uid_qm_txt</code>: the unique text identifier relating to the question or measure</li>
+<li><code>response_category</code>: a general identifier relating to the response category that the value represents (see the <a href="#sec-intro-response-categories">response cateogries</a> section for more details).</li>
+<li><code>value</code>: the actual survey result/score ranging from 0 to 100 (up to three decimal points). Scores typically relate to percentages (e.g. 23 would represent a true value of 23%, or 0.23 in decimal notation).</li>
+</ul>
+<p>Datasets may also include identifiers relating to the organisation (<code>uid_org_txt</code>) and/or demographic objects (<code>uid_demcat_num</code>, <code>uid_demcat_txt</code>, <code>uid_demq_txt</code> and/or <code>uid_cat_txt</code>) that the data relates to.</p>
+<div id="tbl-bench-example" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bench-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Example structure of the benchmark results file
+</figcaption>
+<div aria-describedby="tbl-bench-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"../data/01-benchmarks/csps_benchmarks_2009-2024_5b58c24b.csv"</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">sample_n</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 6
+   data_type  year uid_qm_num  uid_qm_txt                response_category value
+   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;                     &lt;chr&gt;             &lt;dbl&gt;
+ 1 benchmark  2023 2.07.001.00 rwk.information_needed    agreement         70.9 
+ 2 mean       2020 3.03.007.00 tpl.manager_trusts        agreement         88.8 
+ 3 benchmark  2015 3.01.001.00 tpl.trusted_job           agreement         87.8 
+ 4 mean       2016 2.03.007.00 mgr.confidence_manger     agreement         71.5 
+ 5 benchmark  2024 3.04.002.00 dvl.devolution_resources  agreement         35.4 
+ 6 mean       2024 2.09.006.00 lmc.change_managed_well   agreement         31.8 
+ 7 benchmark  2010 2.09.010.00 lmc.safe_to_challenge     agreement         39.4 
+ 8 benchmark  2022 2.03.005.00 mgr.manager_open          agreement         86.3 
+ 9 benchmark  2012 2.11.001.00 act.senior_action         agreement         43.1 
+10 mean       2015 6.02.003.98 dhb.bullied_by_someone_e… multi_choice       3.71</code></pre>
+</div>
+</div>
+</figure>
+</div>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Prior to 2020 some organisations published PDF reports of their results that also included a breakdown of the Likert scale for each question. A change in contractor for the People Survey ended the production of these PDF reports and since then most organisations have stopped publishing their own People Survey results independently of the combined results published by the Cabinet Office.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./01_terminology.html" class="pagination-link" aria-label="Glossary of terms and concepts">
+        <span class="nav-page-text">Glossary of terms and concepts</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./about.html#copyright">
+<p>© Matt Kerlogue 2026, licensed under CC-BY-4.0</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="./about.html" aria-current="page">
+<p>About</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./privacy.html">
+<p>Privacy policy</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./about.html#disclaimer">
+<p>Legal</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.quarto.org" target="_blank">
+<p>Made with Quarto</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

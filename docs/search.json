@@ -1,0 +1,787 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CSPS Data Processing Companion",
+    "section": "",
+    "text": "Welcome\nThis companion outlines and documents the approach taken to approach taken to process data from the UK government’s Civil Service People Survey into a set of harmonised datasets that can be easily reused.\nThe harmonised data is available in the csps-data repository on Github. Specific documentation about the data is available in here.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#companion-structure",
+    "href": "index.html#companion-structure",
+    "title": "CSPS Data Processing Companion",
+    "section": "Companion structure",
+    "text": "Companion structure\nThe structure of this companion is intended to (roughly) follow the structure and workflow taken by the R code in the csps-data repository.\n\nIntroduction: provides a general introduction to the companion and a high-level outline of the approach to processing the People Survey data.\nGlossary of terms and concepts: provides a glossary of key terminology and concepts used throughout the companion, including terminology/concepts specific to the People Survey and the data processing as well as some terms and concepts relating to the UK Civil Service more generally.\nTechnical set-up: this part of the companion discusses general technical approach to the data processing, including coding and the software/packages used, the source data and the bespoke helper functions that have been written to assist the different stages of the data processing project.\nDeveloping harmonisations: this part of the companion discusses and documents the approach taken to developing a harmonised set of identifiers the enable the processing of the People Survey data.\n\nIntroduction to harmonisation\nHarmonising questions and measures\nHarmonising organisation names\nHarmonising demographic questions and categories\n\nExtracting data: this part of the companion discusses and documents the approach taken to extracting the raw data from the People Survey publications.\n\nIntroduction to data extraction\nExtracting benchmark results\nExtracting organisation results\nExtracting demographic results\n\nProcessing and harmonising data: this part of the companion discusses and documents the approach taken to standardising the raw data using the harmonised identifiers.\n\nIntroduction to data processing\nProcessing benchmark results\nProcessing organisation results\nProcessing demographic results\n\nData dictionaries: this part provides technical documentation of the output data files resulting from the processing stage.\nAppendices: this part provides additional materials.\n\nReferences\nSex, gender and gender identity in the Civil Service People Survey\n\nColophon: the about page provides information about the development of this companion/website, accessibility, copyright and legal disclaimer. The website’s privacy policy is provided separately.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#about-the-civil-service-people-survey",
+    "href": "index.html#about-the-civil-service-people-survey",
+    "title": "CSPS Data Processing Companion",
+    "section": "About the Civil Service People Survey",
+    "text": "About the Civil Service People Survey\nThe Civil Service People Survey is is the annual employee attitudes survey that has carried out across the UK Civil Service since 2009. It is an important management tool for managers and leaders working within in the Civil Service. It is also a useful tool for external parties that hold senior officials and government ministers to account for the leadership and management of the Civil Service.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#about-the-author",
+    "href": "index.html#about-the-author",
+    "title": "CSPS Data Processing Companion",
+    "section": "About the author",
+    "text": "About the author\nThis companion and the code it describes have been written by Matt Kerlogue1. In 2009 Matt was part of the team that set up the Civil Service People Survey, leading the development of the survey’s methodology and analysis of the survey results. He went on to lead the team delivering the survey from 2011 to 2015, and continued to provide ad-hoc analytical and methodological support to the People Survey team until he left the Cabinet Office in 2022.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#copyright-and-licensing",
+    "href": "index.html#copyright-and-licensing",
+    "title": "CSPS Data Processing Companion",
+    "section": "Copyright and licensing",
+    "text": "Copyright and licensing\nThis companion; the re-processed People Survey data and associated metadata; and, the software code written to process the data are copyright of Matt Kerlogue (2026).\nThis companion itself and re-processed data are licensed under the Creative Commons Attribution License 4.0 (CC-BY-4.0). While the the software code is licensed under the MIT License.\nThe raw data from the People Survey is Crown Copyright, licensed under the Open Government Licence 3.0\nThe recommended citation for this companion is:\n\nKerlogue M (2026) CSPS Data Processing Companion, https://mattkerlogue.github.io/csps-data/\n\nThe recommended citation for the re-processed data is:\n\nKerlogue M (2026) Civil Service People Survey harmonised datasets, https://github.com/mattkerlogue/csps-data\n\nRead more on copyright, licensing and attribution.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#statement-on-ai",
+    "href": "index.html#statement-on-ai",
+    "title": "CSPS Data Processing Companion",
+    "section": "Statement on AI",
+    "text": "Statement on AI\nThis companion and the data processing it documents have not been produced using artificial intelligence.\nThe author supports the Creative Commons’ CC Signals initiative. For this work the ‘Credit + Open’ signals apply, that is any use of this material by an AI-system appropriate credit/attribution should be given (as per the CC-BY license), and that the AI-systems used should be open models/ systems.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "CSPS Data Processing Companion",
+    "section": "",
+    "text": "Visit my website and find me on Github or Bluesky.↩︎",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "00_introduction.html",
+    "href": "00_introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Who this companion is for\nThe Civil Service People Survey is is the annual employee attitudes survey that has carried out across the UK Civil Service since 2009. It is an important management tool for managers and leaders working within in the Civil Service. It is also a useful tool for external parties that hold senior officials and government ministers to account for the leadership and management of the Civil Service.\nThis introduction covers: who this companion is for; a brief explanation of how the People Survey is run; key underlying concepts in the structure of survey’s data; and, an outline of the harmonised concepts and identifiers and the structure of the harmonised datasets.\nThis companion uses the terms ‘Civil Service People Survey’ and ‘People Survey’ interchangeably; the acronym ‘CSPS’ is used sparingly, usually were space is at a premium. A more complete guide to terminology is also available.\nThis companion mainly acts as documentation for the data processing in the csps-data repository. It has been called a ‘companion’ because it takes a narrative approach to documentation that also includes wider discussion of the survey’s background and operation, and explains the rationale for behind decisions taken to harmonise the data over time.\nThe main audience for this companion is those who wish to reuse the harmonised data for their own analysis. It also serves as a record of decisions made in regards to harmonising aspects of the survey’s data structure that change over time. This companion may also be useful for those working inside the Civil Service that are working with multi-year data and/or interested in comparing results between organisations or to Civil Service benchmarks.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "00_introduction.html#sec-intro-how-survey-is-run",
+    "href": "00_introduction.html#sec-intro-how-survey-is-run",
+    "title": "Introduction",
+    "section": "How the People Survey is run",
+    "text": "How the People Survey is run\nThe Civil Service People Survey is coordinated by the People Survey Team based in the Cabinet Office, they are responsible for the overall management and operation of the survey and publishing of the results. The survey’s fieldwork and internal reporting is provided by an external third-party contractor, currently Qualtrics. Alongside the central team and external contractor, participating organisations have a ‘survey manager’ that acts as the liaison point for each organisation, survey managers are responsible for collating crucial ‘local’ information necessary for the running of the survey (such as the internal team hierarchy), publicising the survey and encouraging participation during the fieldwork period, and disseminating the results within their organisation.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "00_introduction.html#sec-intro-need",
+    "href": "00_introduction.html#sec-intro-need",
+    "title": "Introduction",
+    "section": "The need for a harmonised dataset",
+    "text": "The need for a harmonised dataset\nWhile data and results from the survey have been published each year, there is no single dataset or API that makes it easy to access the data. The range of data published each year varies, as do aspects of the survey content and coverage.\nAlthough there is some degree of consistency and stability in the survey’s questionnaire over time there are additions and removals of questions that have occurred over the past 16 years. Organisational coverage varies over time as organisations are established, merged, abolished or changed in other ways. The range of demographic categories either asked about or published has also changed over time.\nThese challenges prevent easy re-use of the data, including by individuals within the UK Civil Service. The aim of the data processing documented in this companion is to provide a public resource that makes it easy for others to re-use the data.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "00_introduction.html#sec-survey-concepts",
+    "href": "00_introduction.html#sec-survey-concepts",
+    "title": "Introduction",
+    "section": "Original survey data concepts",
+    "text": "Original survey data concepts\nBefore any processing we must first define core concepts in the survey’s data structures and methodology.\n\nAttitudinal questions and measures\nThe main body of the survey’s questionnaire is made up of individual questions that measure individual’s attitudes and experiences of working in their civil service organisation over the past year. These questions are often rated through a five-point Likert scale of ‘strongly disagree’ to ‘strongly agree’, see the section on response categories for more details. Most of these attitudinal questions are also used to derive composite measures that are used as headline results for the survey, see the section on indexes and theme scores for more details. In the context of the data processing, together, these are referred to as attitudinal questions and measures. In programming code the term qm has been typically used to refer to these data. See !!! for more details.\n\n\nOrganisations\nRespondents to the survey participate as part of an organisation, typically (but not always) the government department or agency they work for. Questions in the survey typically ask respondents to consider their responses in relation to this organisational unit. In programming code the term org has typically been used to refer to organisations, and dept_group is used to refer to groups of organisations related to a specific government department. See !!! for more details.\n\n\nCivil Service benchmark and all respondents results\nThe headline cross-government results from the survey are the Civil Service benchmark results, this is calculated for each question and measure as the median score of participating organisations.\nThe results for all respondents to the survey are also published but these scores are largely determined by the experiences of respondents based in the 5-6 largest civil service organisations. These scores may be referred to as either all respondents, all civil servants or mean scores.\n\n\nDemographic questions\nAlongside the attitudinal questions the People Survey asks a range of demographic questions relating to both their job and personal characteristics that are used to understand the experiences of different groups of civil servants. The demographics comprise both questions and categories, in programming code the term demog is typically used to refer to these two aspects collectively, demq for demographic questions, cat for categories, and demcat for combinations of questions and categories (since categories are not always unique across the questions).\nIn addition to the results for all respondents split by demographic questions and categories there are also more detailed results published for five sets of demographics (sex/gender, ethnicity, health status, sexual orientation and socio-economic background). These detailed demographic results publications provide results of cross-tabulation of these five demographics with all other demographic questions, for example results for men and women by grade. The detailed demographic results also include a summary of organisation scores for each of the five demographics.\n\n\nTypology of data types\nFrom the structure of the People Survey data described above we can devise a simple taxonomy of the different ‘types’ of data published by the People Survey. The attitudinal questions and measures are excluded from the taxonomy, with the taxonomy acting as a guide to the type of units of analysis covered by different sets of attitudinal question and measure results.\n\nThe benchmark results - the ‘Civil Service benchmark’, i.e. the median scores of participating organisations.\nThe mean scores - the results for all respondents to the People Survey.\nThe organisation results - the overall results for each organisation.\nThe demographic results - the results for all respondents by individual demographic questions and categories.\nThe detailed demographic results - results for multiple combinations of demographic questions and categories.\nThe organisation demographic results - results of the People Survey’s headline measures for each organisation and select demographic categories.\n\n\n\nResponse categories\nThe majority of attitudinal questions are asked on a five-point scale ranging from ‘strongly disagree’ to ‘strongly agree’. For these questions the survey results present the ‘percent positive’ which reflects the proportion answering ‘agree’ or ‘strongly agree’ 1.\nIn addition to the five-point agreement scale the following scales are used for some questions:\n\nYes/no scales: offering respondents either a simple binary ‘yes’ ‘no’ choice or sometimes with a ‘don’t know’ or ‘prefer not to say’ option.\nTemporal scales: offering respondents options to state how often a situation occurs, typically ranging from ‘always’ to ‘never’ but also including scales that refer to specific time periods (e.g. ‘weekly’ or ‘monthly’).\nQuality scale: used for ratings of mental and physical health, ranging from ‘excellent’ to ‘very poor’.\nNumeric extent scale: used for the personal wellbeing questions, respondents are asked to provide a rating from ‘0’ to ‘10’ where a response of ‘0’ represents ‘not at all’ and ‘10’ represents ‘completely’ (e.g. ‘not at all satisfied’ or ‘completely satisfied’).\nProductivity range scale: used for a question on self-assessed productivity, respondents asked how productive they feel they have been recently and are given a set of percentage ranges to select from.\nStay/leave scale: used for the question on future intentions, respondents are asked about the future intentions of working for their organisation with responses ranging from leaving as soon as possible to staying for at least the next three years.\nMultiple choice scales: offering respondents the ability to select multiple categories in response to a question (e.g. to describe the type of bullying or harassment the individual has experienced).\n\n\n\nIndexes and theme scores\nThe responses to individual questions are used to calculate a small number of summary measures, which are used as headline results for the survey. These summary measures are either called indexes when they make use of the full range of the input questions’ response scales or theme scores when they make use of only part of the range of the input questions’ response scales.\n\nThe employee engagement index is derived from five questions relating to respondents levels’ of advocacy, attachment and motivation.\nThe PERMA index and Proxy Stress Index are wellbeing indexes that assess the extent to which respondents are ‘flourishing’ (for the PERMA Index) or experiencing factors that potentially increase stress levels (for the Proxy Stress Index).\nThe nine theme scores are derived from the main section of attitudinal questions and measure factors that influence employee engagement. These scores are calculated relating to the of ‘strongly agree’ and ‘agree’ responses to each question within each theme.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "00_introduction.html#sec-intro-harmonised-concepts",
+    "href": "00_introduction.html#sec-intro-harmonised-concepts",
+    "title": "Introduction",
+    "section": "Harmonised survey data concepts",
+    "text": "Harmonised survey data concepts\nThe processing documented in this companion aligns the original survey data published by the Cabinet Office into a set of harmonised datasets that allow for easy cross-sectional and time-series analysis of the data.\n\nUnique identifiers\nAt the core of the processing is the use of regular expressions (or ‘regexes’) which are used to match question or measure text, organisation names, demographic questions and categories to a set of unique identifiers. There are three sets of unique identifiers:\n\nQuestion and measure identifiers:\n\nuid_qm_num: A numeric identifier in the format 0.00.000.00\nuid_qm_txt: A human-readable text identifier in the format thm.question (where thm is a short-code for the survey section and question is short phrase to describe the question or measure)\n\nOrganisation identifiers:\n\nuid_org_txt: Typically a 6-letter code to refer to organisations, in some cases a shorter 3- to 5-letter code is used\n\nDemographic identifiers:\n\nuid_demq_txt: Typically a 6-letter code to refer to demographic questions, in two cases a 5-letter code is used\nuid_cat_txt: A 6- to 12-character alphanumeric code to refer to demographic categories\nuid_demcat_num: A numeric identifier in the format 0.00.00.000 used to refer to unique combinations of demographic questions and categories\nuid_demcat_txt: A (somewhat) human-readable text identifier used to refer to unique combinations of demographic questions and categories in the format DEMQ_DCAT where DEMQ refers to the demographic question and DCAT to the category.\n\n\n\n\nOutput data files\nThe output data files are a combination of ‘datasets’ and ‘lookups’, datasets contain the processed data from the People Survey aligned to the unique identifiers while lookups provide labels and other metadata relating to the unique identifiers.\nThe harmonised datasets structure the data in a ‘long format’, that is each row in a dataset relates to an individual value/score from the People Survey, at a minimum each dataset includes the following columns:\n\ndata_type: a value representing the type of data included in the dataset (see the data typology section for more details)\nyear: the year of the survey’s results the data relates to\nuid_qm_num: the unique numeric identifier relating to the question or measure\nuid_qm_txt: the unique text identifier relating to the question or measure\nresponse_category: a general identifier relating to the response category that the value represents (see the response cateogries section for more details).\nvalue: the actual survey result/score ranging from 0 to 100 (up to three decimal points). Scores typically relate to percentages (e.g. 23 would represent a true value of 23%, or 0.23 in decimal notation).\n\nDatasets may also include identifiers relating to the organisation (uid_org_txt) and/or demographic objects (uid_demcat_num, uid_demcat_txt, uid_demq_txt and/or uid_cat_txt) that the data relates to.\n\n\n\nTable 1: Example structure of the benchmark results file\n\n\nreadr::read_csv(\n    here::here(\"../data/01-benchmarks/csps_benchmarks_2009-2024_5b58c24b.csv\"),\n    show_col_types = FALSE\n) |&gt;\n    dplyr::sample_n(10)\n\n# A tibble: 10 × 6\n   data_type  year uid_qm_num  uid_qm_txt                response_category value\n   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;                     &lt;chr&gt;             &lt;dbl&gt;\n 1 benchmark  2023 2.07.001.00 rwk.information_needed    agreement         70.9 \n 2 mean       2020 3.03.007.00 tpl.manager_trusts        agreement         88.8 \n 3 benchmark  2015 3.01.001.00 tpl.trusted_job           agreement         87.8 \n 4 mean       2016 2.03.007.00 mgr.confidence_manger     agreement         71.5 \n 5 benchmark  2024 3.04.002.00 dvl.devolution_resources  agreement         35.4 \n 6 mean       2024 2.09.006.00 lmc.change_managed_well   agreement         31.8 \n 7 benchmark  2010 2.09.010.00 lmc.safe_to_challenge     agreement         39.4 \n 8 benchmark  2022 2.03.005.00 mgr.manager_open          agreement         86.3 \n 9 benchmark  2012 2.11.001.00 act.senior_action         agreement         43.1 \n10 mean       2015 6.02.003.98 dhb.bullied_by_someone_e… multi_choice       3.71",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "00_introduction.html#footnotes",
+    "href": "00_introduction.html#footnotes",
+    "title": "Introduction",
+    "section": "",
+    "text": "Prior to 2020 some organisations published PDF reports of their results that also included a breakdown of the Likert scale for each question. A change in contractor for the People Survey ended the production of these PDF reports and since then most organisations have stopped publishing their own People Survey results independently of the combined results published by the Cabinet Office.↩︎",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html",
+    "href": "01_terminology.html",
+    "title": "Glossary of terms and concepts",
+    "section": "",
+    "text": "A\nThis chapter is a reference/glossary of various terminology used throughout this companion, including terminology relating to both the processing of the Civil Service People Survey data as well as terms and concepts relating more generally to the operation and management of the Civil Service.\nThis companion uses the terms ‘Civil Service People Survey’ and ‘People Survey’ interchangeably; the acronym ‘CSPS’ is used sparingly, usually were space is at a premium (see the CSPS entry below for further details).",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#a",
+    "href": "01_terminology.html#a",
+    "title": "Glossary of terms and concepts",
+    "section": "",
+    "text": "agency\n\n\nSee organisation.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#c",
+    "href": "01_terminology.html#c",
+    "title": "Glossary of terms and concepts",
+    "section": "C",
+    "text": "C\n\n\ncivil servant\n\n\nAn official employed by the Crown that works in the UK Civil Service.\n\n\nCivil Service\n\n\nThe term “Civil Service” means the UK Civil Service, that is the body of officials employed by the Crown that work in departments and agencies of the UK’s central government, the Scottish Government and the Welsh Government. Historically, it has been called the ‘Home Civil Service’. The vast majority of civil servants working for the UK Civil Service are invited to take part in the survey1.\nThe Diplomatic Service are the combination of Crown employees working for the Foreign, Commonwealth and Development Office and staff employed locally by British diplomatic missions and posts (e.g. High Commissions, Embassies or Consulates). Staff of the diplomatic service, both FCDO Crown employees and those locally employed, participate in the People Survey.\nUnlike the Scottish and Welsh Governments, the Northern Ireland Executive is supported by a legally separate body of civil servants called the Northern Ireland Civil Service. Staff for the Northern Ireland Civil Service do not participate in the People Survey. Staff of UK government departments or agencies based in Northern Ireland do participate in the survey as they are UK civil servants.\n\n\nCivil Service People Survey\n\n\nThe Civil Service People Survey is the annual employee attitudes survey of civil servants working in the UK Civil Service.\n\n\ncore questionnaire\n\n\nThe bulk of the People Survey uses a common questionnaire seen by all respondents no matter which organisation they participate through, this is called the ‘core questionnaire’. Some items of the core questionnaire use ‘variable terms’ that adapt the language of the question so that it reflects the organisational context of the respondent. In addition to the core questionnaire organisations can chose a small number of additional ‘local’ questions bespoke to their needs, these are not included in the central datasets published by the Cabinet Office.\nSee also: demographic questions, demographic categories and variable term.\n\n\nCSPS\n\n\n‘CSPS’ is a commonly used acronym to refer to the Civil Service People Survey. Like many terms used in the Civil Service/government this acronym is not unique. In the context of this companion and the data processing it describes, ‘CSPS’ is only used to refer to the Civil Service People Survey.\nThe other main use in the context of the management of the Civil Service is the Civil Service Pension Scheme (also ‘CSPS’, all capitalised).\nElsewhere in government, Community Safety Partnerships (local partnerships of public service organisations in England and Wales) and Co-ordinated Support Plans (a legal support plan in Scotland for children with long-term, multiple or complex support needs) can both be referred to using the acronym ‘CSP’ and is pluralised as ‘CSPs’ (note the lower-case ‘s’).",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#d",
+    "href": "01_terminology.html#d",
+    "title": "Glossary of terms and concepts",
+    "section": "D",
+    "text": "D\n\n\ndemographic questions, demographic categories\n\n\nIn addition to attitudinal questions the People Survey includes a number of ‘demographic’ questions that allow the results of the survey to be broken down by different characteristics of respondents. The demographics are split in to two major groups: work-related characteristics such as a respondent’s grade, their working location or the type of role they do; and, personal characteristics such as a respondent’s sex, their age or whether they have childcare responsibilities. Individual responses to demographic questions are referred to as ‘demographic categories’.\nSee also: core questionnaire.\n\n\ndepartment, departmental family, departmental group\n\n\nSee organisation.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#e",
+    "href": "01_terminology.html#e",
+    "title": "Glossary of terms and concepts",
+    "section": "E",
+    "text": "E\n\n\nEEI, EES\n\n\nSee employee engagement index.\n\n\nemployee engagement\n\n\nThe concept underlying the measurement framework for the Civil Service People Survey. There is no singular definition of employee engagement, however Bailey et al. (2015) notes that many definitions have developed as a result of the “positive psychology” movement. In regards to the People Survey, the Cabinet Office (2025) describes employee engagement as:\n\na workplace approach designed to ensure that employees are committed to their organisation’s goals and values, motivated to contribute to organisational success, and are able at the same time to enhance their own sense of well-being.\n\n\n\nemployee engagement index\n\n\nThe Civil Service People Survey measures employee engagement through an ‘employee engagement index’ (often simplified to ‘engagement index’), which is calculated from five questions that individual respondents levels of “pride, advocacy, attachment, inspiration and motivation” with their organisation (Cabinet Office 2025). The index is calculated such that a score of 0% reflects all respondents answering ‘strongly disagree’ to all five questions, and a score of 100% reflects all respondents answering ‘strongly agree’ to all five questions.\nThe employee engagement index is sometimes referred to by the acronym EEI (for employee engagement index) or EES (for employee engagement score).\nSee also: employee engagement and theme scores.\n\n\nexecutive agency\n\n\nSee organisation.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#g",
+    "href": "01_terminology.html#g",
+    "title": "Glossary of terms and concepts",
+    "section": "G",
+    "text": "G\n\n\ngender, gender identity\n\n\nSee sex and gender.\n\n\ngit\n\n\nA distributed version control system for managing source code and data.\n\n\ngovernment department\n\n\nSee organisation.\n\n\ngrade\n\n\nChanges in 1991 and 1996 ended the collective pay and grading system in use across the Civil Service and government departments were given flexibility to set their own salary scales (Public Service Select Committee 1998), often called ‘grades’. For coordination purposes these departmental grades are aligned into a cross-Civil Service framework of seven broad grades (Cabinet Office).",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#m",
+    "href": "01_terminology.html#m",
+    "title": "Glossary of terms and concepts",
+    "section": "M",
+    "text": "M\n\n\nmachinery of government change\n\n\nA ‘machinery of government change’ or ‘MoG’ change (typically pronounced “mog change”) is the common term used for the transfer of functions between different government/public service organisations.\nMachinery of government changes present complications in analysing People Survey time-series data as government departments and executive agencies can be created, merged, split. While many MoG changes are visible in the published data (typically through changes in organisation name), some MoG changes involve the transfer of functions between existing organisations without any visible external changes to organisation names/labels.\nMachinery of government changes and their implications for the People Survey are discussed further in the chapter on harmonising organisations.\nSee also: organisation.\n\n\nministry\n\n\nSee organisation.\n\n\nMoG change\n\n\nSee machinery of government change.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#n",
+    "href": "01_terminology.html#n",
+    "title": "Glossary of terms and concepts",
+    "section": "N",
+    "text": "N\n\n\nnon-departmental public body\n\n\nSee organisation.\n\n\nnon-ministerial department\n\n\nSee organisation.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#o",
+    "href": "01_terminology.html#o",
+    "title": "Glossary of terms and concepts",
+    "section": "O",
+    "text": "O\n\n\norganisation\n\n\nThe organisational structure of the UK Civil Service is not simple and nor is it formally codified. While there are aspects common to the experiences of civil servants and all are required to follow the Civil Service Code. The UK Civil Service is not a single employer, rather it is the government department or agency that is the employer of individual civil servants.\nThe People Survey is designed to support this flexibility as questions in the core questionnaire include a ‘variable term’ that ensure respondents see terminology specific to their context rather than use a generic term like ‘organisation’ or ‘department’ that may cause confusion. Organisations also have the option to include bespoke local questions in addition to the survey’s core questionnaire.\nIn this context, individuals participate in the People Survey through one of around 100 ‘organisations’. These agencies typically align with individual government departments and agencies, however in some cases staff in agencies are surveyed as part of their parent department, in other cases for a department may have additional ‘organisations’ that split out a specific group of staff for operational reasons. Individual organisations are grouped into departmental groups (sometimes referred to as ‘families’).\nThe nature of the Civil Service’s organisational structure, and its implications for the People Survey is discussed further in the chapter on harmonising organisations.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#p",
+    "href": "01_terminology.html#p",
+    "title": "Glossary of terms and concepts",
+    "section": "P",
+    "text": "P\n\n\npay band, pay scale\n\n\nSee grade.\n\n\nPeople Survey\n\n\nSee Civil Service People Survey.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#r",
+    "href": "01_terminology.html#r",
+    "title": "Glossary of terms and concepts",
+    "section": "R",
+    "text": "R\n\n\nregex\n\n\nSee regular expression.\n\n\nregular expression\n\n\nA regular expressions (often called a ‘regex’) is a method for pattern matching in text. They are used in the People Survey to identify attitudinal questions, demographic questions and categories, and organisation names within the People Survey datasets.\nSee the introduction to harmonisation for further details on how regular expressions are used in the processing of People Survey data.\n\n\nrepo\n\n\nSee repository.\n\n\nrepository\n\n\nIn the context of this companion the term ‘repository’, often shortened to ‘repo’, typically means a collection of software code managed through a version control system such as git and often stored in a cloud service such as Github.\n\n\nresponsibility level\n\n\nSee grade.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#s",
+    "href": "01_terminology.html#s",
+    "title": "Glossary of terms and concepts",
+    "section": "S",
+    "text": "S\n\n\nsex and gender\n\n\nOver the years of its operation there have been several changes to the way the People Survey has measured sex, gender and gender identity. These questionnaire changes and the particular choices made to harmonise People Survey data over time are discussed in a dedicated appendix.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#t",
+    "href": "01_terminology.html#t",
+    "title": "Glossary of terms and concepts",
+    "section": "T",
+    "text": "T\n\n\ntheme scores\n\n\nAlongside the engagement index, the survey results include a set of ‘theme scores’ which provide a summary score for the nine main themes of the survey’s questionnaire. Theme scores reflect the level of positive response to the questions in the given theme, that is ‘strongly agree’ or ‘agree’ answers. Theme scores are calculated on a per respondent basis and as a result of missing data (i.e. if a does not answer all questions in a theme) theme scores may not match a simple mean of the published percent positive scores for a theme.\nSee also: employee engagement index.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#u",
+    "href": "01_terminology.html#u",
+    "title": "Glossary of terms and concepts",
+    "section": "U",
+    "text": "U\n\n\nUID\n\n\nSee unique identifier.\n\n\nUK Civil Service\n\n\nSee Civil Service.\n\n\nunique identifier\n\n\nA unique identifier (UID) is a code that refers to a specific item.\nIn the context of the People Survey processing there are three sets of UIDs that have been implements: UIDs for attitudinal questions and measures; UIDs for organisations; and, UIDs for demographic questions and categories.\nSee also: core questionnaire, demographic questions, demographic categories and organisation.",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#v",
+    "href": "01_terminology.html#v",
+    "title": "Glossary of terms and concepts",
+    "section": "V",
+    "text": "V\n\n\nvariable term\n\n\nThe core questionnaire is seen by all respondents to the survey, however to ensure questions are clear some questions include ‘variable terms’ which replace a generic term with terms that are bespoke to the specific organisation. As of 2024 the only variable terms are ‘my organisation’ and ‘your organisation’, which are substituted with the organisation’s actual name (or in some cases acronym, such as ‘HMRC’ for staff in HM Revenue and Customs).\nThe question on grade can be considered a special variation of the variable terms as it is part of the core questionnaire but the options are bespoke to each organisation’s grade structure. In practice each organisation has a separate grade question for their respondents and the answers are then matched to the Civil Service’s common grade framework.\n\n\n\n\n\n\nBailey C, Madden A, Alfes K, Fletcher L, Robinson D, Holmes J, Buzzeo J and Currie G (2015) Evaluating the evidence on employee engagement and its potential benefits to NHS staff: a narrative synthesis of the literature. Health and Social Care Delivery Research 3(26). https://doi.org/10.3310/hsdr03260.\n\n\nCabinet Office (n.d.) Civil Service grades and salaries. Civil Service Careers. https://www.civil-service-careers.gov.uk/civil-service-grades-and-pay/ (accessed January 2, 2026)\n\n\nCabinet Office (2025) Quality and Methodology Information Civil Service People Survey: 2024 results - GOV.UK. Retrieved from https://www.gov.uk/government/publications/civil-service-people-survey-2024-results/quality-and-methodology-information-for-the-civil-service-people-survey-2024\n\n\nPublic Service Select Committee (1998) Part 4: The Civil Service Today Public Service Committee Report (HL 1997-98 (55)). Retrieved from https://publications.parliament.uk/pa/ld199798/ldselect/ldpubsrv/055/psrep10.htm",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "01_terminology.html#footnotes",
+    "href": "01_terminology.html#footnotes",
+    "title": "Glossary of terms and concepts",
+    "section": "",
+    "text": "Very small organisations are not obliged to participate in the People Survey. Some civil servants provide secretariat services to advisory bodies that are independent of government, in most cases these staff participate in the People Survey through their ‘home department’ (as they are employed by the government that ‘sponsors’ the advisory body) however in some cases these staff do not participate in the survey.↩︎",
+    "crumbs": [
+      "Glossary of terms and concepts"
+    ]
+  },
+  {
+    "objectID": "02_technical_approach.html",
+    "href": "02_technical_approach.html",
+    "title": "1  Technical approach",
+    "section": "",
+    "text": "File formats\nThe processing of the People Survey data held in the csps-data repository has been undertaken in R using the Positron IDE. The project is version controlled with git, using Github for storage.\nThe original People Survey source data is stored in a mix of CSV files, Microsoft Excel spreadsheet files (.xls/.xslx) and Open Document Format spreadsheet files (.ods).\nInterim and output data are stored in either CSV format or Apache Parquet.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Technical approach</span>"
+    ]
+  },
+  {
+    "objectID": "02_technical_approach.html#dependencies",
+    "href": "02_technical_approach.html#dependencies",
+    "title": "1  Technical approach",
+    "section": "Dependencies",
+    "text": "Dependencies\n\nThe following R packages (and their dependencies) have been used in the development of the processing code:\n\n{arrow} - for storing and accessing data in Parquet files\n{cli} - for console messages\n{dplyr} - for tabular data manipulation\n{fs} - for file system operations\n{janitor} - for column name cleaning\n{purrr} - for data manipulation\n{readODS} - to read ODS files\n{readr} - to read and write CSV files\n{readxl} - to read Excel files\n{rlang} - for helper functions\n{stringi} - for string processing\n{stringr} - for string processing\n{tibble} - for tabular data manipulation\n{tidyr} - for tabular data manipulation\n{tidyxl} - to read Excel files\n{unpivotr} - to reshape tidyxl data\n{yaml12} - to read YAML files\n\nThe following packages (and their dependencies) have been used in the production of this companion:\n\n{dplyr}\n{glue}\n{purrr}\n{readr}\n{rmarkdown}\n{stringr}\n{tibble}\n{yaml12}",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Technical approach</span>"
+    ]
+  },
+  {
+    "objectID": "02_technical_approach.html#repository-structure",
+    "href": "02_technical_approach.html#repository-structure",
+    "title": "1  Technical approach",
+    "section": "Repository structure",
+    "text": "Repository structure\nThis companion documents the contents of the csps-data repository. The high-level folder structure of the repo is as follows:\ncsps-data\n├─ companion\n├─ data\n│  ├─ 00-reference\n│  ├─ 01-benchmarks\n│  ├─ 02-organisations\n│  └─ 03-demographics\n├─ proc\n│  ├─ 01-questions_ref\n│  ├─ 02-organisations_ref\n│  ├─ 03-demographics_ref\n│  ├─ 04-extract_data\n│  └─ 05-processing\n├─ R\n│  ├─ 01-questions_ref\n│  ├─ 02-organisations_ref\n│  ├─ 03-demographics_ref\n│  ├─ 04-extract_data\n│  └─ 05-processing\n└─ raw-data\n\nThe companion folder contains the underlying source code for this companion book\nThe data folder contains the harmonised and re-processed People Survey data, see the data dictionaries part of the companion for details.\nThe proc folder contains intermediate outputs from the data processing.\nThe R folder contains the source code for the data processing, see the workflow section below for details.\nThe raw-data folder contains the original published source datasets and associated materials, see the chapter on source_data for details.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Technical approach</span>"
+    ]
+  },
+  {
+    "objectID": "02_technical_approach.html#workflow",
+    "href": "02_technical_approach.html#workflow",
+    "title": "1  Technical approach",
+    "section": "Workflow",
+    "text": "Workflow\nThe csps-data repo and this companion are largely structured to follow the workflow of the data processing, in particular the structure and naming of the script in R folder outlines the workflow taken to process the data:\ncsps-data\n├─ ...\n├─ R\n│ ├─ 01-questions_ref\n│ │  ├ 01-questions_ref/01_01-extract_questions.R\n│ │  ├ 01-questions_ref/01_02-regex_development.R\n│ │  ├ 01-questions_ref/01_03-regex_refinement.R\n│ │  └ 01-questions_ref/01_04-question_reference.R\n│ ├─ 02-organisations_ref\n│ │  ├─ 02-organisations_ref/02_01-extract_organisations.R\n│ │  ├─ 02-organisations_ref/02_02-org_regex_refinement.R\n│ │  └─ 02-organisations_ref/02_03-org_reference.R\n│ ├─ 03-demographics_ref\n│ │  ├─ 03-demographics_ref/03_01-extract-demogs.R\n│ │  ├─ 03-demographics_ref/03_02-demog_regex_refinement.R\n│ │  ├─ 03-demographics_ref/03_03-demcat_development.R\n│ │  └─ 03-demographics_ref/03_04-demcat_ref.R\n│ ├─ 04-extract_data\n│ │  ├─ 04-extract_data/04_01-benchmark_extract.R\n│ │  ├─ 04-extract_data/04_02-organisation_extract.R\n│ │  └─ 04-extract_data/04_03-demograhpic_extract.R\n│ ├─ 05-processing\n│ │  ├─ 05-processing/05_01-process_benchmarks.R\n│ │  ├─ 05-processing/05_02-process_organisations.R\n│ │  └─ 05-processing/05_03-process_demographics.R\n│ ├─ utils\n│ │  ├─ data_extract_helpers.R\n│ │  ├─ data_files.R\n│ │  ├─ data_files_ref.R\n│ │  ├─ extract_response_category.R\n│ │  ├─ regex_matches.R\n│ │  ├─ text_to_uid.R\n│ │  └─ variable_extract_helpers.R\n│ ├─ LICENSE-MIT\n│ └─ README.md\n└─ ...\n\nThe first stages of the workflow are dedicated to developing regexes and harmonised indicators.\n\nThe R/01-questions_ref folder contains the scripts for regexes and identifiers related to questions and measures.\nThe R/02-organisations_ref folder contains the scripts for regexes and identifiers related to organisations.\nThe R/03-demographics_ref folder contains the scripts for regexes and identifiers related to demographic questions and categories\n\nThe R/04-extract_data folder contains the scripts for extracting data from the raw source files for benchmarks, organisations, and demographics.\nThe R/05-processing folder contains the scripts for processing the raw data and producing the harmonised datasets for benchmarks, organisations, and demographics.\nThe R/utils folder contains the scripts for bespoke helpers and utility functions.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Technical approach</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html",
+    "href": "03_source_data.html",
+    "title": "2  Source data",
+    "section": "",
+    "text": "CSPS 2009\nThe original data for the Civil Service People Survey is published by the Cabinet Office. Table 2.1 provides links to each of the sources and Table 2.2 provides a summary of coverage overtime.\nTable 2.2 summarises the extent of data covered, however owing to changes in publication practice over time there is not necessarily a specific file relating to each set of data in each year. Notably:\nThe original data is published in a combination of CSV and Excel formats from 2009 to 2019, in 2020 in a combination of CSV and Open Document Spreadsheet (ODS) format, and only in ODS format from 2021 onwards. The file raw-data/00_data_files.yaml provides a log of all the relevant files contained within the raw-data folder, this file is also used to construct the 00_data_files.csv and 00_data_coverage.csv reference datasets.\nThe remaining sections of this chapter provide an overview of the data files stored in the raw-data folder of the csps-data repo.\nThe benchmark and SCS results are contained in the 2013 results files.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2009",
+    "href": "03_source_data.html#csps-2009",
+    "title": "2  Source data",
+    "section": "",
+    "text": "Source: UK Government Web Archive\nRepo folder: raw-data/2009\nData files:\n\nOrganisation scores (CSV, Excel)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2010",
+    "href": "03_source_data.html#csps-2010",
+    "title": "2  Source data",
+    "section": "CSPS 2010",
+    "text": "CSPS 2010\n\nSource: UK Government Web Archive\nRepo folder: raw-data/2010\nData files:\n\nOrganisation scores (CSV, Excel)\n\nOther files:\n\nSummary of findings report (PDF)\n\n\nThe benchmark and SCS results are contained in the 2013 results files.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2011",
+    "href": "03_source_data.html#csps-2011",
+    "title": "2  Source data",
+    "section": "CSPS 2011",
+    "text": "CSPS 2011\n\nSource: UK Government Web Archive\nRepo folder: raw-data/2011\nData files:\n\nOrganisation scores (CSV, Excel)\n\nOther files:\n\nSummary of findings report (PDF)\n\n\nThe benchmark and SCS results are contained in the 2013 results files.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2012",
+    "href": "03_source_data.html#csps-2012",
+    "title": "2  Source data",
+    "section": "CSPS 2012",
+    "text": "CSPS 2012\n\nSource: UK Government Web Archive\nRepo folder: raw-data/2012\nData files:\n\nOrganisation scores (CSV, Excel)\n\nOther files:\n\nSummary of findings report (PDF)\n\n\nThe benchmark and SCS results are contained in the 2013 results files.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2013",
+    "href": "03_source_data.html#csps-2013",
+    "title": "2  Source data",
+    "section": "CSPS 2013",
+    "text": "CSPS 2013\n\nSource: UK Government Web Archive\nRepo folder: raw-data/2013\nData files:\n\nBenchmark (median) scores (CSV, Excel)\nOrganisation scores (CSV, Excel)\nDemographic scores (CSV, Excel)\nSCS trend results (CSV, Excel)\n\nOther files:\n\nBenchmark scores report (PDF)\nSCS trend results report (PDF)\nDemographic scores (PDF)\nSummary of findings report (PDF)\nTechnical guide (PDF)\nCore questionnaire (PDF)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2014",
+    "href": "03_source_data.html#csps-2014",
+    "title": "2  Source data",
+    "section": "CSPS 2014",
+    "text": "CSPS 2014\n\nSource: GOV.UK\nRepo folder: raw-data/2014\nData files:\n\nBenchmark (median) scores (CSV, Excel)\nOrganisation scores (CSV, Excel)\nDemographic scores (CSV, Excel)\nDemographic scores by ethnicity (Excel)\nDemographic scores by sex/gender (Excel)\nDemographic scores by health status (Excel)\nDemographic scores by LGBT identity (Excel)\n\nOther files:\n\nBenchmark scores report (PDF)\nSCS trend results report (PDF)\nSummary of findings report (PDF)\nTechnical guide (PDF)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2015",
+    "href": "03_source_data.html#csps-2015",
+    "title": "2  Source data",
+    "section": "CSPS 2015",
+    "text": "CSPS 2015\n\nSource: GOV.UK\nRepo folder: raw-data/2015\nData files:\n\nBenchmark (median) scores (CSV)\nOrganisation scores (CSV, Excel)\nDemographic scores (CSV, Excel)\nDemographic scores by ethnicity (Excel)\nDemographic scores by sex/gender (Excel)\nDemographic scores by health status (Excel)\nDemographic scores by LGBT identity (Excel)\n\nOther files:\n\nBenchmark scores report (PDF)\nSummary of findings report (PDF)\nTechnical guide (PDF)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2016",
+    "href": "03_source_data.html#csps-2016",
+    "title": "2  Source data",
+    "section": "CSPS 2016",
+    "text": "CSPS 2016\n\nSource: GOV.UK\nRepo folder: raw-data/2016\nData files:\n\nBenchmark (median) scores (CSV)\nOrganisation scores (CSV, Excel)\nDemographic scores (CSV, Excel)\nDemographic scores by ethnicity (Excel)\nDemographic scores by sex/gender (Excel)\nDemographic scores by health status (Excel)\nDemographic scores by LGBT identity (Excel)\n\nOther files:\n\nBenchmark scores report (PDF)\nDepartmental trends report (PDF)\nTechnical guide (PDF)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2017",
+    "href": "03_source_data.html#csps-2017",
+    "title": "2  Source data",
+    "section": "CSPS 2017",
+    "text": "CSPS 2017\n\nSource: GOV.UK\nRepo folder: raw-data/2017\nData files:\n\nBenchmark (median) scores (CSV)\nOrganisation scores (CSV, Excel)\nDemographic scores (Excel)\nDemographic scores by ethnicity (Excel)\nDemographic scores by sex/gender (Excel)\nDemographic scores by health status (Excel)\nDemographic scores by LGBT identity (Excel)\n\nOther files:\n\nBenchmark scores report (PDF)\nDepartmental trends report (PDF)\nTechnical guide (PDF)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2018",
+    "href": "03_source_data.html#csps-2018",
+    "title": "2  Source data",
+    "section": "CSPS 2018",
+    "text": "CSPS 2018\n\nSource: GOV.UK\nRepo folder: raw-data/2018\nData files:\n\nBenchmark (median) scores (CSV)\nAll respondent (mean) scores (CSV)\nOrganisation scores (CSV, Excel)\nDemographic scores (Excel)\nDemographic scores by ethnicity (Excel)\nDemographic scores by sex/gender (Excel)\nDemographic scores by health status (Excel)\nDemographic scores by LGBT identity (Excel)\n\nOther files:\n\nBenchmark scores report (PDF)\nDepartmental trends report (PDF)\nTechnical guide (PDF)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2019",
+    "href": "03_source_data.html#csps-2019",
+    "title": "2  Source data",
+    "section": "CSPS 2019",
+    "text": "CSPS 2019\n\nSource: GOV.UK\nRepo folder: raw-data/2019\nData files:\n\nBenchmark (median) scores (CSV)\nAll respondent (mean) scores (CSV)\nOrganisation scores (CSV, Excel)\nDemographic scores (Excel)\nDemographic scores by ethnicity (Excel)\nDemographic scores by sex/gender (Excel)\nDemographic scores by health status (Excel)\nDemographic scores by LGBT identity (Excel)\nDemographic scores by socio-economic background (Excel)\n\nOther files:\n\nBenchmark scores report (PDF)\nDepartmental trends report (PDF)\nTechnical guide (PDF)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2020",
+    "href": "03_source_data.html#csps-2020",
+    "title": "2  Source data",
+    "section": "CSPS 2020",
+    "text": "CSPS 2020\n\nSource: GOV.UK\nRepo folder: raw-data/2020\nData files:\n\nBenchmark (median) scores (CSV)\nAll respondent (mean) scores (CSV)\nOrganisation scores (ODS)\nDemographic scores (ODS)\nDemographic scores by ethnicity (ODS)\nDemographic scores by sex/gender (ODS)\nDemographic scores by health status (ODS)\nDemographic scores by LGBT identity (ODS)\n\nOther files:\n\nTechnical guide (PDF)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2021",
+    "href": "03_source_data.html#csps-2021",
+    "title": "2  Source data",
+    "section": "CSPS 2021",
+    "text": "CSPS 2021\n\nSource: GOV.UK\nRepo folder: raw-data/2021\nData files:\n\nBenchmark (median) scores (ODS)\nDemographic scores (ODS)\nDemographic scores by ethnicity (ODS)\nDemographic scores by sex/gender (ODS)\nDemographic scores by health status (ODS)\nDemographic scores by LGBT identity (ODS)\nDemographic scores by socio-economic background (ODS)\n\nOther files:\n\nTechnical guide (HTML)\n\n\nThe all respondent (mean) scores and organisation scores are included in the benchmark scores ODS file.\nThe technical guide is published as an HTML file. For archive purposes the raw-data/2021 folder contains a PDF print-preview of the report and a zip file containing the HTML file and associated assets (e.g. images, CSV, JavaScript).",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2022",
+    "href": "03_source_data.html#csps-2022",
+    "title": "2  Source data",
+    "section": "CSPS 2022",
+    "text": "CSPS 2022\n\nSource: GOV.UK\nRepo folder: raw-data/2022\nData files:\n\nBenchmark (median) scores (ODS)\nDemographic scores (ODS)\nDemographic scores by ethnicity (ODS)\nDemographic scores by sex/gender (ODS)\nDemographic scores by health status (ODS)\nDemographic scores by LGBT identity (ODS)\nDemographic scores by socio-economic background (ODS)\n\nOther files:\n\nTechnical guide (HTML)\n\n\nThe all respondent (mean) scores and organisation scores are included in the benchmark scores ODS file.\nThe technical guide is published as an HTML file. For archive purposes the raw-data/2022 folder contains a PDF print-preview of the report and a zip file containing the HTML file and associated assets (e.g. images, CSV, JavaScript).",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2023",
+    "href": "03_source_data.html#csps-2023",
+    "title": "2  Source data",
+    "section": "CSPS 2023",
+    "text": "CSPS 2023\n\nSource: GOV.UK\nRepo folder: raw-data/2023\nData files:\n\nBenchmark (median) scores (ODS)\nDemographic scores (ODS)\nDemographic scores by ethnicity (ODS)\nDemographic scores by sex/gender (ODS)\nDemographic scores by health status (ODS)\nDemographic scores by LGBT identity (ODS)\nDemographic scores by socio-economic background (ODS)\n\nOther files:\n\nResults highlights (HTML)\nQuality and Methodology Information (HTML)\n\n\nThe all respondent (mean) scores and organisation scores are included in the benchmark scores ODS file.\nThe results highlights and the ‘quality and methodology information’ (previously called the technical guide) are published as HTML files. For archive purposes the raw-data/2023 folder contains a PDF print-preview of each report and a zip file containing the HTML file and associated assets (e.g. images, CSV, JavaScript).",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#csps-2024",
+    "href": "03_source_data.html#csps-2024",
+    "title": "2  Source data",
+    "section": "CSPS 2024",
+    "text": "CSPS 2024\n\nSource: GOV.UK\nRepo folder: raw-data/2024\nData files:\n\nBenchmark (median) scores (ODS)\nDemographic scores (ODS)\nDemographic scores by ethnicity (ODS)\nDemographic scores by sex/gender (ODS)\nDemographic scores by health status (ODS)\nDemographic scores by LGBT identity (ODS)\nDemographic scores by socio-economic background (ODS)\n\nOther files:\n\nResults highlights (HTML)\nQuality and Methodology Information (HTML)\n\n\nThe all respondent (mean) scores and organisation scores are included in the benchmark scores ODS file.\nThe results highlights and the ‘quality and methodology information’ (previously called the technical guide) are published as HTML files. For archive purposes the raw-data/2023 folder contains a PDF print-preview of each report and a zip file containing the HTML file and associated assets (e.g. images, CSV, JavaScript).\n\n\n\n\nCabinet Office (2013) Civil Service People Survey 2013. https://webarchive.nationalarchives.gov.uk/ukgwa/20140310230334/http://www.civilservice.gov.uk/about/improving/employee-engagement-in-the-civil-service/people-survey-2013 (accessed January 10, 2026)\n\n\nCabinet Office (2014) Civil Service People Survey: 2014 results. https://www.gov.uk/government/publications/civil-service-people-survey-2014-results (accessed January 10, 2026)\n\n\nCabinet Office (2015) Civil Service People Survey: 2015 results. https://www.gov.uk/government/publications/civil-service-people-survey-2015-results (accessed January 10, 2026)\n\n\nCabinet Office (2016) Civil Service People Survey: 2016 results. https://www.gov.uk/government/publications/civil-service-people-survey-2016-results (accessed December 10, 2025)\n\n\nCabinet Office (2017) Civil Service People Survey: 2017 results. https://www.gov.uk/government/publications/civil-service-people-survey-2017-results–2 (accessed December 10, 2025)\n\n\nCabinet Office (2018) Civil Service People Survey: 2018 results. https://www.gov.uk/government/publications/civil-service-people-survey-2018-results (accessed December 10, 2025)\n\n\nCabinet Office (2020) Civil Service People Survey: 2019 results. https://www.gov.uk/government/publications/civil-service-people-survey-2019-results (accessed December 10, 2025)\n\n\nCabinet Office (2021) Civil Service People Survey: 2020 results. https://www.gov.uk/government/publications/civil-service-people-survey-2020-results (accessed December 10, 2025)\n\n\nCabinet Office (2022) Civil Service People Survey: 2021 results. https://www.gov.uk/government/publications/civil-service-people-survey-2021-results (accessed December 10, 2025)\n\n\nCabinet Office (2023) Civil Service People Survey: 2022 results. https://www.gov.uk/government/publications/civil-service-people-survey-2022-results (accessed December 10, 2025)\n\n\nCabinet Office (2024) Civil Service People Survey: 2023 results. https://www.gov.uk/government/publications/civil-service-people-survey-2023-results (accessed December 10, 2025)\n\n\nCabinet Office (2025) Civil Service People Survey: 2024 results. https://www.gov.uk/government/publications/civil-service-people-survey-2024-results (accessed December 10, 2025)",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "03_source_data.html#footnotes",
+    "href": "03_source_data.html#footnotes",
+    "title": "2  Source data",
+    "section": "",
+    "text": "In 2013 the Cabinet Office stated to publish results all respondents by demographic group, including the results for the Senior Civil Service (SCS). In 2013 a one-off publication of the SCS results from 2009 to 2013 was also released, in future years the scores for the SCS are included in the demographic results publications.↩︎",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Source data</span>"
+    ]
+  },
+  {
+    "objectID": "04_helper_functions.html",
+    "href": "04_helper_functions.html",
+    "title": "3  Utilities and helper functions",
+    "section": "",
+    "text": "csps_data_files\nA number of utilities and helper functions have been written to help the processing of the People Survey data and are documented in this chapter. The scripts for these utilities and helpers are contained in the R/utils folder of the csps-data repo.\nThere are a large number of files that provide the source data for the People Survey. The raw-data/00_data_files.yaml file provides a log (in YAML format) of all the source data files stored in the raw-data folder of the csps-data repo.\nThe R/utils/data_files.R script loads this YAML file as a list (called csps_data_files) to make it easier to access file paths from within the R code.\nsource(\"R/utils/data_files.R\")\nnames(csps_data_files)\n\n [1] \"csps2009\" \"csps2010\" \"csps2011\" \"csps2012\" \"csps2013\" \"csps2014\"\n [7] \"csps2015\" \"csps2016\" \"csps2017\" \"csps2018\" \"csps2019\" \"csps2020\"\n[13] \"csps2021\" \"csps2022\" \"csps2023\" \"csps2024\" \"csps2025\"\n\nstr(csps_data_files$csps2015)\n\nList of 12\n $ benchmarks.c               : chr \"raw-data/2015/csps2015_benchmarks_csv_fixed.csv\"\n $ organisations.c            : chr \"raw-data/2015/csps2015_allorganisations_csv_fixed.csv\"\n $ organisations.x            : chr \"raw-data/2015/csps2015_allorganisations.xlsx\"\n $ demographics.c             : chr \"raw-data/2015/Civil-Service-People-Survey-2015-results-by-demographic-groups-csv.csv\"\n $ demographics.x             : chr \"raw-data/2015/Civil-Service-People-Survey-2015-results-by-demographic-groups.xlsx\"\n $ details_ethnicity.x        : chr \"raw-data/2015/Civil-Service-People-Survey-2015-results-by-ethnicity.xlsx\"\n $ details_gender.x           : chr \"raw-data/2015/Civil-Service-People-Survey-2015-results-by-gender.xlsx\"\n $ details_health.x           : chr \"raw-data/2015/Civil-Service-People-Survey-2015-results-by-health-status.xlsx\"\n $ details_lgbt.x             : chr \"raw-data/2015/Civil-Service-People-Survey-2015-results-by-sexual-identity.xlsx\"\n $ report_summary_highlights.p: chr \"raw-data/2015/ANNEX_D_CSPS_2015_Summary_of_findings_slides.pdf\"\n $ report_technical_guide.p   : chr \"raw-data/2015/CSPS_2015_Technical_Guide.pdf\"\n $ report_benchmark_report.p  : chr \"raw-data/2015/csps2015_benchmark_report.pdf\"\nThe R/data_files_ref.R script also processes the YAML file to produce two reference CSV files, it is not directly used in the processing.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Utilities and helper functions</span>"
+    ]
+  },
+  {
+    "objectID": "04_helper_functions.html#data-extraction-helpers",
+    "href": "04_helper_functions.html#data-extraction-helpers",
+    "title": "3  Utilities and helper functions",
+    "section": "Data extraction helpers",
+    "text": "Data extraction helpers\nThe R/utils/data_extract_helpers.R function provides a series of helper functions used in the scripts in folder R/04-extract_data that are designed to open and process the raw data_files.\nWhile the file formats of published data have changed over time (from CSV and Excel to ODS format) and the internal structure of each format is different, for each file type the structure has remained largely consistent throughout time (for example the CSV of benchmark scores in 2018 is similar in structure to the CSV of benchmark scores in 2013). This stability in per-format structure has made it easy to construct a set of re-usable extraction functions:\n\nlong_csv()\nextract_benchmark_ods()\nextract_organisation_ods()\nextract_demographic_data()\n\nAll of these functions are designed to return a tibble that stores the data from the raw data sets in ‘long’ format, that is each row of the tibble relates to an individual value (i.e. a cell of the 2-dimensional input spreadsheet/table).\n\n\n\n\nFigure 3.1: Example of converting People Survey data from ‘wide’ to ‘long’ format\n\n\nExample of a table being pivotedImage showing two tables. The left hand table shows an example of a People Survey benchmark scores dataset in 'wide' format with one question per row and one year per column. The right hand table shows the same data in 'long' format where each row is a separate value and the column header years have been transposed to a new column called year.\n\nMeasure20092010Employee engagementindex5856B01. I am interestedin my work9089MeasureyearvalueEmployee engagementindexEmployee engagementindexB01. I am interestedin my workB01. I am interestedin my work200920102009201058569089\n\n\n\n\n\n\n\nlong_csv()\nThe long_csv() function reads a CSV file and converts it into long format. It is used to process CSV files containing either benchmark scores (and all respondent scores which have the same layout) or organisation scores datasets. Benchmark scores datasets have question labels in rows and years in columns, while organisation scores datasets have organisation names (and, depending on year, reference codes) in rows and question labels in columns.\nlong_csv(\n    path, type = NULL, values_convert = NULL, skip = 0, cols = NULL,\n    na = c(\"\", \"NA\", \"n/a\"), ...\n)\n\npath\n\nfile path\n\ntype\n\ntype of CSV being processed (either benchmark_csv or organisation_csv)\n\nvalues_convert\n\nif necessary use \"scale_100\" to convert percentages from 0-1 decimal to 0-100 score\n\nskip\n\nrows to skip\n\ncols\n\ncolumns to subset to\n\nna\n\nvalues to consider missing\n\n…\n\nvalues to pass on to readr::read_csv()\n\n\n\n\nextract_benchmark_ods()\nThe extract_benchmark_ods() function",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Utilities and helper functions</span>"
+    ]
+  },
+  {
+    "objectID": "04_helper_functions.html#extract_response_cat",
+    "href": "04_helper_functions.html#extract_response_cat",
+    "title": "3  Utilities and helper functions",
+    "section": "extract_response_cat()",
+    "text": "extract_response_cat()\nFor the majority of attitudinal questions and measures in the People Survey the published data includes only one value. The majority of attitudinal questions are asked on a ‘strongly agree’ to ‘strongly disagree’ scale, and published score is the combined percentage responding ‘agree’ or ‘strongly agree’. However, some questions use other scales and in some cases more than one response category is published. There are also a small number of questions with multiple responses.\nThe extract_response_cat() function (in the R/utils/extract_response_cat.R file) takes a vector of attitudinal question/measure text and associated UIDs and returns a vector of response categories based on that input.",
+    "crumbs": [
+      "Technical set-up",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Utilities and helper functions</span>"
+    ]
+  },
+  {
+    "objectID": "10_harmonisation.html",
+    "href": "10_harmonisation.html",
+    "title": "4  Introduction to harmonisation",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\nAs set out in the introduction, the nature of People Survey data publications has varied over time, and while the content is broadly stable there have inevitably been changes to the core questionnaire and organisation coverage over its 17 years of operation. Similarly, while the published datasets have some level of consistency there have inevitably been changes in the content and structure of these documents.\nTo overcome these issues it is necessary to create a set of lists of unique components in the survey data. After creating these unique reference lists there is also a need to also develop methods for matching items within the survey data to these reference lists. This is what is meant by ‘harmonisation’ in the context of processing the People Survey data: aligning published data to a set of unique lists.\nWhile the specific vary, each process for creating and developing harmonisations follow a similar workflow:\n\nExtract items (questions, organisations, demographics etc) from the published data.\nMake the list of items unique.\nDevelop regexes for matching.\nTest and refine the regexes.\nAssign unique identifiers to each item.\n\nThe next three chapters detail the specifics of developing the reference lists for harmonising three of the core components of the People Survey data: questions and measures, organisations and demographic questions and categories.",
+    "crumbs": [
+      "Developing harmonisations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Introduction to harmonisation</span>"
+    ]
+  },
+  {
+    "objectID": "11_questions_regex.html",
+    "href": "11_questions_regex.html",
+    "title": "5  Harmonising questions and measures",
+    "section": "",
+    "text": "Workflow\nThe attitudinal questions and their associated measures (the engagement index, theme scores and wellbeing indexes) are the main purpose of the People Survey, they tell us about the attitudes and opinions of civil servants about working for their organisation.\nThe core questionnaire for the survey has remained relatively stable over the 17 years of the survey’s life there have been changes, largely question additions but also some removals.\nThe attitudinal questions and measures exist in all People Survey datasets. While the core questionnaire uses question numbers to distinguish between questions each year, due to changes in the questionnaire, these are not stable unique references over time. Further complicating the situation is that in some datasets there are no question numbers provided, while in others only the the question numbers are included. As a result there is a need to not only develop regexes to identify question wording, but also a lookup of questions to question numbers/measures.\nThe workflow for developing the regexes and identifiers for questions and measures is contained in R scripts in the R/01-questions_ref folder of the csps-data repo, interim outputs are stored in the `proc/01-questions_ref:",
+    "crumbs": [
+      "Developing harmonisations",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Harmonising questions and measures</span>"
+    ]
+  },
+  {
+    "objectID": "11_questions_regex.html#workflow",
+    "href": "11_questions_regex.html#workflow",
+    "title": "5  Harmonising questions and measures",
+    "section": "",
+    "text": "01_01-extract_questions.R extracts the questions and measure data for all of the raw data files.\n01_02-regex_development.R de-duplicates the questions and measure extracted from the raw data files and create files for manually developing pattern matching regexes.\n01_03-regex_refinement.R includes code for checking if the regexes produce match unique questions/measures, creates files for manually updating labels and unique identifiers.\n01_04-question_reference.R outputs a finalised version of the regexes, as well as a lookup file for those datasets that only include question numbers.",
+    "crumbs": [
+      "Developing harmonisations",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Harmonising questions and measures</span>"
+    ]
+  },
+  {
+    "objectID": "11_questions_regex.html#unique-identifiers-for-questions-and-measures",
+    "href": "11_questions_regex.html#unique-identifiers-for-questions-and-measures",
+    "title": "5  Harmonising questions and measures",
+    "section": "Unique identifiers for questions and measures",
+    "text": "Unique identifiers for questions and measures\nThere are two unique identifiers that have been defined for attitudinal questions and measures: uid_qm_txt, a somewhat human-readable UID; and, uid_qm_num, a numeric-based UID.",
+    "crumbs": [
+      "Developing harmonisations",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Harmonising questions and measures</span>"
+    ]
+  },
+  {
+    "objectID": "12_organisations_regex.html",
+    "href": "12_organisations_regex.html",
+    "title": "6  Harmonising organisations",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Developing harmonisations",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Harmonising organisations</span>"
+    ]
+  },
+  {
+    "objectID": "13_demographics_regex.html",
+    "href": "13_demographics_regex.html",
+    "title": "7  Harmonising demographics",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Developing harmonisations",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Harmonising demographics</span>"
+    ]
+  },
+  {
+    "objectID": "20_extraction.html",
+    "href": "20_extraction.html",
+    "title": "8  Introduction to data extraction",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Extracting data",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to data extraction</span>"
+    ]
+  },
+  {
+    "objectID": "21_extract_benchmarks.html",
+    "href": "21_extract_benchmarks.html",
+    "title": "9  Extracting benchmark results",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Extracting data",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Extracting benchmark results</span>"
+    ]
+  },
+  {
+    "objectID": "22_extract_organisations.html",
+    "href": "22_extract_organisations.html",
+    "title": "10  Extracting organisation results",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Extracting data",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Extracting organisation results</span>"
+    ]
+  },
+  {
+    "objectID": "23_extract_demographics.html",
+    "href": "23_extract_demographics.html",
+    "title": "11  Extracting demographic results",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Extracting data",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Extracting demographic results</span>"
+    ]
+  },
+  {
+    "objectID": "30_processing.html",
+    "href": "30_processing.html",
+    "title": "12  Introduction to data processing",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Processing and harmonising data",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Introduction to data processing</span>"
+    ]
+  },
+  {
+    "objectID": "31_processing_benchmarks.html",
+    "href": "31_processing_benchmarks.html",
+    "title": "13  Processing benchmark results",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Processing and harmonising data",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Processing benchmark results</span>"
+    ]
+  },
+  {
+    "objectID": "32_processing_organisations.html",
+    "href": "32_processing_organisations.html",
+    "title": "14  Processing organisations results",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Processing and harmonising data",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Processing organisations results</span>"
+    ]
+  },
+  {
+    "objectID": "33_processing_demographics.html",
+    "href": "33_processing_demographics.html",
+    "title": "15  Processing demographic results",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Processing and harmonising data",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Processing demographic results</span>"
+    ]
+  },
+  {
+    "objectID": "90_references.html",
+    "href": "90_references.html",
+    "title": "References",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n\n\nBailey C, Madden A, Alfes K, Fletcher L, Robinson D, Holmes J,\nBuzzeo J and Currie G (2015) Evaluating the evidence on\nemployee engagement and its potential benefits to NHS staff: a narrative\nsynthesis of the literature. Health and Social Care Delivery\nResearch 3(26). https://doi.org/10.3310/hsdr03260.\n\n\nCabinet Office (n.d.) Civil Service grades and\nsalaries. Civil Service Careers. https://www.civil-service-careers.gov.uk/civil-service-grades-and-pay/\n(accessed 2 January 2026)\n\n\nCabinet Office (2025) Quality and Methodology\nInformation Civil Service People Survey: 2024 results -\nGOV.UK. Retrieved from https://www.gov.uk/government/publications/civil-service-people-survey-2024-results/quality-and-methodology-information-for-the-civil-service-people-survey-2024\n\n\nPublic Service Select Committee (1998) Part 4: The\nCivil Service Today Public Service Committee Report (HL 1997-98\n(55)). Retrieved from https://publications.parliament.uk/pa/ld199798/ldselect/ldpubsrv/055/psrep10.htm",
+    "crumbs": [
+      "Appendices",
+      "References"
+    ]
+  },
+  {
+    "objectID": "99_demographics_sex_gender.html",
+    "href": "99_demographics_sex_gender.html",
+    "title": "Sex, gender and gender identity in the Civil Service People Survey",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Appendices",
+      "Sex, gender and gender identity in the Civil Service People Survey"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the CSPS Data Processing Companion",
+    "section": "",
+    "text": "Accessibility\nTO DO\nTO DO",
+    "crumbs": [
+      "Colophon",
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#copyright",
+    "href": "about.html#copyright",
+    "title": "About the CSPS Data Processing Companion",
+    "section": "Copyright and licensing",
+    "text": "Copyright and licensing\nThis companion; the re-processed People Survey data and associated metadata; and, the software code written to process the data are copyright of Matt Kerlogue (2026).\nThis companion itself and re-processed data are licensed under the Creative Commons Attribution License 4.0 (CC-BY-4.0). While the the software code is licensed under the MIT License.\nThe raw data from the People Survey is Crown Copyright, licensed under the Open Government Licence 3.0\nThe recommended citation for this companion is:\n\nKerlogue M (2026) CSPS Data Processing Companion, https://mattkerlogue.github.io/csps-data/\n\nThe recommended citation for the re-processed data is:\n\nKerlogue M (2026) Civil Service People Survey harmonised datasets, https://github.com/mattkerlogue/csps-data\n\nRead more on copyright, licensing and attribution.",
+    "crumbs": [
+      "Colophon",
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#disclaimer",
+    "href": "about.html#disclaimer",
+    "title": "About the CSPS Data Processing Companion",
+    "section": "Legal disclaimer",
+    "text": "Legal disclaimer\nThis companion and associated materials are provided as-is.\nThe author provides no guarantees or warranties that the information provided in this website and associated materials are current, secure, accurate, complete, or free from viruses or other harmful components.\nThe materials on this site comprise the author’s views, they do not constitute legal or other professional advice.\nThe author, Matt Kerlogue, is not liable for any damages arising in contract, tort of otherwise from the use or inability to use this website, any material contained within it or any other website linked from this website, or from any action or decision taken as a result of using this website.\nThis website includes links to other websites, the author is not responsible for the content of any linked website. The author is not responsible for any transmission received from any linked website. The linked websites are included to assist visitors but inclusion of a linked website does not imply that the author endorses, approves the website. The author makes no guarantee that links are current, accurate or working.",
+    "crumbs": [
+      "Colophon",
+      "About"
+    ]
+  },
+  {
+    "objectID": "privacy.html",
+    "href": "privacy.html",
+    "title": "Privacy policy",
+    "section": "",
+    "text": "Under development: This book is still under active\n        development, its content and structure are subject to change.\n    \n\n\n\n\n\n…",
+    "crumbs": [
+      "Colophon",
+      "Privacy policy"
+    ]
+  }
+]
