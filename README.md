@@ -80,6 +80,7 @@ convenient, open-source and interoperable format.
 * 2022: [GOV.UK][govuk-22]
 * 2023: [GOV.UK][govuk-23]
 * 2024: [GOV.UK][govuk-24]
+* 2025: [GOV.UK][govuk-25]
 
 ## Copyright and Licensing
 
@@ -113,3 +114,4 @@ The recommended citation for the re-processed data is:
 [govuk-22]: https://www.gov.uk/government/publications/civil-service-people-survey-2022-results
 [govuk-23]: https://www.gov.uk/government/publications/civil-service-people-survey-2023-results
 [govuk-24]: https://www.gov.uk/government/publications/civil-service-people-survey-2024-results
+[govuk-25]: https://www.gov.uk/government/publications/civil-service-people-survey-2025-results

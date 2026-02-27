@@ -14,6 +14,7 @@ data_files <- tibble::tibble(
     values_to = "file_path",
     indices_to = "file_id"
   ) |>
+  tidyr::drop_na(file_path) |>
   dplyr::mutate(
     file_type = tools::file_ext(file_path),
     file_type = dplyr::if_else(grepl("xls", file_type), "xlsx", file_type),
@@ -57,13 +58,13 @@ data_coverage <- data_files |>
         "details_lgbt",
         "details_seb",
         "scs",
-        "report.benchmark_report",
-        "report.departmental_trends",
-        "report.summary_highlights",
-        "report.demographic_results",
-        "report.scs_results",
-        "report.technical_guide",
-        "report.core_questionnaire"
+        "report_benchmark_report",
+        "report_departmental_trends",
+        "report_summary_highlights",
+        "report_demographic_results",
+        "report_scs_results",
+        "report_technical_guide",
+        "report_core_questionnaire"
       )
     )
   ) |>

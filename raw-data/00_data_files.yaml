@@ -5,17 +5,17 @@ csps2009:
 csps2010:
   organisations.c: "raw-data/2010/csps2010allorganisations_tcm6-38334.csv"
   organisations.x: "raw-data/2010/csps2010allorganisations_tcm6-38335.xls"
-  report.summary_highlights.p: "raw-data/2010/CSPS-2010-background_tcm6-38336.pdf"
+  report_summary_highlights.p: "raw-data/2010/CSPS-2010-background_tcm6-38336.pdf"
 
 csps2011:
   organisations.c: "raw-data/2011/csps2011_allorganisations_20120202.csv"
   organisations.x: "raw-data/2011/csps2011_allorganisations_20120202.xls"
-  report.summary_highlights.p: "raw-data/2011/csps2011_externalsummary_final_20120201.pdf"
+  report_summary_highlights.p: "raw-data/2011/csps2011_externalsummary_final_20120201.pdf"
 
 csps2012:
   organisations.c: "raw-data/2012/csps2012_allorganisations_20130201.csv"
   organisations.x: "raw-data/2012/csps2012_allorganisations_20130201.xlsx"
-  report.summary_highlights.p: "raw-data/2012/csps2012_summary-of-findings_final.pdf"
+  report_summary_highlights.p: "raw-data/2012/csps2012_summary-of-findings_final.pdf"
 
 csps2013:
   benchmarks.c: "raw-data/2013/csps2013_benchmarks_20131125.csv"
@@ -26,12 +26,12 @@ csps2013:
   demographics.x: "raw-data/2013/csps2013_demographic_results.xlsx"
   scs.c: "raw-data/2013/csps2013_scs.csv"
   scs.x: "raw-data/2013/csps2013_scs.xlsx"
-  report.benchmark_report.p: "raw-data/2013/csps2013_benchmark_report_20121125.pdf"
-  report.demographic_results.p: "demoraw-data/2013/csps2013_demographic_results.pdf"
-  report.core_questionnaire.p: "raw-data/2013/csps2013_questionnaire_core.pdf"
-  report.scs_results.p: "raw-data/2013/csps2013_scs.pdf"
-  report.summary_highlights.p: "raw-data/2013/csps2013_summary_of_findings.pdf"
-  report.technical_guide.p: "raw-data/2013/csps2013_technicalguide.pdf"
+  report_benchmark_report.p: "raw-data/2013/csps2013_benchmark_report_20121125.pdf"
+  report_demographic_results.p: "demoraw-data/2013/csps2013_demographic_results.pdf"
+  report_core_questionnaire.p: "raw-data/2013/csps2013_questionnaire_core.pdf"
+  report_scs_results.p: "raw-data/2013/csps2013_scs.pdf"
+  report_summary_highlights.p: "raw-data/2013/csps2013_summary_of_findings.pdf"
+  report_technical_guide.p: "raw-data/2013/csps2013_technicalguide.pdf"
 
 csps2014:
   benchmarks.c: "raw-data/2014/csps2014_benchmarks.csv"
@@ -44,10 +44,10 @@ csps2014:
   details_gender.x: "raw-data/2014/csps2014_gender_detailedresults.xlsx"
   details_health.x: "raw-data/2014/csps2014_disability_detailedresults.xlsx"
   details_lgbt.x: "raw-data/2014/csps2014_lgb_detailedresults.xlsx"
-  report.benchmark_report.p: "raw-data/2014/csps2014_benchmark_report.pdf"
-  report.scs_results.p: "raw-data/2014/csps2014_scs.pdf"
-  report.summary_highlights.p: "raw-data/2014/csps2014_summaryoffindings_final.pdf"
-  report.technical_guide.p: "raw-data/2014/csps2014_technicalguide.pdf"
+  report_benchmark_report.p: "raw-data/2014/csps2014_benchmark_report.pdf"
+  report_scs_results.p: "raw-data/2014/csps2014_scs.pdf"
+  report_summary_highlights.p: "raw-data/2014/csps2014_summaryoffindings_final.pdf"
+  report_technical_guide.p: "raw-data/2014/csps2014_technicalguide.pdf"
 
 csps2015:
   benchmarks.c: "raw-data/2015/csps2015_benchmarks_csv_fixed.csv"
@@ -59,9 +59,9 @@ csps2015:
   details_gender.x: "raw-data/2015/Civil-Service-People-Survey-2015-results-by-gender.xlsx"
   details_health.x: "raw-data/2015/Civil-Service-People-Survey-2015-results-by-health-status.xlsx"
   details_lgbt.x: "raw-data/2015/Civil-Service-People-Survey-2015-results-by-sexual-identity.xlsx"
-  report.summary_highlights.p: "raw-data/2015/ANNEX_D_CSPS_2015_Summary_of_findings_slides.pdf"
-  report.technical_guide.p: "raw-data/2015/CSPS_2015_Technical_Guide.pdf"
-  report.benchmark_report.p: "raw-data/2015/csps2015_benchmark_report.pdf"
+  report_summary_highlights.p: "raw-data/2015/ANNEX_D_CSPS_2015_Summary_of_findings_slides.pdf"
+  report_technical_guide.p: "raw-data/2015/CSPS_2015_Technical_Guide.pdf"
+  report_benchmark_report.p: "raw-data/2015/csps2015_benchmark_report.pdf"
 
 csps2016:
   benchmarks.c: "raw-data/2016/civil_service_peoples_survey_2016_benchmark_scores.csv"
@@ -73,9 +73,9 @@ csps2016:
   details_gender.x: "raw-data/2016/Civil-Service-People-Survey-2016-results-by-gender.xlsx"
   details_health.x: "raw-data/2016/Civil-Service-People-Survey-2016-results-by-health-status.xlsx"
   details_lgbt.x: "raw-data/2016/Civil-Service-People-Survey-2016-results-by-sexual-identity.xlsx"
-  report.benchmark_report.p: "raw-data/2016/Civil_Service_People_Survey_2016_-_Benchmark_Report.pdf"
-  report.departmental_trends.p: "raw-data/2016/Civil_Service_People_Survey_2016_-_Departmental_Trends__V2_.pdf"
-  report.technical_guide.p: "raw-data/2016/civil_service_people_survey_2016_technical_Guide.pdf"
+  report_benchmark_report.p: "raw-data/2016/Civil_Service_People_Survey_2016_-_Benchmark_Report.pdf"
+  report_departmental_trends.p: "raw-data/2016/Civil_Service_People_Survey_2016_-_Departmental_Trends__V2_.pdf"
+  report_technical_guide.p: "raw-data/2016/civil_service_people_survey_2016_technical_Guide.pdf"
 
 csps2017:
   benchmarks.c: "raw-data/2017/Civil_Service_People_Survey_2017_Benchmark_scores__CSV_.csv"
@@ -86,9 +86,9 @@ csps2017:
   details_gender.x: "raw-data/2017/Civil_Service_People_Survey_2017_results_by_gender.xlsx"
   details_health.x: "raw-data/2017/Civil_Service_People_Survey_2017_results_by_health_status.xlsx"
   details_lgbt.x: "raw-data/2017/Civil_Service_People_Survey_2017_results_by_sexual_orientation.xlsx"
-  report.benchmark_report.p: "raw-data/2017/Civil_Service_People_Survey_2017_Benchmark_scores.pdf"
-  report.departmental_trends.p: "raw-data/2017/Civil_Service_People_Survey_2017_Summary_of_main_department_scores_2009_to_2017.pdf"
-  report.technical_guide.p: "raw-data/2017/Civil_Service_People_Survey_2017_Technical_Guide__1_.pdf"
+  report_benchmark_report.p: "raw-data/2017/Civil_Service_People_Survey_2017_Benchmark_scores.pdf"
+  report_departmental_trends.p: "raw-data/2017/Civil_Service_People_Survey_2017_Summary_of_main_department_scores_2009_to_2017.pdf"
+  report_technical_guide.p: "raw-data/2017/Civil_Service_People_Survey_2017_Technical_Guide__1_.pdf"
 
 csps2018:
   benchmarks.c: "raw-data/2018/Civil-Service-People-Survey-2009-2018-Median-Benchmark-Scores.csv"
@@ -100,9 +100,9 @@ csps2018:
   details_gender.x: "raw-data/2018/Civil-Service-People-Survey-2018-results-by-gender.xlsx"
   details_health.x: "raw-data/2018/Civil-Service-People-Survey-2018-results-by-health-status.xlsx"
   details_lgbt.x: "raw-data/2018/Civil-Service-People-Survey-2018-results-by-sexual-orientation.xlsx"
-  report.departmental_trends.p: "raw-data/2018/Civil_Service_People_Survey_-_Summary_of_Main_Department_Theme_Scores_2009_to_2018.pdf"
-  report.benchmark_report.p: "raw-data/2018/Civil_Service_People_Survey_2018_-_Benchmark_Scores.pdf"
-  report.technical_guide.p: "raw-data/2018/Civil_Service_People_Survey_2018_-_Full_Technical_Guide.pdf"
+  report_departmental_trends.p: "raw-data/2018/Civil_Service_People_Survey_-_Summary_of_Main_Department_Theme_Scores_2009_to_2018.pdf"
+  report_benchmark_report.p: "raw-data/2018/Civil_Service_People_Survey_2018_-_Benchmark_Scores.pdf"
+  report_technical_guide.p: "raw-data/2018/Civil_Service_People_Survey_2018_-_Full_Technical_Guide.pdf"
 
 csps2019:
   benchmarks.c: "raw-data/2019/Civil-Service-People-Survey-2009-to-2019-Median-Benchmark-Scores-CSV.csv"
@@ -115,9 +115,9 @@ csps2019:
   details_health.x: "raw-data/2019/Civil-Service-People-Survey-2019-results-by-health-status.xlsx"
   details_lgbt.x: "raw-data/2019/Civil-Service-People-Survey-2019-results-by-sexual-orientation.xlsx"
   details_seb.x: "raw-data/2019/Civil-Service-People-Survey-2019-results-by-socio-economic-background.xlsx"
-  report.technical_guide.p: "raw-data/2019/Civil-Service-People-Survey-2019-Technical-Guide.pdf"
-  report.departmental_trends.p: "raw-data/2019/Civil-Service-People-Survey-Main-Department-Scores-2009-to-2019.pdf"
-  report.benchmark_report.p: "raw-data/2019/Civil_Service_People_Survey_2009_to_2019_Median_Benchmark_Scores_-_final.pdf"
+  report_technical_guide.p: "raw-data/2019/Civil-Service-People-Survey-2019-Technical-Guide.pdf"
+  report_departmental_trends.p: "raw-data/2019/Civil-Service-People-Survey-Main-Department-Scores-2009-to-2019.pdf"
+  report_benchmark_report.p: "raw-data/2019/Civil_Service_People_Survey_2009_to_2019_Median_Benchmark_Scores_-_final.pdf"
 
 csps2020:
   benchmarks.c: "raw-data/2020/Civil_Service_People_Survey_2009_to_2020_Median_Benchmark_Scores.csv"
@@ -128,7 +128,7 @@ csps2020:
   details_gender.o: "raw-data/2020/Civil-Service-People-Survey-2020-results-by-gender-v2.ods"
   details_health.o: "raw-data/2020/Civil-Service-People-Survey-2020-results-by-health-v2.ods"
   details_lgbt.o: "raw-data/2020/Civil-Service-People-Survey-2020-results-by-sexual-orientation-v2.ods"
-  report.technical_guide.p: "raw-data/2020/Civil_Service_People_Survey_2020-_Technical_Guide.pdf"
+  report_technical_guide.p: "raw-data/2020/Civil_Service_People_Survey_2020-_Technical_Guide.pdf"
 
 csps2021:
   benchmarks.o: "raw-data/2021/Civil_Service_People_Survey_2009_2021_Benchmarks_v2.ods"
@@ -138,9 +138,9 @@ csps2021:
   details_health.o: "raw-data/2021/Civil-Service-People-Survey-2021-results-by-health.ods"
   details_lgbt.o: "raw-data/2021/Civil-Service-People-Survey-2021-results-by-sexual-orientation.ods"
   details_seb.o: "raw-data/2021/Civil-Service-People-Survey-2021-results-by-socio-economic-background.ods"
-  report.technical_guide.h: "raw-data/2021/Civil Service People Survey 2021_ technical guide - GOV.UK.html"
-  report.technical_guide.p: "raw-data/2021/Civil Service People Survey 2021_ technical guide - GOV.UK.pdf"
-  report.technical_guide.z: "raw-data/2021/Civil Service People Survey 2021_ technical guide - GOV.UK.zip"
+  report_technical_guide.h: "raw-data/2021/Civil Service People Survey 2021_ technical guide - GOV.UK.html"
+  report_technical_guide.p: "raw-data/2021/Civil Service People Survey 2021_ technical guide - GOV.UK.pdf"
+  report_technical_guide.z: "raw-data/2021/Civil Service People Survey 2021_ technical guide - GOV.UK.zip"
 
 csps2022:
   benchmarks.o: "raw-data/2022/Civil_Service_People_Survey_2022_Benchmark_Results.ods"
@@ -150,9 +150,9 @@ csps2022:
   details_health.o: "raw-data/2022/Civil-Service-People-Survey-2022-results-by-health.ods"
   details_lgbt.o: "raw-data/2022/Civil-Service-People-Survey-2022-results-by-sexual-orientation.ods"
   details_seb.o: "raw-data/2022/Civil-Service-People-Survey-2022-results-by-socio-economic-background.ods"
-  report.technical_guide.h: "raw-data/2022/Civil Service People Survey 2022_ Technical Guide - GOV.UK.html"
-  report.technical_guide.p: "raw-data/2022/Civil Service People Survey 2022_ Technical Guide - GOV.UK.pdf"
-  report.technical_guide.z: "raw-data/2022/Civil Service People Survey 2022_ Technical Guide - GOV.UK.zip"
+  report_technical_guide.h: "raw-data/2022/Civil Service People Survey 2022_ Technical Guide - GOV.UK.html"
+  report_technical_guide.p: "raw-data/2022/Civil Service People Survey 2022_ Technical Guide - GOV.UK.pdf"
+  report_technical_guide.z: "raw-data/2022/Civil Service People Survey 2022_ Technical Guide - GOV.UK.zip"
 
 csps2023:
   benchmarks.o: "raw-data/2023/Civil_Service_People_Survey_2023_Benchmark_Results.ods"
@@ -162,13 +162,13 @@ csps2023:
   details_health.o: "raw-data/2023/Civil-Service-People-Survey-2023-results-by-long-term-health-status.ods"
   details_lgbt.o: "raw-data/2023/Civil-Service-People-Survey-2023-results-by-sexual-orientation.ods"
   details_seb.o: "raw-data/2023/Civil-Service-People-Survey-2023-results-by-socio-economic-background.ods"
-  report.summary_highlights.o: "raw-data/2023/Civil_Service_People_Survey_2023_-_Results_Highlights_Data_Companion.ods"
-  report.summary_highlights.h: "raw-data/2023/Civil Service People Survey 2023 - Results Highlights - GOV.UK.html"
-  report.summary_highlights.p: "raw-data/2023/Civil Service People Survey 2023 - Results Highlights - GOV.UK.pdf"
-  report.summary_highlights.z: "raw-data/2023/Civil Service People Survey 2023 - Results Highlights - GOV.UK.zip"
-  report.technical_guide.h: "raw-data/2023/Quality and Methodology Information for the Civil Service People Survey 2023 - GOV.UK.html"
-  report.technical_guide.p: "raw-data/2023/Quality and Methodology Information for the Civil Service People Survey 2023 - GOV.UK.pdf"
-  report.technical_guide.z: "raw-data/2023/Quality and Methodology Information for the Civil Service People Survey 2023 - GOV.UK.zip"
+  report_summary_highlights.o: "raw-data/2023/Civil_Service_People_Survey_2023_-_Results_Highlights_Data_Companion.ods"
+  report_summary_highlights.h: "raw-data/2023/Civil Service People Survey 2023 - Results Highlights - GOV.UK.html"
+  report_summary_highlights.p: "raw-data/2023/Civil Service People Survey 2023 - Results Highlights - GOV.UK.pdf"
+  report_summary_highlights.z: "raw-data/2023/Civil Service People Survey 2023 - Results Highlights - GOV.UK.zip"
+  report_technical_guide.h: "raw-data/2023/Quality and Methodology Information for the Civil Service People Survey 2023 - GOV.UK.html"
+  report_technical_guide.p: "raw-data/2023/Quality and Methodology Information for the Civil Service People Survey 2023 - GOV.UK.pdf"
+  report_technical_guide.z: "raw-data/2023/Quality and Methodology Information for the Civil Service People Survey 2023 - GOV.UK.zip"
 
 csps2024:
   benchmarks.o: "raw-data/2024/Civil_Service_People_Survey_2024_Benchmark_Results.ods"
@@ -178,10 +178,26 @@ csps2024:
   details_gender.o: "raw-data/2024/Civil-Service-People-Survey-2024-results-by-sex-and-gender.ods"
   details_lgbt.o: "raw-data/2024/Civil-Service-People-Survey-2024-results-by-sexual-orientation.ods"
   details_seb.o: "raw-data/2024/Civil-Service-People-Survey-2024-results-by-socio-economic-background.ods"
-  report.summary_highlights.o: "raw-data/2024/Civil_Service_People_Survey_2024_-_Results_Highlights_Data_Companion.ods"
-  report.summary_highlights.h: "raw-data/2024/Civil Service People Survey 2024 - Results Highlights - GOV.UK.html"
-  report.summary_highlights.p: "raw-data/2024/Civil Service People Survey 2024 - Results Highlights - GOV.UK.pdf"
-  report.summary_highlights.z: "raw-data/2024/Civil Service People Survey 2024 - Results Highlights - GOV.UK.zip"
-  report.technical_guide.h: "raw-data/2024/Quality and Methodology Information for the Civil Service People Survey 2024 - GOV.UK.html"
-  report.technical_guide.p: "raw-data/2024/Quality and Methodology Information for the Civil Service People Survey 2024 - GOV.UK.pdf"
-  report.technical_guide.z: "raw-data/2024/Quality and Methodology Information for the Civil Service People Survey 2024 - GOV.UK.zip"
+  report_summary_highlights.o: "raw-data/2024/Civil_Service_People_Survey_2024_-_Results_Highlights_Data_Companion.ods"
+  report_summary_highlights.h: "raw-data/2024/Civil Service People Survey 2024 - Results Highlights - GOV.UK.html"
+  report_summary_highlights.p: "raw-data/2024/Civil Service People Survey 2024 - Results Highlights - GOV.UK.pdf"
+  report_summary_highlights.z: "raw-data/2024/Civil Service People Survey 2024 - Results Highlights - GOV.UK.zip"
+  report_technical_guide.h: "raw-data/2024/Quality and Methodology Information for the Civil Service People Survey 2024 - GOV.UK.html"
+  report_technical_guide.p: "raw-data/2024/Quality and Methodology Information for the Civil Service People Survey 2024 - GOV.UK.pdf"
+  report_technical_guide.z: "raw-data/2024/Quality and Methodology Information for the Civil Service People Survey 2024 - GOV.UK.zip"
+
+csps2025:
+  benchmarks.o: "raw-data/2025/Civil_Service_People_Survey_2025_Benchmark_Results.ods"
+  demographics.o:
+  details_ethnicity.o:
+  details_health.o: 
+  details_gender.o: 
+  details_lgbt.o: 
+  details_seb.o:
+  report_summary_highlights.o: "raw-data/2025/Civil_Service_People_Survey_2025_-_Results_Highlights_Data_Companion.ods"
+  report_summary_highlights.h: "raw-data/2025/Civil Service People Survey 2025 - Results Highlights - GOV.UK.html"
+  report_summary_highlights.p: "raw-data/2025/Civil Service People Survey 2025 - Results Highlights - GOV.UK.pdf"
+  report_summary_highlights.z: "raw-data/2025/Civil Service People Survey 2025 - Results Highlights - GOV.UK.zip"
+  report_technical_guide.h: "raw-data/2025/Quality and Methodology Information for the Civil Service People Survey 2025 - GOV.UK.html"
+  report_technical_guide.p: "raw-data/2025/Quality and Methodology Information for the Civil Service People Survey 2025 - GOV.UK.pdf"
+  report_technical_guide.z: "raw-data/2025/Quality and Methodology Information for the Civil Service People Survey 2025 - GOV.UK.zip"
