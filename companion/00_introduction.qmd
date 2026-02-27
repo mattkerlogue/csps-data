@@ -285,7 +285,7 @@ set.seed(215202)
 #| label: tbl-bench-example
 #| tbl-cap: Example structure of the benchmark results file
 readr::read_csv(
-    "../data/01-benchmarks/csps_benchmarks_2009-2024.csv",
+    here::here("../data/01-benchmarks/csps_benchmarks_2009-2024_5b58c24b.csv"),
     show_col_types = FALSE
 ) |>
     dplyr::sample_n(10)

@@ -3,15 +3,33 @@ page-navigation: false
 ---
 # About the CSPS Data Processing Companion {.unnumbered}
 
-...
+TO DO
 
 # Accessibility
 
-...
+TO DO
 
 ## Copyright and licensing {#copyright}
 
-...
+This companion; the re-processed People Survey data and associated metadata;
+and, the software code written to process the data are copyright of Matt
+Kerlogue (2026).
+
+This companion itself and re-processed data are licensed under the
+[Creative Commons Attribution License 4.0 (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/). While the the software code is licensed under the
+[MIT License](https://github.com/mattkerlogue/csps-data/blob/main/LICENSE-MIT).
+
+The raw data from the People Survey is Crown Copyright, licensed under the [Open Government Licence 3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/)
+
+The recommended citation for this companion is:
+
+> Kerlogue M (2026) CSPS Data Processing Companion, https://mattkerlogue.github.io/csps-data/
+
+The recommended citation for the re-processed data is:
+
+> Kerlogue M (2026) Civil Service People Survey harmonised datasets, https://github.com/mattkerlogue/csps-data
+
+Read more on [copyright, licensing and attribution](about.qmd#copyright).
 
 ## Legal disclaimer {#disclaimer}
 
